@@ -15,3 +15,11 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+.idea/*
+system/application/cache/*
+
+*/config/config.php
+*/config/database.php
+/config/config.php
+/config/database.php
