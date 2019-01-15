@@ -180,13 +180,6 @@
                     </div>
                 </div>
                 <div class="menu-and-user">
-                    <div class="logged-user-w">
-                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.jpg')?>"></div>
-                        <div class="logged-user-info-w">
-                            <div class="logged-user-name">Maria Gomez</div>
-                            <div class="logged-user-role">Administrator</div>
-                        </div>
-                    </div>
                     <ul class="main-menu">
                         <li class="has-sub-menu"><a href="index.html">
                                 <div class="icon-w">
@@ -372,145 +365,49 @@
                         <div class="logo-element"></div>
                         <div class="logo-label">IMAS</div>
                     </a></div>
+                <!-- <div class="menu-actions">
+                    <div class="top-icon"><a href="<?=site_url('programmes')?>"><div class="icon-w"><i class="os-icon os-icon-home"> HOME</i></a></div></div>
+                </div> -->
                 <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
                         type="text"></div>
                 <h1 class="menu-page-header">Page Header</h1>
                 <ul class="main-menu">
-                    <li class="sub-header"><span>Layouts</span></li>
-                    <li class="selected has-sub-menu"><a href="index.html">
+                    <li class="selected"><a href="index.html">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-home"></div>
+                            </div><span>Home</span>
+                        </a>
+                    </li>
+                    <li class="selected"><a href="index.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
-                            </div><span>Dashboard</span>
+                            </div><span>Overview</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Dashboard</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-layout"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Dashboard 1</a></li>
-                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a></li>
-                                    <li><a href="apps_support_dashboard.html">Dashboard 3</a></li>
-                                    <li><a href="apps_projects.html">Dashboard 4</a></li>
-                                    <li><a href="apps_bank.html">Dashboard 5</a></li>
-                                    <li><a href="layouts_menu_top_image.html">Dashboard 6</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
-                    <li class=" has-sub-menu"><a href="layouts_menu_top_image.html">
+                    <li class=""><a href="layouts_menu_top_image.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
-                            </div><span>Menu Styles</span>
+                            </div><span>Benefits</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Menu Styles</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-layers"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_side_full.html">Side Menu Light</a></li>
-                                    <li><a href="layouts_menu_side_full_dark.html">Side Menu Dark</a></li>
-                                    <li><a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong
-                                                class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="apps_pipeline.html">Side &amp; Top Dark</a></li>
-                                    <li><a href="apps_projects.html">Side &amp; Top</a></li>
-                                    <li><a href="layouts_menu_side_mini.html">Mini Side Menu</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a></li>
-                                    <li><a href="layouts_menu_side_compact.html">Compact Side Menu</a></li>
-                                    <li><a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a></li>
-                                    <li><a href="layouts_menu_right.html">Right Menu</a></li>
-                                    <li><a href="layouts_menu_top.html">Top Menu Light</a></li>
-                                    <li><a href="layouts_menu_top_dark.html">Top Menu Dark</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_top_image.html">Top Menu Image <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a></li>
-                                    <li><a href="layouts_menu_side_compact_click.html">Menu Inside Click</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
-                    <li class="sub-header"><span>Options</span></li>
-                    <li class=" has-sub-menu"><a href="apps_bank.html">
+                    <li class="sub-header"><span>ICP Value</span></li>
+                    <li class=""><a href="apps_bank.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-package"></div>
-                            </div><span>Applications</span>
+                            </div><span>Gantt Chart</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Applications</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-package"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="apps_email.html">Email Application</a></li>
-                                    <li><a href="apps_support_dashboard.html">Support Dashboard</a></li>
-                                    <li><a href="apps_support_index.html">Tickets Index</a></li>
-                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="apps_projects.html">Projects List</a></li>
-                                    <li><a href="apps_bank.html">Banking <strong class="badge badge-danger">New</strong></a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="apps_full_chat.html">Chat Application</a></li>
-                                    <li><a href="apps_todo.html">To Do Application <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_chat.html">Popup Chat</a></li>
-                                    <li><a href="apps_pipeline.html">CRM Pipeline</a></li>
-                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_calendar.html">Calendar</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
-                    <li class=" has-sub-menu"><a href="#">
+                    <li class=""><a href="#">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-file-text"></div>
-                            </div><span>Pages</span>
+                            </div><span>Delivarables</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Pages</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-file-text"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="misc_invoice.html">Invoice</a></li>
-                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_charts.html">Charts</a></li>
-                                    <li><a href="auth_login.html">Login</a></li>
-                                    <li><a href="auth_register.html">Register</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="auth_lock.html">Lock Screen</a></li>
-                                    <li><a href="misc_pricing_plans.html">Pricing Plans</a></li>
-                                    <li><a href="misc_error_404.html">Error 404</a></li>
-                                    <li><a href="misc_error_500.html">Error 500</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
-                    <li class=" has-sub-menu"><a href="#">
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/icv_calculation')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-life-buoy"></div>
-                            </div><span>UI Kit</span>
+                            </div><span>ICV Calculation</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">UI Kit</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-life-buoy"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="uikit_modals.html">Modals <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="uikit_alerts.html">Alerts</a></li>
-                                    <li><a href="uikit_grid.html">Grid</a></li>
-                                    <li><a href="uikit_progress.html">Progress</a></li>
-                                    <li><a href="uikit_popovers.html">Popover</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="uikit_tooltips.html">Tooltips</a></li>
-                                    <li><a href="uikit_buttons.html">Buttons</a></li>
-                                    <li><a href="uikit_dropdowns.html">Dropdowns</a></li>
-                                    <li><a href="uikit_typography.html">Typography</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
                     <li class="sub-header"><span>Elements</span></li>
                     <li class=" has-sub-menu"><a href="#">
@@ -641,6 +538,35 @@
                         <!-- <li class="sub-header"><span>Layouts</span></li> -->
                         <li class="sub-header top-icon os-dropdown-trigger toggle-menu-style"><i class="os-icon os-icon-menu"></i></li>
                     </ul>
+                    <div class="fancy-selector-w">
+						<div class="fancy-selector-current">
+							<div class="fs-main-info">
+								<div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
+								<div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
+							</div>
+							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
+						</div>
+						<div class="fancy-selector-options">
+							<div class="fancy-selector-option">
+								<div class="fs-main-info">
+									<div class="fs-name">CMS Product</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
+								</div>
+							</div>
+							<div class="fancy-selector-option active">
+								<div class="fs-main-info">
+									<div class="fs-name">Server Product</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
+								</div>
+							</div>
+							<div class="fancy-selector-option">
+								<div class="fs-main-info">
+									<div class="fs-name">Compute Engine</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
+								</div>
+							</div>
+						</div>
+					</div>
                     <div class="top-menu-controls">
                         <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
                                 type="text"></div>
