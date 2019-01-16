@@ -58,3 +58,4 @@ $route['reset-password'] = 'resetpassword';
 $route['programmes/(:any)'] = 'programmes/find_programme/$1';
 $route['programmes/(:any)/(:any)'] = 'projects/find_project/$1/$2';
 $route['programmes/(:any)/(:any)/icv_calculation'] = 'projects/icv_calculation/$1/$2';
+$route['programmes/(:any)/(:any)/deliverables'] = 'projects/deliverables/$1/$2';
