@@ -41,7 +41,7 @@
 									<div class="col-sm-12 col-md-12">
 										<div class="form-group">
 											<label for="">Programme Name</label>
-											<b class="font d-block">10 X 6-CAR ELECTRIC TRAIN SETS (ETS)</b>
+											<b class="font d-block">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</b>
 										</div>
 									</div>
 								</div>
@@ -709,7 +709,7 @@
 					<div class="fancy-selector-w">
 						<div class="fancy-selector-current">
 							<div class="fs-main-info">
-								<div class="fs-name">10 X 6-CAR ELECTRIC TRAIN SETS (ETS)</div>
+								<div class="fs-name">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</div>
 								<div class="fs-sub"><span>PROJECTS :</span><strong>05</strong></div>
 							</div>
 							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
@@ -717,20 +717,20 @@
 						<div class="fancy-selector-options">
 							<div class="fancy-selector-option">
 								<div class="fs-main-info">
-									<div class="fs-name">CMS Product</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
+									<div class="fs-name">10 X 6-CAR ELECTRIC TRAIN SETS (ETS)</div>
+									<div class="fs-sub"><span>PROJECTS :</span><strong>11</strong></div>
 								</div>
 							</div>
 							<div class="fancy-selector-option active">
 								<div class="fs-main-info">
 									<div class="fs-name">Server Product</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
+									<div class="fs-sub"><span>PROJECTS :</span><strong>03</strong></div>
 								</div>
 							</div>
 							<div class="fancy-selector-option">
 								<div class="fs-main-info">
 									<div class="fs-name">Compute Engine</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
+									<div class="fs-sub"><span>PROJECTS :</span><strong>06</strong></div>
 								</div>
 							</div>
 						</div>
@@ -846,10 +846,10 @@
 								<div class="element-wrapper">
 									<div class="os-tabs-w">
 										<div class="os-tabs-controls">
-											<ul class="nav nav-tabs bigger">
-												<li class="nav-item"><a class="nav-link active show no-loader content-panel-hide" data-toggle="tab" href="#tab_overview">Overview</a></li>
-												<li class="nav-item"><a class="nav-link no-loader content-panel-view" data-toggle="tab" href="#tab_projects">Projects</a></li>
-												<li class="nav-item"><a class="nav-link no-loader content-panel-hide" data-toggle="tab" href="#tab_activity">Activity</a></li>
+											<ul class="nav nav-tabs">
+												<li class="nav-item"><a class="nav-link active show no-loader content-panel-hide" data-toggle="tab" href="#tab_overview"><strong>PROGRAMME OVERVIEW</strong></a></li>
+												<li class="nav-item"><a class="nav-link no-loader content-panel-view" data-toggle="tab" href="#tab_projects"><strong>PROJECTS</strong></a></li>
+												<li class="nav-item"><a class="nav-link no-loader content-panel-hide" data-toggle="tab" href="#tab_activity"><strong>ACTIVITY</strong></a></li>
 											</ul>
 											<ul class="nav nav-pills smaller d-none d-md-flex">
 												<li class="nav-item">
@@ -1001,7 +1001,7 @@
 																	<td>
 																		<div class="text-primary"><b>Tunneling Training Academy (TTA graduates)</b></div>
 																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CGMR-90-IP2</b></div>
+																			<div class="label text-dark">Ref.No. : <b class="font">CPCF-11-MW2</b></div>
 																		</div>
 																	</td>
 																	<td>Indirect</td>
@@ -1010,7 +1010,7 @@
 																	<td class="text-center">-</td>
 																	<td class="nowrap"><span class="badge badge-secondary">New</span></td>
 																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
+																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2')?>"><i class="os-icon os-icon-grid-10"></i></a>
 																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
 																	</td>
 																</tr>
