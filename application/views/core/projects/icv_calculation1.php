@@ -22,156 +22,50 @@
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
     <div class="all-wrapper with-side-panel solid-bg-all">
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel" role="dialog" tabindex="-1">
+        <div aria-hidden="true" class="onboarding-modal modal fade animated" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-centered" role="document">
                 <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
                         type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
                     <div class="onboarding-slider-w">
-                      <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
+                        <div class="onboarding-slide">
+                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon2.png')?>" width="200px"></div>
                             <div class="onboarding-content with-gradient">
                                 <h4 class="onboarding-title">Example of onboarding screen!</h4>
                                 <div class="onboarding-text">This is an example of a multistep onboarding screen, you
                                     can use it to introduce your customers to your app, or collect additional
                                     information from them before they start using your app.</div>
                             </div>
-                        </div>-->
+                        </div>
                         <div class="onboarding-slide">
                             <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
                             <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">ICP Multiplier</h4>
-                                <div class="onboarding-text">Direct offset</div>
+                                <h4 class="onboarding-title">Example Request Information</h4>
+                                <div class="onboarding-text">In this example you can see a form where you can request
+                                    some additional information from the customer when they land on the app page.</div>
                                 <form>
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <input type="hidden" id="hidMultiplierLocation">
-                                            <div class="form-group"><label for="">Item</label><select class="form-control" id="item">
-                                                    <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
-                                                </select></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group"><label for="">Your Full Name</label><input class="form-control"
+                                                    placeholder="Enter your full name..." type="text" value=""></div>
                                         </div>
-                                        <div class="col-sm-12" hidden id="itemDesDiv">
-                                            <div class="form-group">
-                                                <select class="form-control" id="itemdes">
-                                                    <option>Select</option>
-                                                    <!--<option>Equity Investment</option>
-                                                    <option>Bank Gua</option>
-                                                    <option>Other</option>-->
+                                        <div class="col-sm-6">
+                                            <div class="form-group"><label for="">Your Role</label><select class="form-control">
+                                                    <option>Web Developer</option>
+                                                    <option>Business Owner</option>
+                                                    <option>Other</option>
                                                 </select></div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel4" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h6 >Milestone 1</h6>
-                                <h6 >Activity 1</h6>
-                                <h4 class="onboarding-title">Evidences</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="element-box-tp">
-                                                <div class="users-list-w">
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel3" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
                         <div class="onboarding-slide">
                             <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon6.png')?>" width="200px"></div>
                             <div class="onboarding-content with-gradient">
-                                <h6 >Milestone 1</h6>
-                                <h6 >Activity 1</h6>
-                                <h4 class="onboarding-title">Deliverables</h4>
+                                <h4 class="onboarding-title">Showcase App Features</h4>
+                                <div class="onboarding-text">In this example you can showcase some of the features of
+                                    your application, it is very handy to make new users aware of your hidden features.
+                                    You can use boostrap columns to split them up.</div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <ul class="features-list">
@@ -190,57 +84,6 @@
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel1" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">ICP Multiplier</h4>
-                                <div class="onboarding-text">Direct offset</div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <input type="hidden" id="hidMultiplierLocation">
-                                            <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
-                                                    <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
-                                                </select></div>
-                                        </div>
-                                        <div class="col-sm-12" hidden id="itemDesDiv1">
-                                            <div class="form-group">
-                                                <select class="form-control" id="itemdes1">
-                                                    <option>Select</option>
-                                                    <!--<option>Equity Investment</option>
-                                                    <option>Bank Gua</option>
-                                                    <option>Other</option>-->
-                                                </select></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -337,6 +180,13 @@
                     </div>
                 </div>
                 <div class="menu-and-user">
+                    <div class="logged-user-w">
+                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.jpg')?>"></div>
+                        <div class="logged-user-info-w">
+                            <div class="logged-user-name">Maria Gomez</div>
+                            <div class="logged-user-role">Administrator</div>
+                        </div>
+                    </div>
                     <ul class="main-menu">
                         <li class="has-sub-menu"><a href="index.html">
                                 <div class="icon-w">
@@ -522,49 +372,145 @@
                         <div class="logo-element"></div>
                         <div class="logo-label">IMAS</div>
                     </a></div>
-                <!-- <div class="menu-actions">
-                    <div class="top-icon"><a href="<?=site_url('programmes')?>"><div class="icon-w"><i class="os-icon os-icon-home"> HOME</i></a></div></div>
-                </div> -->
                 <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
                         type="text"></div>
                 <h1 class="menu-page-header">Page Header</h1>
                 <ul class="main-menu">
-                    <li class="selected"><a href="index.html">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-home"></div>
-                            </div><span>Home</span>
-                        </a>
-                    </li>
-                    <li class="selected"><a href="index.html">
+                    <li class="sub-header"><span>Layouts</span></li>
+                    <li class="selected has-sub-menu"><a href="index.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
-                            </div><span>Overview</span>
+                            </div><span>Dashboard</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">Dashboard</div>
+                            <div class="sub-menu-icon"><i class="os-icon os-icon-layout"></i></div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li><a href="index.html">Dashboard 1</a></li>
+                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a></li>
+                                    <li><a href="apps_support_dashboard.html">Dashboard 3</a></li>
+                                    <li><a href="apps_projects.html">Dashboard 4</a></li>
+                                    <li><a href="apps_bank.html">Dashboard 5</a></li>
+                                    <li><a href="layouts_menu_top_image.html">Dashboard 6</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
-                    <li class=""><a href="layouts_menu_top_image.html">
+                    <li class=" has-sub-menu"><a href="layouts_menu_top_image.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
-                            </div><span>Benefits</span>
+                            </div><span>Menu Styles</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">Menu Styles</div>
+                            <div class="sub-menu-icon"><i class="os-icon os-icon-layers"></i></div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li><a href="layouts_menu_side_full.html">Side Menu Light</a></li>
+                                    <li><a href="layouts_menu_side_full_dark.html">Side Menu Dark</a></li>
+                                    <li><a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong
+                                                class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="apps_pipeline.html">Side &amp; Top Dark</a></li>
+                                    <li><a href="apps_projects.html">Side &amp; Top</a></li>
+                                    <li><a href="layouts_menu_side_mini.html">Mini Side Menu</a></li>
+                                </ul>
+                                <ul class="sub-menu">
+                                    <li><a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a></li>
+                                    <li><a href="layouts_menu_side_compact.html">Compact Side Menu</a></li>
+                                    <li><a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a></li>
+                                    <li><a href="layouts_menu_right.html">Right Menu</a></li>
+                                    <li><a href="layouts_menu_top.html">Top Menu Light</a></li>
+                                    <li><a href="layouts_menu_top_dark.html">Top Menu Dark</a></li>
+                                </ul>
+                                <ul class="sub-menu">
+                                    <li><a href="layouts_menu_top_image.html">Top Menu Image <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a></li>
+                                    <li><a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a></li>
+                                    <li><a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a></li>
+                                    <li><a href="layouts_menu_side_compact_click.html">Menu Inside Click</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
-                    <li class="sub-header"><span>ICP Value</span></li>
-                    <li class=""><a href="apps_bank.html">
+                    <li class="sub-header"><span>Options</span></li>
+                    <li class=" has-sub-menu"><a href="apps_bank.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-package"></div>
-                            </div><span>Gantt Chart</span>
+                            </div><span>Applications</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">Applications</div>
+                            <div class="sub-menu-icon"><i class="os-icon os-icon-package"></i></div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li><a href="apps_email.html">Email Application</a></li>
+                                    <li><a href="apps_support_dashboard.html">Support Dashboard</a></li>
+                                    <li><a href="apps_support_index.html">Tickets Index</a></li>
+                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="apps_projects.html">Projects List</a></li>
+                                    <li><a href="apps_bank.html">Banking <strong class="badge badge-danger">New</strong></a></li>
+                                </ul>
+                                <ul class="sub-menu">
+                                    <li><a href="apps_full_chat.html">Chat Application</a></li>
+                                    <li><a href="apps_todo.html">To Do Application <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="misc_chat.html">Popup Chat</a></li>
+                                    <li><a href="apps_pipeline.html">CRM Pipeline</a></li>
+                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="misc_calendar.html">Calendar</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
-                    <li class=""><a href="#">
+                    <li class=" has-sub-menu"><a href="#">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-file-text"></div>
-                            </div><span>Delivarables</span>
+                            </div><span>Pages</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">Pages</div>
+                            <div class="sub-menu-icon"><i class="os-icon os-icon-file-text"></i></div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li><a href="misc_invoice.html">Invoice</a></li>
+                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="misc_charts.html">Charts</a></li>
+                                    <li><a href="auth_login.html">Login</a></li>
+                                    <li><a href="auth_register.html">Register</a></li>
+                                </ul>
+                                <ul class="sub-menu">
+                                    <li><a href="auth_lock.html">Lock Screen</a></li>
+                                    <li><a href="misc_pricing_plans.html">Pricing Plans</a></li>
+                                    <li><a href="misc_error_404.html">Error 404</a></li>
+                                    <li><a href="misc_error_500.html">Error 500</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/icv_calculation')?>">
+                    <li class=" has-sub-menu"><a href="#">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-life-buoy"></div>
-                            </div><span>ICV Calculation</span>
+                            </div><span>UI Kit</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">UI Kit</div>
+                            <div class="sub-menu-icon"><i class="os-icon os-icon-life-buoy"></i></div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li><a href="uikit_modals.html">Modals <strong class="badge badge-danger">New</strong></a></li>
+                                    <li><a href="uikit_alerts.html">Alerts</a></li>
+                                    <li><a href="uikit_grid.html">Grid</a></li>
+                                    <li><a href="uikit_progress.html">Progress</a></li>
+                                    <li><a href="uikit_popovers.html">Popover</a></li>
+                                </ul>
+                                <ul class="sub-menu">
+                                    <li><a href="uikit_tooltips.html">Tooltips</a></li>
+                                    <li><a href="uikit_buttons.html">Buttons</a></li>
+                                    <li><a href="uikit_dropdowns.html">Dropdowns</a></li>
+                                    <li><a href="uikit_typography.html">Typography</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
                     <li class="sub-header"><span>Elements</span></li>
                     <li class=" has-sub-menu"><a href="#">
@@ -695,35 +641,6 @@
                         <!-- <li class="sub-header"><span>Layouts</span></li> -->
                         <li class="sub-header top-icon os-dropdown-trigger toggle-menu-style"><i class="os-icon os-icon-menu"></i></li>
                     </ul>
-                    <div class="fancy-selector-w">
-						<div class="fancy-selector-current">
-							<div class="fs-main-info">
-								<div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
-								<div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
-							</div>
-							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
-						</div>
-						<div class="fancy-selector-options">
-							<div class="fancy-selector-option">
-								<div class="fs-main-info">
-									<div class="fs-name">CMS Product</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
-								</div>
-							</div>
-							<div class="fancy-selector-option active">
-								<div class="fs-main-info">
-									<div class="fs-name">Server Product</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
-								</div>
-							</div>
-							<div class="fancy-selector-option">
-								<div class="fs-main-info">
-									<div class="fs-name">Compute Engine</div>
-									<div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
-								</div>
-							</div>
-						</div>
-					</div>
                     <div class="top-menu-controls">
                         <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
                                 type="text"></div>
@@ -842,13 +759,10 @@
                 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
                 <div class="content-i">
                     <div class="content-box">
-
-
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="element-wrapper">
-                                    <h6 class="element-header">ICV Calculation</h6>
+                                    <h6 class="element-header">ICV calculation(Direct ICP)</h6>
                                     <div class="element-box-tp">
                                         <!--------------------
                                         START - Controls Above Table
@@ -876,140 +790,110 @@
                                         START - Table with actions
                                         ------------------  -->
                                         <div class="table-responsive">
-                                            <table class="table table-bordered table-lg table-v2 table-striped">
+                                        <table class="table table-bordered table-lg table-v2 table-striped">
 
                                                 <tbody>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="3" >Milestone</td>
+                                                <tr>
+                                                    <td rowspan="3">Milestone</td>
                                                     <td rowspan="3">Activity</td>
                                                     <td rowspan="3">
-                                                        Timeline/
-                                                        Completion Period
+                                                        <p>Timeline/</p>
+                                                        <p>Completion Period</p>
                                                     </td>
                                                     <td rowspan="3">Basis of Calculation</td>
                                                     <td colspan="2">Nominal Value Non-MLC (RM)</td>
                                                     <td colspan="2">Nominal Value MLC (RM)</td>
-                                                    <td rowspan="3">Total
-                                                        (a*b)+(c*d)
+                                                    <td rowspan="3">
+                                                        <p>Total</p>
+                                                        <p>(a*b)+(c*d)</p>
                                                     </td>
                                                     <td rowspan="3">Deliverables</td>
                                                     <td rowspan="3">Evidences</td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Nominal Value</td>
+                                                <tr>
+                                                    <td>NV</td>
                                                     <td>M</td>
-                                                    <td>Nominal Value</td>
+                                                    <td>NV</td>
                                                     <td>M</td>
                                                 </tr>
-                                                <tr style="text-align: center">
+                                                <tr>
                                                     <td>a</td>
                                                     <td>b</td>
                                                     <td>c</td>
                                                     <td>d</td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="2">Milestone</td>
-                                                    <td>Activity</td>
+                                                <tr>
+                                                    <td rowspan="2">Milestone 1</td>
+                                                    <td>Activity 1</td>
                                                     <td>period 1</td>
                                                     <td>calc 1</td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;delicerables 1</td>
+                                                    <td>
+                                                        evidenc 1
+                                                    </td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
+                                                <tr>
+                                                    <td>&nbsp;Activity 2</td>
                                                     <td>&nbsp;period 2</td>
                                                     <td>&nbsp;calc 2</td>
-                                                    <td ><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value="" ></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;&nbsp;delicerables 2</td>
+                                                    <td>&nbsp;
+                                                        evidenc 2
+                                                    </td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="2">&nbsp;Milestone</td>
-                                                    <td>Activity</td>
+                                                <tr>
+                                                    <td rowspan="2">&nbsp;Milestone 2</td>
+                                                    <td>&nbsp;Activity 3</td>
                                                     <td>&nbsp;period 3</td>
                                                     <td>&nbsp;calc 3</td>
-                                                    <td ><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td class="multipilerModel"><input class="form-control nonMLCM "  readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;&nbsp;delicerables 3</td>
+                                                    <td>&nbsp;
+                                                        evidenc 3
+                                                    </td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
+                                                <tr>
+                                                    <td>&nbsp;Activity 4</td>
                                                     <td>&nbsp;period 4</td>
                                                     <td>&nbsp;calc 4</td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM"  readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6 <a href="#" class="viewDeliver"> View <i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1 <a href="#" class="viewAttachments"> View <i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;&nbsp;delicerables 4</td>
+                                                    <td>&nbsp;
+                                                        evidenc 4
+                                                    </td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td colspan="4">Total ICV(MYR)</td>
-                                                    <td colspan="2"><input class="form-control" readonly type="text" value="0.00" id="columnSumICV"></td>
-                                                    <td>Total MLC(MYR)</td>
-                                                    <td><input class="form-control" readonly type="text" value="0.00" id="columnSumMLC"></td>
-                                                    <td colspan="3"></td>
+                                                <tr>
+                                                    <td colspan="4">Total ICV</td>
+                                                    <td colspan="2">11111111111111</td>
+                                                    <td>Total MLC</td>
+                                                    <td>&nbsp;</td>
+                                                    <td colspan="3">2222222222222222222222</td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td colspan="8">Total ICV(MYR)</td>
-                                                    <td colspan="3"><input class="form-control" readonly type="text" value="0.00" id="columnSumTotalICV"></td>
+                                                <tr>
+                                                    <td colspan="8">Total ICV</td>
+                                                    <td colspan="3">3333333333333333333</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
+
                                         </div>
                                         <!--------------------
                                         END - Table with actions
@@ -1038,11 +922,10 @@
                             </div>
                         </div>
                     </div>
-
                     <!--------------------
-                    END - Sidebar
+                    START - Sidebar
                     -------------------->
-                </div>
+
             </div>
         </div>
         <div class="display-type"></div>
@@ -1077,161 +960,5 @@
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
     <script src="<?=site_url('assets/js/demo_customizerce5a.js?version=4.4.1')?>"></script>
     <script src="<?=site_url('assets/js/app.js')?>"></script>
-    <script type ="text/javascript">
-        $(document).on("change","#item",function(){
-            $('#itemDesDiv').removeAttr('hidden');
-            if($('#item').val() == 1){
-                $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
-            }
-            if($('#item').val() == 2){
-                $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
-            }
-            if($('#item').val() == 3){
-                $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
-            }
-            if($('#item').val() == 4){
-                $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
-            }
-            if($('#item').val() == 5){
-                $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="1">Incidental</option><option value="1">Others</option>');
-            }
-        });
-        $(document).on("change","#item1",function(){
-            $('#itemDesDiv1').removeAttr('hidden');
-            if($('#item1').val() == 1){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
-            }
-            if($('#item1').val() == 2){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
-            }
-            if($('#item1').val() == 3){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
-            }
-            if($('#item1').val() == 4){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
-            }
-            if($('#item1').val() == 5){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="1">Incidental</option><option value="1">Others</option>');
-            }
-        });
-        $(document).on("click",".viewDeliver",function(){
-            $('#multipilerModel3').modal('show');
-        });
-        $(document).on("click",".viewAttachments",function(){
-            $('#multipilerModel4').modal('show');
-        });
-
-        $(document).on("click",".multipilerModel",function(){
-            $('#multipilerModel').modal('show');
-           /* $source = $(this).find('input[type=text]');*/
-            $sourcenon = $(this).closest("tr").find('.nonMLCM');
-            $rowSum = $(this).closest("tr").find('.rowSUM');
-            $source2 = $(this).closest("tr").find('.nonMLC').val();
-            $source = $(this).closest("tr").find('.MLCM').val();
-            $source3 = $(this).closest("tr").find('.mlc').val();
-        });
-        $('#multipilerModel').on('hidden.bs.modal', function () {
-            $sourcenon.val($(this).find('#itemdes').val());
-            var totalICV= $("#columnSumICV").val();
-            var totalMLC = $("#columnSumMLC").val();
-            var totalSum = $("#columnSumTotalICV").val();
-            if(isNaN($source2)){
-                var nonMLC =  0.00;
-            }else{
-                var nonMLC =  $source2;
-            }
-
-            var mult =  $sourcenon.val();
-            if(!isNaN( mult)){
-                var totalCurrentICV=parseInt(totalICV) + ( parseInt(nonMLC) * parseInt(mult) ) ;
-                $("#columnSumICV").val(totalCurrentICV);
-                var valueOne= $sourcenon .val();
-                var valueTWo= $source2;
-                if($source == ""){
-                    valueFour = 0;
-                }else{
-                    var valueFour= $source;
-                }
-                if($source3 == ""){
-                    var valueThree= 0;
-                }else{
-                    var valueThree= $source3;
-                }
-
-                var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
-
-            }
-            var sum = 0;
-            $(".rowSUM").each(function(){
-                sum += +$(this).val();
-            });
-            $("#columnSumTotalICV").val(sum);
-
-        });
-        $(document).on("click",".multipilerModel1",function(){
-            $('#multipilerModel1').modal('show');
-            /* $source = $(this).find('input[type=text]');*/
-            $source = $(this).closest("tr").find('.MLCM');
-            $source3 = $(this).closest("tr").find('.mlc').val();
-            $sourcenon = $(this).closest("tr").find('.nonMLCM').val();
-            $rowSum = $(this).closest("tr").find('.rowSUM');
-            $source2 = $(this).closest("tr").find('.nonMLC');
-        });
-
-        $('#multipilerModel1').on('hidden.bs.modal', function () {
-            $source.val($(this).find('#itemdes1').val());
-            var totalICV= $("#columnSumICV").val();
-            var totalMLC = $("#columnSumMLC").val();
-            var totalSum = $("#columnSumTotalICV").val();
-            if(isNaN($source3)){
-                var mlc =  0.00;
-            }else{
-                var mlc =  $source3;
-            }
-            var mult =  $source.val();
-            if(!isNaN( mult)){
-
-                if($source2.val() == ""){
-                    var valueTWo= 0;
-                }else{
-                    var valueTWo= $source2.val();
-                }
-
-                var valueFour= $(this).find('#itemdes1').val();
-                var valueThree= $source3;
-                if($sourcenon =="" ){
-                    var valueOne= 0;
-                }else{
-                    var valueOne= $sourcenon;
-                }
-                var totalCurrentMLC=parseInt(totalMLC) + ( parseInt(mlc) * parseInt(mult) ) ;
-                $("#columnSumMLC").val(totalCurrentMLC);
-                var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
-
-            }
-            var sum = 0;
-            $(".rowSUM").each(function(){
-                sum += +$(this).val();
-            });
-            $("#columnSumTotalICV").val(sum);
-           /* var v1 = $("#columnSumTotalICV").val();
-            var v2 = $rowSum .val();
-            var totalCureentICV =  parseInt(v1) + parseInt(v2);
-            $("#columnSumTotalICV").val(totalCureentICV);*/
-
-        });
-    </script>
 </body>
 </html>
