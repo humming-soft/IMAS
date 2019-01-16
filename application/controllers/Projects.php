@@ -11,8 +11,11 @@ class Projects extends HS_Controller {
     public function find_project($p_ref='',$projectId=''){
         // tda-pod-mot-54-2015-802
         // cgmr-90-ip2
-
-        $this->load->view('core/projects/project');
+        if($projectId == "cgmr-90-ip2"){
+            $this->load->view('core/projects/project');
+        }else{
+            $this->load->view('core/projects/project_new');
+        }
     }
     public function icv_calculation($p_ref='',$projectId=''){
         // tda-pod-mot-54-2015-802

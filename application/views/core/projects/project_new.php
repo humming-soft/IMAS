@@ -544,8 +544,11 @@
                     <div class="fancy-selector-w">
                         <div class="fancy-selector-current">
                             <div class="fs-main-info">
-                                <div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
-                                <div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
+                                <div class="fs-name">Tunneling Training Academy (TTA Graduates)</div>
+                                <div class="fs-sub">
+                                    <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
+                                    <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
+                                </div>
                             </div>
                             <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
                         </div>
@@ -681,7 +684,7 @@
                     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING
                             AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-                    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
+                    <li class="breadcrumb-item"><span>Tunneling Training Academy (TTA Graduates)</span></li>
                 </ul>
                 <!--------------------
                 END - Breadcrumbs
@@ -695,18 +698,66 @@
                                     <div class="element-actions">
                                         <a class="btn btn-primary btn-block" data-target=".onboarding-modal"
                                             data-toggle="modal" href="#">
-                                            <i class="os-icon os-icon-plus-circle"></i><span>Edit</span>
+                                            <i class="os-icon os-icon-plus-circle"></i><span>EDIT</span>
                                         </a>
                                     </div>
                                     <h6 class="element-header">PROJECT OVERVIEW</h6>
+                                    <div class="element-box">
+                                        <div class="element-wrapper">
+                                            <div class="element-actions">
+                                                <a class="btn btn-danger btn-block" data-target=".onboarding-modal"
+                                                    data-toggle="modal" href="#">
+                                                    <i class="os-icon os-icon-ui-49"></i><span>ITEMS PENDING</span>
+                                                </a>
+                                            </div>
+                                            <h6 class="element-header">Schedule A Progress</h6>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="token-bonus-ui">
+                                                        <div class="bonus-bar">
+                                                            <div class="bonus-extra full">
+                                                                <div class="bonus-extra-item active" data-percent="0" style="width: 0%;">
+                                                                    <span class="bonus-extra-amount">INITIATION</span>
+                                                                    <span class="bonus-extra-percent">0%</span>
+                                                                </div>
+                                                                <div class="bonus-extra-item active" data-percent="10" style="width: 10%;">
+                                                                    <span class="bonus-extra-amount">BENEFITS</span>
+                                                                    <span class="bonus-extra-percent">10%</span>
+                                                                </div>
+                                                                <div class="bonus-extra-item active" data-percent="20" style="width: 20%;">
+                                                                    <span class="bonus-extra-amount">PROJECT DELIVARABLES</span>
+                                                                    <span  class="bonus-extra-percent">30%</span>
+                                                                </div>
+                                                                <div class="bonus-extra-item active" data-percent="35" style="width: 35%;">
+                                                                    <span class="bonus-extra-amount d-inline">MILESTONES<br><small>(ICV Calculation)</small></span>
+                                                                    <span class="bonus-extra-percent">65%</span>
+                                                                </div>
+                                                                <div class="bonus-extra-item" data-percent="35" style="width: 35%;">
+                                                                    <span class="bonus-extra-amount">SUBMISSION</span>
+                                                                    <span class="bonus-extra-percent">100%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="buttons-w">
+                                                            <div class="actions-left"><a class="btn btn-link" href="#"><i class="os-icon os-icon-info"></i><span>Complete All the items of Schedule A for Submission</span></a></div>
+                                                            <div class="actions-right"><span class="text-danger mr-2"><i class="os-icon os-icon-x-circle"></i> Incomplete</span><button class="btn btn-light" disabled href="#"><i
+                                                                        class="os-icon os-icon-mail-18"></i><span>Submit Schedule A</span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="element-content">
                                         <div class="element-box-tp">
                                             <div class="support-index">
                                                 <div class="support-ticket-content-w">
                                                     <div class="support-ticket-content">
                                                         <div class="support-ticket-content-header">
-                                                            <h4 class="ticket-header">Development of Variable Density
-                                                                (VD) Tunnel Boring Machine (TBM)</h4>
+                                                            <h4 class="ticket-header">Tunneling Training Academy (TTA
+                                                                graduates)</h4>
                                                             <a class="back-to-index" href="#"><i class="os-icon os-icon-arrow-left5"></i><span>Back</span></a><a
                                                                 class="show-ticket-info" href="#"><span>Show more
                                                                     Details</span><i class="os-icon os-icon-documents-03"></i></a>
@@ -735,13 +786,12 @@
                                                                             : </span></div>
                                                                 </div>
                                                                 <div class="ticket-reply-content">
-                                                                    <p>Provide partnership platform with international
-                                                                        tunneling expert through joint development of
-                                                                        VD TBM and local involvement in TBM design
-                                                                        works.</p>
-                                                                    <p>Grooms Malaysian company to be ready in
-                                                                        venturing through local and international
-                                                                        tunneling projects in the future.</p>
+                                                                    <p>Establishment of Tunneling Training Academy at
+                                                                        Kota Kemuning Shah Alam. Competency building
+                                                                        for more than 500 students and create job
+                                                                        opportunities for more than 200 local workers.
+                                                                        Establishment of South East Asia’s first
+                                                                        tunneling academy.</p>
                                                                 </div>
                                                                 <!-- <div class="ticket-attachments">
                                                                     <a class="attachment" href="#">
@@ -753,8 +803,8 @@
                                                                         <div class="ticket-reply-info">
                                                                             <div class="d-bold">
                                                                                 <span class="text-primary">Project
-                                                                                    Status : <span class="badge badge-primary">IN
-                                                                                        PROGRESS</span></span>
+                                                                                    Status : <span class="badge badge-danger">
+                                                                                        NEW</span></span>
 
                                                                             </div>
                                                                         </div>
@@ -765,7 +815,8 @@
                                                                                 <span class="text-primary">Objectives :
                                                                                 </span>
                                                                                 <ul class="features-list">
-                                                                                    <li>Localization/Subcontracting</li>
+                                                                                    <li>Training/Human Capital
+                                                                                        Development</li>
                                                                                     <li>Technology Transfer(s)</li>
                                                                                 </ul>
                                                                             </div>
@@ -782,7 +833,7 @@
                                                                     <div class="col-sm-12 col-md-6">
                                                                         <div class="ticket-reply-info">
                                                                             <div><span class="text-primary">Revision
-                                                                                    Date : </span><b>30-Dec-2011</b></div>
+                                                                                    Date : </span><b>09-JAN-2019</b></div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-12 col-md-6">
@@ -813,7 +864,7 @@
                                                                             <div class="ticket-reply-content field-highlight1 mt-2">
                                                                                 <dl class="dl-horizontal pt-2">
                                                                                     <dt>Name</dt>
-                                                                                    <dd> ACREWORKS SDN BHD</dd>
+                                                                                    <dd>MINISTRY OF EDUCATION (MOE)</dd>
                                                                                     <dt>Address</dt>
                                                                                     <dd> Level 3A-3, Corporate Building
                                                                                         (Block E) Pusat Komersial
@@ -828,86 +879,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
                                                             </div>
-                                                            <fieldset class="form-group">
-                                                                <legend><span>Milestone Summary</span></legend>
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <div class="token-bonus-ui">
-                                                                            <div class="bonus-bar">
-                                                                                <div class="bonus-base"><span class="bonus-base-title">Initiation</span>
-                                                                                    <span class="bonus-base-amount">Approval</span><span
-                                                                                        class="bonus-base-percent">12-JAN-2012</span></div>
-                                                                                <div class="bonus-extra">
-                                                                                    <div class="bonus-extra-item active"
-                                                                                        data-percent="10" style="width: 10%;"><span
-                                                                                            class="bonus-extra-amount">M1</span><span
-                                                                                            class="bonus-extra-percent">10%</span></div>
-                                                                                    <div class="bonus-extra-item active"
-                                                                                        data-percent="20" style="width: 20%;"><span
-                                                                                            class="bonus-extra-amount">M2</span><span
-                                                                                            class="bonus-extra-percent">30%</span></div>
-                                                                                    <div class="bonus-extra-item active"
-                                                                                        data-percent="20" style="width: 35%;"><span
-                                                                                            class="bonus-extra-amount">M3</span><span
-                                                                                            class="bonus-extra-percent">65%</span></div>
-                                                                                    <div class="bonus-extra-item"
-                                                                                        data-percent="20" style="width: 20%;"><span
-                                                                                            class="bonus-extra-amount">M4</span><span
-                                                                                            class="bonus-extra-percent">85%</span></div>
-                                                                                    <div class="bonus-extra-item"
-                                                                                        data-percent="30" style="width: 30%;"><span
-                                                                                            class="bonus-extra-amount">M5</span><span
-                                                                                            class="bonus-extra-percent">100%</span></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row pt-3">
-                                                                    <div class="col-sm-12">
-                                                                        <div class="token-overview-wrap">
-                                                                            <div class="token-overview">
-                                                                                <div class="row text-center">
-                                                                                    <div class="col-md-3 col-sm-6">
-                                                                                        <div class="token-bonus token-bonus-sale"><span
-                                                                                                class="token-overview-title">
-                                                                                                Total Milestone(s)</span><span
-                                                                                                class="token-overview-value bonus-on-sale">05</span></div>
-                                                                                    </div>
-                                                                                    <div class="col-md-3 col-sm-6">
-                                                                                        <div class="token-bonus token-bonus-amount"><span
-                                                                                                class="token-overview-title">
-                                                                                                Completed Milestone(s)</span><span
-                                                                                                class="token-overview-value bonus-on-amount">03</span></div>
-                                                                                    </div>
-                                                                                    <div class="col-md-3 col-sm-6">
-                                                                                        <div class="token-bonus token-bonus-amount"><span
-                                                                                                class="token-overview-title">
-                                                                                                Total Activitie(s)</span><span
-                                                                                                class="token-overview-value bonus-on-amount">24</span></div>
-                                                                                    </div>
-                                                                                    <div class="col-md-3 col-sm-6">
-                                                                                        <div class="token-bonus token-bonus-amount"><span
-                                                                                                class="token-overview-title">
-                                                                                                Completed Activitie(s)</span><span
-                                                                                                class="token-overview-value bonus-on-amount">16</span></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="note note-plane note-danger note-sm pdt-1x pl-0">
-                                                                                <p class="small float-right">M - Milestone</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <div class="d-block float-right">
-                                                                            <a class="btn btn-success btn-sm" href="#"><i class="os-icon os-icon-grid-10"></i><span>View Detail</span></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </fieldset>
                                                         </div>
                                                     </div>
                                                     <div class="support-ticket-info"><a class="close-ticket-info" href="#"><i
@@ -926,30 +898,25 @@
                                                         </div>
                                                         <h5 class="info-header">Project Details</h5>
                                                         <div class="info-section text-center">
-                                                            <div class="label">Created: <strong class="ml-1">Jan 24th,
-                                                                    2011</strong></div>
+                                                            <div class="label">Created: <strong class="ml-1">09-JAN-2019</strong></div>
                                                             <div class="label">Type: <div class="badge badge-success ml-1">Indirect</div>
                                                             </div>
                                                         </div>
                                                         <h5 class="info-header">Project Progress</h5>
                                                         <div class="info-section">
                                                             <div class="fancy-progress-with-label">
-                                                                <div class="fpl-label">65%</div>
+                                                                <div class="fpl-label">0%</div>
                                                                 <div class="fpl-progress-w">
-                                                                    <div class="fpl-progress-i" style="width: 65%;"></div>
+                                                                    <div class="fpl-progress-i" style="width: 0%;"></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <h5 class="info-header">Documents</h5>
                                                         <div class="info-section">
                                                             <div class="ci-file-list list-doc">
-                                                                <ul>
-                                                                    <li><a href="#">Annual Revenue.pdf</a></li>
-                                                                    <li><a href="#">Expenses.xls</a></li>
-                                                                    <li><a href="#">Business Plan.doc</a></li>
-                                                                </ul>
-                                                                <a class="centered-load-more-link smaller" href="#"><span>Load
-                                                                        More..</span></a>
+                                                                <a class="centered-load-more-link smaller" href="#"><span><i
+                                                                            class="os-icon os-icon-plus-circle"></i>
+                                                                        Add Documents..</span></a>
                                                             </div>
                                                         </div>
                                                     </div>
