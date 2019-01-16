@@ -821,7 +821,7 @@
 										<li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing
 													Details</span></a></li>
 										<li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
-										<li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+										<li><a href="<?=site_url('logout')?>"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
 									</ul>
 								</div>
 							</div>
@@ -884,6 +884,33 @@
 																				<i class="os-icon os-icon-ui-51"></i><span>Programme-detail.pdf</span>
 																			</a>
 																		</div>
+																		<div class="row">
+																			<div class="col-sm-12 col-md-6">
+																				<div class="ticket-reply-info"><div><span class="text-primary">Procuring Agency : </span><b>Ministry of Transport (MOT)</b></div></div>
+																			</div>
+																			<div class="col-sm-12 col-md-6">
+																				<div class="ticket-reply-info"><div><span class="text-primary">Sector : </span><b>Land Transport</b></div></div>
+																			</div>
+																			<div class="col-sm-12 col-md-6">
+																				<div class="ticket-reply-info">
+																				<div>
+																					<span class="text-primary">ICP Provider : </span>
+																					<dl class="dl-horizontal">
+																						<dt>Name</dt>
+																						<dd> MMC GAMUDA KVMRT (T) SDN BHD</dd>
+																						<dt>Address</dt>
+																						<dd> Level 3A-3, Corporate Building (Block E) Pusat Komersial Southgate No.2, Jalan Chan Sow Lin, Off, Jalan Dua, 55200 Kuala Lumpur</dd>
+																						<dt>Contact Details</dt>
+																						<dd> Ting Sheng Chong <br>03-2385 8000<br>ting_sheng@mmc-gamuda.my</dd>
+																					</dl>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-12 col-md-6">
+																				<div class="ticket-reply-info"><div><span class="text-primary">Programme Start Date : </span><b>Jan 24th, 2011</b></div></div>
+																			</div>
+																		</div>
+																		
 																	</div>
 																	<fieldset class="form-group">
 																		<legend><span>Project(s) Summary</span></legend>

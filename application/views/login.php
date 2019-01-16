@@ -72,38 +72,36 @@
 					<div class="col-xl-7 pa-0">
 						<div class="auth-form-wrap py-xl-0 py-50">
 							<div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100 auth-box-w">
-								<form>
-									<h1 class="display-4 mb-10">Welcome Back :)</h1>
-									<p class="mb-3 text-center">Sign in to your account.</p>
-									<form action="#">
-										<div class="form-group"><label for="">Username</label><input class="form-control" placeholder="Enter your username"
-											 type="text">
-											<div class="pre-icon os-icon os-icon-user-male-circle"></div>
+								<h1 class="display-5 mb-10 text-center">ICP Management System</h1>
+								<p class="mb-3 text-center">Sign in to your account.</p>
+								<?=form_open('login/auth') ?>
+									<div class="form-group"><label for="">Username</label><input class="form-control" placeholder="Enter your username"
+											type="text">
+										<div class="pre-icon os-icon os-icon-user-male-circle"></div>
+									</div>
+									<div class="form-group"><label for="">Password</label><input class="form-control" placeholder="Enter your password"
+											type="password">
+										<div class="pre-icon os-icon os-icon-fingerprint"></div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="custom-control custom-checkbox mb-25">
+												<input class="custom-control-input" id="same-address" type="checkbox" checked>
+												<label class="custom-control-label font-14" for="same-address">Remember Me</label>
+											</div>
 										</div>
-										<div class="form-group"><label for="">Password</label><input class="form-control" placeholder="Enter your password"
-											 type="password">
-											<div class="pre-icon os-icon os-icon-fingerprint"></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="custom-control custom-checkbox mb-25">
-                                                    <input class="custom-control-input" id="same-address" type="checkbox" checked>
-                                                    <label class="custom-control-label font-14" for="same-address">Remember Me</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group text-right">
-                                                    <a href="<?=site_url('forgot-password')?>" class="font-14 mt-15">Forgot Password?</a>
-                                                </div>
-                                            </div>
-                                        </div>
+										<div class="col-sm-6">
+											<div class="form-group text-right">
+												<a href="<?=site_url('forgot-password')?>" class="font-14 mt-15">Forgot Password?</a>
+											</div>
+										</div>
+									</div>
 
-                                    <button class="btn btn-primary btn-block " type="submit"><i class="os-icon os-icon-check-square mr-1"></i> Login</button>
-                                    </form>
-                                   
-                                    <div class="hs-hr"></div>
-									<p class="text-center pt-3">Do have an account yet? <a href="#">Contact Us</a></p>
-								</form>
+								<button class="btn btn-primary btn-block " type="submit"><i class="os-icon os-icon-check-square mr-1"></i> Login</button>
+								<?=form_close()?>
+								
+								<div class="hs-hr"></div>
+								<p class="text-center pt-3">Do have an account yet? <a href="#">Contact Us</a></p>
 							</div>
 						</div>
 					</div>

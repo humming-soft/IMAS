@@ -372,7 +372,7 @@
                         type="text"></div>
                 <h1 class="menu-page-header">Page Header</h1>
                 <ul class="main-menu">
-                    <li class="selected"><a href="index.html">
+                    <li class="selected"><a href="<?=site_url('programmes')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-home"></div>
                             </div><span>Home</span>
@@ -655,7 +655,7 @@
                                         <li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing
                                                     Details</span></a></li>
                                         <li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
-                                        <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+                                        <li><a href="<?=site_url('logout')?>"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -675,9 +675,9 @@
                 START - Breadcrumbs
                 -------------------->
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-                    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
+                    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
                 </ul>
                 <!--------------------
                 END - Breadcrumbs
