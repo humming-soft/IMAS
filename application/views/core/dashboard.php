@@ -729,7 +729,7 @@
 										<li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing
 													Details</span></a></li>
 										<li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
-										<li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+										<li><a href="<?=site_url('logout')?>"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
 									</ul>
 								</div>
 							</div>
@@ -823,7 +823,8 @@
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-secondary">New</div>
-															</div><a class="post-link" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>View Detail</span><i class="os-icon os-icon-arrow-right7"></i></a>
+															</div>
+															<a class="btn btn-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>Details</span><i class="os-icon os-icon-arrow-2-right"></i></a>
 														</div>
 													</div>
 												</div>
@@ -874,7 +875,8 @@
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-primary">In Progress</div>
-															</div><a class="post-link" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>View Detail</span><i class="os-icon os-icon-arrow-right7"></i></a>
+															</div>
+															<a class="btn btn-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>Details</span><i class="os-icon os-icon-arrow-2-right"></i></a>
 														</div>
 													</div>
 												</div>
@@ -924,7 +926,8 @@
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-primary">In Progress</div>
-															</div><a class="post-link" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>View Detail</span><i class="os-icon os-icon-arrow-right7"></i></a>
+															</div>
+															<a class="btn btn-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>Details</span><i class="os-icon os-icon-arrow-2-right"></i></a>
 														</div>
 													</div>
 												</div>
@@ -974,7 +977,8 @@
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-success">Completed</div>
-															</div><a class="post-link" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>View Detail</span><i class="os-icon os-icon-arrow-right7"></i></a>
+															</div>
+															<a class="btn btn-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>Details</span><i class="os-icon os-icon-arrow-2-right"></i></a>
 														</div>
 													</div>
 												</div>
@@ -1024,7 +1028,8 @@
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-success">Completed</div>
-															</div><a class="post-link" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>View Detail</span><i class="os-icon os-icon-arrow-right7"></i></a>
+															</div>
+															<a class="btn btn-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>"><span>Details</span><i class="os-icon os-icon-arrow-2-right"></i></a>
 														</div>
 													</div>
 												</div>

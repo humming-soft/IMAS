@@ -11373,7 +11373,8 @@ legend:before {
     margin-bottom: 0px;
     display: inline-block;
     text-transform: uppercase;
-    font-size: .585rem;
+    font-size: .75rem;
+    font-weight: 600;
     font-family: "Avenir Next W01","Proxima Nova W01","Rubik",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 }
 
@@ -29249,4 +29250,16 @@ body.color-scheme-dark .page-item.disabled .page-link,.content-panel.color-schem
 }
 .font-2p4{
 font-size: 2.4rem;
+}
+.dl-horizontal dt {
+    float: left;
+    width: 120px;
+    clear: left;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dl-horizontal dd {
+    margin-left: 140px;
 }

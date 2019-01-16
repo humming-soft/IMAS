@@ -1090,6 +1090,7 @@ document.addEventListener('DOMContentLoaded', function() {
   App.initModal();
   App.initFancySelector();
   App.initContentPanelTrigger();
+  App.initSupportService();
 });
 // When page is fully loaded
 window.addEventListener('load', function() {
