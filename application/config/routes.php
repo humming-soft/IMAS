@@ -60,3 +60,4 @@ $route['programmes/(:any)/(:any)'] = 'projects/find_project/$1/$2';
 $route['programmes/(:any)/(:any)/icv_calculation'] = 'projects/icv_calculation/$1/$2';
 $route['programmes/(:any)/(:any)/benefits'] = 'projects/project_benefits/$1/$2';
 $route['programmes/(:any)/(:any)/milestones'] = 'projects/milestones/$1/$2';
+$route['programmes/(:any)/(:any)/deliverables'] = 'projects/deliverables/$1/$2';

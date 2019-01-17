@@ -22,229 +22,6 @@
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
     <div class="all-wrapper with-side-panel solid-bg-all">
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                        type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                      <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">ICP Multiplier</h4>
-                                <div class="onboarding-text">Direct offset</div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <input type="hidden" id="hidMultiplierLocation">
-                                            <div class="form-group"><label for="">Item</label><select class="form-control" id="item">
-                                                    <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
-                                                </select></div>
-                                        </div>
-                                        <div class="col-sm-12" hidden id="itemDesDiv">
-                                            <div class="form-group">
-                                                <select class="form-control" id="itemdes">
-                                                    <option>Select</option>
-                                                    <!--<option>Equity Investment</option>
-                                                    <option>Bank Gua</option>
-                                                    <option>Other</option>-->
-                                                </select></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel4" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h6 >Milestone 1</h6>
-                                <h6 >Activity 1</h6>
-                                <h4 class="onboarding-title">Evidences</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="element-box-tp">
-                                                <div class="users-list-w">
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel3" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon6.png')?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h6 >Milestone 1</h6>
-                                <h6 >Activity 1</h6>
-                                <h4 class="onboarding-title">Deliverables</h4>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <ul class="features-list">
-                                            <li>Fully Responsive design</li>
-                                            <li>Pre-built app layouts</li>
-                                            <li>Incredible Flexibility</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <ul class="features-list">
-                                            <li>Boxed & Full Layouts</li>
-                                            <li>Based on Bootstrap 4</li>
-                                            <li>Developer Friendly </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel1" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <!--  <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>-->
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">ICP Multiplier</h4>
-                                <div class="onboarding-text">Direct offset</div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <input type="hidden" id="hidMultiplierLocation">
-                                            <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
-                                                    <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
-                                                </select></div>
-                                        </div>
-                                        <div class="col-sm-12" hidden id="itemDesDiv1">
-                                            <div class="form-group">
-                                                <select class="form-control" id="itemdes1">
-                                                    <option>Select</option>
-                                                    <!--<option>Equity Investment</option>
-                                                    <option>Bank Gua</option>
-                                                    <option>Other</option>-->
-                                                </select></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="search-with-suggestions-w">
             <div class="search-with-suggestions-modal">
                 <div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search..."
@@ -877,139 +654,143 @@
                                         ------------------  -->
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-lg table-v2 table-striped">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            No.
+                                                        </th>
+                                                        <th>
+                                                            Description
+                                                        </th>
+                                                        <th>
+                                                            Milestone
+                                                        </th>
+                                                        <th>
+                                                            Remarks
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            Project Initiation
+                                                        </td>
+                                                        <td>
+                                                            2019-Feb-28
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea  class="form-control"></textarea>
+                                                            </div>
+                                                        </td>
 
-                                                <tbody>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="3" >Milestone</td>
-                                                    <td rowspan="3">Activity</td>
-                                                    <td rowspan="3">
-                                                        Timeline/
-                                                        Completion Period
-                                                    </td>
-                                                    <td rowspan="3">Basis of Calculation</td>
-                                                    <td colspan="2">Nominal Value Non-MLC (RM)</td>
-                                                    <td colspan="2">Nominal Value MLC (RM)</td>
-                                                    <td rowspan="3">Total
-                                                        (a*b)+(c*d)
-                                                    </td>
-                                                    <td rowspan="3">Deliverables</td>
-                                                    <td rowspan="3">Evidences</td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Nominal Value</td>
-                                                    <td>M</td>
-                                                    <td>Nominal Value</td>
-                                                    <td>M</td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>a</td>
-                                                    <td>b</td>
-                                                    <td>c</td>
-                                                    <td>d</td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="2">Milestone</td>
-                                                    <td>Activity</td>
-                                                    <td>period 1</td>
-                                                    <td>calc 1</td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            Project Setup
+                                                        </td>
+                                                        <td>
+                                                            2019-Mar-15
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            Planning
+                                                        </td>
+                                                        <td>
+                                                            2019-May-02
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea   class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 2</td>
-                                                    <td>&nbsp;calc 2</td>
-                                                    <td ><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            Implementation
+                                                        </td>
+                                                        <td>
+                                                            2020-Mar-03
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea  class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value="" ></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            Testing
+                                                        </td>
+                                                        <td>
+                                                            2020-Jun-04
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea   class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="2">&nbsp;Milestone</td>
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 3</td>
-                                                    <td>&nbsp;calc 3</td>
-                                                    <td ><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            6
+                                                        </td>
+                                                        <td>
+                                                            Training
+                                                        </td>
+                                                        <td>
+                                                            2020-Sep-05
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea  class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td class="multipilerModel"><input class="form-control nonMLCM "  readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            7
+                                                        </td>
+                                                        <td>
+                                                            Commissioning
+                                                        </td>
+                                                        <td>
+                                                            2020-Dec-31
+                                                        </td>
+                                                        <td>
+                                                            <div class="col-md-8">
+                                                                <textarea  class="form-control"></textarea>
                                                             </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 4</td>
-                                                    <td>&nbsp;calc 4</td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control nonMLC" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM"  readonly type="text" value=""></td>
-                                                    <td><div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">RM</div>
-                                                            </div>
-                                                            <input class="form-control mlc" type="text">
-                                                        </div></td>
-                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6 <a href="#" class="viewDeliver"> View <i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1 <a href="#" class="viewAttachments"> View <i class="os-icon  os-icon-eye"></i></a></td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td colspan="4">Total ICV(MYR)</td>
-                                                    <td colspan="2"><input class="form-control" readonly type="text" value="0.00" id="columnSumICV"></td>
-                                                    <td>Total MLC(MYR)</td>
-                                                    <td><input class="form-control" readonly type="text" value="0.00" id="columnSumMLC"></td>
-                                                    <td colspan="3"></td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td colspan="8">Total ICV(MYR)</td>
-                                                    <td colspan="3"><input class="form-control" readonly type="text" value="0.00" id="columnSumTotalICV"></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+
+                                                    </tr>
+                                                    </tbody>
+
+                                                </table>
                                         </div>
                                         <!--------------------
                                         END - Table with actions
@@ -1082,7 +863,7 @@
             $('#itemDesDiv').removeAttr('hidden');
             if($('#item').val() == 1){
                 $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Finacing</option><option value="3">Principal Guarantee for SBLC</option>');
+                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
             }
             if($('#item').val() == 2){
                 $('#itemdes').find('option').not(':first').remove();

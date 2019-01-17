@@ -41,4 +41,10 @@ class Projects extends HS_Controller {
 
         $this->load->view('core/projects/icv_calculation');
     }
+    public function deliverables($p_ref='',$projectId=''){
+        // tda-pod-mot-54-2015-802
+        // cgmr-90-ip2
+
+        $this->load->view('core/projects/deliverables');
+    }
 }
