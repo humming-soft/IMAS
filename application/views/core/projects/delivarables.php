@@ -554,10 +554,10 @@
                                                             1
                                                         </td>
                                                         <td>
-                                                            Project Initiation
+                                                            Tunnel Drive From Crossover To Ampang Park
                                                         </td>
                                                         <td>
-                                                            2019-Feb-28
+                                                            01-Oct-2019
                                                         </td>
                                                         <td>
                                                             <div class="col-md-8">
@@ -571,10 +571,10 @@
                                                             2
                                                         </td>
                                                         <td>
-                                                            Project Setup
+                                                            Tunnel Drive From Titiwangsa To Crossover
                                                         </td>
                                                         <td>
-                                                            2019-Mar-15
+                                                            31-May-2020
                                                         </td>
                                                         <td>
                                                             <div class="col-md-8">
@@ -588,82 +588,14 @@
                                                             3
                                                         </td>
                                                         <td>
-                                                            Planning
+                                                            Chan Sow Lin Station Launching Facilities
                                                         </td>
                                                         <td>
-                                                            2019-May-02
-                                                        </td>
-                                                        <td>
-                                                            <div class="col-md-8">
-                                                                <textarea   class="form-control"></textarea>
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            4
-                                                        </td>
-                                                        <td>
-                                                            Implementation
-                                                        </td>
-                                                        <td>
-                                                            2020-Mar-03
-                                                        </td>
-                                                        <td>
-                                                            <div class="col-md-8">
-                                                                <textarea  class="form-control"></textarea>
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            5
-                                                        </td>
-                                                        <td>
-                                                            Testing
-                                                        </td>
-                                                        <td>
-                                                            2020-Jun-04
+                                                            31-May-2020
                                                         </td>
                                                         <td>
                                                             <div class="col-md-8">
                                                                 <textarea   class="form-control"></textarea>
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            6
-                                                        </td>
-                                                        <td>
-                                                            Training
-                                                        </td>
-                                                        <td>
-                                                            2020-Sep-05
-                                                        </td>
-                                                        <td>
-                                                            <div class="col-md-8">
-                                                                <textarea  class="form-control"></textarea>
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            7
-                                                        </td>
-                                                        <td>
-                                                            Commissioning
-                                                        </td>
-                                                        <td>
-                                                            2020-Dec-31
-                                                        </td>
-                                                        <td>
-                                                            <div class="col-md-8">
-                                                                <textarea  class="form-control"></textarea>
                                                             </div>
                                                         </td>
 
