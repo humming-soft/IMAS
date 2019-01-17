@@ -24,8 +24,7 @@
     <div class="all-wrapper with-side-panel solid-bg-all">
         <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                        type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
+                <div class="modal-content text-center">
                     <div class="onboarding-slider-w">
                       <!--  <div class="onboarding-slide">
                             <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
@@ -64,6 +63,11 @@
                                                 </select></div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-right">
+                                            <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -89,8 +93,8 @@
                         <div class="onboarding-slide">
                             <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
                             <div class="onboarding-content with-gradient">
-                                <h6 >Milestone 1</h6>
-                                <h6 >Activity 1</h6>
+                                <h5 >Milestone : Tunnel Drive From Crossover To Ampang Park</h5>
+                                <h6 >Activity : Land Available for Shoplots Jln Tun Tun Razak   </h6>
                                 <h4 class="onboarding-title">Evidences</h4>
                                 <form>
                                     <div class="row">
@@ -102,7 +106,29 @@
                                                             <div class="user-avatar"></div>
                                                         </div>
                                                         <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
+                                                            <h6 class="user-title">Jln Tun Razak Flyover Plan and Design</h6>
+                                                            <div class="user-role">uploaded : 01-11-2018</div>
+                                                        </div><a class="user-action" href="users_profile_small.html">
+                                                            <div class="os-icon os-icon-download"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="user-w with-status status-green">
+                                                        <div class="user-avatar-w">
+                                                            <div class="user-avatar"></div>
+                                                        </div>
+                                                        <div class="user-name">
+                                                            <h6 class="user-title">Instrumentation Installation progress details </h6>
+                                                            <div class="user-role">uploaded : 07-12-2018</div>
+                                                        </div><a class="user-action" href="users_profile_small.html">
+                                                            <div class="os-icon os-icon-download"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="user-w with-status status-green">
+                                                        <div class="user-avatar-w">
+                                                            <div class="user-avatar"></div>
+                                                        </div>
+                                                        <div class="user-name">
+                                                            <h6 class="user-title">Instrumentation Installation mechinary purchase bills</h6>
                                                             <div class="user-role">uploaded : 12-01-2019</div>
                                                         </div><a class="user-action" href="users_profile_small.html">
                                                             <div class="os-icon os-icon-download"></div>
@@ -113,30 +139,8 @@
                                                             <div class="user-avatar"></div>
                                                         </div>
                                                         <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
-                                                        </div><a class="user-action" href="users_profile_small.html">
-                                                            <div class="os-icon os-icon-download"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"></div>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <h6 class="user-title">Attachment One</h6>
-                                                            <div class="user-role">uploaded : 12-01-2019</div>
+                                                            <h6 class="user-title">Material Stockpile & Segment Yard details   </h6>
+                                                            <div class="user-role">uploaded : 16-01-2019</div>
                                                         </div><a class="user-action" href="users_profile_small.html">
                                                             <div class="os-icon os-icon-download"></div>
                                                         </a>
@@ -197,8 +201,7 @@
         </div>
         <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel1" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                                                               type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
+                <div class="modal-content text-center">
                     <div class="onboarding-slider-w">
                         <!--  <div class="onboarding-slide">
                             <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
@@ -220,11 +223,10 @@
                                             <input type="hidden" id="hidMultiplierLocation">
                                             <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
                                                     <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
+                                                    <option value="1">Professional Sevices local sourcing</option>
+                                                    <option value="2">Local Product</option>
+                                                    <option value="3">Plant Facility</option>
+                                                    <option value="4">Logistics</option>
                                                 </select></div>
                                         </div>
                                         <div class="col-sm-12" hidden id="itemDesDiv1">
@@ -235,6 +237,11 @@
                                                     <option>Bank Gua</option>
                                                     <option>Other</option>-->
                                                 </select></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-right">
+                                            <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
                                         </div>
                                     </div>
                                 </form>
@@ -869,6 +876,38 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="form-group"><label for="">Total Non MLC</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">RM</div>
+                                                        </div>
+                                                        <input class="form-control" readonly id="columnSumICV1" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="form-group"><label for="">Total MLC</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">RM</div>
+                                                        </div>
+                                                        <input class="form-control" readonly id="columnSumMLC1" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="form-group"><label for="">Total ICV</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">RM</div>
+                                                        </div>
+                                                        <input class="form-control" readonly id="columnSumTotalICV1" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!--------------------
                                         END - Controls Above Table
                                         ------------------          -->
@@ -877,41 +916,176 @@
                                         ------------------  -->
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-lg table-v2 table-striped">
-
                                                 <tbody>
                                                 <tr style="text-align: center">
-                                                    <td rowspan="3" >Milestone</td>
-                                                    <td rowspan="3">Activity</td>
-                                                    <td rowspan="3">
-                                                        Timeline/
-                                                        Completion Period
-                                                    </td>
-                                                    <td rowspan="3">Basis of Calculation</td>
-                                                    <td colspan="2">Nominal Value Non-MLC (RM)</td>
-                                                    <td colspan="2">Nominal Value MLC (RM)</td>
-                                                    <td rowspan="3">Total
-                                                        (a*b)+(c*d)
-                                                    </td>
-                                                    <td rowspan="3">Deliverables</td>
-                                                    <td rowspan="3">Evidences</td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Nominal Value</td>
-                                                    <td>M</td>
-                                                    <td>Nominal Value</td>
-                                                    <td>M</td>
-                                                </tr>
-                                                <tr style="text-align: center">
-                                                    <td>a</td>
-                                                    <td>b</td>
-                                                    <td>c</td>
-                                                    <td>d</td>
-                                                </tr>
-                                                <tr style="text-align: center">
                                                     <td rowspan="2">Milestone</td>
-                                                    <td>Activity</td>
-                                                    <td>period 1</td>
-                                                    <td>calc 1</td>
+                                                    <td colspan="2" rowspan="2">Activity</td>
+                                                    <td rowspan="2">Timeline</td>
+                                                    <td colspan="2">Nominal Value Non MLC (RM)</td>
+                                                    <td colspan="2">Nominal Value MLC (RM)</td>
+                                                    <td rowspan="2">Total</td>
+                                                    <td rowspan="2">Evidences</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td >NV</td>
+                                                    <td >Multiplier</td>
+                                                    <td >NV</td>
+                                                    <td >Multiplier</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="9" style="font-weight: bold">1.	Tunnel Drive From Crossover To Ampang Park</td>
+                                                    <td rowspan="3">1.	Land Available for Shoplots Jln Tun Tun Razak   </td>
+                                                    <td >Meterial</td>
+                                                    <td >01-Jul-18  -  01-Jul-18</td>
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >01-Jul-18  -  01-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >01-Jul-18  -  01-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  rowspan="3">2.	Instrumentation Installation </td>
+                                                    <td>Meterial</td>
+                                                    <td >01-May-18  -  10-Oct-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >01-May-18  -  10-Oct-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Manpower</td>
+                                                    <td >01-May-18  -  10-Oct-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">3.	Specific Ground Improvement Works/Grouting</td>
+                                                    <td >Meterial</td>
+                                                    <td >04-Nov-17  -  15-Oct-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >04-Nov-17  -  15-Oct-18</td>
+
                                                     <td><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
@@ -927,20 +1101,19 @@
                                                         </div></td>
                                                     <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
                                                     <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 2</td>
-                                                    <td>&nbsp;calc 2</td>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >04-Nov-17  -  15-Oct-18</td>
+
                                                     <td ><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
                                                             </div>
                                                             <input class="form-control nonMLC" type="text">
                                                         </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value="" ></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
                                                     <td><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
@@ -949,21 +1122,21 @@
                                                         </div></td>
                                                     <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
                                                     <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td rowspan="2">&nbsp;Milestone</td>
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 3</td>
-                                                    <td>&nbsp;calc 3</td>
+                                                <tr>
+                                                    <td rowspan="9" style="font-weight: bold">2.Tunnel Drive From Titiwangsa To Crossover</td>
+                                                    <td rowspan="3">1.	Instrumentation Installation</td>
+                                                    <td >Meterial</td>
+                                                    <td >01-Apr-18  -  09-Oct-18</td>
+
                                                     <td ><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
                                                             </div>
                                                             <input class="form-control nonMLC" type="text">
                                                         </div></td>
-                                                    <td class="multipilerModel"><input class="form-control nonMLCM "  readonly type="text" value=""></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
                                                     <td><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
@@ -972,20 +1145,19 @@
                                                         </div></td>
                                                     <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
                                                     <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6<a href="#" class="viewDeliver"> View<i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1<a href="#" class="viewAttachments"> View<i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
-                                                <tr style="text-align: center">
-                                                    <td>Activity</td>
-                                                    <td>&nbsp;period 4</td>
-                                                    <td>&nbsp;calc 4</td>
-                                                    <td><div class="input-group">
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >01-Apr-18  -  09-Oct-18</td>
+
+                                                    <td ><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
                                                             </div>
                                                             <input class="form-control nonMLC" type="text">
                                                         </div></td>
-                                                    <td  class="multipilerModel"><input class="form-control nonMLCM"  readonly type="text" value=""></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
                                                     <td><div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">RM</div>
@@ -993,12 +1165,353 @@
                                                             <input class="form-control mlc" type="text">
                                                         </div></td>
                                                     <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
-                                                    <td><input class="form-control rowSUM" readonly type="text" value=""></td>
-                                                    <td>6 <a href="#" class="viewDeliver"> View <i class="os-icon os-icon-eye"></i></a></td>
-                                                    <td>1 <a href="#" class="viewAttachments"> View <i class="os-icon  os-icon-eye"></i></a></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >01-Apr-18  -  09-Oct-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  rowspan="3">2.	Specific Ground Improvement Works/Grouting   </td>
+                                                    <td>Meterial</td>
+                                                    <td >30-Jul-17  -  03-Nov-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >30-Jul-17  -  03-Nov-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Manpower</td>
+                                                    <td >30-Jul-17  -  03-Nov-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">3.	TBM Activities: VD-C-1 Assembly</td>
+                                                    <td >Meterial</td>
+                                                    <td >31-Jul-18  -  29-Sep-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >31-Jul-18  -  29-Sep-18</td>
+
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >31-Jul-18  -  29-Sep-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="9" style="font-weight: bold">3.Chan Sow Lin Station Launching Facilities</td>
+                                                    <td rowspan="3">1.	Component Grout Plant</td>
+                                                    <td >Meterial</td>
+                                                    <td >01-Jan-18 -  14-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >01-Jan-18 -  14-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >01-Jan-18 -  14-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  rowspan="3">1.	Compressed Air Plant </td>
+                                                    <td>Meterial</td>
+                                                    <td >01-Nov-17 -  04-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >01-Nov-17 -  04-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Manpower</td>
+                                                    <td >01-Nov-17 -  04-Jul-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">1.	Chiller Plant </td>
+                                                    <td >Meterial</td>
+                                                    <td >16-Oct-17 -  28-Aug-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td >Mechinary</td>
+                                                    <td >16-Oct-17 -  28-Aug-18</td>
+
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manpower</td>
+                                                    <td >16-Oct-17 -  28-Aug-18</td>
+
+                                                    <td ><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control nonMLC" type="text">
+                                                        </div></td>
+                                                    <td class="multipilerModel"><input class="form-control nonMLCM" readonly type="text" value=""></td>
+                                                    <td><div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">RM</div>
+                                                            </div>
+                                                            <input class="form-control mlc" type="text">
+                                                        </div></td>
+                                                    <td  class="multipilerModel1"><input class="form-control MLCM" readonly type="text" value=""></td>
+                                                    <td ><input class="form-control rowSUM" readonly type="text" value=""></td>
+                                                    <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr style="text-align: center">
-                                                    <td colspan="4">Total ICV(MYR)</td>
+                                                    <td colspan="5">Total ICV(MYR)</td>
                                                     <td colspan="2"><input class="form-control" readonly type="text" value="0.00" id="columnSumICV"></td>
                                                     <td>Total MLC(MYR)</td>
                                                     <td><input class="form-control" readonly type="text" value="0.00" id="columnSumMLC"></td>
@@ -1105,23 +1618,19 @@
             $('#itemDesDiv1').removeAttr('hidden');
             if($('#item1').val() == 1){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
+                $('#itemdes1').append('<option value="4">Design,systems integration work knowledge and skils development</option><option value="4">Technology upgrading,knowledge/Skils transfer and certification(People,Product & process)</option><option value="2">Installation,Testing,Commissioning and Project Management</option>');
             }
             if($('#item1').val() == 2){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
+                $('#itemdes1').append('<option value="3">Parts and Component, Main Equipment,Test Equipment - Custom Made</option><option value="1">Parts and Component, Main Equipment,Test Equipment - Off The Shelves</option>');
             }
             if($('#item1').val() == 3){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
+                $('#itemdes1').append('<option value="3">Plant Equipment and mechinary</option><option value="4">Tools,Jigs and Fixtures</option>');
             }
             if($('#item1').val() == 4){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
-            }
-            if($('#item1').val() == 5){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="1">Incidental</option><option value="1">Others</option>');
+                $('#itemdes1').append('<option value="1">Integrated logistic support</option><option value="1">Forwarding haulage and transportation,storage and warehouse</option><option value="1">Local Insurance</option>');
             }
         });
         $(document).on("click",".viewDeliver",function(){
@@ -1155,6 +1664,7 @@
             if(!isNaN( mult)){
                 var totalCurrentICV=parseInt(totalICV) + ( parseInt(nonMLC) * parseInt(mult) ) ;
                 $("#columnSumICV").val(totalCurrentICV);
+                $("#columnSumICV1").val(totalCurrentICV);
                 var valueOne= $sourcenon .val();
                 var valueTWo= $source2;
                 if($source == ""){
@@ -1169,14 +1679,27 @@
                 }
 
                 var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
+                if(!isNaN(final)){
+                    $rowSum.val(final);
+                }else{
+                    $rowSum.val(0.00);
+                }
+
 
             }
             var sum = 0;
             $(".rowSUM").each(function(){
                 sum += +$(this).val();
             });
-            $("#columnSumTotalICV").val(sum);
+            if(!isNaN(sum)){
+                $("#columnSumTotalICV").val(sum);
+                $("#columnSumTotalICV1").val(sum);
+            }else{
+                alert("Nominal Value NON MLC Value is missing!");
+                $("#columnSumTotalICV").val(0.00);
+                $("#columnSumTotalICV1").val(0.00);
+            }
+
 
         });
         $(document).on("click",".multipilerModel1",function(){
@@ -1216,20 +1739,41 @@
                     var valueOne= $sourcenon;
                 }
                 var totalCurrentMLC=parseInt(totalMLC) + ( parseInt(mlc) * parseInt(mult) ) ;
-                $("#columnSumMLC").val(totalCurrentMLC);
+                if(!isNaN(totalCurrentMLC)){
+                    $("#columnSumMLC").val(totalCurrentMLC);
+                    $("#columnSumMLC1").val(totalCurrentMLC);
+                }else{
+                    alert("Nominal Value MLC Value is missing!");
+                    $("#columnSumMLC").val(0.00);
+                    $("#columnSumMLC1").val(0.00);
+                }
+
+
                 var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
+                if(!isNaN(final)){
+                    $rowSum.val(final);
+                }else{
+                    $rowSum.val(0.00);
+                }
+
 
             }
             var sum = 0;
             $(".rowSUM").each(function(){
                 sum += +$(this).val();
             });
-            $("#columnSumTotalICV").val(sum);
-           /* var v1 = $("#columnSumTotalICV").val();
-            var v2 = $rowSum .val();
-            var totalCureentICV =  parseInt(v1) + parseInt(v2);
-            $("#columnSumTotalICV").val(totalCureentICV);*/
+            if(!isNaN(sum)){
+                $("#columnSumTotalICV").val(sum);
+                $("#columnSumTotalICV1").val(sum);
+            }else{
+                $("#columnSumTotalICV").val(0.00);
+                $("#columnSumTotalICV1").val(0.00);
+            }
+
+            /* var v1 = $("#columnSumTotalICV").val();
+             var v2 = $rowSum .val();
+             var totalCureentICV =  parseInt(v1) + parseInt(v2);
+             $("#columnSumTotalICV").val(totalCureentICV);*/
 
         });
     </script>

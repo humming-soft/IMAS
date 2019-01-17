@@ -1339,6 +1339,8 @@
 	<script type ="text/javascript">
 		$(document).on("change","#checkSix",function(){
 			if(this.checked) {
+				$("#objectiveDes").attr("hidden",false);
+			}else{
 				$("#objectiveDes").attr("hidden",true);
 			}
 		});
