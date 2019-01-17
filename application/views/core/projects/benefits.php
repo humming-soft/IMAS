@@ -572,13 +572,53 @@
 
                                                 <tr>
                                                     <td>
-
+                                                        <div class="col-sm-12">
+                                                                <select class="form-control">
+                                                                    <option>--Select--</option>
+                                                                    <option>RMK 10 Key Growth Engins</option>
+                                                                    <option>National Key areas(4%)</option>
+                                                                    <option>Oil & Gas</option>
+                                                                    <option>Palm oil and related products</option>
+                                                                    <option>Ginacial Services</option>
+                                                                    <option>Wholesale and retail</option>
+                                                                    <option>Tourism</option>
+                                                                    <option>Information and comm technology</option>
+                                                                    <option>Education</option>
+                                                                    <option>Electrical and Electronic</option>
+                                                                    <option>Business services</option>
+                                                                    <option>Private Healthcare</option>
+                                                                    <option>Agriculture</option>
+                                                                    <option>Greater k.Lumpur</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                     <td>
-
+                                                        <div class="col-sm-12">
+                                                                <select class="form-control">
+                                                                    <option>--Select--</option>
+                                                                    <option>Iskander Malaysia</option>
+                                                                    <option>North corridor ecnomic region</option>
+                                                                    <option>East coast Eco.Region</option>
+                                                                    <option>Sarawak Corridor Renewable Energy</option>
+                                                                    <option>Sabah development Corridor</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                     <td>
-
+                                                        <div class="col-sm-12">
+                                                                <select class="form-control">
+                                                                    <option>--Select--</option>
+                                                                    <option>Foster strategic local and international partnership</option>
+                                                                    <option>Maximize the usage of local contents</option>
+                                                                    <option>Establish a sustainable Malaysian industrial,economic and technological base,with strategic capabelities development and industrial participation in the global supply chain</option>
+                                                                    <option>Technology Acquisition development and diffusion</option>
+                                                                    <option>Collaborate in strategic (R&D&C) projects</option>
+                                                                    <option>Facilitate investments and collaborate in strategic Human Resource Development(HRD) initiatives </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </td>
 
                                                 </tr>
