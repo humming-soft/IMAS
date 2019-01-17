@@ -18,6 +18,7 @@
     <link href="<?=site_url('assets/js/vendors/fullcalendar/dist/fullcalendar.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('assets/js/vendors/perfect-scrollbar/css/perfect-scrollbar.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.css')?>" rel="stylesheet">
+    <link href="<?=site_url('assets/js/vendors/gantt/dhtmlxgantt.css')?>" rel="stylesheet" type="text/css">
     <link href="<?=site_url('assets/css/core.css')?>" rel="stylesheet">
 </head>
 
@@ -26,26 +27,62 @@
         <div aria-hidden="true" class="onboarding-modal modal fade animated" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-centered" role="document">
                 <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                        type="button"><span class="close-label">Close</span><span class="os-icon os-icon-close"></span></button>
+                        type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
                     <div class="onboarding-slider-w">
                         <div class="onboarding-slide">
+                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon2.png')?>"
+                                    width="200px"></div>
                             <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Tunneling Training Academy (TTA Graduates)</h4>
-                                <div class="onboarding-text"><b>SCHEDULE A</b></div>
+                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
+                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
+                                    can use it to introduce your customers to your app, or collect additional
+                                    information from them before they start using your app.</div>
+                            </div>
+                        </div>
+                        <div class="onboarding-slide">
+                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
+                            <div class="onboarding-content with-gradient">
+                                <h4 class="onboarding-title">Example Request Information</h4>
+                                <div class="onboarding-text">In this example you can see a form where you can request
+                                    some additional information from the customer when they land on the app page.</div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group"><label for="">Your Full Name</label><input class="form-control"
+                                                    placeholder="Enter your full name..." type="text" value=""></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group"><label for="">Your Role</label><select class="form-control">
+                                                    <option>Web Developer</option>
+                                                    <option>Business Owner</option>
+                                                    <option>Other</option>
+                                                </select></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="onboarding-slide">
+                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon6.png')?>"
+                                    width="200px"></div>
+                            <div class="onboarding-content with-gradient">
+                                <h4 class="onboarding-title">Showcase App Features</h4>
+                                <div class="onboarding-text">In this example you can showcase some of the features of
+                                    your application, it is very handy to make new users aware of your hidden features.
+                                    You can use boostrap columns to split them up.</div>
                                 <div class="row">
-                                    <div class="col-sm-6 b-r">
-                                        <div class="pb-2"><strong>Items Completed</strong></div>
-                                        <ul class="features-list completed">
-                                            <li>Project Initiation</li>
-                                            <li>Project Benefits</li>
-                                            <li>Project Delivarables</li>
+                                    <div class="col-sm-6">
+                                        <ul class="features-list">
+                                            <li>Fully Responsive design</li>
+                                            <li>Pre-built app layouts</li>
+                                            <li>Incredible Flexibility</li>
                                         </ul>
                                     </div>
                                     <div class="col-sm-6">
-                                    <div class="pb-2"><strong>Items Incomplete</strong></div>
-                                        <ul class="features-list pending">
-                                            <li>Add Milestones</li>
-                                            <li>ICV Calculation</li>
+                                        <ul class="features-list">
+                                            <li>Boxed & Full Layouts</li>
+                                            <li>Based on Bootstrap 4</li>
+                                            <li>Developer Friendly </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -345,20 +382,20 @@
                             </div><span>Home</span>
                         </a>
                     </li>
-                    <li class="selected"><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2')?>">
+                    <li class="selected"><a href="index.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
                             </div><span>Overview</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2/benefits')?>">
+                    <li class=""><a href="layouts_menu_top_image.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
                             </div><span>Benefits</span>
                         </a>
                     </li>
                     <li class="sub-header"><span>ICP Value</span></li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2/milestones')?>">
+                    <li class=""><a href="apps_bank.html">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-package"></div>
                             </div><span>Gantt Chart</span>
@@ -508,19 +545,19 @@
                     <div class="fancy-selector-w">
                         <div class="fancy-selector-current">
                             <div class="fs-main-info">
-                                <div class="fs-name">Tunneling Training Academy (TTA Graduates)</div>
-                                <div class="fs-sub">
-                                    <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
-                                    <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
-                                </div>
+                                <div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
+                                <div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
                             </div>
                             <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
                         </div>
                         <div class="fancy-selector-options">
                             <div class="fancy-selector-option">
                                 <div class="fs-main-info">
-                                    <div class="fs-name">CMS Product</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
+                                    <div class="fs-name">Tunneling Training Academy (TTA graduates)</div>
+                                    <div class="fs-sub">
+                                        <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
+                                        <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="fancy-selector-option active">
@@ -648,7 +685,7 @@
                     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING
                             AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-                    <li class="breadcrumb-item"><span>Tunneling Training Academy (TTA Graduates)</span></li>
+                    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
                 </ul>
                 <!--------------------
                 END - Breadcrumbs
@@ -662,228 +699,14 @@
                                     <div class="element-actions">
                                         <a class="btn btn-primary btn-block" data-target=".onboarding-modal"
                                             data-toggle="modal" href="#">
-                                            <i class="os-icon os-icon-plus-circle"></i><span>EDIT</span>
+                                            <i class="os-icon os-icon-plus-circle"></i><span>Edit</span>
                                         </a>
                                     </div>
                                     <h6 class="element-header">PROJECT OVERVIEW</h6>
-                                    <div class="element-box">
-                                        <div class="element-wrapper">
-                                            <div class="element-actions">
-                                                <a class="btn btn-danger btn-block" data-target=".onboarding-modal"
-                                                    data-toggle="modal" href="#">
-                                                    <i class="os-icon os-icon-ui-49"></i><span>ITEMS PENDING</span>
-                                                </a>
-                                            </div>
-                                            <h6 class="element-header">Schedule A Progress</h6>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="token-bonus-ui">
-                                                        <div class="bonus-bar">
-                                                            <div class="bonus-extra full">
-                                                                <div class="bonus-extra-item active" data-percent="0" style="width: 0%;">
-                                                                    <span class="bonus-extra-amount">INITIATION</span>
-                                                                    <span class="bonus-extra-percent">0%</span>
-                                                                </div>
-                                                                <div class="bonus-extra-item active" data-percent="10" style="width: 10%;">
-                                                                    <span class="bonus-extra-amount">BENEFITS</span>
-                                                                    <span class="bonus-extra-percent">10%</span>
-                                                                </div>
-                                                                <div class="bonus-extra-item active" data-percent="20" style="width: 20%;">
-                                                                    <span class="bonus-extra-amount">PROJECT DELIVARABLES</span>
-                                                                    <span  class="bonus-extra-percent">30%</span>
-                                                                </div>
-                                                                <div class="bonus-extra-item active" data-percent="35" style="width: 35%;">
-                                                                    <span class="bonus-extra-amount d-inline">MILESTONES<br><small>(ICV Calculation)</small></span>
-                                                                    <span class="bonus-extra-percent">65%</span>
-                                                                </div>
-                                                                <div class="bonus-extra-item" data-percent="35" style="width: 35%;">
-                                                                    <span class="bonus-extra-amount">SUBMISSION</span>
-                                                                    <span class="bonus-extra-percent">100%</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-12">
-                                                        <div class="buttons-w">
-                                                            <div class="actions-left"><a class="btn btn-link" href="#"><i class="os-icon os-icon-info"></i><span>Complete All the items of Schedule A for Submission</span></a></div>
-                                                            <div class="actions-right"><span class="badge badge-danger blink"><i class="os-icon os-icon-x-circle mr-1"></i><span>Incomplete</span></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="element-content">
-                                        <div class="element-box-tp">
-                                            <div class="support-index">
-                                                <div class="support-ticket-content-w">
-                                                    <div class="support-ticket-content">
-                                                        <div class="support-ticket-content-header">
-                                                            <h4 class="ticket-header">Tunneling Training Academy (TTA
-                                                                graduates)</h4>
-                                                            <a class="back-to-index" href="#"><i class="os-icon os-icon-arrow-left5"></i><span>Back</span></a><a
-                                                                class="show-ticket-info" href="#"><span>Show more
-                                                                    Details</span><i class="os-icon os-icon-documents-03"></i></a>
-                                                        </div>
-                                                        <legend class="text-bright"><span>Programme Info</span></legend>
-                                                        <div class="ticket-thread">
-                                                            <div class="ticket-reply">
-                                                                <div class="row pb-3">
-                                                                    <div class="col-sm-12 col-md-12">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div><span class="text-primary">Programme
-                                                                                    Name : </span><b>TUNNELING AND
-                                                                                    UNDERGROUND WORKS (MMC GAMUDA)</b></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12 col-md-12">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div><span class="text-primary">Programme
-                                                                                    Ref.Code : </span><b>TDA/PRG/MPT/2011/23-45/GT/MY</b></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <legend class="text-bright"><span>Project Info</span></legend>
-                                                                <div class="ticket-reply-info">
-                                                                    <div class="text-primary"><span>Project Description
-                                                                            : </span></div>
-                                                                </div>
-                                                                <div class="ticket-reply-content">
-                                                                    <p>Establishment of Tunneling Training Academy at
-                                                                        Kota Kemuning Shah Alam. Competency building
-                                                                        for more than 500 students and create job
-                                                                        opportunities for more than 200 local workers.
-                                                                        Establishment of South East Asia’s first
-                                                                        tunneling academy.</p>
-                                                                </div>
-                                                                <!-- <div class="ticket-attachments">
-                                                                    <a class="attachment" href="#">
-                                                                        <i class="os-icon os-icon-ui-51"></i><span>Programme-detail.pdf</span>
-                                                                    </a>
-                                                                </div> -->
-                                                                <div class="row">
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div class="d-bold">
-                                                                                <span class="text-primary">Project
-                                                                                    Status : <span class="badge badge-danger">
-                                                                                        NEW</span></span>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div class="d-inline-flex">
-                                                                                <span class="text-primary">Objectives :
-                                                                                </span>
-                                                                                <ul class="features-list">
-                                                                                    <li>Training/Human Capital
-                                                                                        Development</li>
-                                                                                    <li>Technology Transfer(s)</li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div><span class="text-primary">Current
-                                                                                    Revison : </span><b>01</b></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <div><span class="text-primary">Revision
-                                                                                    Date : </span><b>09-JAN-2019</b></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <span class="text-primary">ICP Provider :
-                                                                            </span>
-                                                                            <div class="ticket-reply-content field-highlight1 mt-2">
-                                                                                <dl class="dl-horizontal pt-2">
-                                                                                    <dt>Name</dt>
-                                                                                    <dd> MMC GAMUDA KVMRT (T) SDN BHD</dd>
-                                                                                    <dt>Address</dt>
-                                                                                    <dd> Level 3A-3, Corporate Building
-                                                                                        (Block E) Pusat Komersial
-                                                                                        Southgate No.2, Jalan Chan Sow
-                                                                                        Lin, Off, Jalan Dua, 55200
-                                                                                        Kuala Lumpur</dd>
-                                                                                    <dt>Contact Details</dt>
-                                                                                    <dd> Ting Sheng Chong <br>03-2385
-                                                                                        8000<br><a href="mailto:faizal@acreworks.com.my">ting_sheng@mmc-gamuda.my</a></dd>
-                                                                                </dl>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-12 col-md-6">
-                                                                        <div class="ticket-reply-info">
-                                                                            <span class="text-primary">ICP Recipient :
-                                                                            </span>
-                                                                            <div class="ticket-reply-content field-highlight1 mt-2">
-                                                                                <dl class="dl-horizontal pt-2">
-                                                                                    <dt>Name</dt>
-                                                                                    <dd>MINISTRY OF EDUCATION (MOE)</dd>
-                                                                                    <dt>Address</dt>
-                                                                                    <dd> Level 3A-3, Corporate Building
-                                                                                        (Block E) Pusat Komersial
-                                                                                        Southgate No.2, Jalan Chan Sow
-                                                                                        Lin, Off, Jalan Dua, 55200
-                                                                                        Kuala Lumpur</dd>
-                                                                                    <dt>Contact Details</dt>
-                                                                                    <dd> Faizal Ahammed <br>03-2781
-                                                                                        9456<br><a href="mailto:faizal@acreworks.com.my">faizal@acreworks.com.my</a></dd>
-                                                                                </dl>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="support-ticket-info"><a class="close-ticket-info" href="#"><i
-                                                                class="os-icon os-icon-ui-23"></i></a>
-                                                        <!-- <div class="todo-list pt-3 b-b">
-                                                            <a class="todo-item complete bg-success" href="#">
-                                                                <div class="text-white">
-                                                                    <div>Approved</div>
-                                                                </div>
-                                                                <div class="ti-icon text-white"><i class="os-icon os-icon-check"></i></div>
-                                                            </a>
-                                                        </div> -->
-                                                        <div class="customer pt-3">
-                                                            <h4 class="customer-name">RM 132 Million</h4>
-                                                            <div class="customer-tickets">Estimated Total ICV</div>
-                                                        </div>
-                                                        <h5 class="info-header">Project Details</h5>
-                                                        <div class="info-section text-center">
-                                                            <div class="label">Created: <strong class="ml-1">09-JAN-2019</strong></div>
-                                                            <div class="label">Type: <div class="badge badge-success ml-1">Indirect</div>
-                                                            </div>
-                                                        </div>
-                                                        <h5 class="info-header">Project Progress</h5>
-                                                        <div class="info-section">
-                                                            <div class="fancy-progress-with-label">
-                                                                <div class="fpl-label">0%</div>
-                                                                <div class="fpl-progress-w">
-                                                                    <div class="fpl-progress-i" style="width: 0%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <h5 class="info-header">Documents</h5>
-                                                        <div class="info-section">
-                                                            <div class="ci-file-list list-doc">
-                                                                <a class="centered-load-more-link smaller" href="#"><span><i
-                                                                            class="os-icon os-icon-plus-circle"></i>
-                                                                        Add Documents..</span></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <div class="row m-0">
+                                            <div class="col-12 col-md-12 col-lg-12">
+                                                <div id="wbs_milestones" style='height:700px;'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -925,7 +748,14 @@
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/tooltip.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
     <script src="<?=site_url('assets/js/demo_customizerce5a.js?version=4.4.1')?>"></script>
+    <script src="<?=site_url('assets/js/vendors/gantt/dhtmlxgantt.js')?>"></script>
     <script src="<?=site_url('assets/js/app.js')?>"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var base_url = "<?=site_url()?>";
+            App.initWBS2(base_url);
+        });
+    </script>
 </body>
 
 </html>

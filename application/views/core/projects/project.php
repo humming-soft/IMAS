@@ -552,8 +552,11 @@
                         <div class="fancy-selector-options">
                             <div class="fancy-selector-option">
                                 <div class="fs-main-info">
-                                    <div class="fs-name">CMS Product</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
+                                    <div class="fs-name">Tunneling Training Academy (TTA graduates)</div>
+                                    <div class="fs-sub">
+                                        <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
+                                        <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="fancy-selector-option active">
