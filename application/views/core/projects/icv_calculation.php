@@ -223,11 +223,10 @@
                                             <input type="hidden" id="hidMultiplierLocation">
                                             <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
                                                     <option>Select</option>
-                                                    <option value="1">Investment</option>
-                                                    <option value="2">Research,Development and Commercialization</option>
-                                                    <option value="3">Marketing Assistance</option>
-                                                    <option value="4">Human Capital Development</option>
-                                                    <option value="5">Incidental/Others</option>
+                                                    <option value="1">Professional Sevices local sourcing</option>
+                                                    <option value="2">Local Product</option>
+                                                    <option value="3">Plant Facility</option>
+                                                    <option value="4">Logistics</option>
                                                 </select></div>
                                         </div>
                                         <div class="col-sm-12" hidden id="itemDesDiv1">
@@ -1619,23 +1618,19 @@
             $('#itemDesDiv1').removeAttr('hidden');
             if($('#item1').val() == 1){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
+                $('#itemdes1').append('<option value="4">Design,systems integration work knowledge and skils development</option><option value="4">Technology upgrading,knowledge/Skils transfer and certification(People,Product & process)</option><option value="2">Installation,Testing,Commissioning and Project Management</option>');
             }
             if($('#item1').val() == 2){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
+                $('#itemdes1').append('<option value="3">Parts and Component, Main Equipment,Test Equipment - Custom Made</option><option value="1">Parts and Component, Main Equipment,Test Equipment - Off The Shelves</option>');
             }
             if($('#item1').val() == 3){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
+                $('#itemdes1').append('<option value="3">Plant Equipment and mechinary</option><option value="4">Tools,Jigs and Fixtures</option>');
             }
             if($('#item1').val() == 4){
                 $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
-            }
-            if($('#item1').val() == 5){
-                $('#itemdes1').find('option').not(':first').remove();
-                $('#itemdes1').append('<option value="1">Incidental</option><option value="1">Others</option>');
+                $('#itemdes1').append('<option value="1">Integrated logistic support</option><option value="1">Forwarding haulage and transportation,storage and warehouse</option><option value="1">Local Insurance</option>');
             }
         });
         $(document).on("click",".viewDeliver",function(){
@@ -1684,15 +1679,27 @@
                 }
 
                 var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
+                if(!isNaN(final)){
+                    $rowSum.val(final);
+                }else{
+                    $rowSum.val(0.00);
+                }
+
 
             }
             var sum = 0;
             $(".rowSUM").each(function(){
                 sum += +$(this).val();
             });
-            $("#columnSumTotalICV").val(sum);
-            $("#columnSumTotalICV1").val(sum);
+            if(!isNaN(sum)){
+                $("#columnSumTotalICV").val(sum);
+                $("#columnSumTotalICV1").val(sum);
+            }else{
+                alert("Nominal Value NON MLC Value is missing!");
+                $("#columnSumTotalICV").val(0.00);
+                $("#columnSumTotalICV1").val(0.00);
+            }
+
 
         });
         $(document).on("click",".multipilerModel1",function(){
@@ -1732,22 +1739,41 @@
                     var valueOne= $sourcenon;
                 }
                 var totalCurrentMLC=parseInt(totalMLC) + ( parseInt(mlc) * parseInt(mult) ) ;
-                $("#columnSumMLC").val(totalCurrentMLC);
-                $("#columnSumMLC1").val(totalCurrentMLC);
+                if(!isNaN(totalCurrentMLC)){
+                    $("#columnSumMLC").val(totalCurrentMLC);
+                    $("#columnSumMLC1").val(totalCurrentMLC);
+                }else{
+                    alert("Nominal Value MLC Value is missing!");
+                    $("#columnSumMLC").val(0.00);
+                    $("#columnSumMLC1").val(0.00);
+                }
+
+
                 var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
-                $rowSum.val(final);
+                if(!isNaN(final)){
+                    $rowSum.val(final);
+                }else{
+                    $rowSum.val(0.00);
+                }
+
 
             }
             var sum = 0;
             $(".rowSUM").each(function(){
                 sum += +$(this).val();
             });
-            $("#columnSumTotalICV").val(sum);
-            $("#columnSumTotalICV1").val(sum);
-           /* var v1 = $("#columnSumTotalICV").val();
-            var v2 = $rowSum .val();
-            var totalCureentICV =  parseInt(v1) + parseInt(v2);
-            $("#columnSumTotalICV").val(totalCureentICV);*/
+            if(!isNaN(sum)){
+                $("#columnSumTotalICV").val(sum);
+                $("#columnSumTotalICV1").val(sum);
+            }else{
+                $("#columnSumTotalICV").val(0.00);
+                $("#columnSumTotalICV1").val(0.00);
+            }
+
+            /* var v1 = $("#columnSumTotalICV").val();
+             var v2 = $rowSum .val();
+             var totalCureentICV =  parseInt(v1) + parseInt(v2);
+             $("#columnSumTotalICV").val(totalCureentICV);*/
 
         });
     </script>
