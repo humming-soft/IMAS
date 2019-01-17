@@ -1190,7 +1190,7 @@ var App = function () {
     
       };
 
-      var _wbs2 = function() {
+      var _wbs2 = function(base_url) {
         gantt.config.columns = [
           {name: "text", tree: true, width: 370, resize: true, label: "Milestones And Activities"},
           {name: "start_date", align: "center", width: 100, label: "Start Date", resize: true},
@@ -1305,7 +1305,7 @@ var App = function () {
         gantt.config.date_grid = "%d-%M-%Y";
         // ganttModules.zoom.setZoom(4);
         gantt.init("wbs_milestones");
-        gantt.load(base_url+"assets/js/pages/resource_project_multiple_owners.json");
+        gantt.load(base_url+"assets/js/resource_project_multiple_owners_1.json");
     
         resourcesStore.attachEvent("onParse", function(){
             var people = [];
