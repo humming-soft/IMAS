@@ -1082,7 +1082,7 @@
             $('#itemDesDiv').removeAttr('hidden');
             if($('#item').val() == 1){
                 $('#itemdes').find('option').not(':first').remove();
-                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
+                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Finacing</option><option value="3">Principal Guarantee for SBLC</option>');
             }
             if($('#item').val() == 2){
                 $('#itemdes').find('option').not(':first').remove();

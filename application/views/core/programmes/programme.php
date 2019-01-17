@@ -111,17 +111,89 @@
 								<div class="onboarding-text">In this example you can see a form where you can request
 									some additional information from the customer when they land on the app page.</div>
 								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group text-center"><label for="">Objectives</label></div>
+									</div>
+									<div class="col-sm-4 text-left">
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkOne">Localization/Subcontracting</label></div>
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkTwo">Technology Transfer(s)</label></div>
+									</div>
+									<div class="col-sm-4 text-left">
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkThree">Market Access</label></div>
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkFour">Investments</label></div>
+									</div>
+									<div class="col-sm-4 text-left">
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkFive">Training/Human Capital Development</label></div>
+										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkSix">Others</label></div>
+										<input class="form-control" id="objectiveDes" hidden placeholder="Please describe below.." type="text">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group"><label for="">Project Description</label>
+											<textarea  class="form-control"></textarea>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="onboarding-slide">
+							<div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
+							<div class="onboarding-content with-gradient">
+								<h4 class="onboarding-title">Example Request Information</h4>
+								<div class="row">
 									<div class="col-sm-6">
-										<div class="form-group"><label for="">Your Full Name</label><input class="form-control" placeholder="Enter your full name..."
-											 type="text" value=""></div>
+										<div class="form-group"><label for="">ICP Recipient(s)</label>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Name</div>
+												</div>
+												<input class="form-control"  type="text">
+											</div>
+											<br>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Address</div>
+												</div>
+												<textarea  class="form-control"></textarea>
+											</div>
+											<br>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Contact Details</div>
+												</div>
+												<input class="form-control"  type="text">
+											</div>
+											<br>
+										</div>
 									</div>
 									<div class="col-sm-6">
-										<div class="form-group"><label for="">Your Role</label><select class="form-control">
-												<option>Web Developer</option>
-												<option>Business Owner</option>
-												<option>Other</option>
-											</select></div>
+										<div class="form-group"><label for="">ICP Provider</label>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Name</div>
+												</div>
+												<input class="form-control"  type="text">
+											</div>
+											<br>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Address</div>
+												</div>
+												<textarea  class="form-control"></textarea>
+											</div>
+											<br>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">Contact Details</div>
+												</div>
+												<input class="form-control"  type="text">
+											</div>
+											<br>
+										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -1327,6 +1399,13 @@
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
 	<script src="<?=site_url('assets/js/demo_customizerce5a.js?version=4.4.1')?>"></script>
 	<script src="<?=site_url('assets/js/app.js')?>"></script>
+	<script type ="text/javascript">
+		$(document).on("change","#checkSix",function(){
+			if(this.checked) {
+				$("#objectiveDes").attr("hidden",true);
+			}
+		});
+	</script>
 </body>
 
 </html>
