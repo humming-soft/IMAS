@@ -1012,6 +1012,10 @@ var App = function () {
       var _wbs = function(base_url) {
         gantt.config.columns = [
             {name: "text", tree: true, width: 370, resize: true, label: "Milestones And Activities"},
+            {name:"progress",   label:"Status",  template:function(obj){
+              return Math.round(obj.progress*100)+"%";
+              }, align: "center", width:60 },
+      
             {name: "start_date", align: "center", width: 100, label: "Start Date", resize: true},
             {name: "end_date", align: "center",label: "End Date",width: 100, resize: true},
             {name: "duration", width: 58, align: "center"}
