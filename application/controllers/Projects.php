@@ -47,4 +47,10 @@ class Projects extends HS_Controller {
 
         $this->load->view('core/projects/delivarables');
     }
+    public function activities($p_ref='',$projectId=''){
+        // tda-pod-mot-54-2015-802
+        // cgmr-90-ip2
+
+        $this->load->view('core/projects/activities');
+    }
 }

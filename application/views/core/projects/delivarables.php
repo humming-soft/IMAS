@@ -21,6 +21,9 @@
 </head>
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
+<div class="preloader-it">
+		<div class="loader-pendulums"></div>
+	</div>
     <div class="all-wrapper with-side-panel solid-bg-all">
         <div class="search-with-suggestions-w">
             <div class="search-with-suggestions-modal">
@@ -56,13 +59,13 @@
                     </div>
                     <div class="ssg-content">
                         <div class="ssg-items ssg-items-list"><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.png')?>)"></div>
                                 <div class="item-name">John Ma<span>yer</span>s</div>
                             </a><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.png')?>)"></div>
                                 <div class="item-name">Th<span>omas</span> Mullier</div>
                             </a><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.png')?>)"></div>
                                 <div class="item-name">Kim C<span>olli</span>ns</div>
                             </a></div>
                     </div>
@@ -87,7 +90,7 @@
                                 <div class="item-name">User<span>Tabl</span>e.sql</div>
                             </a><a class="ssg-item" href="#">
                                 <div class="item-icon"><i class="os-icon os-icon-image"></i></div>
-                                <div class="item-name">wed<span>din</span>g.jpg</div>
+                                <div class="item-name">wed<span>din</span>g.png</div>
                             </a></div>
                         <div class="ssg-nothing-found">
                             <div class="icon-w"><i class="os-icon os-icon-eye-off"></i></div><span>No files were found.
@@ -413,28 +416,28 @@
                             <div class="os-dropdown light message-list">
                                 <ul>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">John Mayers</h6>
                                                 <h6 class="message-title">Account Update</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Phil Jones</h6>
                                                 <h6 class="message-title">Secutiry Updates</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar3.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Bekky Simpson</h6>
                                                 <h6 class="message-title">Vacation Rentals</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Alice Priskon</h6>
                                                 <h6 class="message-title">Payment Confirmation</h6>
@@ -472,10 +475,10 @@
                         -------------------->
                         <div class="logged-user-w">
                             <div class="logged-user-i">
-                                <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+                                <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
                                 <div class="logged-user-menu color-style-bright">
                                     <div class="logged-user-avatar-info">
-                                        <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+                                        <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
                                         <div class="logged-user-info-w">
                                             <div class="logged-user-name">Maria Gomez</div>
                                             <div class="logged-user-role">Administrator</div>
@@ -510,9 +513,10 @@
                 START - Breadcrumbs
                 -------------------->
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-                    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes"><i class="os-icon os-icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes/tda-pod-mot-54-2015-802">TUNNELING
+                            AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
+                    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
                 </ul>
                 <!--------------------
                 END - Breadcrumbs
@@ -526,33 +530,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="element-wrapper">
-                                    <h6 class="element-header">ICV Calculation</h6>
-                                    <div class="element-box-tp">
-                                        <!--------------------
-                                        START - Controls Above Table
-                                        -------------------->
-                                        <div class="controls-above-table">
-                                            <div class="row">
-                                                <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Download
-                                                        CSV</a><a class="btn btn-sm btn-secondary" href="#">Archive</a><a
-                                                        class="btn btn-sm btn-danger" href="#">Delete</a></div>
-                                                <div class="col-sm-6">
-                                                    <form class="form-inline justify-content-sm-end"><input class="form-control form-control-sm rounded bright"
-                                                            placeholder="Search" type="text"><select class="form-control form-control-sm rounded bright">
-                                                            <option selected="selected" value="">Select Status</option>
-                                                            <option value="Pending">Pending</option>
-                                                            <option value="Active">Active</option>
-                                                            <option value="Cancelled">Cancelled</option>
-                                                        </select></form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--------------------
-                                        END - Controls Above Table
-                                        ------------------          -->
-                                        <!--------------------
-                                        START - Table with actions
-                                        ------------------  -->
+                                    <h6 class="element-header">PROJECT DELIVARABLES</h6>
+                                    <div class="element-box">
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-lg table-v2 table-striped">
                                                     <tbody>
@@ -693,28 +672,6 @@
 
                                                 </table>
                                         </div>
-                                        <!--------------------
-                                        END - Table with actions
-                                        ------------------            -->
-                                        <!--------------------
-                                        START - Controls below table
-                                        ------------------  -->
-                                        <div class="controls-below-table">
-                                            <div class="table-records-info">Showing records 1 - 5</div>
-                                            <div class="table-records-pages">
-                                                <ul>
-                                                    <li><a href="#">Previous</a></li>
-                                                    <li><a class="current" href="#">1</a></li>
-                                                    <li><a href="#">2</a></li>
-                                                    <li><a href="#">3</a></li>
-                                                    <li><a href="#">4</a></li>
-                                                    <li><a href="#">Next</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!--------------------
-                                        END - Controls below table
-                                        -------------------->
                                     </div>
                                 </div>
                             </div>

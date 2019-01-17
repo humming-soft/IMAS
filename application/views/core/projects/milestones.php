@@ -23,6 +23,9 @@
 </head>
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
+<div class="preloader-it">
+		<div class="loader-pendulums"></div>
+	</div>
     <div class="all-wrapper with-side-panel solid-bg-all">
         <div aria-hidden="true" class="onboarding-modal modal fade animated" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-centered" role="document">
@@ -394,7 +397,7 @@
                             </div><span>Benefits</span>
                         </a>
                     </li>
-                    <li class=""><span>ICP Value</span></li>
+                    <li class="sub-header"><span>ICP Value</span></li>
                     <li class="selected"><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/milestones')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-align-right"></div>

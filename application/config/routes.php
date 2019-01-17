@@ -61,3 +61,5 @@ $route['programmes/(:any)/(:any)/icv_calculation'] = 'projects/icv_calculation/$
 $route['programmes/(:any)/(:any)/benefits'] = 'projects/project_benefits/$1/$2';
 $route['programmes/(:any)/(:any)/milestones'] = 'projects/milestones/$1/$2';
 $route['programmes/(:any)/(:any)/delivarables'] = 'projects/delivarables/$1/$2';
+$route['programmes/(:any)/(:any)/activities'] = 'projects/activities/$1/$2';
+

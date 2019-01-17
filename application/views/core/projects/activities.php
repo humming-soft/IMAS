@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>IMAS (ICP Management System) - Dashboard</title>
     <meta charset="utf-8">
@@ -18,88 +17,19 @@
     <link href="<?=site_url('assets/js/vendors/fullcalendar/dist/fullcalendar.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('assets/js/vendors/perfect-scrollbar/css/perfect-scrollbar.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.css')?>" rel="stylesheet">
-    <link href="<?=site_url('assets/js/vendors/gantt/dhtmlxgantt.css')?>" rel="stylesheet" type="text/css">
     <link href="<?=site_url('assets/css/core.css')?>" rel="stylesheet">
 </head>
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
-<div class="preloader-it">
+    <div class="preloader-it">
 		<div class="loader-pendulums"></div>
 	</div>
     <div class="all-wrapper with-side-panel solid-bg-all">
-        <div aria-hidden="true" class="onboarding-modal modal fade animated" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-centered" role="document">
-                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
-                        type="button"><span class="close-label">Skip Intro</span><span class="os-icon os-icon-close"></span></button>
-                    <div class="onboarding-slider-w">
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon2.png')?>"
-                                    width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
-                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
-                                    can use it to introduce your customers to your app, or collect additional
-                                    information from them before they start using your app.</div>
-                            </div>
-                        </div>
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Example Request Information</h4>
-                                <div class="onboarding-text">In this example you can see a form where you can request
-                                    some additional information from the customer when they land on the app page.</div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group"><label for="">Your Full Name</label><input class="form-control"
-                                                    placeholder="Enter your full name..." type="text" value=""></div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group"><label for="">Your Role</label><select class="form-control">
-                                                    <option>Web Developer</option>
-                                                    <option>Business Owner</option>
-                                                    <option>Other</option>
-                                                </select></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="onboarding-slide">
-                            <div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon6.png')?>"
-                                    width="200px"></div>
-                            <div class="onboarding-content with-gradient">
-                                <h4 class="onboarding-title">Showcase App Features</h4>
-                                <div class="onboarding-text">In this example you can showcase some of the features of
-                                    your application, it is very handy to make new users aware of your hidden features.
-                                    You can use boostrap columns to split them up.</div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <ul class="features-list">
-                                            <li>Fully Responsive design</li>
-                                            <li>Pre-built app layouts</li>
-                                            <li>Incredible Flexibility</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <ul class="features-list">
-                                            <li>Boxed & Full Layouts</li>
-                                            <li>Based on Bootstrap 4</li>
-                                            <li>Developer Friendly </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="search-with-suggestions-w">
             <div class="search-with-suggestions-modal">
                 <div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search..."
                         type="text">
-                    <div class="close-search-suggestions"><i class="os-icon os-icon-x"></i></div></input>
+                    <div class="close-search-suggestions"><i class="os-icon os-icon-x"></i></div>
                 </div>
                 <div class="search-suggestions-group">
                     <div class="ssg-header">
@@ -176,7 +106,7 @@
             -------------------->
             <div class="menu-mobile menu-activated-on-click color-scheme-dark">
                 <div class="mm-logo-buttons-w"><a class="mm-logo" href="index.html"><img src="<?=site_url('assets/img/logo.png')?>">
-                        <span>IMAS</span></a>
+                <span>IMAS</span></a>
                     <div class="mm-buttons">
                         <div class="content-panel-open">
                             <div class="os-icon os-icon-grid-circles"></div>
@@ -375,8 +305,8 @@
                 <!-- <div class="menu-actions">
                     <div class="top-icon"><a href="<?=site_url('programmes')?>"><div class="icon-w"><i class="os-icon os-icon-home"> HOME</i></a></div></div>
                 </div> -->
-                <!-- <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
-                        type="text"></div> -->
+                <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
+                        type="text"></div>
                 <h1 class="menu-page-header">Page Header</h1>
                 <ul class="main-menu">
                     <li><a href="<?=site_url('programmes')?>">
@@ -385,20 +315,20 @@
                             </div><span>Home</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2')?>">
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
                             </div><span>Overview</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2/benefits')?>">
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/benefits')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
                             </div><span>Benefits</span>
                         </a>
                     </li>
                     <li class="sub-header"><span>ICP Value</span></li>
-                    <li class="selected"><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2/milestones')?>">
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/milestones')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-align-right"></div>
                             </div><span>Gantt Chart</span>
@@ -417,7 +347,7 @@
                         </a>
                     </li>
                     <li class="sub-header"><span>OTHERS</span></li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/activities')?>">
+                    <li class="selected"><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/activities')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-activity"></div>
                             </div><span>Activity</span>
@@ -427,8 +357,8 @@
                 <div class="side-menu-magic">
                     <h4>TDA</h4>
                     <p>Technology Depository Agency</p>
-                    <div class="btn-w"><a class="btn btn-white btn-rounded" href="https://tda.my" target="_blank">Visit
-                            Us</a></div>
+                    <div class="btn-w"><a class="btn btn-white btn-rounded" href="https://tda.my"
+                            target="_blank">Visit Us</a></div>
                 </div>
             </div>
             <!--------------------
@@ -447,37 +377,34 @@
                         <li class="sub-header top-icon os-dropdown-trigger toggle-menu-style"><i class="os-icon os-icon-menu"></i></li>
                     </ul>
                     <div class="fancy-selector-w">
-                        <div class="fancy-selector-current">
-                            <div class="fs-main-info">
-                                <div class="fs-name">Tunneling Training Academy (TTA Graduates)</div>
-                                <div class="fs-sub"><span>TOTAL ICV :</span><strong>-</strong></div>
-                            </div>
-                            <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
-                        </div>
-                        <div class="fancy-selector-options">
-                            <div class="fancy-selector-option">
-                                <div class="fs-main-info">
-                                    <div class="fs-name">Tunneling Training Academy (TTA graduates)</div>
-                                    <div class="fs-sub">
-                                        <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
-                                        <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fancy-selector-option active">
-                                <div class="fs-main-info">
-                                    <div class="fs-name">Server Product</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
-                                </div>
-                            </div>
-                            <div class="fancy-selector-option">
-                                <div class="fs-main-info">
-                                    <div class="fs-name">Compute Engine</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+						<div class="fancy-selector-current">
+							<div class="fs-main-info">
+								<div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
+								<div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
+							</div>
+							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
+						</div>
+						<div class="fancy-selector-options">
+							<div class="fancy-selector-option">
+								<div class="fs-main-info">
+									<div class="fs-name">CMS Product</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>32</strong></div>
+								</div>
+							</div>
+							<div class="fancy-selector-option active">
+								<div class="fs-main-info">
+									<div class="fs-name">Server Product</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
+								</div>
+							</div>
+							<div class="fancy-selector-option">
+								<div class="fs-main-info">
+									<div class="fs-name">Compute Engine</div>
+									<div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
+								</div>
+							</div>
+						</div>
+					</div>
                     <div class="top-menu-controls">
                         <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
                                 type="text"></div>
@@ -566,7 +493,7 @@
                                         <li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing
                                                     Details</span></a></li>
                                         <li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
-                                        <li><a href="<?=site_url('logout')?>"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+                                        <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -586,8 +513,8 @@
                 START - Breadcrumbs
                 -------------------->
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
-                    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING
+                    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes"><i class="os-icon os-icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes/tda-pod-mot-54-2015-802">TUNNELING
                             AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
                     <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
                 </ul>
@@ -597,27 +524,80 @@
                 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
                 <div class="content-i">
                     <div class="content-box">
+
+
+
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="element-wrapper">
-                                    <div class="element-actions">
-                                        <a class="btn btn-primary btn-block" data-target=".onboarding-modal"
-                                            data-toggle="modal" href="#">
-                                            <i class="os-icon os-icon-plus-circle"></i><span>Edit</span>
-                                        </a>
-                                    </div>
-                                    <h6 class="element-header">PROJECT OVERVIEW</h6>
-                                    <div class="element-content">
-                                        <div class="row m-0">
-                                            <div class="col-12 col-md-12 col-lg-12">
-                                                <div id="wbs_milestones" style='height:700px;'></div>
-                                            </div>
-                                        </div>
+                                    <h6 class="element-header">PROJECT ACTIVITIES</h6>
+                                    <div class="element-box">
+                                    <div class="timed-activities padded">
+													<div class="timed-activity">
+														<div class="ta-date"><span>21st Jan, 2017</span></div>
+														<div class="ta-record-w">
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>11:55</strong> am</div>
+																<div class="ta-activity">Uploaded Evidence of Activity for <a href="#">Production of TBM Parts in Malaysia</a></div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>2:34</strong> pm</div>
+																<div class="ta-activity">Updated ICV Calculation for <a href="#">Production of TBM Parts in Malaysia</a></div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>7:12</strong> pm</div>
+																<div class="ta-activity">Status of the project <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> changed from <span class="badge badge-info">PROPOSED</span> to <span class="badge badge-success">APPROVED</span></div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>9:39</strong> pm</div>
+																<div class="ta-activity">Schedule A Approved for <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a></div>
+															</div>
+														</div>
+													</div>
+													<div class="timed-activity">
+														<div class="ta-date"><span>3rd Feb, 2017</span></div>
+														<div class="ta-record-w">
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>9:32</strong> pm</div>
+																<div class="ta-activity">Updated ICV Calculation for <a href="#">Production of TBM Parts in Malaysia</a></div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>5:14</strong> pm</div>
+																<div class="ta-activity">TDA <a href="#">Commented</a> on the project <a href="#">Production of TBM Parts in Malaysia</a>
+																	category</div>
+															</div>
+														</div>
+													</div>
+													<div class="timed-activity">
+														<div class="ta-date"><span>21st Jan, 2017</span></div>
+														<div class="ta-record-w">
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>11:55</strong> am</div>
+																<div class="ta-activity">Schedule A Submitted for the project <a href="#">Production of TBM Parts in Malaysia</a></div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>2:34</strong> pm</div>
+																<div class="ta-activity">Added project benefits for<a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> 
+																	category</div>
+															</div>
+															<div class="ta-record">
+																<div class="ta-timestamp"><strong>9:39</strong> pm</div>
+																<div class="ta-activity">Initiated A Project called <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> under Programme 
+																<a href="#">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!--------------------
+                    END - Sidebar
+                    -------------------->
                 </div>
             </div>
         </div>
@@ -652,14 +632,162 @@
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/tooltip.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
     <script src="<?=site_url('assets/js/demo_customizerce5a.js?version=4.4.1')?>"></script>
-    <script src="<?=site_url('assets/js/vendors/gantt/dhtmlxgantt.js')?>"></script>
     <script src="<?=site_url('assets/js/app.js')?>"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var base_url = "<?=site_url()?>";
-            App.initWBS2(base_url);
+    <script type ="text/javascript">
+        $(document).on("change","#item",function(){
+            $('#itemDesDiv').removeAttr('hidden');
+            if($('#item').val() == 1){
+                $('#itemdes').find('option').not(':first').remove();
+                $('#itemdes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
+            }
+            if($('#item').val() == 2){
+                $('#itemdes').find('option').not(':first').remove();
+                $('#itemdes').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
+            }
+            if($('#item').val() == 3){
+                $('#itemdes').find('option').not(':first').remove();
+                $('#itemdes').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
+            }
+            if($('#item').val() == 4){
+                $('#itemdes').find('option').not(':first').remove();
+                $('#itemdes').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
+            }
+            if($('#item').val() == 5){
+                $('#itemdes').find('option').not(':first').remove();
+                $('#itemdes').append('<option value="1">Incidental</option><option value="1">Others</option>');
+            }
+        });
+        $(document).on("change","#item1",function(){
+            $('#itemDesDiv1').removeAttr('hidden');
+            if($('#item1').val() == 1){
+                $('#itemdes1').find('option').not(':first').remove();
+                $('#itemdes1').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Fiv=nacing</option><option value="3">Principal Guarantee for SBLC</option>');
+            }
+            if($('#item1').val() == 2){
+                $('#itemdes1').find('option').not(':first').remove();
+                $('#itemdes1').append(' <option value="4">IPR transfer and Commercialization through JV/Partnership with local company</option> <option value="4">Technology Commercialization and roll out/Start up company</option> <option value="4">Tools/equipment, laboratory and workshop setup</option> <option value="4">Training and skil development cources</option> <option value="4">IPR development and sharing</option> <option value="3">Technology adaption to local environment and conditions</option> <option value="3">Transfer and resident of ToT project team assignment to OEMs</option> <option value="3">Subject Matter experts to local recipient assignment</option> <option value="3">Drawing,manuals and training documentations for recipient</option>');
+            }
+            if($('#item1').val() == 3){
+                $('#itemdes1').find('option').not(':first').remove();
+                $('#itemdes1').append('<option value="N/A">Captive Market Access</option><option value="N/A">Market Access Assistance</option><option value="N/A">Globel Supply chain participation</option><option value="4">Organization International Certification</option>');
+            }
+            if($('#item1').val() == 4){
+                $('#itemdes1').find('option').not(':first').remove();
+                $('#itemdes1').append('<option value="4">Technical Transfer ,skils and competency development for prefessional services</option><option value="4">On Job Traing</option><option value="3">Knowledge Transfer and skil development</option><option value="2">Non Technical transfer and Skil Development</option><option value="2">Training and skils development courses general</option><option value="1">Higher learning placement programe</option><option value="1">Higher value job creation</option>');
+            }
+            if($('#item1').val() == 5){
+                $('#itemdes1').find('option').not(':first').remove();
+                $('#itemdes1').append('<option value="1">Incidental</option><option value="1">Others</option>');
+            }
+        });
+        $(document).on("click",".viewDeliver",function(){
+            $('#multipilerModel3').modal('show');
+        });
+        $(document).on("click",".viewAttachments",function(){
+            $('#multipilerModel4').modal('show');
+        });
+
+        $(document).on("click",".multipilerModel",function(){
+            $('#multipilerModel').modal('show');
+           /* $source = $(this).find('input[type=text]');*/
+            $sourcenon = $(this).closest("tr").find('.nonMLCM');
+            $rowSum = $(this).closest("tr").find('.rowSUM');
+            $source2 = $(this).closest("tr").find('.nonMLC').val();
+            $source = $(this).closest("tr").find('.MLCM').val();
+            $source3 = $(this).closest("tr").find('.mlc').val();
+        });
+        $('#multipilerModel').on('hidden.bs.modal', function () {
+            $sourcenon.val($(this).find('#itemdes').val());
+            var totalICV= $("#columnSumICV").val();
+            var totalMLC = $("#columnSumMLC").val();
+            var totalSum = $("#columnSumTotalICV").val();
+            if(isNaN($source2)){
+                var nonMLC =  0.00;
+            }else{
+                var nonMLC =  $source2;
+            }
+
+            var mult =  $sourcenon.val();
+            if(!isNaN( mult)){
+                var totalCurrentICV=parseInt(totalICV) + ( parseInt(nonMLC) * parseInt(mult) ) ;
+                $("#columnSumICV").val(totalCurrentICV);
+                var valueOne= $sourcenon .val();
+                var valueTWo= $source2;
+                if($source == ""){
+                    valueFour = 0;
+                }else{
+                    var valueFour= $source;
+                }
+                if($source3 == ""){
+                    var valueThree= 0;
+                }else{
+                    var valueThree= $source3;
+                }
+
+                var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
+                $rowSum.val(final);
+
+            }
+            var sum = 0;
+            $(".rowSUM").each(function(){
+                sum += +$(this).val();
+            });
+            $("#columnSumTotalICV").val(sum);
+
+        });
+        $(document).on("click",".multipilerModel1",function(){
+            $('#multipilerModel1').modal('show');
+            /* $source = $(this).find('input[type=text]');*/
+            $source = $(this).closest("tr").find('.MLCM');
+            $source3 = $(this).closest("tr").find('.mlc').val();
+            $sourcenon = $(this).closest("tr").find('.nonMLCM').val();
+            $rowSum = $(this).closest("tr").find('.rowSUM');
+            $source2 = $(this).closest("tr").find('.nonMLC');
+        });
+
+        $('#multipilerModel1').on('hidden.bs.modal', function () {
+            $source.val($(this).find('#itemdes1').val());
+            var totalICV= $("#columnSumICV").val();
+            var totalMLC = $("#columnSumMLC").val();
+            var totalSum = $("#columnSumTotalICV").val();
+            if(isNaN($source3)){
+                var mlc =  0.00;
+            }else{
+                var mlc =  $source3;
+            }
+            var mult =  $source.val();
+            if(!isNaN( mult)){
+
+                if($source2.val() == ""){
+                    var valueTWo= 0;
+                }else{
+                    var valueTWo= $source2.val();
+                }
+
+                var valueFour= $(this).find('#itemdes1').val();
+                var valueThree= $source3;
+                if($sourcenon =="" ){
+                    var valueOne= 0;
+                }else{
+                    var valueOne= $sourcenon;
+                }
+                var totalCurrentMLC=parseInt(totalMLC) + ( parseInt(mlc) * parseInt(mult) ) ;
+                $("#columnSumMLC").val(totalCurrentMLC);
+                var final= ((parseInt(valueOne) * parseInt(valueTWo)) + (parseInt(valueFour) * parseInt(valueThree)));
+                $rowSum.val(final);
+
+            }
+            var sum = 0;
+            $(".rowSUM").each(function(){
+                sum += +$(this).val();
+            });
+            $("#columnSumTotalICV").val(sum);
+           /* var v1 = $("#columnSumTotalICV").val();
+            var v2 = $rowSum .val();
+            var totalCureentICV =  parseInt(v1) + parseInt(v2);
+            $("#columnSumTotalICV").val(totalCureentICV);*/
+
         });
     </script>
 </body>
-
 </html>
