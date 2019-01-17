@@ -524,7 +524,7 @@
             <!--------------------
             START - Main Menu
             -------------------->
-            <div class="menu-w selected-menu-color-light menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-bright sub-menu-color-bright menu-position-side menu-side-left menu-layout-compact sub-menu-style-over">
+            <div class="menu-w selected-menu-color-light menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-bright sub-menu-color-bright menu-position-side menu-side-left menu-layout-mini sub-menu-style-over">
                 <div class="logo-w"><a class="logo" href="index.html">
                         <div class="logo-element"></div>
                         <div class="logo-label">IMAS</div>
