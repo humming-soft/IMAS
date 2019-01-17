@@ -25430,7 +25430,8 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
     z-index: 999;
     color: #111;
     opacity: 1;
-    text-shadow: none
+    text-shadow: none;
+    outline:none;
 }
 
 .onboarding-modal button.close .os-icon {
@@ -25464,7 +25465,7 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 
 .onboarding-modal .onboarding-content h1,.onboarding-modal .onboarding-content h2,.onboarding-modal .onboarding-content h3,.onboarding-modal .onboarding-content h4 {
     color: #047bf8;
-    margin-bottom: 1.5rem
+    margin-bottom: .5rem
 }
 
 .onboarding-modal .onboarding-content .onboarding-text {
@@ -29295,7 +29296,7 @@ font-size: 2.4rem;
     list-style: none;
     position: relative;
 }
-.features-list li:before{
+.features-list li:before, .features-list.completed li:before{
     content: "\e961";
     font-family: 'osfont' !important;
     speak: none;
@@ -29313,6 +29314,14 @@ font-size: 2.4rem;
     top: 45%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+.features-list.completed li:before{
+    content: "\e961" !important;
+    color: #047bf8 !important;
+}
+.features-list.pending li:before{
+    content: "\ea88" !important;
+    color: #e65252 !important;
 }
 .token-bonus-ui {
     padding: 1px 0
