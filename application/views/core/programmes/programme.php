@@ -144,7 +144,7 @@
 								<h4 class="onboarding-title">Example Request Information</h4>
 								<div class="row">
 									<div class="col-sm-6">
-										<div class="form-group"><label for="">ICP Recipient(s)</label>
+										<div class="form-group"><label for="">ICP Recipient</label>
 											<div class="input-group">
 												<div class="input-group-prepend">
 													<div class="input-group-text">Name</div>
@@ -1402,6 +1402,8 @@
 	<script type ="text/javascript">
 		$(document).on("change","#checkSix",function(){
 			if(this.checked) {
+				$("#objectiveDes").attr("hidden",false);
+			}else{
 				$("#objectiveDes").attr("hidden",true);
 			}
 		});
