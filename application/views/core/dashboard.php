@@ -95,7 +95,8 @@
 		<div class="search-with-suggestions-w">
 			<div class="search-with-suggestions-modal">
 				<div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search..." type="text">
-					<div class="close-search-suggestions"><i class="os-icon os-icon-x"></i></div></input>
+					<div class="close-search-suggestions"><i class="os-icon os-icon-x"></i></div>
+					<!-- </input> -->
 				</div>
 				<div class="search-suggestions-group">
 					<div class="ssg-header">
@@ -125,13 +126,13 @@
 					</div>
 					<div class="ssg-content">
 						<div class="ssg-items ssg-items-list"><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.png')?>)"></div>
 								<div class="item-name">John Ma<span>yer</span>s</div>
 							</a><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.png')?>)"></div>
 								<div class="item-name">Th<span>omas</span> Mullier</div>
 							</a><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.png')?>)"></div>
 								<div class="item-name">Kim C<span>olli</span>ns</div>
 							</a></div>
 					</div>
@@ -184,7 +185,7 @@
 				</div>
 				<!-- <div class="menu-and-user">
                     <div class="logged-user-w">
-                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.jpg')?>"></div>
+                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.png')?>"></div>
                         <div class="logged-user-info-w">
                             <div class="logged-user-name">Maria Gomez</div>
                             <div class="logged-user-role">Administrator</div>
@@ -652,28 +653,28 @@
 							<div class="os-dropdown light message-list">
 								<ul>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar1.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">John Mayers</h6>
 												<h6 class="message-title">Account Update</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar2.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Phil Jones</h6>
 												<h6 class="message-title">Secutiry Updates</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar3.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Bekky Simpson</h6>
 												<h6 class="message-title">Vacation Rentals</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar4.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Alice Priskon</h6>
 												<h6 class="message-title">Payment Confirmation</h6>
@@ -711,10 +712,10 @@
                         -------------------->
 						<div class="logged-user-w">
 							<div class="logged-user-i">
-								<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+								<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
 								<div class="logged-user-menu color-style-bright">
 									<div class="logged-user-avatar-info">
-										<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+										<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
 										<div class="logged-user-info-w">
 											<div class="logged-user-name">Maria Gomez</div>
 											<div class="logged-user-role">Administrator</div>
@@ -762,7 +763,7 @@
 									</div>
 									<h6 class="element-header">PROGRAMMES DASHBOARD</h6>
 									<div class="row">
-										<div class="col-sm-6">
+										<!-- <div class="col-sm-6">
 											<div class="element-box-tp">
 												<div class="post-box">
 													<div class="post-content">
@@ -803,23 +804,6 @@
 																</div>
 															</div>
 														</div>
-														<!-- <div class="row pb-2">
-															<div class="col-sm-12 col-md-12">
-                                                                <ul class="progress-info">
-                                                                    <li><span>Raised</span> 2,758 TWZ</li>
-                                                                    <li class="text-right"><span>TOTAL</span> 1,500,000 TWZ</li>
-                                                                </ul>
-                                                                <div class="progress-bar">
-                                                                    <div class="progress-scap" data-percent="12" style="width: 12%;">
-                                                                        <div>M1</div>
-                                                                    </div>
-                                                                    <div class="progress-scap" data-percent="24" style="width: 24%;">
-                                                                        <div>M2</div>
-                                                                    </div>
-                                                                    <div class="progress-percent" data-percent="28" style="width: 28%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div> -->
 														<div class="post-foot b-t pt-2">
 															<div class="post-tags">
 																Status : <div class="badge badge-outline-secondary">New</div>
@@ -829,8 +813,8 @@
 													</div>
 												</div>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6">
+                                        </div> -->
+                                        <!-- <div class="col-sm-6">
 											<div class="element-box-tp">
 												<div class="post-box">
 													<div class="post-content">
@@ -881,7 +865,7 @@
 													</div>
 												</div>
 											</div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-sm-6">
 											<div class="element-box-tp">
 												<div class="post-box">
@@ -933,7 +917,7 @@
 												</div>
 											</div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <!-- <div class="col-sm-6">
 											<div class="element-box-tp">
 												<div class="post-box">
 													<div class="post-content">
@@ -983,7 +967,7 @@
 													</div>
 												</div>
 											</div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-sm-6">
 											<div class="element-box-tp">
 												<div class="post-box">

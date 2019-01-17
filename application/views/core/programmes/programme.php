@@ -34,9 +34,7 @@
 						<div class="onboarding-slide">
 							<div class="onboarding-content with-gradient">
 								<h4 class="onboarding-title">Propose New Project</h4>
-								<div class="onboarding-text">This is an example of a multistep onboarding screen, you
-									can use it to introduce your customers to your app, or collect additional
-									information from them before they start using your app.</div>
+								<div class="onboarding-text">Propose new project to claim your ICV. Please complete the basic information about the project.</div>
 								<div class="row text-left">
 									<div class="col-sm-12 col-md-12">
 										<div class="form-group">
@@ -47,7 +45,7 @@
 								</div>
 								<div class="row text-left">
 									<div class="col-sm-12 col-md-12">
-										<fieldset class="form-group">
+										<fieldset class="form-group mt-2">
 											<legend><span>Project Information</span></legend>
 											<div class="row">
 												<div class="col-sm-12">
@@ -69,27 +67,7 @@
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-sm-12 col-md-6">
-													<div class="form-group"><label for="">Estimated Total ICV</label>
-														<div class="input-group">
-															<div class="input-group-prepend">
-																<div class="input-group-text">RM</div>
-															</div>
-															<input class="form-control" placeholder="Enter Estimated Total ICP Value.." type="text">
-															<div class="input-group-append">
-																<div class="input-group-text">Million</div>
-																<button type="button" class="btn btn-light dropdown-toggle btn-icon" data-toggle="dropdown"
-																 aria-expanded="false"></button>
-
-																<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(969px, 36px, 0px);">
-																	<a href="#" class="dropdown-item">Million</a>
-																	<a href="#" class="dropdown-item">Billion</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-sm-12 col-md-6">
+												<div class="col-sm-12 col-md-12">
 													<div class="form-group"><label for="">Project Type</label>
 														<select class="form-control">
 															<option>--Select--</option>
@@ -107,31 +85,30 @@
 						<div class="onboarding-slide">
 							<div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
 							<div class="onboarding-content with-gradient">
-								<h4 class="onboarding-title">Example Request Information</h4>
-								<div class="onboarding-text">In this example you can see a form where you can request
-									some additional information from the customer when they land on the app page.</div>
-								<div class="row">
+								<h4 class="onboarding-title">Project Information</h4>
+								<div class="onboarding-text">Please add the Project Objective(s) and Project Description below.</div>
+								<div class="row text-left">
 									<div class="col-sm-12">
-										<div class="form-group text-center"><label for="">Objectives</label></div>
+										<div class="form-group"><label for="">Project Objective (s)</label></div>
 									</div>
 									<div class="col-sm-4 text-left">
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkOne">Localization/Subcontracting</label></div>
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkTwo">Technology Transfer(s)</label></div>
+										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkOne">Localization/Subcontracting</label></div>
+										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkTwo">Technology Transfer(s)</label></div>
 									</div>
-									<div class="col-sm-4 text-left">
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkThree">Market Access</label></div>
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkFour">Investments</label></div>
+									<div class="col-sm-3 text-left">
+										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkThree">Market Access</label></div>
+										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkFour">Investments</label></div>
 									</div>
-									<div class="col-sm-4 text-left">
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkFive">Training/Human Capital Development</label></div>
-										<div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" id="checkSix">Others</label></div>
+									<div class="col-sm-5 text-left">
+										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkFive">Training/Human Capital Development</label></div>
+										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkSix">Others</label></div>
 										<input class="form-control" id="objectiveDes" hidden placeholder="Please describe below.." type="text">
 									</div>
 								</div>
-								<div class="row">
+								<div class="row text-left mt-3">
 									<div class="col-sm-12">
 										<div class="form-group"><label for="">Project Description</label>
-											<textarea  class="form-control"></textarea>
+											<textarea rows="5" class="form-control" placeholder="Enter Project Description.."></textarea>
 										</div>
 									</div>
 
@@ -141,83 +118,45 @@
 						<div class="onboarding-slide">
 							<div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
 							<div class="onboarding-content with-gradient">
-								<h4 class="onboarding-title">Example Request Information</h4>
+								<h4 class="onboarding-title">Project Information</h4>
+								<div class="onboarding-text">Please add the ICP Recipient Information below.</div>
 								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group"><label for="">ICP Recipient</label>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Name</div>
-												</div>
-												<input class="form-control"  type="text">
-											</div>
-											<br>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Address</div>
-												</div>
-												<textarea  class="form-control"></textarea>
-											</div>
-											<br>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Contact Details</div>
-												</div>
-												<input class="form-control"  type="text">
-											</div>
-											<br>
+									<div class="col-sm-6 text-left">
+										<div class="pb-2 b-b"><span class="text-primary"><b>ICP RECIPIENT</b></div>
+										<div class="form-group"><label for="">Name</label>
+											<input class="form-control" placeholder="Enter Recipient Name.." type="text">
+										</div>
+										<div class="form-group">
+											<label for="">Address</label>
+											<textarea rows="3" class="form-control" placeholder="Enter Recipient Address.."></textarea>
+										</div>
+										<div class="form-group">
+											<label for="">Contact Details</label>
+											<input class="form-control mt-1" placeholder="Enter Contact Name.." type="text">
+											<input class="form-control mt-1" placeholder="Enter Contact Number.." type="text">
+											<input class="form-control mt-1" placeholder="Enter Contact E-mail.." type="text">
 										</div>
 									</div>
-									<div class="col-sm-6">
-										<div class="form-group"><label for="">ICP Provider</label>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Name</div>
-												</div>
-												<input class="form-control"  type="text">
-											</div>
-											<br>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Address</div>
-												</div>
-												<textarea  class="form-control"></textarea>
-											</div>
-											<br>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<div class="input-group-text">Contact Details</div>
-												</div>
-												<input class="form-control"  type="text">
-											</div>
-											<br>
+									<div class="col-sm-6 text-left">
+										<div class="pb-2 b-b"><span class="text-primary"><b>ICP PROVIDER</b></div>
+										<div class="form-group">
+											<label for="">Name</label>
+											<b class="font d-block">MMC GAMUDA KVMRT (T) SDN BHD<span class="small"> (Generated)</span></b>
+										</div>
+										<div class="form-group">
+											<label for="">Address</label>
+											<b class="font d-block">Level 3A-3, Corporate Building (Block E) Pusat Komersial Southgate No.2, Jalan Chan Sow Lin, Off, Jalan Dua, 55200 Kuala Lumpur<span class="small"> (Generated)</span></b>
+										</div>
+										<div class="form-group">
+											<label for="">Contact Details</label>
+											<b class="font d-block">Ting Sheng Chong<br> 03-2385 8000<br> ting_sheng@mmc-gamuda.my<span class="small"> (Generated)</span></b>
 										</div>
 									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="onboarding-slide">
-							<div class="onboarding-media"><img alt="" src="<?=site_url('assets/img/bigicon6.png')?>" width="200px"></div>
-							<div class="onboarding-content with-gradient">
-								<h4 class="onboarding-title">Showcase App Features</h4>
-								<div class="onboarding-text">In this example you can showcase some of the features of
-									your application, it is very handy to make new users aware of your hidden features.
-									You can use boostrap columns to split them up.</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<ul class="features-list">
-											<li>Fully Responsive design</li>
-											<li>Pre-built app layouts</li>
-											<li>Incredible Flexibility</li>
-										</ul>
-									</div>
-									<div class="col-sm-6">
-										<ul class="features-list">
-											<li>Boxed & Full Layouts</li>
-											<li>Based on Bootstrap 4</li>
-											<li>Developer Friendly </li>
-										</ul>
+									<div class="col-sm-12 text-right">
+										<div class="form-buttons-w">
+											<button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
+											<button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -260,13 +199,13 @@
 					</div>
 					<div class="ssg-content">
 						<div class="ssg-items ssg-items-list"><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.png')?>)"></div>
 								<div class="item-name">John Ma<span>yer</span>s</div>
 							</a><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.png')?>)"></div>
 								<div class="item-name">Th<span>omas</span> Mullier</div>
 							</a><a class="ssg-item" href="users_profile_big.html">
-								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.jpg')?>)"></div>
+								<div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.png')?>)"></div>
 								<div class="item-name">Kim C<span>olli</span>ns</div>
 							</a></div>
 					</div>
@@ -319,7 +258,7 @@
 				</div>
 				<!-- <div class="menu-and-user">
                     <div class="logged-user-w">
-                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.jpg')?>"></div>
+                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.png')?>"></div>
                         <div class="logged-user-info-w">
                             <div class="logged-user-name">Maria Gomez</div>
                             <div class="logged-user-role">Administrator</div>
@@ -816,28 +755,28 @@
 							<div class="os-dropdown light message-list">
 								<ul>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar1.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">John Mayers</h6>
 												<h6 class="message-title">Account Update</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar2.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Phil Jones</h6>
 												<h6 class="message-title">Secutiry Updates</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar3.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Bekky Simpson</h6>
 												<h6 class="message-title">Vacation Rentals</h6>
 											</div>
 										</a></li>
 									<li><a href="#">
-											<div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+											<div class="user-avatar-w"><img alt="" src="img/avatar4.png"></div>
 											<div class="message-content">
 												<h6 class="message-from">Alice Priskon</h6>
 												<h6 class="message-title">Payment Confirmation</h6>
@@ -875,10 +814,10 @@
                         -------------------->
 						<div class="logged-user-w">
 							<div class="logged-user-i">
-								<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+								<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
 								<div class="logged-user-menu color-style-bright">
 									<div class="logged-user-avatar-info">
-										<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+										<div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
 										<div class="logged-user-info-w">
 											<div class="logged-user-name">Maria Gomez</div>
 											<div class="logged-user-role">Administrator</div>
@@ -984,37 +923,6 @@
 																		</div>
 																		
 																	</div>
-																	<fieldset class="form-group">
-																		<legend><span>Project(s) Summary</span></legend>
-																		<div class="row">
-																			<div class="col-sm-6">
-																				<div class="form-group"><label for=""> First Name</label><input class="form-control" placeholder="First Name"
-																					 type="text"></div>
-																			</div>
-																			<div class="col-sm-6">
-																				<div class="form-group"><label for="">Last Name</label><input class="form-control" placeholder="Last Name"
-																					 type="text"></div>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6">
-																				<div class="form-group"><label for=""> Date Picker</label>
-																					<div class="date-input"><input class="single-daterange form-control" placeholder="Date of birth"
-																						 type="text" value="04/12/1978"></div>
-																				</div>
-																			</div>
-																			<div class="col-sm-6">
-																				<div class="form-group"><label for="">Twitter Username</label>
-																					<div class="input-group">
-																						<div class="input-group-prepend">
-																							<div class="input-group-text">@</div>
-																						</div><input class="form-control" placeholder="Twitter Username" type="text">
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="form-group"><label> Example textarea</label><textarea class="form-control" rows="3"></textarea></div>
-																	</fieldset>
 																</div>
 															</div>
 															<div class="support-ticket-info"><a class="close-ticket-info" href="#"><i class="os-icon os-icon-ui-23"></i></a>
@@ -1027,7 +935,7 @@
 																	<div class="label">Created: <strong class="ml-1">Jan 24th, 2011</strong></div>
 																	<div class="label">Type: <div class="badge badge-success ml-1">ICP Programme</div></div>
 																</div>
-																<h5 class="info-header">Projects Details</h5>
+																<h5 class="info-header">Projects Details (05)</h5>
 																<div class="info-section">
 																	<ul class="users-list as-tiles">
                                                                         <li><a class="author with-avatar" href="#">
@@ -1077,7 +985,7 @@
 																		</div>
 																	</td>
 																	<td>Indirect</td>
-																	<td><strong>RM 132 Mil</strong></td>
+																	<td class="text-center"><strong>-</strong></td>
 																	<td>Traning/Human Capital Development</td>
 																	<td class="text-center">-</td>
 																	<td class="nowrap"><span class="badge badge-secondary">New</span></td>
@@ -1101,7 +1009,7 @@
 																	<td class="nowrap"><span class="badge badge-warning">Proposed</span></td>
 																	<td class="row-actions">
 																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
 																	</td>
 																</tr>
 																<tr>
@@ -1119,7 +1027,7 @@
 																	<td class="nowrap"><span class="badge badge-warning">Proposed</span></td>
 																	<td class="row-actions">
 																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
 																	</td>
 																</tr>
 																<tr>
@@ -1137,7 +1045,7 @@
 																	<td class="nowrap"><span class="badge badge-primary">In Progress</span></td>
 																	<td class="row-actions">
 																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
 																	</td>
 																</tr>
 																<tr>
@@ -1155,7 +1063,7 @@
 																	<td class="nowrap"><span class="badge badge-success">Approved</span></td>
 																	<td class="row-actions">
 																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
 																	</td>
 																</tr>
 															</tbody>
@@ -1170,20 +1078,19 @@
 														<div class="ta-record-w">
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>11:55</strong> am</div>
-																<div class="ta-activity">Created a post called <a href="#">Register new symbol</a> in Rogue</div>
+																<div class="ta-activity">Uploaded Evidence of Activity for <a href="#">Production of TBM Parts in Malaysia</a></div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>2:34</strong> pm</div>
-																<div class="ta-activity">Commented on story <a href="#">How to be a leader</a> in <a href="#">Financial</a>
-																	category</div>
+																<div class="ta-activity">Updated ICV Calculation for <a href="#">Production of TBM Parts in Malaysia</a></div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>7:12</strong> pm</div>
-																<div class="ta-activity">Added <a href="#">John Silver</a> as a friend</div>
+																<div class="ta-activity">Status of the project <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> changed from <span class="badge badge-info">PROPOSED</span> to <span class="badge badge-success">APPROVED</span></div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>9:39</strong> pm</div>
-																<div class="ta-activity">Started following user <a href="#">Ben Mosley</a></div>
+																<div class="ta-activity">Schedule A Approved for <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a></div>
 															</div>
 														</div>
 													</div>
@@ -1192,11 +1099,11 @@
 														<div class="ta-record-w">
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>9:32</strong> pm</div>
-																<div class="ta-activity">Added <a href="#">John Silver</a> as a friend</div>
+																<div class="ta-activity">Updated ICV Calculation for <a href="#">Production of TBM Parts in Malaysia</a></div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>5:14</strong> pm</div>
-																<div class="ta-activity">Commented on story <a href="#">How to be a leader</a> in <a href="#">Financial</a>
+																<div class="ta-activity">TDA <a href="#">Commented</a> on the project <a href="#">Production of TBM Parts in Malaysia</a>
 																	category</div>
 															</div>
 														</div>
@@ -1206,16 +1113,18 @@
 														<div class="ta-record-w">
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>11:55</strong> am</div>
-																<div class="ta-activity">Created a post called <a href="#">Register new symbol</a> in Rogue</div>
+																<div class="ta-activity">Schedule A Submitted for the project <a href="#">Production of TBM Parts in Malaysia</a></div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>2:34</strong> pm</div>
-																<div class="ta-activity">Commented on story <a href="#">How to be a leader</a> in <a href="#">Financial</a>
+																<div class="ta-activity">Added project benefits for<a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> 
 																	category</div>
 															</div>
 															<div class="ta-record">
 																<div class="ta-timestamp"><strong>9:39</strong> pm</div>
-																<div class="ta-activity">Started following user <a href="#">Ben Mosley</a></div>
+																<div class="ta-activity">Initiated A Project called <a href="#">Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</a> under Programme 
+																<a href="#">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</a>
+																</div>
 															</div>
 														</div>
 													</div>
@@ -1242,6 +1151,26 @@
 								</div>
 							</div>
 						</div>
+						<div class="element-wrapper">
+                            <div class="element-actions actions-only"><a class="element-action element-action-fold" href="#"><i class="os-icon os-icon-minus-circle"></i></a></div>
+                            <h6 class="element-header">Programme Type</h6>
+                            <div class="element-box-tp">
+                                <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox mb-25">
+                                        <input class="custom-control-input" id="same-address" name="cb01" type="checkbox" checked>
+                                        <label class="custom-control-label font-14" for="same-address">Economic Enhancement Programme (EEP)</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-25">
+                                        <input class="custom-control-input" id="same-address" name="cb02" type="checkbox" checked>
+                                        <label class="custom-control-label font-14" for="same-address">Direct Offset</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-25">
+                                        <input class="custom-control-input" id="same-address" name="cb03" type="checkbox" checked>
+                                        <label class="custom-control-label font-14" for="same-address">Indirect Offset</label>
+                                    </div>              
+                                </div>
+                            </div>
+                        </div>
 						<div class="element-wrapper">
 							<div class="element-actions actions-only"><a class="element-action element-action-fold" href="#"><i class="os-icon os-icon-minus-circle"></i></a></div>
 							<h6 class="element-header">Status</h6>
@@ -1342,7 +1271,15 @@
 										<div class="activity-time"></div>
 										<div class="activity-box">
 											<div class="activity-info">
-												<div class="activity-role"><strong class="font-p72">500 Mil - 1 Bil <span class="ls-1">(3)</span></strong></div>
+												<div class="activity-role"><strong class="font-p72">500 Mil - 1 Bil <span class="ls-1"></span></strong></div>
+											</div>
+										</div>
+									</div>
+									<div class="activity-box-w">
+										<div class="activity-time"></div>
+										<div class="activity-box">
+											<div class="activity-info">
+												<div class="activity-role"><strong class="font-p72">1 Mil - 99 Bil <span class="ls-1">(1)</span></strong></div>
 											</div>
 										</div>
 									</div>
@@ -1350,7 +1287,7 @@
 										<div class="activity-time">LOW</div>
 										<div class="activity-box">
 											<div class="activity-info">
-												<div class="activity-role"><strong class="font-p72">100 Mil - 500 MIl <span class="ls-1">(1)</span></strong></div>
+												<div class="activity-role"><strong class="font-p72">100 Mil - 500 MIl <span class="ls-1">(3)</span></strong></div>
 											</div>
 										</div>
 									</div>

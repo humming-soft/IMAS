@@ -89,13 +89,13 @@
                     </div>
                     <div class="ssg-content">
                         <div class="ssg-items ssg-items-list"><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar1.png')?>)"></div>
                                 <div class="item-name">John Ma<span>yer</span>s</div>
                             </a><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar2.png')?>)"></div>
                                 <div class="item-name">Th<span>omas</span> Mullier</div>
                             </a><a class="ssg-item" href="users_profile_big.html">
-                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.jpg')?>)"></div>
+                                <div class="item-media" style="background-image: url(<?=site_url('assets/img/avatar3.png')?>)"></div>
                                 <div class="item-name">Kim C<span>olli</span>ns</div>
                             </a></div>
                     </div>
@@ -135,7 +135,7 @@
             START - Mobile Menu
             -------------------->
             <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-                <div class="mm-logo-buttons-w"><a class="mm-logo" href="index.html"><img src="<?=site_url('assets/img/logo.png')?>">
+                <div class="mm-logo-buttons-w"><a class="mm-logo" href="<?=site_url('programmes')?>"><img src="<?=site_url('assets/img/logo.png')?>">
                         <span>IMAS</span></a>
                     <div class="mm-buttons">
                         <div class="content-panel-open">
@@ -148,7 +148,7 @@
                 </div>
                 <div class="menu-and-user">
                     <ul class="main-menu">
-                        <li class="has-sub-menu"><a href="index.html">
+                        <li class="has-sub-menu"><a href="<?=site_url('programmes')?>">
                                 <div class="icon-w">
                                     <div class="os-icon os-icon-layout"></div>
                                 </div><span>Dashboard</span>
@@ -364,7 +364,7 @@
                             </div><span>Gantt Chart</span>
                         </a>
                     </li>
-                    <li class=""><a href="#">
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/delivarables')?>">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-file-text"></div>
                             </div><span>Delivarables</span>
@@ -376,112 +376,13 @@
                             </div><span>ICV Calculation</span>
                         </a>
                     </li>
-                    <li class="sub-header"><span>Elements</span></li>
-                    <li class=" has-sub-menu"><a href="#">
+                    <li class="sub-header"><span>OTHERS</span></li>
+                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/activities')?>">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-mail"></div>
-                            </div><span>Emails</span>
+                                <div class="os-icon os-icon-activity"></div>
+                            </div><span>Activity</span>
                         </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Emails</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-mail"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="emails_welcome.html">Welcome Email</a></li>
-                                    <li><a href="emails_order.html">Order Confirmation</a></li>
-                                    <li><a href="emails_payment_due.html">Payment Due</a></li>
-                                    <li><a href="emails_forgot.html">Forgot Password</a></li>
-                                    <li><a href="emails_activate.html">Activate Account</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-users"></div>
-                            </div><span>Users</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Users</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-users"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="users_profile_big.html">Big Profile</a></li>
-                                    <li><a href="users_profile_small.html">Compact Profile</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-edit-32"></div>
-                            </div><span>Forms</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Forms</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-edit-32"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="forms_regular.html">Regular Forms</a></li>
-                                    <li><a href="forms_validation.html">Form Validation</a></li>
-                                    <li><a href="forms_wizard.html">Form Wizard</a></li>
-                                    <li><a href="forms_uploads.html">File Uploads</a></li>
-                                    <li><a href="forms_wisiwig.html">Wisiwig Editor</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-grid"></div>
-                            </div><span>Tables</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Tables</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-grid"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="tables_regular.html">Regular Tables</a></li>
-                                    <li><a href="tables_datatables.html">Data Tables</a></li>
-                                    <li><a href="tables_editable.html">Editable Tables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-zap"></div>
-                            </div><span>Icons</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Icons</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-zap"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a></li>
-                                    <li><a href="icon_fonts_feather.html">Feather Icons</a></li>
-                                    <li><a href="icon_fonts_themefy.html">Themefy Icons</a></li>
-                                    <li><a href="icon_fonts_picons_thin.html">Picons Thin</a></li>
-                                    <li><a href="icon_fonts_dripicons.html">Dripicons</a></li>
-                                    <li><a href="icon_fonts_eightyshades.html">Eightyshades</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_entypo.html">Entypo</a></li>
-                                    <li><a href="icon_fonts_font_awesome.html">Font Awesome</a></li>
-                                    <li><a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a></li>
-                                    <li><a href="icon_fonts_metrize_icons.html">Metrize Icons</a></li>
-                                    <li><a href="icon_fonts_picons_social.html">Picons Social</a></li>
-                                    <li><a href="icon_fonts_batch_icons.html">Batch Icons</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_dashicons.html">Dashicons</a></li>
-                                    <li><a href="icon_fonts_typicons.html">Typicons</a></li>
-                                    <li><a href="icon_fonts_weather_icons.html">Weather Icons</a></li>
-                                    <li><a href="icon_fonts_light_admin.html">Light Admin</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+                    </li>                  
                 </ul>
                 <div class="side-menu-magic">
                     <h4>TDA</h4>
@@ -510,8 +411,8 @@
                             <div class="fs-main-info">
                                 <div class="fs-name">Tunneling Training Academy (TTA Graduates)</div>
                                 <div class="fs-sub">
-                                    <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
-                                    <div class="float-right"><span>STATUS :</span><strong>NEW (65%)</strong></div>
+                                    <div class="float-left"><span>TOTAL ICV :</span><strong>-</strong></div>
+                                    <div class="float-right"><span>STATUS :</span><strong>NEW</strong></div>
                                 </div>
                             </div>
                             <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
@@ -548,28 +449,28 @@
                             <div class="os-dropdown light message-list">
                                 <ul>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">John Mayers</h6>
                                                 <h6 class="message-title">Account Update</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Phil Jones</h6>
                                                 <h6 class="message-title">Secutiry Updates</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar3.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Bekky Simpson</h6>
                                                 <h6 class="message-title">Vacation Rentals</h6>
                                             </div>
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.png"></div>
                                             <div class="message-content">
                                                 <h6 class="message-from">Alice Priskon</h6>
                                                 <h6 class="message-title">Payment Confirmation</h6>
@@ -607,10 +508,10 @@
                         -------------------->
                         <div class="logged-user-w">
                             <div class="logged-user-i">
-                                <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+                                <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
                                 <div class="logged-user-menu color-style-bright">
                                     <div class="logged-user-avatar-info">
-                                        <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.jpg')?>"></div>
+                                        <div class="avatar-w"><img alt="" src="<?=site_url('assets/img/avatar1.png')?>"></div>
                                         <div class="logged-user-info-w">
                                             <div class="logged-user-name">Maria Gomez</div>
                                             <div class="logged-user-role">Administrator</div>
@@ -659,12 +560,6 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="element-wrapper">
-                                    <div class="element-actions">
-                                        <a class="btn btn-primary btn-block" data-target=".onboarding-modal"
-                                            data-toggle="modal" href="#">
-                                            <i class="os-icon os-icon-plus-circle"></i><span>EDIT</span>
-                                        </a>
-                                    </div>
                                     <h6 class="element-header">PROJECT OVERVIEW</h6>
                                     <div class="element-box">
                                         <div class="element-wrapper">
@@ -856,8 +751,8 @@
                                                             </a>
                                                         </div> -->
                                                         <div class="customer pt-3">
-                                                            <h4 class="customer-name">RM 132 Million</h4>
-                                                            <div class="customer-tickets">Estimated Total ICV</div>
+                                                            <h4 class="customer-name small">-</h4>
+                                                            <div class="customer-tickets">Estimated Total ICV <small class="d-block text-danger">(Please Complete your ICV Calculation)</small></div>
                                                         </div>
                                                         <h5 class="info-header">Project Details</h5>
                                                         <div class="info-section text-center">
