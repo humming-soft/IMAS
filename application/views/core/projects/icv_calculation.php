@@ -821,7 +821,7 @@
                                                 <tr>
                                                     <td rowspan="9" style="font-weight: bold; width: 10%;">1.	Tunnel Drive From Crossover To Ampang Park</td>
                                                     <td rowspan="3" style="width: 10%;">1.	Land Available for Shoplots Jln Tun Tun Razak   </td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-Jan-19  -  01-May-19</td>
                                                     <td ><div class="input-group">
                                                             <div class="input-group-prepend">
@@ -841,7 +841,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Jan-19  -  01-May-19</td>
 
                                                     <td ><div class="input-group">
@@ -884,7 +884,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td  rowspan="3">2.	Instrumentation Installation </td>
-                                                    <td>Meterial</td>
+                                                    <td>Material </td>
                                                     <td >01-May-19  -  01-Aug-19</td>
 
                                                     <td ><div class="input-group">
@@ -905,7 +905,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-May-19  -  01-Aug-19</td>
 
                                                     <td ><div class="input-group">
@@ -948,7 +948,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td rowspan="3">3.	Specific Ground Improvement Works/Grouting</td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-May-19  -  01-Oct-19</td>
 
                                                     <td ><div class="input-group">
@@ -969,7 +969,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-May-19  -  01-Oct-19</td>
 
                                                     <td><div class="input-group">
@@ -1013,7 +1013,7 @@
                                                 <tr>
                                                     <td rowspan="9" style="font-weight: bold; width: 10%;">2.Tunnel Drive From Titiwangsa To Crossover</td>
                                                     <td rowspan="3">1.	Instrumentation Installation</td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-Sep-19  -  01-Nov-19</td>
 
                                                     <td ><div class="input-group">
@@ -1034,7 +1034,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Sep-19  -  01-Nov-19</td>
 
                                                     <td ><div class="input-group">
@@ -1077,7 +1077,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td  rowspan="3">2.	Specific Ground Improvement Works/Grouting   </td>
-                                                    <td>Meterial</td>
+                                                    <td>Material </td>
                                                     <td >01-Dec-19  -  01-Apr-2020</td>
 
                                                     <td ><div class="input-group">
@@ -1098,7 +1098,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Dec-19  -  01-Apr-2020</td>
 
                                                     <td ><div class="input-group">
@@ -1141,7 +1141,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td rowspan="3">3.	TBM Activities: VD-C-1 Assembly</td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-Apr-20  -  01-Jun-2020</td>
 
                                                     <td ><div class="input-group">
@@ -1162,7 +1162,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Apr-20  -  01-Jun-2020</td>
 
                                                     <td><div class="input-group">
@@ -1206,7 +1206,7 @@
                                                 <tr>
                                                     <td rowspan="9" style="font-weight: bold; width: 10%;">3.Chan Sow Lin Station Launching Facilities</td>
                                                     <td rowspan="3">1.	Component Grout Plant</td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-Sep-19 -  14-Nov-19</td>
 
                                                     <td ><div class="input-group">
@@ -1227,7 +1227,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Sep-19 -  14-Nov-19</td>
 
                                                     <td ><div class="input-group">
@@ -1270,7 +1270,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td  rowspan="3">1.	Compressed Air Plant </td>
-                                                    <td>Meterial</td>
+                                                    <td>Material </td>
                                                     <td >01-Dec-19 -  04-Apr-20</td>
 
                                                     <td ><div class="input-group">
@@ -1291,7 +1291,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Dec-19 -  04-Apr-20</td>
                                                     <td ><div class="input-group">
                                                             <div class="input-group-prepend">
@@ -1333,7 +1333,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td rowspan="3">1.	Chiller Plant </td>
-                                                    <td >Meterial</td>
+                                                    <td >Material </td>
                                                     <td >01-Apr-20 -  01-Jun-20</td>
 
                                                     <td ><div class="input-group">
@@ -1354,7 +1354,7 @@
                                                     <td><a href="#" class="viewAttachments"> View</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td >Mechinary</td>
+                                                    <td >Machinery </td>
                                                     <td >01-Apr-20 -  01-Jun-20</td>
 
                                                     <td><div class="input-group">
