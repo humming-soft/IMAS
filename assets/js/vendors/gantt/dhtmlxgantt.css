@@ -1686,3 +1686,6 @@ div.dhx_modal_cover {
   font-weight: bold;
   border-width: 0;
 }
+.status_line {
+  background-color: #0ca30a;
+}
