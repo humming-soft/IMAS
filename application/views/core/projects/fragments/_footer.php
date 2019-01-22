@@ -37,7 +37,9 @@
     <?php if(in_array("gantt",$support)){ ?>
     <script src="<?=site_url('assets/js/vendors/gantt/dhtmlxgantt.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/gantt/ext/dhtmlxgantt_marker.js')?>"></script>
-    <script src="<?=site_url('assets/js/vendors/gantt/ext/dhtmlxgantt_auto_scheduling.js')?>"></script>
+    <!-- <script src="<?=site_url('assets/js/vendors/gantt/ext/dhtmlxgantt_auto_scheduling.js')?>"></script> -->
+    <script src="<?=site_url('assets/js/vendors/gantt/ext/dhtmlxgantt_undo.js')?>"></script>
+    <script src="<?=site_url('assets/js/vendors/gantt/ext/dhtmlxgantt_fullscreen.js')?>"></script>
     <?php }} ?>
     <script src="<?=site_url('assets/js/vendors/tether/dist/js/tether.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/util.js')?>"></script>

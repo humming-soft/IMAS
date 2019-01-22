@@ -8,222 +8,218 @@ var Milestone = function () {
       {name: "add", width: 30}
     ];
 
-    // var resourceConfig = {
-    //     columns: [
-    //         {
-    //             name: "name", label: "Name", tree:true, template: function (resource) {
-    //             return resource.text;
-    //         }
-    //         },
-    //         {
-    //             name: "workload", label: "Workload", template: function (resource) {
-    //             var tasks;
-    //             var store = gantt.getDatastore(gantt.config.resource_store),
-    //                 field = gantt.config.resource_property;
-
-    //             if(store.hasChild(resource.id)){
-    //                 tasks = gantt.getTaskBy(field, store.getChildren(resource.id));
-    //             }else{
-    //                 tasks = gantt.getTaskBy(field, resource.id);
-    //             }
-
-    //             var totalDuration = 0;
-    //             for (var i = 0; i < tasks.length; i++) {
-    //                 totalDuration += tasks[i].duration;
-    //             }
-
-    //             return (totalDuration || 0) * 8 + "h";
-    //         }
-    //         }
-    //     ]
-    // };
-
-    gantt.templates.resource_cell_class = function(start_date, end_date, resource, tasks){
-        var css = [];
-        css.push("resource_marker");
-        if (tasks.length <= 1) {
-            css.push("workday_ok");
-        } else {
-            css.push("workday_over");
-        }
-        return css.join(" ");
-    };
-
-    gantt.templates.resource_cell_value = function(start_date, end_date, resource, tasks){
-        return "<div>" + tasks.length * 8 + "</div>";
-    };
-
-    gantt.locale.labels.section_owner = "Resources";
-    gantt.config.lightbox.sections = [
-        {name: "description", height: 38, map_to: "text", type: "textarea", focus: true},
-        //{name: "owner", height: 22, map_to: "owner_id", type: "select", options: gantt.serverList("people")},
-        {name:"owner",height:60, type:"multiselect", options:gantt.serverList("people"), map_to:"owner_id", unassigned_value:5 },
-        {name: "time", type: "duration", map_to: "auto"}
+    gantt.config.types.root = "project";
+	gantt.config.types.subproject = "milestone";
+	gantt.config.lightbox.subproject_sections = gantt.config.lightbox.sections;
+	gantt.config.lightbox.project_sections = [
+		{name: "description", height: 70, map_to: "text", type: "textarea", focus: true},
+		{name: "time", type: "duration", map_to: "auto", readonly: true}
     ];
-
-    gantt.config.resource_store = "resource";
-    gantt.config.resource_property = "owner_id";
-    gantt.config.order_branch = true;
-    gantt.config.open_tree_initially = true;
     
-    gantt.config.order_branch = true;
-    gantt.config.order_branch_free = true;
-    gantt.config.grid_resize = true;
-    gantt.config.static_background = true;
-    gantt.config.auto_scheduling_strict = true;
+    function defaultValues(task) {
+		var text = "",
+			index = gantt.getChildren(task.parent || gantt.config.root_id).length + 1,
+			types = gantt.config.types;
 
-    gantt.config.layout = {
-        css: "gantt_container",
-        rows: [
-            {
-                cols: [
-                    {view: "grid", group:"grids", scrollY: "scrollVer"},
-                    {resizer: true, width: 1},
-                    {view: "timeline", scrollX: "scrollHor", scrollY: "scrollVer"},
-                    {view: "scrollbar", id: "scrollVer", group:"vertical"}
-                ],
-                gravity:2
-            },
-            {resizer: true, width: 1},
-            // {
-            //     config: resourceConfig,
-            //     cols: [
-            //         {view: "resourceGrid", group:"grids", width: 435, scrollY: "resourceVScroll" },
-            //         {resizer: true, width: 1},
-            //         {view: "resourceTimeline", scrollX: "scrollHor", scrollY: "resourceVScroll"},
-            //         {view: "scrollbar", id: "resourceVScroll", group:"vertical"}
-            //     ],
-            //     gravity:1
-            // },
-            {view: "scrollbar", id: "scrollHor"}
-        ]
-    };
+		switch (task.type) {
+			case types.project:
+				text = "Project";
+				break;
+			case types.subproject:
+				text = 'Milestone';
+				break;
+			default:
+				text = 'Activity';
+				break;
+		}
+		task.text = text + " #" + index;
+		return;
+    }
+    
+    gantt.attachEvent("onTaskCreated", function (task) {
+		var parent = task.parent,
+			types = gantt.config.types,
+			level = 0;
 
-    var resourcesStore = gantt.createDatastore({
-        name: gantt.config.resource_store,
-        type: "treeDatastore",
-        initItem: function (item) {
-            item.parent = item.parent || gantt.config.root_id;
-            item[gantt.config.resource_property] = item.parent;
-            item.open = true;
-            return item;
-        }
+		if (parent == gantt.config.root_id || !parent) {
+			level = 0;
+		} else {
+			level = gantt.getTask(task.parent).$level + 1;
+		}
+		switch (level) {
+			case 0:
+				task.type = types.project;
+				break;
+			case 1:
+				task.type = types.subproject;
+				break;
+			default:
+				task.type = types.task;
+				break;
+		}
+
+		defaultValues(task);
+		return true;
     });
-    gantt.config.scale_unit = "month";
-    gantt.config.date_scale = "%m - %Y";
-    gantt.config.date_grid = "%d-%M-%Y";
-    // ganttModules.zoom.setZoom(4);
+    
+    gantt.templates.task_class = gantt.templates.grid_row_class = function (start, end, task) {
+		switch (task.type) {
+			case gantt.config.types.project:
+				return 'Project';
+				break;
+			case gantt.config.types.subproject:
+				return 'Milestone';
+				break;
+			default:
+				return 'activity';
+				break;
+		}
+	};
+    
     gantt.init("wbs_milestones");
     gantt.load(base_url+"assets/js/resource_project_multiple_owners_1.json");
 
-    resourcesStore.attachEvent("onParse", function(){
-        var people = [];
-        resourcesStore.eachItem(function(res){
-            if(!resourcesStore.hasChild(res.id)){
-                var copy = gantt.copy(res);
-                copy.key = res.id;
-                copy.label = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + res.text;
-                people.push(copy);
-            }
-            if(resourcesStore.hasChild(res.id)){
-                var copy = gantt.copy(res);
-                copy.key = res.id;
-                copy.label = res.text;
-                people.push(copy);
-            }
-        });
-        gantt.updateCollection("people", people);
-    });
+    //Highlights Weekend - START
+    gantt.templates.scale_cell_class = function (date) {
+		if (date.getDay() == 0 || date.getDay() == 6) {
+			return "weekend";
+		}
+	};
+	gantt.templates.task_cell_class = function (item, date) {
+		if (date.getDay() == 0 || date.getDay() == 6) {
+			return "weekend"
+		}
+    };
+    //Highlights Weekend - ENDS
 
-    resourcesStore.parse([
-        {id: 1, text: "HUMAN RESOURCES", parent:null},
-        {id: 2, text: "HARDWARE RESOURCES", parent:null},
-        {id: 3, text: "OFFICE REQUIREMENTS", parent:null},
-        {id: 4, text: "SOFTWARE REQUIREMENTS", parent:null},
-        {id: 6, text: "Chief Information Officer", parent:1},
-        {id: 7, text: "Program Director", parent:1},
-        {id: 8, text: "Project Director", parent:1},
-        {id: 9, text: "Service Delivery Director", parent:1},
-        {id: 10, text: "Sales Director", parent:1},
-        {id: 11, text: "Insides Sales Manager", parent:1},
-        {id: 12, text: "Project Manager", parent:1},
-        {id: 13, text: "Business Development Manager", parent:1},
-        {id: 14, text: "IT Supply Chain Manager", parent:1},
-        {id: 15, text: "Account Manager", parent:1},
+    //Progress Text - START
+    gantt.templates.progress_text = function (start, end, task) {
+		return "<span style='text-align:left;'>" + Math.round(task.progress * 100) + "% </span>";
+    };
+    //Progress Text - ENDS
 
-        {id: 16, text: "IT Procurement Specialist", parent:1},
-        {id: 17, text: "IT Marketing Communications Executive", parent:1},
-        {id: 18, text: "IT Trainer", parent:1},
-        {id: 19, text: "Channel Sales Specialist", parent:1},
-        {id: 20, text: "Inside Sales Specialist", parent:1},
-        {id: 22, text: "SAP Team Lead", parent:1},
-        {id: 23, text: "Software Development Manager", parent:1},
-        {id: 24, text: "Senior Solutions Architect", parent:1},
-        {id: 25, text: "Lead Software Developer", parent:1},
-        {id: 26, text: "Business Consultant", parent:1},
+    var _setScaleConfig = function(value) {
+		switch (value) {
+			case 1:
+				gantt.config.scale_unit = "day";
+				gantt.config.step = 1;
+				gantt.config.date_scale = "%d %M";
+				gantt.config.subscales = [];
+				gantt.config.scale_height = 27;
+				gantt.templates.date_scale = null;
+				break;
+			case 2:
+				var weekScaleTemplate = function (date) {
+					var dateToStr = gantt.date.date_to_str("%d %M");
+					var startDate = gantt.date.week_start(new Date(date));
+					var endDate = gantt.date.add(gantt.date.add(startDate, 1, "week"), -1, "day");
+					return dateToStr(startDate) + " - " + dateToStr(endDate);
+				};
 
-        {id: 27, text: "SAP Consultant", parent:1},
-        {id: 28, text: "Software Sales manager", parent:1},
-        {id: 29, text: "ETL Developers", parent:1},
-        {id: 30, text: "Websphere Application Developers", parent:1},
-        {id: 31, text: "BI Consultant", parent:1},
-        {id: 32, text: "System Analyst", parent:1},
-        {id: 33, text: "QA Specialist", parent:1},
-        {id: 34, text: "Junior Solutions Architect", parent:1},
-        {id: 35, text: "Software Engineer", parent:1},
-        {id: 36, text: "Software Programmer", parent:1},
+				gantt.config.scale_unit = "week";
+				gantt.config.step = 1;
+				gantt.templates.date_scale = weekScaleTemplate;
+				gantt.config.subscales = [
+					{unit: "day", step: 1, date: "%D"}
+				];
+				gantt.config.scale_height = 50;
+				break;
+			case 3:
+				gantt.config.scale_unit = "month";
+				gantt.config.date_scale = "%F, %Y";
+				gantt.config.subscales = [
+					{unit: "day", step: 1, date: "%j, %D"}
+				];
+				gantt.config.scale_height = 50;
+				gantt.templates.date_scale = null;
+                break;
+            case 4:
+                gantt.config.scale_unit = "year";
+                gantt.config.step = 1;
+                gantt.config.date_scale = "%Y";
+                gantt.config.min_column_width = 50;
 
-        {id: 37, text: "Web Designer", parent:1},
-        {id: 38, text: "Analyst Programmer", parent:1},
-        {id: 39, text: "Java Developer", parent:1},
-        {id: 40, text: "Programmer", parent:1},
-        {id: 41, text: "Billing System Specialist", parent:1},
-        {id: 42, text: "Implementation & Technical Support Manager", parent:1},
-        {id: 43, text: "Information Security Manager", parent:1},
-        {id: 44, text: "UNIX Specialist", parent:1},
-        {id: 45, text: "Service Delivery Manager", parent:1},
-        {id: 46, text: "Senior System Engineer", parent:1},
+                gantt.config.scale_height = 90;
+                gantt.templates.date_scale = null;
 
-        {id: 47, text: "Wintel Specialist", parent:1},
-        {id: 48, text: "IT Manager", parent:1},
-        {id: 49, text: "Problem & change Management Specialist", parent:1},
-        {id: 50, text: "Security Analyst", parent:1},
-        {id: 51, text: "Technical Writer", parent:1},
-        {id: 52, text: "Unix & linux OS Engineer", parent:1},
-        {id: 53, text: "Pre-Sales Engineer", parent:1},
-        {id: 54, text: "Billing System Engineer", parent:1},
-        {id: 55, text: "Database Administrator", parent:1},
-        {id: 56, text: "System Engineer", parent:1},
+                var quarterLabel = function(date) {
+                    var month = date.getMonth();
+                    var q_num;
+            
+                    if (month >= 9) {
+                        q_num = 4;
+                    } else if (month >= 6) {
+                        q_num = 3;
+                    } else if (month >= 3) {
+                        q_num = 2;
+                    } else {
+                        q_num = 1;
+                    }
+            
+                    return "Q" + q_num;
+                }
 
-        {id: 57, text: "Technical Consultant", parent:1},
-        {id: 58, text: "Network Administrator", parent:1},
-        {id: 58, text: "Helpdesk Tech Support(Foreign Language Expertise)", parent:1},
-        {id: 60, text: "Help Desk Analyst", parent:1},
-        {id: 61, text: "IT Executive", parent:1},
-        {id: 62, text: "Automation Support Engineer", parent:1},
-        {id: 63, text: "Technician", parent:1},
-        {id: 64, text: "IT Administrator", parent:1},
+                gantt.config.subscales = [
+                    {unit: "quarter", step: 1, template: quarterLabel},
+                    {unit: "month", step: 1, date: "%M"}
+                ];
+                break;
+			case 5:
+				gantt.config.scale_unit = "year";
+				gantt.config.step = 1;
+				gantt.config.date_scale = "%Y";
+				gantt.config.min_column_width = 50;
 
-        {id: 65, text: "Hard Drive: Minimum 32 GB", parent:2},
-        {id: 66, text: "Ethernet connection (LAN) OR a wireless adapter (Wi-Fi)", parent:2},
-        {id: 67, text: "Processor", parent:2},
-        {id: 68, text: "Memory (RAM): Minimum 1 GB", parent:2},
+				gantt.config.scale_height = 90;
+				gantt.templates.date_scale = null;
 
-        {id: 69, text: "Appery.io", parent:4},
-        {id: 70, text: "Mobile Roadie", parent:4},
-        {id: 71, text: "TheAppBuilder", parent:4},
-        {id: 72, text: "AppMachine", parent:4},
 
-        {id: 73, text: "Bookcases", parent:3},
-        {id: 74, text: "File cabinets", parent:3},
-        {id: 75, text: "Wall whiteboard and markers", parent:3}
-    ]);
+				gantt.config.subscales = [
+					{unit: "month", step: 1, date: "%M"}
+				];
+				break;
+		}
+	};
 
+    var currentScale = 2;
+    _setScaleConfig(currentScale);
+    $(".gantt-control").on("click",function(){
+        switch ($(this).data('control')) {
+            case 'undo' :
+                gantt.undo();
+            break;
+            case 'redo' :
+                gantt.redo();
+            break;
+            case 'fullscreen' :
+                gantt.expand();
+            break;
+            case 'zoom-in' :
+                if(currentScale < 5 && currentScale >= 1){
+                    $(this).next().removeClass("disabled")
+                    _setScaleConfig(++currentScale);
+                    gantt.render();
+                }else{
+                    $(this).addClass("disabled")
+                }
+            break;
+            case 'zoom-out' :
+                if(currentScale <= 5 && currentScale > 1){
+                    $(this).prev().removeClass("disabled")
+                    $(this).removeClass("disabled")
+                    _setScaleConfig(--currentScale);
+                    gantt.render();
+                }else{
+                    $(this).addClass("disabled")
+                }
+            break;
+        }
+    })
 };
 
     return {
         init: function(){
-            _wbs(base_url);
+            ganttobj = _wbs(base_url);
         }
     }
 }();

@@ -18,6 +18,24 @@ END - Breadcrumbs
                 <div class="element-wrapper">
                     <h6 class="element-header">MILESTONES (GANTT CHART)</h6>
                     <div class="element-content">
+                        <!-- <div class="element-wrapper pb-1">
+                            <div class="element-box">
+                                <div class="btn-group">
+                                    <a class="btn btn-primary" href="#"><i class="os-icon os-icon-refresh-ccw"></i></a>
+                                    <a class="btn btn-grey" href="#"><i class="os-icon os-icon-log-out"></i></a>
+                                    <a class="btn btn-grey" href="#"><i class="os-icon os-icon-plus-circle"></i></a>
+                                </div>
+
+                                <div class="btn-group">
+                                    <a class="btn btn-grey gantt-controls" href="#"><i class="os-icon os-icon-rotate-ccw"></i></a>
+                                    <a class="btn btn-grey" href="#"><i class="os-icon os-icon-rotate-cw"></i></a>
+                                </div>
+
+                                <div class="btn-group">
+                                    <a class="btn btn-grey" href="#"><i class="os-icon os-icon-maximize"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
                         <div class="element-box">
                             <div class="row m-0">
                                 <div class="col-12 col-md-12 col-lg-12">

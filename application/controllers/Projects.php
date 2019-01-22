@@ -55,7 +55,7 @@ class Projects extends HS_Controller {
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             $_header['support'] = array("gantt");
-            $_footer["page_js"] = "milestones";
+            $_footer["page_js"] = "milestones_new";
             $data['prog_ref'] = $p_ref;
             $data['proj_id'] = $projectId;
             $this->load->view('core/projects/fragments/_header.php',$_header);
