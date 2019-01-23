@@ -692,6 +692,8 @@ var App = function () {
         });
 
         $('.ae-list').perfectScrollbar({ wheelPropagation: true });
+        $('.ae-content').perfectScrollbar({ wheelPropagation: true });
+
 
         $('.ae-list .ae-item').on('click', function () {
           $('.ae-item.active').removeClass('active');
@@ -1338,6 +1340,8 @@ document.addEventListener('DOMContentLoaded', function() {
   App.initSupportService();
   App.initBlink();
   App.initTooltip();
+  App.initMailApp();
+
 });
 // When page is fully loaded
 window.addEventListener('load', function() {
