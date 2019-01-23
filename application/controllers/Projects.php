@@ -91,6 +91,7 @@ class Projects extends HS_Controller {
         $this->load->view('core/projects/delivarables',$data);
         $this->load->view('core/projects/fragments/_footer.php',$_header);
     }
+
     public function activities($p_ref='',$projectId=''){
         // tda-pod-mot-54-2015-802
         // cgmr-90-ip2
@@ -101,6 +102,19 @@ class Projects extends HS_Controller {
         $this->load->view('core/projects/fragments/_side_nav.php');
         $this->load->view('core/projects/fragments/_top_nav.php');
         $this->load->view('core/projects/activities',$data);
+        $this->load->view('core/projects/fragments/_footer.php',$_header);
+    }
+
+    public function collaboration($p_ref='',$projectId=''){
+        // tda-pod-mot-54-2015-802
+        // cgmr-90-ip2
+        $_header["page_js"] = "collaboration";
+        $data['prog_ref'] = $p_ref;
+        $data['proj_id'] = $projectId;
+        $this->load->view('core/projects/fragments/_header.php',$_header);
+        $this->load->view('core/projects/fragments/_side_nav.php');
+        $this->load->view('core/projects/fragments/_top_nav.php');
+        $this->load->view('core/projects/collaboration',$data);
         $this->load->view('core/projects/fragments/_footer.php',$_header);
     }
 }

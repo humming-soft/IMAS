@@ -125,7 +125,7 @@
                         </li>
                         <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/icv_calculation')?>">
                                 <div class="icon-w">
-                                    <div class="os-icon os-icon-life-buoy"></div>
+                                    <div class="os-icon os-icon-agenda-1"></div>
                                 </div><span>ICV Calculation</span>
                             </a>
                         </li>
@@ -162,50 +162,62 @@
                 <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..." type="text"></div>
                 <h1 class="menu-page-header">Page Header</h1>
                 <ul class="main-menu">
-                    <li><a href="<?=site_url('programmes')?>">
+                    <li><a href="<?=site_url('programmes')?>" data-placement="right" data-toggle="tooltip" title="Home">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-home"></div>
                             </div><span>Home</span>
                         </a>
                     </li>
-                    <li class="selected"><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>">
+                    <li id="m_overview" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>" data-placement="right" data-toggle="tooltip" title="Overview">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
                             </div><span>Overview</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/benefits')?>">
+                    <li id="m_benefits" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/benefits')?>" data-placement="right" data-toggle="tooltip" title="Benefits">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
                             </div><span>Benefits</span>
                         </a>
                     </li>
                     <li class="sub-header"><span>ICP Value</span></li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/milestones')?>">
+                    <li id="m_gc" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/milestones')?>" data-placement="right" data-toggle="tooltip" title="Gantt Chart">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-align-right"></div>
                             </div><span>Gantt Chart</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/delivarables')?>">
+                    <li id="m_delivarables" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/delivarables')?>" data-placement="right" data-toggle="tooltip" title="Delivarables">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-file-text"></div>
                             </div><span>Delivarables</span>
                         </a>
                     </li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/icv_calculation')?>">
+                    <li id="m_icv_cal" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/icv_calculation')?>" data-placement="right" data-toggle="tooltip" title="ICV Calculation">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-life-buoy"></div>
+                                <div class="os-icon os-icon-agenda-1"></div>
                             </div><span>ICV Calculation</span>
                         </a>
                     </li>
-                    <li class="sub-header"><span>OTHERS</span></li>
-                    <li class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/activities')?>">
+                    <li class="sub-header"><span>OTHERS</span></li>  
+                    <li id="m_collaboration" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/collaboration')?>" data-placement="right" data-toggle="tooltip" title="Collaboration">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-users"></div>
+                            </div><span>Collaboration</span>
+                        </a>
+                    </li>       
+                    <li id="m_meetings" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/meetings')?>" data-placement="right" data-toggle="tooltip" title="Meetings">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-calendar-time"></div>
+                            </div><span>Meetings</span>
+                        </a>
+                    </li>
+                    <li id="m_activity" class=""><a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2/activities')?>" data-placement="right" data-toggle="tooltip" title="Activity">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-activity"></div>
                             </div><span>Activity</span>
                         </a>
-                    </li>                  
+                    </li>            
                 </ul>
                 <div class="side-menu-magic">
                     <h4>TDA</h4>
