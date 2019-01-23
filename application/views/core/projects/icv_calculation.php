@@ -292,6 +292,12 @@ START - Email Content Header
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            <div class="col-sm-12 text-right">
+                                                <div class="form-buttons-w">
+                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
+                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -479,8 +485,17 @@ START - Email Content Header
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            <div class="col-sm-12 text-right">
+                                                <div class="form-buttons-w">
+                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
+                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -669,6 +684,12 @@ START - Email Content Header
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            <div class="col-sm-12 text-right">
+                                                <div class="form-buttons-w">
+                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
+                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
