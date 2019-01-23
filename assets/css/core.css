@@ -15858,6 +15858,9 @@ body.menu-side-right .layout-w {
 .element-wrapper .btn+.btn,.element-wrapper .all-wrapper .fc-button+.btn,.all-wrapper .element-wrapper .fc-button+.btn,.element-wrapper .all-wrapper .btn+.fc-button,.all-wrapper .element-wrapper .btn+.fc-button,.element-wrapper .all-wrapper .fc-button+.fc-button,.all-wrapper .element-wrapper .fc-button+.fc-button {
     margin-left: 1rem
 }
+.element-wrapper .btn-group .btn+.btn{
+    margin-left: 0
+}
 
 .element-wrapper.compact {
     padding-bottom: 2rem
