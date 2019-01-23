@@ -234,9 +234,15 @@ var Milestone = function () {
     
       };
 
+      var _menuSelected = function(menu){
+        menu.addClass("selected");
+    }; 
+
+
     return {
         init: function(){
             _wbs(base_url);
+            _menuSelected($("#m_gc"));
         }
     }
 }();

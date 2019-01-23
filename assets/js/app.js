@@ -1337,6 +1337,7 @@ document.addEventListener('DOMContentLoaded', function() {
   App.initContentPanelTrigger();
   App.initSupportService();
   App.initBlink();
+  App.initTooltip();
 });
 // When page is fully loaded
 window.addEventListener('load', function() {

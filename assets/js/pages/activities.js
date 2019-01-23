@@ -1,4 +1,4 @@
-var Project = function () {
+var Activities = function () {
 
     var _menuSelected = function(menu){
         menu.addClass("selected");
@@ -6,10 +6,10 @@ var Project = function () {
 
     return {
         init: function(){
-            _menuSelected($("#m_overview"));
+            _menuSelected($("#m_activity"));
         }
     }
 }();
 document.addEventListener('DOMContentLoaded', function() {
-    Project.init();
+    Activities.init();
   });

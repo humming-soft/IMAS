@@ -21140,8 +21140,8 @@ a.with-avatar span {
 
 .full-chat-w .full-chat-right {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 260px;
-    flex: 0 0 260px;
+    -ms-flex: 0 0 360px;
+    flex: 0 0 360px;
     background-color: #fff;
     border-left: 1px solid rgba(0,0,0,0.1);
     padding: 20px

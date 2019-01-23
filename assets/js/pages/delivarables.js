@@ -1,4 +1,4 @@
-var Project = function () {
+var Delivarables = function () {
 
     var _menuSelected = function(menu){
         menu.addClass("selected");
@@ -6,10 +6,10 @@ var Project = function () {
 
     return {
         init: function(){
-            _menuSelected($("#m_overview"));
+            _menuSelected($("#m_delivarables"));
         }
     }
 }();
 document.addEventListener('DOMContentLoaded', function() {
-    Project.init();
+    Delivarables.init();
   });

@@ -1,5 +1,5 @@
 var Benefits = function () {
-    var _addNew = function(Splash) {
+    var _addNew = function() {
         $( "#addrow5" ).click(function() {
             $("#tabBenefits5").each(function () {
                 var tds = '<tr>';
@@ -16,9 +16,14 @@ var Benefits = function () {
         });
     };
 
+    var _menuSelected = function(menu){
+        menu.addClass("selected");
+    }; 
+
     return {
-        init: function(Splash){
-            _addNew(Splash);
+        init: function(){
+            _addNew();
+            _menuSelected($("#m_benefits"));
         }
     }
 }();

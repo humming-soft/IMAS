@@ -217,9 +217,14 @@ var Milestone = function () {
     })
 };
 
+	var _menuSelected = function(menu){
+		menu.addClass("selected");
+	}; 
+
     return {
         init: function(){
-            ganttobj = _wbs(base_url);
+			ganttobj = _wbs(base_url);
+			_menuSelected($("#m_gc"));
         }
     }
 }();
