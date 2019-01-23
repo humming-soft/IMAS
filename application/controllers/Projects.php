@@ -69,7 +69,7 @@ class Projects extends HS_Controller {
     public function icv_calculation($p_ref='',$projectId=''){
         // tda-pod-mot-54-2015-802
         // cgmr-90-ip2
-        $_header['support'] = array("slick");
+        $_header['support'] = array("slick","scrollbar");
         $_footer["page_js"] = "icvcalc";
         $data['prog_ref'] = $p_ref;
         $data['proj_id'] = $projectId;

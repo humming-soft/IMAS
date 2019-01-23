@@ -29597,3 +29597,6 @@ font-size: 2.4rem;
         font-size:12px
     }
 }
+.tabIcv tbody tr td{
+    padding: 0 .56rem;
+}
