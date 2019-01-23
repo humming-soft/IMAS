@@ -57,6 +57,7 @@ var ICVCalc = function () {
              if(!isNaN($nonMLCM.val())){
                  if($nonNV.val() == "" || isNaN($nonNV.val())){
                      alert("Please Enter Nominal Value");
+                     $nonMLCM.val("");
                  }else{
                      if($MLCM.val()== "" || $MLCM.val()== "N/A"){
                          curruntMLCM = 0 ;
@@ -75,14 +76,15 @@ var ICVCalc = function () {
                          if(!isNaN(sumRow)){
                              $("#sumNonMLC").val(sumRow);
                          }
-N                    }
-                     var sum = 0;
-                     $(".TotalRow").each(function(){
-                         sum += +$(this).val();
-                     });
-                     if(!isNaN(sum)){
-                         $("#totalICV").val(sum);
-                     }
+                   }
+
+                 }
+                 var sum = 0;
+                 $(".TotalRow").each(function(){
+                     sum += +$(this).val();
+                 });
+                 if(!isNaN(sum)){
+                     $("#totalICV").val(sum);
                  }
              }
 
@@ -103,6 +105,7 @@ N                    }
             if(!isNaN($MLCM.val())){
                 if($NV.val() == "" || isNaN($NV.val())){
                     alert("Please Enter Nominal Value for MLC");
+                    $MLCM.val("");
                 }else{
                     if($nonMLCM.val()== "" || $nonMLCM.val()== "N/A"){
                         curruntnonMLCM = 0 ;
@@ -123,13 +126,14 @@ N                    }
                             $("#sumMLC").val(sumRowMLC);
                         }
                     }
-                    var sum = 0;
-                    $(".TotalRow").each(function(){
-                        sum += +$(this).val();
-                    });
-                    if(!isNaN(sum)){
-                        $("#totalICV").val(sum);
-                    }
+
+                }
+                var sum = 0;
+                $(".TotalRow").each(function(){
+                    sum += +$(this).val();
+                });
+                if(!isNaN(sum)){
+                    $("#totalICV").val(sum);
                 }
             }
         });
