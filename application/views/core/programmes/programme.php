@@ -11,14 +11,10 @@
 	<link href="favicon.png" rel="shortcut icon">
 	<link href="apple-touch-icon.png" rel="apple-touch-icon">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="<?=site_url('assets/js/vendors/select2/dist/css/select2.min.css')?>" rel="stylesheet">
-	<link href="<?=site_url('assets/js/vendors/bootstrap-daterangepicker/daterangepicker.css')?>" rel="stylesheet">
-	<link href="<?=site_url('assets/js/vendors/dropzone/dist/dropzone.css')?>" rel="stylesheet">
-	<link href="<?=site_url('assets/js/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
-	<link href="<?=site_url('assets/js/vendors/fullcalendar/dist/fullcalendar.min.css')?>" rel="stylesheet">
 	<link href="<?=site_url('assets/js/vendors/perfect-scrollbar/css/perfect-scrollbar.min.css')?>" rel="stylesheet">
 	<link href="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.css')?>" rel="stylesheet">
 	<link href="<?=site_url('assets/css/core.css')?>" rel="stylesheet">
+	<script type="text/javascript">var base_url = "<?=site_url()?>";</script>
 </head>
 
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
@@ -26,7 +22,157 @@
 		<div class="loader-pendulums"></div>
 	</div>
 	<div class="all-wrapper with-side-panel solid-bg-all content-panel-hidden">
-		<div aria-hidden="true" class="onboarding-modal modal fade animated" role="dialog" tabindex="-1">
+		<div aria-hidden="true" id="m-e-pg" class="onboarding-modal modal fade animated" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-centered" role="document">
+                <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
+                        type="button"><span class="close-label">Close</span><span
+                            class="os-icon os-icon-close"></span></button>
+                    <?=form_open('programmes/update','id="prog_c_f"')?>
+                    <div class="onboarding-slider-w">
+                        <div class="onboarding-slide">
+                            <div class="onboarding-content with-gradient text-center">
+                                <h4 class="onboarding-title">Edit Programme</h4>
+                                <div class="onboarding-text">Edit Selected ICP Programme.</div>
+
+                                <div class="row text-left">
+                                    <div class="col-sm-12 col-md-12">
+                                        <fieldset class="form-group mt-2">
+                                            <legend><span>Basic Information</span></legend>
+                                            <div class="row text-left">
+                                                <div class="col-sm-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="">Programme Name</label>
+                                                        <input class="form-control" name="prog_name"
+                                                            placeholder="Enter ICP Programme Title/Name.." value="<?=$programme[0]->prog_name?>" type="text">
+                                                        <div class="error-prog_name form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group"><label for=""> Programme Description</label>
+                                                        <textarea rows="5" name="prog_desc" class="form-control"
+                                                            placeholder="Enter Programme Description.."><?=$programme[0]->prog_desc?></textarea>
+                                                        <div class="error-prog_desc form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="onboarding-slide">
+                            <div class="onboarding-content with-gradient text-center">
+                                <h4 class="onboarding-title">Programme Information</h4>
+                                <div class="onboarding-text">Edit Selected ICP Programme.</div>
+
+                                <div class="row text-left">
+                                    <div class="col-sm-12 col-md-12">
+                                        <fieldset class="form-group mt-2">
+                                            <legend><span>Procurement Information</span></legend>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group"><label for=""> Procurement Value</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <?php foreach($currency as $c){ ?>
+																	<input type="hidden" name="currency_code" value="<?=$programme[0]->currency_code_id?>" />
+																	<input type="hidden" name="prog_id" value="<?=$programme[0]->prog_id?>" />
+																	<div class="input-group-text"> <?=$programme[0]->cur_code_name?></div>
+                                                                <?php } ?>
+                                                            </div>
+                                                            <input class="form-control" name="proc_value"
+                                                                placeholder="Enter Procurement Value.." type="text" value="<?=ltrim($programme[0]->proc_value, 'RM')?>">
+                                                            <div class="input-group-append">
+                                                                <select class="form-control" name="currency_scale">
+                                                                    <?php foreach($cscale as $scale){ ?>
+                                                                    <option value="<?=$scale->cur_scale_id?>" <?=($scale->cur_scale_id == $programme[0]->currency_scale_id) ? 'selected': '' ?>><?=$scale->cur_scale_name?></option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="error-proc_value form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row text-left">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="">Procuring Agency</label>
+                                                        <select class="form-control" id="s_agny" name="proc_agency">
+                                                            <?php foreach($agencies as $agency){ ?>
+                                                            <option value="<?=$agency->proc_agcy_id?>" <?=($agency->proc_agcy_id == $programme[0]->proc_agency_id) ? 'selected': '' ?>> <?=$agency->proc_agcy_name?> </option>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <div class="error-proc_agency form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="">Sector</label>
+                                                        <select class="form-control" id="s_sctr" name="proc_sector">
+                                                            <option value="">--Select--</option>
+															<?php foreach($sectors as $sector_id=>$sector_name){ ?>
+                                                            <option value="<?=$sector_id?>" <?=($sector_id == $programme[0]->proc_sector_id) ? 'selected': '' ?>> <?=$sector_name?> </option>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <div class="error-proc_sector form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="onboarding-slide">
+                            <div class="onboarding-content with-gradient text-center">
+                                <h4 class="onboarding-title">Programme Information</h4>
+                                <div class="onboarding-text">Edit Selected ICP Programme.</div>
+                                <div class="row text-left">
+                                    <div class="col-sm-12 col-md-12">
+                                        <fieldset class="form-group mt-2">
+                                            <legend><span>Schedule Information</span></legend>
+                                            <div class="row text-left">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="">Programme Start Date (Planned)</label>
+                                                        <input class="form-control start_date" name="prog_start_date" value="<?=date('d-M-Y', strtotime($programme[0]->prog_start_date))?>"
+                                                            readonly placeholder="Enter ICP Programme Title/Name.."
+                                                            type="text">
+                                                        <div class="error-prog_start_date form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="">Programme End Date (Planned)</label>
+                                                        <input class="form-control end_date" name="prog_end_date" value="<?=date('d-M-Y', strtotime($programme[0]->prog_end_date))?>"
+                                                            readonly placeholder="Enter ICP Programme Title/Name.."
+                                                            type="text">
+                                                        <div class="error-prog_end_date form-text with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <div class="col-sm-12 text-right">
+                                            <div class="form-buttons-w">
+                                                <button class="btn btn-grey" data-dismiss="modal" type="button"><i
+                                                        class="os-icon os-icon-x"></i> Cancel</button>
+                                                <button class="btn btn-primary" type="submit"><i
+                                                        class="os-icon os-icon-navigation"></i> Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?=form_close()?>
+                </div>
+            </div>
+        </div>
+		<div aria-hidden="true" id="m-c-pj" class="onboarding-modal modal fade animated" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1">
 			<div class="modal-dialog modal-lg modal-centered" role="document">
 				<div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
 						 class="close-label">Close</span><span class="os-icon os-icon-close"></span></button>
@@ -56,18 +202,10 @@
 												<div class="col-sm-12 col-md-6">
 													<div class="form-group">
 														<label for="">Reference Number</label>
-														<b class="font d-block">TDA/POD/PRO/01/FOR-01<span class="small"> (Generated)</span></b>
+														<input class="form-control" placeholder="Enter Reference No.." type="text">
 													</div>
 												</div>
 												<div class="col-sm-12 col-md-6">
-													<div class="form-group">
-														<label for="">Revison</label>
-														<b class="font d-block">REV-01<span class="small"> (Generated)</span></b>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-12 col-md-12">
 													<div class="form-group"><label for="">Project Type</label>
 														<select class="form-control">
 															<option>--Select--</option>
@@ -77,6 +215,17 @@
 													</div>
 												</div>
 											</div>
+											<!-- <div class="row">
+												<div class="col-sm-12 col-md-12">
+													<div class="form-group"><label for="">Project Type</label>
+														<select class="form-control">
+															<option>--Select--</option>
+															<option>Direct</option>
+															<option>Indirect</option>
+														</select>
+													</div>
+												</div>
+											</div> -->
 										</fieldset>
 									</div>
 								</div>
@@ -720,30 +869,26 @@
 					<div class="fancy-selector-w">
 						<div class="fancy-selector-current">
 							<div class="fs-main-info">
-								<div class="fs-name">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</div>
-								<div class="fs-sub"><span>PROJECTS :</span><strong>05</strong></div>
+								<div class="fs-name"><?=$programme[0]->prog_name?></div>
+								<div class="fs-sub"><span>PROJECTS :</span><strong>00</strong></div>
 							</div>
 							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
 						</div>
 						<div class="fancy-selector-options">
-							<div class="fancy-selector-option">
-								<div class="fs-main-info">
-									<div class="fs-name">10 X 6-CAR ELECTRIC TRAIN SETS (ETS)</div>
-									<div class="fs-sub"><span>PROJECTS :</span><strong>11</strong></div>
-								</div>
-							</div>
-							<div class="fancy-selector-option active">
-								<div class="fs-main-info">
-									<div class="fs-name">Server Product</div>
-									<div class="fs-sub"><span>PROJECTS :</span><strong>03</strong></div>
-								</div>
-							</div>
-							<div class="fancy-selector-option">
-								<div class="fs-main-info">
-									<div class="fs-name">Compute Engine</div>
-									<div class="fs-sub"><span>PROJECTS :</span><strong>06</strong></div>
-								</div>
-							</div>
+							<?php foreach ($programmes as $prog) { ?>
+								<?php $words = explode(" ", $prog->proc_agcy_name);
+									$acronym = "";
+
+									foreach ($words as $w) {
+									$acronym .= strtolower($w[0]);
+								} ?>
+								<a href="<?=site_url('programmes/tda-prog-'.$acronym.'-'.str_pad($prog->proc_sector_id, 2, "0", STR_PAD_LEFT).'-'.$prog->prog_id.'-'.date('Y', strtotime($prog->created_at)))?>" class="fancy-selector-option <?=($prog->prog_id == $programme[0]->prog_id) ? 'active': ''?>">
+									<div class="fs-main-info">
+										<div class="fs-name"><?=$prog->prog_name?></div>
+										<div class="fs-sub"><span>PROJECTS :</span><strong>00</strong></div>
+									</div>
+								</a>
+							<?php  } ?>
 						</div>
 					</div>
 					<div class="top-menu-controls">
@@ -848,6 +993,16 @@
 				<!--------------------
                 END - Top Bar
                 -------------------->
+				<!--------------------
+				START - Breadcrumbs
+				-------------------->
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
+					<li class="breadcrumb-item"><span><?=$programme[0]->prog_name?></span></li>
+				</ul>
+				<!--------------------
+				END - Breadcrumbs
+				-------------------->
 				<div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 				<div class="content-i">
 					<div class="content-box">
@@ -864,7 +1019,7 @@
 											</ul>
 											<ul class="nav nav-pills smaller d-none d-md-flex">
 												<li class="nav-item">
-													<a class="btn btn-primary btn-block" data-target=".onboarding-modal" data-toggle="modal" href="#"><i class="os-icon os-icon-plus-circle"></i><span>New
+													<a class="btn btn-primary btn-block" data-target="#m-e-pj" data-toggle="modal" href="#"><i class="os-icon os-icon-plus-circle"></i><span>New
 															Project</span></a>
 												</li>
 											</ul>
@@ -876,19 +1031,17 @@
 														<div class="support-ticket-content-w">
 															<div class="support-ticket-content">
 																<div class="support-ticket-content-header">
-																	<h4 class="ticket-header">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</h4>
+																	<h4 class="ticket-header"><?=$programme[0]->prog_name?></h4>
 																	<a class="back-to-index" href="#"><i class="os-icon os-icon-arrow-left5"></i><span>Back</span></a><a
 																	 class="show-ticket-info" href="#"><span>Show Details</span><i class="os-icon os-icon-documents-03"></i></a>
 																</div>
 																<hr>
-																<h6 class="d-block text-right">Ref.Code: <span class="text-primary">TDA/PRG/MPT/2011/23-45/GT/MY</span></h6>
+																<div class="d-block btn-group text-right"><a class="btn btn-primary" data-target="#m-e-pg" data-toggle="modal" href="#"><i class="os-icon os-icon-edit"></i></a><a class="btn btn-danger" href="#"><i class="os-icon os-icon-ui-15"></i></a></div>
 																<div class="ticket-thread">
 																	<div class="ticket-reply">
 																		<div class="ticket-reply-info"><div class="text-primary"><span>Programme Description : </span></div></div>
 																		<div class="ticket-reply-content">
-																			<p>Procurement of 9.5km underground tunnelling works involving the design and construction of seven
-																				underground stations and associated structures between Semantan north portal and Maluri south
-																				portal.</p>
+																			<p><?=$programme[0]->prog_desc?></p>
 																		</div>
 																		<div class="ticket-attachments">
 																			<a class="attachment" href="#">
@@ -897,10 +1050,10 @@
 																		</div>
 																		<div class="row">
 																			<div class="col-sm-12 col-md-6">
-																				<div class="ticket-reply-info"><div><span class="text-primary">Procuring Agency : </span><b>Ministry of Transport (MOT)</b></div></div>
+																				<div class="ticket-reply-info"><div><span class="text-primary">Procuring Agency : </span><b><?=$programme[0]->proc_agcy_name?></b></div></div>
 																			</div>
 																			<div class="col-sm-12 col-md-6">
-																				<div class="ticket-reply-info"><div><span class="text-primary">Sector : </span><b>Land Transport</b></div></div>
+																				<div class="ticket-reply-info"><div><span class="text-primary">Sector : </span><b><?=$programme[0]->proc_agcy_sec_name?></b></div></div>
 																			</div>
 																			<div class="col-sm-12 col-md-6">
 																				<div class="ticket-reply-info">
@@ -918,7 +1071,8 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-12 col-md-6">
-																				<div class="ticket-reply-info"><div><span class="text-primary">Programme Start Date : </span><b>Jan 24th, 2011</b></div></div>
+																				<div class="ticket-reply-info"><div><span class="text-primary">Programme Start Date (Planned) : </span><b><?=date('jS, F Y', strtotime($programme[0]->prog_start_date))?></b></div></div>
+																				<div class="ticket-reply-info"><div><span class="text-primary">Programme End Date (Planned) : </span><b><?=date('jS, F Y', strtotime($programme[0]->prog_end_date))?></b></div></div>
 																			</div>
 																		</div>
 																		
@@ -927,29 +1081,30 @@
 															</div>
 															<div class="support-ticket-info"><a class="close-ticket-info" href="#"><i class="os-icon os-icon-ui-23"></i></a>
 																<div class="customer">
-																	<h4 class="customer-name">RM 8.2 Billion</h4>
+																	<h4 class="customer-name"><?=$programme[0]->proc_value?> <?=$programme[0]->cur_scale_name?></h4>
 																	<div class="customer-tickets">Procurement Value</div>
 																</div>
 																<h5 class="info-header">Programme Details</h5>
 																<div class="info-section text-center">
-																	<div class="label">Created: <strong class="ml-1">Jan 24th, 2011</strong></div>
+																	<div class="label">Created On: <strong class="ml-1"><?=date('jS, F Y', strtotime($programme[0]->created_at))?></strong></div>
+																	<div class="label">Created By: <strong class="ml-1">-</strong></div>
 																	<div class="label">Type: <div class="badge badge-success ml-1">ICP Programme</div></div>
 																</div>
-																<h5 class="info-header">Projects Details (05)</h5>
+																<h5 class="info-header">Projects Details (00)</h5>
 																<div class="info-section">
 																	<ul class="users-list as-tiles">
                                                                         <li><a class="author with-avatar" href="#">
-                                                                            <div class="avatar font-2p4">01</div><span>New</span>
+                                                                            <div class="avatar font-2p4">00</div><span>New</span>
                                                                                 </a>
                                                                         </li>
 																		<li><a class="author with-avatar" href="#">
-																				<div class="avatar font-2p4">02</div><span>Approved</span>
+																				<div class="avatar font-2p4">00</div><span>Approved</span>
 																			</a></li>
 																		<li><a class="author with-avatar" href="#">
-                                                                        <div class="avatar font-2p4">01</div><span>In Progress</span>
+                                                                        <div class="avatar font-2p4">00</div><span>In Progress</span>
 																			</a></li>
 																		<li><a class="author with-avatar" href="#">
-																				<div class="avatar font-2p4">01</div><span>Completed</span>
+																				<div class="avatar font-2p4">00</div><span>Completed</span>
 																			</a></li>
 																		
 																	</ul>
@@ -1309,18 +1464,8 @@
 	<script src="<?=site_url('assets/js/vendors/jquery/dist/jquery.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/popper.js/dist/umd/popper.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/moment/moment.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/chart.js/dist/Chart.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/select2/dist/js/select2.full.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/jquery-bar-rating/dist/jquery.barrating.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/ckeditor/ckeditor.js')?>"></script>
+    <script src="<?=site_url('assets/js/vendors/pikaday/pikaday.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap-validator/dist/validator.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/bootstrap-daterangepicker/daterangepicker.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/dropzone/dist/dropzone.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/editable-table/mindmup-editabletable.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/datatables.net/js/jquery.dataTables.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')?>"></script>
-	<script src="<?=site_url('assets/js/vendors/fullcalendar/dist/fullcalendar.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/tether/dist/js/tether.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.min.js')?>"></script>
@@ -1334,8 +1479,11 @@
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/tab')?>.js"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/tooltip.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
-	<script src="<?=site_url('assets/js/demo_customizerce5a.js?version=4.4.1')?>"></script>
+	<script src="<?=site_url('assets/js/customizer.js')?>"></script>
 	<script src="<?=site_url('assets/js/app.js')?>"></script>
+	<?php if(isset($page_js)){ ?>
+    	<script src="<?=site_url('assets/js/pages/').$page_js.'.js'?>"></script>
+    <?php } ?>
 	<script type ="text/javascript">
 		$(document).on("change","#checkSix",function(){
 			if(this.checked) {

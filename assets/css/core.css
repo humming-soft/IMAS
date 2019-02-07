@@ -2857,10 +2857,16 @@ pre code {
     opacity: 1
 }
 
-.form-control:disabled,.form-control[readonly] {
+/* .form-control:disabled,.form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1
+} */
+
+.form-control:disabled{
     background-color: #e9ecef;
     opacity: 1
 }
+
 
 select.form-control:not([size]):not([multiple]) {
     height: calc(2.1rem + 4px)
@@ -4313,6 +4319,11 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
     border-bottom-left-radius: 0
 }
 
+.input-group>.input-group-append>select{
+    background-color: #e9ecef;
+    border: 2px solid #dde2ec;
+}
+
 .custom-control {
     position: relative;
     display: block;
@@ -4980,7 +4991,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 
 .alert-success {
     color: #104f09;
-    background-color: #6acb5f;
+    background-color: #33d30b69;
     border-color: #36b927
 }
 
@@ -12691,10 +12702,11 @@ body {
     min-height: 100%;
     position: relative;
     padding: 50px;
+    background-color: #f2f4f8;
     overflow-x: hidden
 }
 
-body:before {
+/* body:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -12704,7 +12716,7 @@ body:before {
     left: 0px;
     bottom: 0px;
     right: 0px
-}
+} */
 
 body.full-screen {
     padding: 0px
@@ -12734,8 +12746,8 @@ b,strong {
 }
 
 .all-wrapper {
-    -webkit-box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-    box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
+    /* -webkit-box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.1); */
     border-radius: 6px;
     max-width: 1600px;
     margin: 0px auto;
@@ -22813,7 +22825,7 @@ a.with-avatar span {
 }
 
 .fancy-selector-w .fancy-selector-current .fs-main-info .fs-name,.fancy-selector-w .fancy-selector-option .fs-main-info .fs-name {
-    font-size: .99rem;
+    font-size: .79rem;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 1px;
@@ -25472,7 +25484,7 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 }
 
 .onboarding-modal .onboarding-content .onboarding-text {
-    color: rgba(69,76,96,0.49);
+    color: rgb(66, 66, 66);
     font-weight: 300;
     font-size: .99rem;
     margin-bottom: 30px;
@@ -29602,4 +29614,192 @@ font-size: 2.4rem;
 }
 .tabIcv tbody tr td{
     padding: 0 .56rem;
+}
+.pika-single {
+    z-index: 1060;
+    display: block;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    margin-top: -1px;
+    margin-left: -1px;
+    background-clip: padding-box;
+    border-radius: .1875rem;
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .1);
+}
+.pika-single::after {
+    display: block;
+    clear: both;
+    content: ""}
+.pika-single.is-hidden {
+    display: none;
+}
+.pika-single.is-bound {
+    position: absolute;
+}
+.pika-lendar {
+    float: left;
+    max-width: 15.63rem;
+    margin: .9375rem;
+}
+.pika-title {
+    position: relative;
+    text-align: center;
+}
+.pika-title select {
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+    margin: 0;
+    left: 0;
+    height: 2.25003rem;
+    padding: .4375rem .875rem;
+    border: 1px solid #ddd;
+    opacity: 0;
+}
+.pika-label {
+    display: inline-block;
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+    margin: 0;
+    padding-top: .46875rem;
+    padding-bottom: .46875rem;
+    font-size: .9375rem;
+    line-height: 1;
+}
+.pika-label+.pika-label {
+    margin-left: .46875rem;
+    top: -.0625rem;
+    font-size: .8125rem;
+    color: #999;
+}
+.pika-next, .pika-prev {
+    display: block;
+    position: relative;
+    border: 0;
+    padding: .4375rem;
+    font-size: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: .1875rem;
+    transition: all ease-in-out .15s;
+}
+@media screen and (prefers-reduced-motion:reduce) {
+    .pika-next, .pika-prev {
+        transition: none;
+    }
+}.pika-next:after, .pika-prev:after {
+     font-family: 'osfont' !important;
+     display: block;
+     font-size: 1rem;
+     width: 1rem;
+     text-align: center;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+.pika-next:hover, .pika-prev:hover {
+    color: #333;
+    background-color: #f5f5f5;
+}
+.pika-next.is-disabled, .pika-prev.is-disabled {
+    cursor: default;
+    opacity: .2;
+}
+.pika-prev {
+    float: left;
+}
+.pika-prev:after {
+    content: '\e9b5'}
+.pika-next {
+    float: right;
+}
+.pika-next:after {
+    content: '\e9b6'}
+.pika-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+    table-layout: fixed;
+}
+.pika-table td, .pika-table th {
+    position: relative;
+}
+.pika-table th {
+    text-align: center;
+    font-weight: 400;
+    padding-top: .9375rem;
+    padding-bottom: .4375rem;
+    font-size: .75rem;
+    color: #999;
+}
+.pika-table abbr {
+    border-bottom: 0;
+    cursor: default;
+    text-decoration: none;
+}
+.pika-button {
+    display: block;
+    border: 0;
+    margin: 0;
+    width: 100%;
+    padding: .4375rem;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: .1875rem;
+    transition: all ease-in-out .15s;
+}
+@media screen and (prefers-reduced-motion:reduce) {
+    .pika-button {
+        transition: none;
+    }
+}.pika-button:hover {
+     color: #333;
+     background-color: #f5f5f5;
+ }
+.is-today .pika-button {
+    color: #333;
+    background-color: #f5f5f5;
+}
+.is-selected .pika-button {
+    color: #fff;
+    background-color: #26a69a;
+}
+.is-selected .pika-button:before, .is-today .pika-button:before, .is-today.is-selected .pika-button:before {
+    content: "";
+    position: absolute;
+    top: .14583rem;
+    right: .14583rem;
+    border-top: .4375rem solid #fff;
+    border-left: .4375rem solid transparent;
+    width: 0;
+    height: 0;
+}
+.is-endrange .pika-button, .is-startrange .pika-button {
+    color: #fff;
+    background-color: #26a69a;
+}
+.is-inrange .pika-button {
+    color: #333;
+    background-color: #f5f5f5;
+}
+.is-disabled .pika-button {
+    pointer-events: none;
+    cursor: default;
+    opacity: .5;
+}
+.pika-select {
+    display: inline-block;
+}
+.pika-week {
+    font-size: .75rem;
+    color: #999;
+}
+.no-data{
+    font-weight: 600;
+    font-size: 2rem;
+    opacity: .3;
 }

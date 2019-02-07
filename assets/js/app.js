@@ -900,7 +900,8 @@ var App = function () {
             infinite: false,
             adaptiveHeight: true,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            draggable: false
           });
           $('.onboarding-modal').on('shown.bs.modal', function (e) {
             $('.onboarding-modal .onboarding-slider-w').slick('setPosition');
@@ -1348,3 +1349,9 @@ window.addEventListener('load', function() {
   $('.preloader-it').fadeOut('slow');
   App.initLoader($('.preloader-it'));
 });
+
+var _showLoader = function(){$('.preloader-it').fadeIn('slow');};
+var _hideLoader = function(){$('.preloader-it').fadeOut('slow');};
+var _updatecsrf = function(f,n,v){f.find("input[name='"+n+"']").val(v)};
+var csrf_tn = $('meta[id="csrf_token"]').attr('name');
+var csrf_tc = $('meta[id="csrf_token"]').attr('content');
