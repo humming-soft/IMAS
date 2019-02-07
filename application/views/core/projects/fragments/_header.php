@@ -7,6 +7,7 @@
     <meta content="Hummingsoft Sdn. Bhd." name="author">
     <meta content="Admin dashboard html template" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta id="csrf_token" name="<?=$this->security->get_csrf_token_name()?>" content="<?=$this->security->get_csrf_hash()?>">
     <link href="favicon.png" rel="shortcut icon">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
