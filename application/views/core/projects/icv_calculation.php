@@ -40,7 +40,7 @@ START - Email Messages List
                         <div class="ae-item ">
                             <div class="aei-content ">
                                 <h6 class="aei-title">Milestone 2</h6>
-                                <div class="aei-sub-title">10-Nov-2018 - 11-Nov-2019</div>
+                                <div class="aei-sub-title">10-11-2018 To 11-11-2019</div>
                                 <div class="aei-text">Tunnel Drive From Titiwangsa To Crossover
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ START - Email Messages List
                         <div class="ae-item ">
                             <div class="aei-content ">
                                 <h6 class="aei-title">Milestone 3</h6>
-                                <div class="aei-sub-title">01-Dec-19 -  14-Nov-19</div>
+                                <div class="aei-sub-title">10-11-2018 To 11-11-2019</div>
                                 <div class="aei-text">Chan Sow Lin Station Launching Facilities
                                 </div>
                             </div>
