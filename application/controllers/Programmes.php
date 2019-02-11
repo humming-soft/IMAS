@@ -6,6 +6,7 @@ class Programmes extends HS_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('form');
         $this->load->model('programmemodel','',TRUE);
         $this->load->model('agencymodel','',TRUE);
         $this->load->model('sectormodel','',TRUE);
@@ -14,7 +15,6 @@ class Programmes extends HS_Controller {
     }
 	public function index()
 	{
-        $this->load->helper('form');
         if ($this->session->userdata('message')) {
             $messagehrecord = $this->session->userdata('message');
             $data['message'] = $messagehrecord['message'];
@@ -144,11 +144,11 @@ class Programmes extends HS_Controller {
         if($this->programmemodel->updateProgramme($id, $data)>0){
             $sess_array = array('message' =>  "Programme <strong>".$this->input->post('prog_name')."</strong> deleted successfully.","type" => 1);
             $this->session->set_userdata('message', $sess_array);
-            echo json_encode( array('status'=>1));
+            redirect("/programmes");
         }else{
             $sess_array = array('message' =>  "Operation failed. Please try again later or contact administrator.","type" => 0);
             $this->session->set_userdata('message', $sess_array);
-            echo json_encode( array('status'=>1));
+            redirect("/programmes");
         }
     }
 
@@ -179,13 +179,20 @@ class Programmes extends HS_Controller {
             if($prog_id != null){
                 $data['programme'] = $this->programmemodel->getProgrammeById($prog_id,1,1);
                 if (count($data['programme']) > 0) {
-                    $this->load->helper('form');
+                    $this->load->model('projecttypemodel','',TRUE);
+                    $this->load->model('objectivemodel','',TRUE);
+                    $this->load->model('projectmodel','',TRUE);
                     if ($this->session->userdata('message')) {
                         $messagehrecord = $this->session->userdata('message');
                         $data['message'] = $messagehrecord['message'];
                         $data['type'] = $messagehrecord['type'];
                         $this->session->unset_userdata('message');
-                    }
+                    }                
+                    $data['p_ref'] = $p_ref;
+                    
+                    $data['projects'] = $this->projectmodel->getProjectsByProgramme($prog_id,1);
+                    $data['proj_types'] = $this->projecttypemodel->getAllProjectTypes();
+                    $data['proj_objetives'] = $this->objectivemodel->getAllObjectives(1);
                     $data['programmes'] = $this->programmemodel->getAllProgrammes(1,1);
                     $data['currency'] = $this->currencymodel->getCurrencyById(1);
                     $data['sectors'] = $this->sectormodel->getSectorByAgency($data['programme'][0]->proc_agency_id);

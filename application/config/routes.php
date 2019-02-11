@@ -57,13 +57,17 @@ $route['forgot-password'] = 'forgotpassword';
 $route['reset-password'] = 'resetpassword';
 $route['programmes/create'] = 'programmes/create';
 $route['programmes/update'] = 'programmes/update';
+$route['programmes/delete'] = 'programmes/delete';
 $route['programmes/get_sector/(:num)'] = 'programmes/get_sector/$1';
-$route['programmes/(:any)'] = 'programmes/find_programme/$1';
-$route['programmes/(:any)/(:any)'] = 'projects/find_project/$1/$2';
-$route['programmes/(:any)/(:any)/icv_calculation'] = 'projects/icv_calculation/$1/$2';
-$route['programmes/(:any)/(:any)/benefits'] = 'projects/project_benefits/$1/$2';
-$route['programmes/(:any)/(:any)/milestones'] = 'projects/milestones/$1/$2';
-$route['programmes/(:any)/(:any)/delivarables'] = 'projects/delivarables/$1/$2';
-$route['programmes/(:any)/(:any)/activities'] = 'projects/activities/$1/$2';
-$route['programmes/(:any)/(:any)/collaboration'] = 'projects/collaboration/$1/$2';
+//Projects CRUD
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)'] = 'programmes/find_programme/$1';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/([a-z]{6})'] = 'projects/$2/$1';
+//
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)'] = 'projects/find_project/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/icv_calculation'] = 'projects/icv_calculation/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/benefits'] = 'projects/project_benefits/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/milestones'] = 'projects/milestones/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/delivarables'] = 'projects/delivarables/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/activities'] = 'projects/activities/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/collaboration'] = 'projects/collaboration/$1/$2';
 

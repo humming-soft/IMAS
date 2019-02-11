@@ -1,9 +1,8 @@
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
-    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING
-            AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/'.$this->uri->segment(0))?>"><?=$programme[0]->prog_name?></a></li>
+    <li class="breadcrumb-item"><span><?=$project[0]->proj_name?></span></li>
 </ul>
 <!--------------------
 END - Breadcrumbs
@@ -21,8 +20,7 @@ END - Breadcrumbs
                                 <div class="support-ticket-content-w">
                                     <div class="support-ticket-content">
                                         <div class="support-ticket-content-header">
-                                            <h4 class="ticket-header">Development of Variable Density
-                                                (VD) Tunnel Boring Machine (TBM)</h4>
+                                            <h4 class="ticket-header"><?=$project[0]->proj_name?></h4>
                                             <a class="back-to-index" href="#"><i class="os-icon os-icon-arrow-left5"></i><span>Back</span></a><a
                                                 class="show-ticket-info" href="#"><span>Show more
                                                     Details</span><i class="os-icon os-icon-documents-03"></i></a>
@@ -34,18 +32,16 @@ END - Breadcrumbs
                                                     <div class="col-sm-12 col-md-12">
                                                         <div class="ticket-reply-info">
                                                             <div><span class="text-primary">Programme
-                                                                    Name : </span><b>TUNNELING AND
-                                                                    UNDERGROUND WORKS (MMC GAMUDA)</b></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-12 col-md-12">
-                                                        <div class="ticket-reply-info">
-                                                            <div><span class="text-primary">Programme
-                                                                    Ref.Code : </span><b>TDA/PRG/MPT/2011/23-45/GT/MY</b></div>
+                                                                    Name : </span><b><?=$programme[0]->prog_name?></b></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <legend class="text-bright"><span>Project Info</span></legend>
+                                                <div class="col-sm-12 col-md-12">
+                                                    <div class="ticket-reply-info">
+                                                        <div><span class="text-primary">Project Ref.Number : </span><b><?=$project[0]->proj_ref_no?></b></div>
+                                                    </div>
+                                                </div>
                                                 <div class="ticket-reply-info">
                                                     <div class="text-primary"><span>Project Description
                                                             : </span></div>

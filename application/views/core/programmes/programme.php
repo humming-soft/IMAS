@@ -176,16 +176,17 @@
 			<div class="modal-dialog modal-lg modal-centered" role="document">
 				<div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
 						 class="close-label">Close</span><span class="os-icon os-icon-close"></span></button>
+					<?=form_open('programmes/'.$p_ref.'/create','id="proj_cu_f"')?>
 					<div class="onboarding-slider-w">
 						<div class="onboarding-slide">
-							<div class="onboarding-content with-gradient">
+							<div class="onboarding-content with-gradient text-center">
 								<h4 class="onboarding-title">Propose New Project</h4>
 								<div class="onboarding-text">Propose new project to claim your ICV. Please complete the basic information about the project.</div>
 								<div class="row text-left">
 									<div class="col-sm-12 col-md-12">
 										<div class="form-group">
 											<label for="">Programme Name</label>
-											<b class="font d-block">TUNNELING AND UNDERGROUND WORKS (MMC GAMUDA)</b>
+											<b class="font d-block"><?=$programme[0]->prog_name?></b>
 										</div>
 									</div>
 								</div>
@@ -196,68 +197,60 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="form-group"><label for=""> Project Title/Name</label>
-														<input class="form-control" placeholder="Enter Project Title/Name.." type="text">
+														<input class="form-control" placeholder="Enter Project Title/Name.." name="proj_name" type="text">
+														<div class="error-proj_name form-text with-errors"></div>
 													</div>
 												</div>
 												<div class="col-sm-12 col-md-6">
 													<div class="form-group">
 														<label for="">Reference Number</label>
-														<input class="form-control" placeholder="Enter Reference No.." type="text">
+														<input class="form-control" name="proj_ref_no" placeholder="Enter Reference No.." type="text">
+														<div class="error-proj_ref_no form-text with-errors"></div>
 													</div>
 												</div>
 												<div class="col-sm-12 col-md-6">
 													<div class="form-group"><label for="">Project Type</label>
-														<select class="form-control">
-															<option>--Select--</option>
-															<option>Direct</option>
-															<option>Indirect</option>
+														<select class="form-control" name="proj_type">
+															<option value="">--Select--</option>
+															<?php foreach($proj_types as $proj_type){ ?>
+                                                            <option value="<?=$proj_type->proj_type_id?>"><?=$proj_type->proj_type?></option>
+                                                            <?php } ?>
 														</select>
+														<div class="error-proj_type form-text with-errors"></div>
 													</div>
 												</div>
-											</div>
-											<!-- <div class="row">
-												<div class="col-sm-12 col-md-12">
-													<div class="form-group"><label for="">Project Type</label>
-														<select class="form-control">
-															<option>--Select--</option>
-															<option>Direct</option>
-															<option>Indirect</option>
-														</select>
-													</div>
-												</div>
-											</div> -->
+											</div>										
 										</fieldset>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="onboarding-slide">
-							<div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-							<div class="onboarding-content with-gradient">
+							<div class="onboarding-content with-gradient text-center">
 								<h4 class="onboarding-title">Project Information</h4>
 								<div class="onboarding-text">Please add the Project Objective(s) and Project Description below.</div>
 								<div class="row text-left">
 									<div class="col-sm-12">
 										<div class="form-group"><label for="">Project Objective (s)</label></div>
 									</div>
-									<div class="col-sm-4 text-left">
-										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkOne">Localization/Subcontracting</label></div>
-										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkTwo">Technology Transfer(s)</label></div>
-									</div>
-									<div class="col-sm-3 text-left">
-										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkThree">Market Access</label></div>
-										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkFour">Investments</label></div>
-									</div>
-									<div class="col-sm-5 text-left">
-										<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkFive">Training/Human Capital Development</label></div>
-										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" type="checkbox" id="checkSix">Others</label></div>
-										<input class="form-control" id="objectiveDes" hidden placeholder="Please describe below.." type="text">
+									<?php foreach($proj_objetives as $proj_objetive){ ?>
+										<div class="col-sm-6 text-left">
+											<div class="form-check pb-2"><label class="form-check-label"><input class="form-control form-check-input" name="proj_obj[]" value="<?=$proj_objetive->obj_id?>" type="checkbox" id="checkOne"><?=$proj_objetive->obj_name?></label></div>									
+										</div>
+									<?php } ?>
+									<div class="col-sm-12 text-left">
+										<div class="form-check"><label class="form-check-label"><input class="form-control form-check-input" name="proj_obj[]" value="0" type="checkbox" id="checkSix">Others</label></div>
+										<input class="form-control" id="objectiveDes" name="proj_obj_other" hidden placeholder="Please describe here.." type="text">
+										<div class="error-proj_obj_other form-text with-errors"></div>
+										<div class="error-proj_obj form-text with-errors"></div>
 									</div>
 								</div>
 								<div class="row text-left mt-3">
+									<input type="hidden" name="prog_id" value="<?=$programme[0]->prog_id?>"/>
 									<div class="col-sm-12">
 										<div class="form-group"><label for="">Project Description</label>
-											<textarea rows="5" class="form-control" placeholder="Enter Project Description.."></textarea>
+											<textarea rows="5" class="form-control" name="proj_desc" placeholder="Enter Project Description.."></textarea>
+											<div class="error-proj_desc form-text with-errors"></div>
 										</div>
 									</div>
 
@@ -265,29 +258,50 @@
 							</div>
 						</div>
 						<div class="onboarding-slide">
-							<div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
-							<div class="onboarding-content with-gradient">
+							<div class="onboarding-content with-gradient text-center">
 								<h4 class="onboarding-title">Project Information</h4>
 								<div class="onboarding-text">Please add the ICP Recipient Information below.</div>
 								<div class="row">
-									<div class="col-sm-6 text-left">
+									<div class="col-sm-12 text-left">
 										<div class="pb-2 b-b"><span class="text-primary"><b>ICP RECIPIENT</b></div>
-										<div class="form-group"><label for="">Name</label>
-											<input class="form-control" placeholder="Enter Recipient Name.." type="text">
-										</div>
-										<div class="form-group">
-											<label for="">Address</label>
-											<textarea rows="3" class="form-control" placeholder="Enter Recipient Address.."></textarea>
-										</div>
-										<div class="form-group">
-											<label for="">Contact Details</label>
-											<input class="form-control mt-1" placeholder="Enter Contact Name.." type="text">
-											<input class="form-control mt-1" placeholder="Enter Contact Number.." type="text">
-											<input class="form-control mt-1" placeholder="Enter Contact E-mail.." type="text">
+										<div class="form-group pt-2"><label for="">Name</label>
+											<input class="form-control" name="proj_rec_name" placeholder="Enter Recipient Name.." type="text">
+											<div class="error-proj_rec_name form-text with-errors"></div>
 										</div>
 									</div>
 									<div class="col-sm-6 text-left">
+										<div class="form-group">
+											<label for="">Address</label>
+											<input class="form-control mt-1" name="proj_rec_addr_line1" placeholder="Address line 1" type="text">
+											<div class="error-proj_rec_addr_line1 form-text with-errors"></div>
+											<input class="form-control mt-1" name="proj_rec_addr_line2" placeholder="Address line 2" type="text">
+											<div class="error-proj_rec_addr_line2 form-text with-errors"></div>
+											<input class="form-control mt-1" name="proj_rec_addr_line3" placeholder="Address line 3" type="text">
+										</div>
+									</div>
+									<div class="col-sm-6 text-left">
+										<div class="form-group">
+											<label for="">Contact Details</label>
+											<input class="form-control mt-1" name="proj_rec_cont_name" placeholder="Enter Contact Name.." type="text">
+											<div class="error-proj_rec_cont_name form-text with-errors"></div>
+											<input class="form-control mt-1" name="proj_rec_cont_no" placeholder="Enter Contact Number.." type="text">
+											<div class="error-proj_rec_cont_no form-text with-errors"></div>
+											<input class="form-control mt-1" name="proj_rec_cont_email" placeholder="Enter Contact E-mail.." type="text">
+											<div class="error-proj_rec_cont_email form-text with-errors"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="onboarding-slide">
+							<div class="onboarding-content with-gradient text-center">
+								<h4 class="onboarding-title">Project Information</h4>
+								<div class="onboarding-text">Please add the ICP Recipient Information below.</div>
+								<div class="row">
+									<div class="col-sm-12 text-left pb-2">
 										<div class="pb-2 b-b"><span class="text-primary"><b>ICP PROVIDER</b></div>
+									</div>
+									<div class="col-sm-8 text-left">
 										<div class="form-group">
 											<label for="">Name</label>
 											<b class="font d-block">MMC GAMUDA KVMRT (T) SDN BHD<span class="small"> (Generated)</span></b>
@@ -304,13 +318,35 @@
 									<div class="col-sm-12 text-right">
 										<div class="form-buttons-w">
 											<button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
-											<button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+											<button class="btn btn-primary" type="submit"><i class="os-icon os-icon-navigation"></i> Save</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<?=form_close()?>
+				</div>
+			</div>
+		</div>
+		<div aria-hidden="true" class="onboarding-modal modal fade animated" id="m-d-pg" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1">
+			<div class="modal-dialog modal-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header faded smaller">
+						<div class="modal-title"><strong>Confirmation</strong></div><button aria-label="Close" class="close"
+							data-dismiss="modal" type="button"><span aria-hidden="true">
+								&times;</span></button>
+					</div>
+					<?=form_open('programmes/delete','id="prog_d_f"')?>	
+					<div class="modal-body">						
+						<div>Deleting Programme (<?=$programme[0]->prog_name?>) will remove all the associated projects. Continue?</div>								
+					</div>
+					<div class="modal-footer buttons-on-right">
+						<button class="btn btn-danger" type="submit">Delete</button>
+						<input type="hidden" name="prog_id" value="<?=$programme[0]->prog_id?>" />
+						<button class="btn btn-link" data-dismiss="modal" type="button"> Cancel</button>
+					</div>
+					<?=form_close()?>		
 				</div>
 			</div>
 		</div>
@@ -390,9 +426,6 @@
 			</div>
 		</div>
 		<div class="layout-w">
-			<!--------------------
-            START - Mobile Menu
-            -------------------->
 			<div class="menu-mobile menu-activated-on-click color-scheme-dark">
 				<div class="mm-logo-buttons-w"><a class="mm-logo" href="index.html"><img src="<?=site_url('assets/img/logo.png')?>">
 						<span>IMAS</span></a>
@@ -405,460 +438,8 @@
                         </div> -->
 					</div>
 				</div>
-				<!-- <div class="menu-and-user">
-                    <div class="logged-user-w">
-                        <div class="avatar-w"><img alt="" src="<?=site_url('assetsimg/avatar1.png')?>"></div>
-                        <div class="logged-user-info-w">
-                            <div class="logged-user-name">Maria Gomez</div>
-                            <div class="logged-user-role">Administrator</div>
-                        </div>
-                    </div>
-                    <ul class="main-menu">
-                        <li class="has-sub-menu"><a href="index.html">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-layout"></div>
-                                </div><span>Dashboard</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">Dashboard 1</a></li>
-                                <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a></li>
-                                <li><a href="apps_support_dashboard.html">Dashboard 3</a></li>
-                                <li><a href="apps_projects.html">Dashboard 4</a></li>
-                                <li><a href="apps_bank.html">Dashboard 5</a></li>
-                                <li><a href="layouts_menu_top_image.html">Dashboard 6</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="layouts_menu_top_image.html">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-layers"></div>
-                                </div><span>Menu Styles</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="layouts_menu_side_full.html">Side Menu Light</a></li>
-                                <li><a href="layouts_menu_side_full_dark.html">Side Menu Dark</a></li>
-                                <li><a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="apps_pipeline.html">Side &amp; Top Dark</a></li>
-                                <li><a href="apps_projects.html">Side &amp; Top</a></li>
-                                <li><a href="layouts_menu_side_mini.html">Mini Side Menu</a></li>
-                                <li><a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a></li>
-                                <li><a href="layouts_menu_side_compact.html">Compact Side Menu</a></li>
-                                <li><a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a></li>
-                                <li><a href="layouts_menu_right.html">Right Menu</a></li>
-                                <li><a href="layouts_menu_top.html">Top Menu Light</a></li>
-                                <li><a href="layouts_menu_top_dark.html">Top Menu Dark</a></li>
-                                <li><a href="layouts_menu_top_image.html">Top Menu Image <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a></li>
-                                <li><a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a></li>
-                                <li><a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a></li>
-                                <li><a href="layouts_menu_side_compact_click.html">Menu Inside Click</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="apps_bank.html">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-package"></div>
-                                </div><span>Applications</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="apps_email.html">Email Application</a></li>
-                                <li><a href="apps_support_dashboard.html">Support Dashboard</a></li>
-                                <li><a href="apps_support_index.html">Tickets Index</a></li>
-                                <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="apps_projects.html">Projects List</a></li>
-                                <li><a href="apps_bank.html">Banking <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="apps_full_chat.html">Chat Application</a></li>
-                                <li><a href="apps_todo.html">To Do Application <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="misc_chat.html">Popup Chat</a></li>
-                                <li><a href="apps_pipeline.html">CRM Pipeline</a></li>
-                                <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="misc_calendar.html">Calendar</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-file-text"></div>
-                                </div><span>Pages</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="misc_invoice.html">Invoice</a></li>
-                                <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="misc_charts.html">Charts</a></li>
-                                <li><a href="auth_login.html">Login</a></li>
-                                <li><a href="auth_register.html">Register</a></li>
-                                <li><a href="auth_lock.html">Lock Screen</a></li>
-                                <li><a href="misc_pricing_plans.html">Pricing Plans</a></li>
-                                <li><a href="misc_error_404.html">Error 404</a></li>
-                                <li><a href="misc_error_500.html">Error 500</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-life-buoy"></div>
-                                </div><span>UI Kit</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="uikit_modals.html">Modals <strong class="badge badge-danger">New</strong></a></li>
-                                <li><a href="uikit_alerts.html">Alerts</a></li>
-                                <li><a href="uikit_grid.html">Grid</a></li>
-                                <li><a href="uikit_progress.html">Progress</a></li>
-                                <li><a href="uikit_popovers.html">Popover</a></li>
-                                <li><a href="uikit_tooltips.html">Tooltips</a></li>
-                                <li><a href="uikit_buttons.html">Buttons</a></li>
-                                <li><a href="uikit_dropdowns.html">Dropdowns</a></li>
-                                <li><a href="uikit_typography.html">Typography</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-mail"></div>
-                                </div><span>Emails</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="emails_welcome.html">Welcome Email</a></li>
-                                <li><a href="emails_order.html">Order Confirmation</a></li>
-                                <li><a href="emails_payment_due.html">Payment Due</a></li>
-                                <li><a href="emails_forgot.html">Forgot Password</a></li>
-                                <li><a href="emails_activate.html">Activate Account</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-users"></div>
-                                </div><span>Users</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="users_profile_big.html">Big Profile</a></li>
-                                <li><a href="users_profile_small.html">Compact Profile</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-edit-32"></div>
-                                </div><span>Forms</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="forms_regular.html">Regular Forms</a></li>
-                                <li><a href="forms_validation.html">Form Validation</a></li>
-                                <li><a href="forms_wizard.html">Form Wizard</a></li>
-                                <li><a href="forms_uploads.html">File Uploads</a></li>
-                                <li><a href="forms_wisiwig.html">Wisiwig Editor</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-grid"></div>
-                                </div><span>Tables</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="tables_regular.html">Regular Tables</a></li>
-                                <li><a href="tables_datatables.html">Data Tables</a></li>
-                                <li><a href="tables_editable.html">Editable Tables</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub-menu"><a href="#">
-                                <div class="icon-w">
-                                    <div class="os-icon os-icon-zap"></div>
-                                </div><span>Icons</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a></li>
-                                <li><a href="icon_fonts_feather.html">Feather Icons</a></li>
-                                <li><a href="icon_fonts_themefy.html">Themefy Icons</a></li>
-                                <li><a href="icon_fonts_picons_thin.html">Picons Thin</a></li>
-                                <li><a href="icon_fonts_dripicons.html">Dripicons</a></li>
-                                <li><a href="icon_fonts_eightyshades.html">Eightyshades</a></li>
-                                <li><a href="icon_fonts_entypo.html">Entypo</a></li>
-                                <li><a href="icon_fonts_font_awesome.html">Font Awesome</a></li>
-                                <li><a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a></li>
-                                <li><a href="icon_fonts_metrize_icons.html">Metrize Icons</a></li>
-                                <li><a href="icon_fonts_picons_social.html">Picons Social</a></li>
-                                <li><a href="icon_fonts_batch_icons.html">Batch Icons</a></li>
-                                <li><a href="icon_fonts_dashicons.html">Dashicons</a></li>
-                                <li><a href="icon_fonts_typicons.html">Typicons</a></li>
-                                <li><a href="icon_fonts_weather_icons.html">Weather Icons</a></li>
-                                <li><a href="icon_fonts_light_admin.html">Light Admin</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="mobile-menu-magic">
-                        <h4>Light Admin</h4>
-                        <p>Clean Bootstrap 4 Template</p>
-                        <div class="btn-w"><a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin"
-                                target="_blank">Purchase Now</a></div>
-                    </div>
-                </div> -->
 			</div>
-			<!--------------------
-            END - Mobile Menu
-            -------------------->
-			<!--------------------
-            START - Main Menu
-            -------------------->
-			<!-- <div class="menu-w selected-menu-color-light menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-bright sub-menu-color-bright menu-position-side menu-side-left menu-layout-compact sub-menu-style-over">
-                <div class="logo-w"><a class="logo" href="index.html">
-                        <div class="logo-element"></div>
-                        <div class="logo-label">IMAS</div>
-                    </a></div>
-                <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
-                        type="text"></div>
-                <h1 class="menu-page-header">Page Header</h1>
-                <ul class="main-menu">
-                    <li class="sub-header"><span>Layouts</span></li>
-                    <li class="selected has-sub-menu"><a href="index.html">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-layout"></div>
-                            </div><span>Dashboard</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Dashboard</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-layout"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Dashboard 1</a></li>
-                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a></li>
-                                    <li><a href="apps_support_dashboard.html">Dashboard 3</a></li>
-                                    <li><a href="apps_projects.html">Dashboard 4</a></li>
-                                    <li><a href="apps_bank.html">Dashboard 5</a></li>
-                                    <li><a href="layouts_menu_top_image.html">Dashboard 6</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="layouts_menu_top_image.html">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-layers"></div>
-                            </div><span>Menu Styles</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Menu Styles</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-layers"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_side_full.html">Side Menu Light</a></li>
-                                    <li><a href="layouts_menu_side_full_dark.html">Side Menu Dark</a></li>
-                                    <li><a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong
-                                                class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="apps_pipeline.html">Side &amp; Top Dark</a></li>
-                                    <li><a href="apps_projects.html">Side &amp; Top</a></li>
-                                    <li><a href="layouts_menu_side_mini.html">Mini Side Menu</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a></li>
-                                    <li><a href="layouts_menu_side_compact.html">Compact Side Menu</a></li>
-                                    <li><a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a></li>
-                                    <li><a href="layouts_menu_right.html">Right Menu</a></li>
-                                    <li><a href="layouts_menu_top.html">Top Menu Light</a></li>
-                                    <li><a href="layouts_menu_top_dark.html">Top Menu Dark</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="layouts_menu_top_image.html">Top Menu Image <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a></li>
-                                    <li><a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a></li>
-                                    <li><a href="layouts_menu_side_compact_click.html">Menu Inside Click</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sub-header"><span>Options</span></li>
-                    <li class=" has-sub-menu"><a href="apps_bank.html">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-package"></div>
-                            </div><span>Applications</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Applications</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-package"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="apps_email.html">Email Application</a></li>
-                                    <li><a href="apps_support_dashboard.html">Support Dashboard</a></li>
-                                    <li><a href="apps_support_index.html">Tickets Index</a></li>
-                                    <li><a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="apps_projects.html">Projects List</a></li>
-                                    <li><a href="apps_bank.html">Banking <strong class="badge badge-danger">New</strong></a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="apps_full_chat.html">Chat Application</a></li>
-                                    <li><a href="apps_todo.html">To Do Application <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_chat.html">Popup Chat</a></li>
-                                    <li><a href="apps_pipeline.html">CRM Pipeline</a></li>
-                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_calendar.html">Calendar</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-file-text"></div>
-                            </div><span>Pages</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Pages</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-file-text"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="misc_invoice.html">Invoice</a></li>
-                                    <li><a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="misc_charts.html">Charts</a></li>
-                                    <li><a href="auth_login.html">Login</a></li>
-                                    <li><a href="auth_register.html">Register</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="auth_lock.html">Lock Screen</a></li>
-                                    <li><a href="misc_pricing_plans.html">Pricing Plans</a></li>
-                                    <li><a href="misc_error_404.html">Error 404</a></li>
-                                    <li><a href="misc_error_500.html">Error 500</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-life-buoy"></div>
-                            </div><span>UI Kit</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">UI Kit</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-life-buoy"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="uikit_modals.html">Modals <strong class="badge badge-danger">New</strong></a></li>
-                                    <li><a href="uikit_alerts.html">Alerts</a></li>
-                                    <li><a href="uikit_grid.html">Grid</a></li>
-                                    <li><a href="uikit_progress.html">Progress</a></li>
-                                    <li><a href="uikit_popovers.html">Popover</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="uikit_tooltips.html">Tooltips</a></li>
-                                    <li><a href="uikit_buttons.html">Buttons</a></li>
-                                    <li><a href="uikit_dropdowns.html">Dropdowns</a></li>
-                                    <li><a href="uikit_typography.html">Typography</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sub-header"><span>Elements</span></li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-mail"></div>
-                            </div><span>Emails</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Emails</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-mail"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="emails_welcome.html">Welcome Email</a></li>
-                                    <li><a href="emails_order.html">Order Confirmation</a></li>
-                                    <li><a href="emails_payment_due.html">Payment Due</a></li>
-                                    <li><a href="emails_forgot.html">Forgot Password</a></li>
-                                    <li><a href="emails_activate.html">Activate Account</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-users"></div>
-                            </div><span>Users</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Users</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-users"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="users_profile_big.html">Big Profile</a></li>
-                                    <li><a href="users_profile_small.html">Compact Profile</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-edit-32"></div>
-                            </div><span>Forms</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Forms</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-edit-32"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="forms_regular.html">Regular Forms</a></li>
-                                    <li><a href="forms_validation.html">Form Validation</a></li>
-                                    <li><a href="forms_wizard.html">Form Wizard</a></li>
-                                    <li><a href="forms_uploads.html">File Uploads</a></li>
-                                    <li><a href="forms_wisiwig.html">Wisiwig Editor</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-grid"></div>
-                            </div><span>Tables</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Tables</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-grid"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="tables_regular.html">Regular Tables</a></li>
-                                    <li><a href="tables_datatables.html">Data Tables</a></li>
-                                    <li><a href="tables_editable.html">Editable Tables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-zap"></div>
-                            </div><span>Icons</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">Icons</div>
-                            <div class="sub-menu-icon"><i class="os-icon os-icon-zap"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a></li>
-                                    <li><a href="icon_fonts_feather.html">Feather Icons</a></li>
-                                    <li><a href="icon_fonts_themefy.html">Themefy Icons</a></li>
-                                    <li><a href="icon_fonts_picons_thin.html">Picons Thin</a></li>
-                                    <li><a href="icon_fonts_dripicons.html">Dripicons</a></li>
-                                    <li><a href="icon_fonts_eightyshades.html">Eightyshades</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_entypo.html">Entypo</a></li>
-                                    <li><a href="icon_fonts_font_awesome.html">Font Awesome</a></li>
-                                    <li><a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a></li>
-                                    <li><a href="icon_fonts_metrize_icons.html">Metrize Icons</a></li>
-                                    <li><a href="icon_fonts_picons_social.html">Picons Social</a></li>
-                                    <li><a href="icon_fonts_batch_icons.html">Batch Icons</a></li>
-                                </ul>
-                                <ul class="sub-menu">
-                                    <li><a href="icon_fonts_dashicons.html">Dashicons</a></li>
-                                    <li><a href="icon_fonts_typicons.html">Typicons</a></li>
-                                    <li><a href="icon_fonts_weather_icons.html">Weather Icons</a></li>
-                                    <li><a href="icon_fonts_light_admin.html">Light Admin</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="side-menu-magic">
-                    <h4>TDA</h4>
-                    <p>Technology Depository Agency</p>
-                    <div class="btn-w"><a class="btn btn-white btn-rounded" href="https://tda.my"
-                            target="_blank">Visit Us</a></div>
-                </div>
-            </div> -->
-			<!--------------------
-            END - Main Menu
-            -------------------->
 			<div class="content-w">
-				<!--------------------
-                START - Top Bar
-                -------------------->
 				<div class="top-bar color-scheme-light">
 					<div class="logo-w">
 						<a class="logo" href="index.html">
@@ -870,7 +451,7 @@
 						<div class="fancy-selector-current">
 							<div class="fs-main-info">
 								<div class="fs-name"><?=$programme[0]->prog_name?></div>
-								<div class="fs-sub"><span>PROJECTS :</span><strong>00</strong></div>
+								<div class="fs-sub"><span>PROJECTS :</span><strong><?=str_pad($programme[0]->no_proj, 2, "0", STR_PAD_LEFT)?></strong></div>
 							</div>
 							<div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
 						</div>
@@ -885,7 +466,7 @@
 								<a href="<?=site_url('programmes/tda-prog-'.$acronym.'-'.str_pad($prog->proc_sector_id, 2, "0", STR_PAD_LEFT).'-'.$prog->prog_id.'-'.date('Y', strtotime($prog->created_at)))?>" class="fancy-selector-option <?=($prog->prog_id == $programme[0]->prog_id) ? 'active': ''?>">
 									<div class="fs-main-info">
 										<div class="fs-name"><?=$prog->prog_name?></div>
-										<div class="fs-sub"><span>PROJECTS :</span><strong>00</strong></div>
+										<div class="fs-sub"><span>PROJECTS :</span><strong><?=str_pad($prog->no_proj, 2, "0", STR_PAD_LEFT)?></strong></div>
 									</div>
 								</a>
 							<?php  } ?>
@@ -1006,6 +587,15 @@
 				<div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 				<div class="content-i">
 					<div class="content-box">
+						<?php if(isset($message) && !empty($message)){ ?>
+							<div
+								class="alert <?=$type == 1 ? " alert-success" : "alert-danger" ; ?> alert-dismissible">
+								<button aria-label="Close" class="close" data-dismiss="alert" type="button">
+									<span aria-hidden="true"> ×</span>
+								</button>
+								<?=$message; ?>
+							</div>
+						<?php } ?>
 						<div class="row pt-4">
 							<div class="col-sm-12">
 								<!--START - Recent Ticket Comments-->
@@ -1019,7 +609,7 @@
 											</ul>
 											<ul class="nav nav-pills smaller d-none d-md-flex">
 												<li class="nav-item">
-													<a class="btn btn-primary btn-block" data-target="#m-e-pj" data-toggle="modal" href="#"><i class="os-icon os-icon-plus-circle"></i><span>New
+													<a class="btn btn-primary btn-block" data-target="#m-c-pj" data-toggle="modal" href="#"><i class="os-icon os-icon-plus-circle"></i><span>New
 															Project</span></a>
 												</li>
 											</ul>
@@ -1036,7 +626,7 @@
 																	 class="show-ticket-info" href="#"><span>Show Details</span><i class="os-icon os-icon-documents-03"></i></a>
 																</div>
 																<hr>
-																<div class="d-block btn-group text-right"><a class="btn btn-primary" data-target="#m-e-pg" data-toggle="modal" href="#"><i class="os-icon os-icon-edit"></i></a><a class="btn btn-danger" href="#"><i class="os-icon os-icon-ui-15"></i></a></div>
+																<div class="d-block btn-group text-right"><a class="btn btn-primary" data-target="#m-e-pg" data-toggle="modal" href="#"><i class="os-icon os-icon-edit"></i></a><a class="btn btn-danger" data-target="#m-d-pg" data-toggle="modal" href="#"><i class="os-icon os-icon-ui-15"></i></a></div>
 																<div class="ticket-thread">
 																	<div class="ticket-reply">
 																		<div class="ticket-reply-info"><div class="text-primary"><span>Programme Description : </span></div></div>
@@ -1089,24 +679,39 @@
 																	<div class="label">Created On: <strong class="ml-1"><?=date('jS, F Y', strtotime($programme[0]->created_at))?></strong></div>
 																	<div class="label">Created By: <strong class="ml-1">-</strong></div>
 																	<div class="label">Type: <div class="badge badge-success ml-1">ICP Programme</div></div>
+																	<div class="label">Status: <div class="badge badge-outline-primary ml-1"><?=$programme[0]->prog_progress_status?></div></div>
 																</div>
-																<h5 class="info-header">Projects Details (00)</h5>
+																<h5 class="info-header">Programme Progress</h5>
+																<div class="info-section">
+																	<div class="fancy-progress-with-label">
+																		<div class="fpl-label">0%</div>
+																		<div class="fpl-progress-w">
+																			<div class="fpl-progress-i" style="width: 0%;"></div>
+																		</div>
+																	</div>
+																</div>
+																<h5 class="info-header">Projects Details (<?=str_pad($programme[0]->no_proj, 2, "0", STR_PAD_LEFT)?>)</h5>
 																<div class="info-section">
 																	<ul class="users-list as-tiles">
-                                                                        <li><a class="author with-avatar" href="#">
-                                                                            <div class="avatar font-2p4">00</div><span>New</span>
-                                                                                </a>
-                                                                        </li>
-																		<li><a class="author with-avatar" href="#">
+																		<?php foreach($programme[0]->no_proj_status as $status_count){ ?>
+																			<li><a class="author with-avatar" href="#">
+																				<div class="avatar font-2p4"><?=str_pad($status_count->count, 2, "0", STR_PAD_LEFT)?></div><span><?=$status_count->proj_progress_status?></span>
+																					</a>
+																			</li>
+																			<!-- Must Remove In Production -->
+																			<li><a class="author with-avatar" href="#">
 																				<div class="avatar font-2p4">00</div><span>Approved</span>
-																			</a></li>
-																		<li><a class="author with-avatar" href="#">
-                                                                        <div class="avatar font-2p4">00</div><span>In Progress</span>
-																			</a></li>
-																		<li><a class="author with-avatar" href="#">
+																					</a>
+																			</li>
+																			<li><a class="author with-avatar" href="#">
+																				<div class="avatar font-2p4">00</div><span>In Progress</span>
+																					</a>
+																			</li>
+																			<li><a class="author with-avatar" href="#">
 																				<div class="avatar font-2p4">00</div><span>Completed</span>
-																			</a></li>
-																		
+																					</a>
+																			</li>
+																		<?php } ?>
 																	</ul>
 																</div>
 															</div>
@@ -1117,110 +722,47 @@
 											<div class="tab-pane" id="tab_projects">
 												<div class="element-box-tp">
 													<div class="table-responsive">
-														<table class="table table-padded">
+														<table class="table table-padded table-togglable">
 															<thead>
 																<tr>
 																	<th>#</th>
-																	<th width="30%">Name</th>
-																	<th>Type</th>
-																	<th>Total ICV (Mil)</th>
-																	<th class="text-center">Objective</th>
-																	<th>Progress</th>
-																	<th>Status</th>
-																	<th>Actions</th>
+																	<th data-toggle="true">Name</th>
+																	<th data-hide="phone">Type</th>
+																	<th data-hide="phone">Total ICV</th>
+																	<th class="text-center" data-hide="phone">Objective</th>
+																	<th data-hide="phone">Progress</th>
+																	<th data-hide="phone">Status</th>
+																	<th data-hide="phone">View</th>
 																</tr>
 															</thead>
 															<tbody>
+															<?php $n = 1; foreach($projects as $project) { ?>
 																<tr>
-																	<td class="text-center">1</td>
+																	<td class="text-center">#<?=$n?></td>
 																	<td>
-																		<div class="text-primary"><b>Tunneling Training Academy (TTA graduates)</b></div>
+																		<div class="text-primary"><b><?=$project->proj_name?></b></div>
 																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CPCF-11-MW2</b></div>
+																			<div class="label text-dark">Ref.No. : <b class="font"><?=$project->proj_ref_no?></b></div>
 																		</div>
 																	</td>
-																	<td>Indirect</td>
+																	<td><?=$project->proj_type?></td>
 																	<td class="text-center"><strong>-</strong></td>
-																	<td>Traning/Human Capital Development</td>
-																	<td class="text-center">-</td>
-																	<td class="nowrap"><span class="badge badge-secondary">New</span></td>
-																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cpcf-11-mw2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
-																	</td>
-																</tr>
-																<tr>
-																	<td class="text-center">2</td>
 																	<td>
-																		<div class="text-primary"><b>Data Acquisition</b></div>
-																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CGMR-90-IP2</b></div>
-																		</div>
+																		<?php $obj_count = count($project->proj_objs);
+																			for($x= 0; $x < $obj_count; $x++){ 
+																			if($obj_count >2 && $x >0){ ?>																			
+																			<div class="d-block">-<?=$project->proj_objs[$x]->proj_obj?><a class="ml-1" href="<?=site_url($this->uri->uri_string().'/'.$project->id_encoded)?>">[<?=$obj_count-2?>+]</a>
+																		<?php }else{ ?>
+																			<div class="d-block">-<?=$project->proj_objs[$x]->proj_obj?></div>
+																		<?php }} ?>
 																	</td>
-																	<td>Indirect</td>
-																	<td><strong>RM 84 Mil</strong></td>
-																	<td>Technology Transfer(s)</td>
 																	<td class="text-center">-</td>
-																	<td class="nowrap"><span class="badge badge-warning">Proposed</span></td>
+																	<td class="nowrap"><span class="badge badge-secondary"><?=$project->proj_progress_status?></span></td>
 																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
+																		<a href="<?=site_url($this->uri->uri_string().'/'.$project->id_encoded)?>"><i class="os-icon os-icon-grid-10"></i></a>
 																	</td>
 																</tr>
-																<tr>
-																	<td class="text-center">3</td>
-																	<td>
-																		<div class="text-primary"><b>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</b></div>
-																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CGMR-90-IP2</b></div>
-																		</div>
-																	</td>
-																	<td>Direct</td>
-																	<td><strong>RM 177 Mil</strong></td>
-																	<td>Investment</td>
-																	<td class="text-center">-</td>
-																	<td class="nowrap"><span class="badge badge-warning">Proposed</span></td>
-																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
-																	</td>
-																</tr>
-																<tr>
-																	<td class="text-center">4</td>
-																	<td>
-																		<div class="text-primary"><b>Steel Fibre Reinforced Concrete (SFRC) Tunnel Linings</b></div>
-																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CMR-22-IDS</b></div>
-																		</div>
-																	</td>
-																	<td>Direct</td>
-																	<td><strong>RM 104.7 Mil</strong></td>
-																	<td><span>Localization/Subcontracting</span></td>
-																	<td class="text-center">-</td>
-																	<td class="nowrap"><span class="badge badge-primary">In Progress</span></td>
-																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
-																	</td>
-																</tr>
-																<tr>
-																	<td class="text-center">5</td>
-																	<td>
-																		<div class="text-primary"><b>Production of TBM Parts in Malaysia</b></div>
-																		<div class="d-block">
-																			<div class="label text-dark">Ref.No. : <b class="font">CET-32-ICD</b></div>
-																		</div>
-																	</td>
-																	<td>Direct</td>
-																	<td><strong>RM 204.68 Mil</strong></td>
-																	<td><span>Localization/Subcontracting</span></td>
-																	<td class="text-center">34%</td>
-																	<td class="nowrap"><span class="badge badge-success">Approved</span></td>
-																	<td class="row-actions">
-																		<a href="<?=site_url('programmes/tda-pod-mot-54-2015-802/cgmr-90-ip2')?>"><i class="os-icon os-icon-grid-10"></i></a>
-																		<!-- <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
-																	</td>
-																</tr>
+															<?php $n++; } ?>
 															</tbody>
 														</table>
 													</div>
@@ -1469,6 +1011,7 @@
 	<script src="<?=site_url('assets/js/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/tether/dist/js/tether.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.min.js')?>"></script>
+	<script src="<?=site_url('assets/js/vendors/footable/footable.min.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/util.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/alert.js')?>"></script>
 	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/button.js')?>"></script>
