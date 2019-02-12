@@ -1,5 +1,5 @@
 var Milestone = function () {
-  var _wbs = function(base_url) {
+  var _wbs = function(base_url,milestones) {
     gantt.config.columns = [
       {name: "text", tree: true, width: 370, resize: true, label: "Milestones And Activities"},
       {name: "start_date", align: "center", width: 100, label: "Start Date", resize: true},
@@ -11,6 +11,7 @@ var Milestone = function () {
     gantt.config.types.root = "project";
 	gantt.config.types.subproject = "milestone";
 	gantt.config.lightbox.subproject_sections = gantt.config.lightbox.sections;
+	gantt.config.open_tree_initially = true;
 	gantt.config.lightbox.project_sections = [
 		{name: "description", height: 70, map_to: "text", type: "textarea", focus: true},
 		{name: "time", type: "duration", map_to: "auto", readonly: true}
@@ -77,7 +78,7 @@ var Milestone = function () {
 	};
     
     gantt.init("wbs_milestones");
-    gantt.load(base_url+"assets/js/resource_project_multiple_owners_1.json");
+	gantt.parse(milestones);
 
     //Highlights Weekend - START
     gantt.templates.scale_cell_class = function (date) {
@@ -138,8 +139,7 @@ var Milestone = function () {
                 gantt.config.step = 1;
                 gantt.config.date_scale = "%Y";
                 gantt.config.min_column_width = 50;
-
-                gantt.config.scale_height = 90;
+				gantt.config.scale_height = 90;
                 gantt.templates.date_scale = null;
 
                 var quarterLabel = function(date) {
@@ -157,7 +157,7 @@ var Milestone = function () {
                     }
             
                     return "Q" + q_num;
-                }
+                };
 
                 gantt.config.subscales = [
                     {unit: "quarter", step: 1, template: quarterLabel},
@@ -169,18 +169,91 @@ var Milestone = function () {
 				gantt.config.step = 1;
 				gantt.config.date_scale = "%Y";
 				gantt.config.min_column_width = 50;
-
 				gantt.config.scale_height = 90;
 				gantt.templates.date_scale = null;
-
-
 				gantt.config.subscales = [
 					{unit: "month", step: 1, date: "%M"}
 				];
 				break;
 		}
 	};
+	  gantt.attachEvent("onAfterTaskAdd", function(id,item){
+		  var csrfName = _getcsrfname(),
+			  csrfHash = _getcsrfcontent();
+		  		_showLoader();
+		  $.post(base_url+'milestone/add',{"imas_csrf_token":csrfHash,"data":item,"id":123}, function(d) {
+			  _hideLoader();
+			  _setcsrfcontent(d.token);
+			  if(d.status == 1) {
+				  _hideLoader();
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+			  }else{
+				  _hideLoader();
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+			  }
+		  }, 'json');
+	  });
+	  gantt.attachEvent("onBeforeLinkAdd", function(id,link){
+		  var csrfName = _getcsrfname(),
+			  csrfHash = _getcsrfcontent();
+		  _showLoader();
+		  $.post(base_url+'milestone/add_link',{"imas_csrf_token":csrfHash,"data":link,"id":123}, function(d) {
+			  _hideLoader();
+			  _setcsrfcontent(d.token);
+			  if(d.status == 1) {
+				  _hideLoader();
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+			  }else{
+				  _hideLoader();
+			  }
+		  }, 'json');
+	  });
+	  gantt.attachEvent("onAfterTaskDelete", function(id,item){
+		  var csrfName = _getcsrfname(),
+			  csrfHash = _getcsrfcontent();
+		  _showLoader();
+		  $.post(base_url+'milestone/delete_task',{"imas_csrf_token":csrfHash,"task_id":id,"id":123}, function(d) {
+			  _hideLoader();
+			  _setcsrfcontent(d.token);
+			  if(d.status == 1) {
+				  _hideLoader();
 
+			  }else{
+				  _hideLoader();
+			  }
+		  }, 'json');
+	  });
+	  gantt.attachEvent("onAfterTaskUpdate", function(id,item){
+		  var csrfName = _getcsrfname(),
+			  csrfHash = _getcsrfcontent();
+		  _showLoader();
+		  $.post(base_url+'milestone/update_task_info',{"imas_csrf_token":csrfHash,"data":item,"id":123,"task_id":id}, function(d) {
+			  _hideLoader();
+			  _setcsrfcontent(d.token);
+			  if(d.status == 1) {
+				  _hideLoader();
+			  }else{
+				  _hideLoader();
+			  }
+		  }, 'json');
+	  });
+	  gantt.attachEvent("onAfterLinkDelete", function(id,item){
+		  var csrfName = _getcsrfname(),
+			  csrfHash = _getcsrfcontent();
+		  _showLoader();
+		  $.post(base_url+'milestone/link_delete',{"imas_csrf_token":csrfHash,"id":123,"link_id":id}, function(d) {
+			  _hideLoader();
+			  _setcsrfcontent(d.token);
+			  if(d.status == 1) {
+				  _hideLoader();
+			  }else{
+				  _hideLoader();
+			  }
+		  }, 'json');
+	  });
     var currentScale = 2;
     _setScaleConfig(currentScale);
     $(".gantt-control").on("click",function(){
@@ -196,7 +269,7 @@ var Milestone = function () {
             break;
             case 'zoom-in' :
                 if(currentScale < 5 && currentScale >= 1){
-                    $(this).next().removeClass("disabled")
+                    $(this).next().removeClass("disabled");
                     _setScaleConfig(++currentScale);
                     gantt.render();
                 }else{
@@ -205,8 +278,8 @@ var Milestone = function () {
             break;
             case 'zoom-out' :
                 if(currentScale <= 5 && currentScale > 1){
-                    $(this).prev().removeClass("disabled")
-                    $(this).removeClass("disabled")
+                    $(this).prev().removeClass("disabled");
+                    $(this).removeClass("disabled");
                     _setScaleConfig(--currentScale);
                     gantt.render();
                 }else{
@@ -216,18 +289,13 @@ var Milestone = function () {
         }
     })
 };
-
 	var _menuSelected = function(menu){
 		menu.addClass("selected");
 	}; 
-
-    return {
-        init: function(){
-			ganttobj = _wbs(base_url);
+	return {
+        init: function(milestones){
+			ganttobj = _wbs(base_url,milestones);
 			_menuSelected($("#m_gc"));
         }
     }
 }();
-document.addEventListener('DOMContentLoaded', function() {
-    Milestone.init();
-  });

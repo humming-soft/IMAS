@@ -6,6 +6,7 @@ class Projects extends HS_Controller {
     function __construct()
     {
         parent::__construct('login');
+        $this->load->model('milestonemodel','',TRUE);
     }
     
     public function find_project($p_ref='',$projectId=''){
@@ -48,6 +49,7 @@ class Projects extends HS_Controller {
             $_footer["page_js"] = "milestones";
             $data['prog_ref'] = $p_ref;
             $data['proj_id'] = $projectId;
+            $data['milestone']=json_encode( $this->milestonemodel->get_milestone(1,123));
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php');
@@ -58,6 +60,7 @@ class Projects extends HS_Controller {
             $_footer["page_js"] = "milestones_new";
             $data['prog_ref'] = $p_ref;
             $data['proj_id'] = $projectId;
+            $data['milestone']=json_encode( $this->milestonemodel->get_milestone(1,123));
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php');

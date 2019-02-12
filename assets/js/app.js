@@ -1353,5 +1353,8 @@ window.addEventListener('load', function() {
 var _showLoader = function(){$('.preloader-it').fadeIn('slow');};
 var _hideLoader = function(){$('.preloader-it').fadeOut('slow');};
 var _updatecsrf = function(f,n,v){f.find("input[name='"+n+"']").val(v)};
+var _getcsrfname = function(){ return $('meta[id=csrf_token]').attr("name"); };
+var _getcsrfcontent = function(){ return $('meta[id=csrf_token]').attr("content"); };
+var _setcsrfcontent = function(c){ return $('meta[id=csrf_token]').attr("content",c); };
 var csrf_tn = $('meta[id="csrf_token"]').attr('name');
 var csrf_tc = $('meta[id="csrf_token"]').attr('content');

@@ -1,5 +1,16 @@
 {
   "data": [
-	{ "id": 1, "text": "Tunneling Training Academy (TTA Graduates)", "type": "project", "start_date": "01-01-2019 00:00", "duration": 501, "progress": 0.0, "parent": 0,"color":"#4f784e"}
+    {"id": 1, "text": "Development of Variable Density (VD) Tunnel Boring Machine (TBM)", "type": "project", "start_date": "01-01-2019 00:00", "duration": 547, "progress": 0.65,"owner_id": ["7","9","10","8"], "parent": 0,"color":"#4f784e"},
+    {"id":"28","text":"Milestone One One","type":"milestone","duration":"1","start_date":"01-07-2019","progress":null,"parent":"1"},
+    {"id":"29","text":"Activity One One","type":"task","duration":"1","start_date":"01-07-2019","progress":null,"parent":"28"}
   ]
 }
+
+
+
+
+
+
+
+
+
