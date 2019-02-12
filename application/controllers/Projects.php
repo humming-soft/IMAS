@@ -170,12 +170,12 @@ class Projects extends HS_Controller {
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
             $_header['support'] = array("gantt");
-            $_footer["page_js"] = "milestone_new";
+            $_footer["page_js"] = "milestones_new";
             $data['milestone']=json_encode( $this->milestonemodel->get_milestone(1,123));
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php',$nav);
-            $this->load->view('core/projects/milestone_new',$data);
+            $this->load->view('core/projects/milestones_new',$data);
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             show_404();
