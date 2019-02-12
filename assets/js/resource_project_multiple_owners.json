@@ -1,10 +1,10 @@
 {
   "data": [
-	{ "id": 1, "text": "Development of Variable Density (VD) Tunnel Boring Machine (TBM)", "type": "project", "start_date": "01-01-2019 00:00", "duration": 547, "progress": 0.65,"owner_id": ["7","9","10","8"], "parent": 0,"color":"#4f784e"},
-	{ "id": 2, "text": "Tunnel Drive From Crossover To Ampang Park", "type": "task", "start_date": "01-01-2019 00:00", "duration": 273 , "progress": 0.30,"owner_id": ["12","8","67"], "parent": "1"},
-	  { "id": 3, "text": "Land Available for Shoplots Jln Tun Tun Razak   ", "type": "task", "start_date": "01-01-2019 00:00", "duration": 120 , "progress": 0.10,"owner_id": ["12","8","67"], "parent": "2"},
-	  { "id": 4, "text": "Instrumentation Installation    ", "type": "task", "start_date": "01-05-2019 00:00", "duration": 92 , "progress": 0.15,"owner_id": ["12","8","67"], "parent": "2"},
-	  { "id": 5, "text": "Specific Ground Improvement Works/Grouting       ", "type": "task", "start_date": "01-05-2019 00:00", "duration": 153 , "progress": 0.5,"owner_id": ["12","8","67"], "parent": "2"},
+	  { "id": 1, "text": "Development of Variable Density (VD) Tunnel Boring Machine (TBM)", "type": "project", "start_date": "01-01-2019 00:00", "duration": 547, "progress": 0.65,"owner_id": ["7","9","10","8"], "parent": 0,"color":"#4f784e"},
+	  { "id": 2, "text": "Tunnel Drive From Crossover To Ampang Park", "type": "task", "start_date": "01-01-2019 00:00", "duration": 273 , "progress": 0.30,"owner_id": ["12","8","67"], "parent": "1"},
+	  { "id": 3, "text": "Land Available for Shoplots Jln Tun Tun Razak", "type": "task", "start_date": "01-01-2019 00:00", "duration": 120 , "progress": 0.10,"owner_id": ["12","8","67"], "parent": "2"},
+	  { "id": 4, "text": "Instrumentation Installation", "type": "task", "start_date": "01-05-2019 00:00", "duration": 92 , "progress": 0.15,"owner_id": ["12","8","67"], "parent": "2"},
+	  { "id": 5, "text": "Specific Ground Improvement Works/Grouting", "type": "task", "start_date": "01-05-2019 00:00", "duration": 153 , "progress": 0.5,"owner_id": ["12","8","67"], "parent": "2"},
 	  { "id": 6, "text": "Tunnel Drive From Titiwangsa To Crossover", "type": "task", "start_date": "01-09-2019 00:00", "duration": 304 , "progress": 0.35,"owner_id": ["12","8","67"], "parent": "1"},
 	  { "id": 7, "text": "Instrumentation Installation  ", "type": "task", "start_date": "01-09-2019 00:00", "duration": 90 , "progress": 0.15,"owner_id": ["12","8","67"], "parent": "6"},
 	  { "id": 8, "text": "Specific Ground Improvement Works/Groutin", "type": "task", "start_date": "01-12-2019 00:00", "duration": 122 , "progress": 0.20,"owner_id": ["12","8","67"], "parent": "6"},
