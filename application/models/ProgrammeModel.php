@@ -14,7 +14,13 @@ Class ProgrammeModel extends CI_Model
 		$this->db->join('tbl_proc_agency as t4', 't1.proc_agency_id = t4.proc_agcy_id', 'LEFT');
 		$this->db->join('tbl_proc_agency_sector as t5', 't1.proc_sector_id = t5.proc_agcy_sec_id', 'LEFT');
 		$this->db->order_by('t1.created_at', 'desc');
-		return $this->db->get()->result();
+		$result = $this->db->get()->result();
+		$CI =& get_instance();
+		$CI->load->model('projectmodel');
+		foreach($result as &$row){
+			$row->no_proj = $CI->projectmodel->getProjectCountByProgramme($row->prog_id,1);
+		}
+		return $result;
 	}
 
 
@@ -44,7 +50,14 @@ Class ProgrammeModel extends CI_Model
 		$this->db->join('tbl_currency_scale as t3', 't1.currency_scale_id = t3.cur_scale_id', 'LEFT');
 		$this->db->join('tbl_proc_agency as t4', 't1.proc_agency_id = t4.proc_agcy_id', 'LEFT');
 		$this->db->join('tbl_proc_agency_sector as t5', 't1.proc_sector_id = t5.proc_agcy_sec_id', 'LEFT');
-		return $this->db->get()->result();
+		$result = $this->db->get()->result();
+		$CI =& get_instance();
+		$CI->load->model('projectmodel');
+		foreach($result as &$row){
+			$row->no_proj = $CI->projectmodel->getProjectCountByProgramme($row->prog_id,1);
+			$row->no_proj_status = $CI->projectmodel->getProjectCountGroupByStatus($row->prog_id,1);
+		}
+		return $result;
 	}
 
 	function getProgrammeByName($name,$uid,$status,$rid=''){

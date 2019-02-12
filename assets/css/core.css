@@ -22935,6 +22935,7 @@ a.with-avatar span {
     position: relative;
     background-color: transparent;
     cursor: pointer;
+    text-decoration: none;
     border-radius: 0px
 }
 
@@ -29797,6 +29798,87 @@ font-size: 2.4rem;
 .pika-week {
     font-size: .75rem;
     color: #999;
+}
+.footable {
+    width: 100%
+}
+
+.footable>thead>tr>th {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.footable.breakpoint>tbody>tr.footable-detail-show>td {
+    border-bottom: 0
+}
+
+.footable.breakpoint>tbody>tr.footable-row-detail:hover {
+    background-color: transparent
+}
+
+.footable.breakpoint>tbody>tr:hover:not(.footable-row-detail) {
+    cursor: pointer
+}
+
+.footable.breakpoint>tbody>tr>.footable-cell-detail {
+    background-color: #fafafa;
+    border-top: 0
+}
+
+.footable.breakpoint>tbody>tr .footable-toggle:before {
+    content: "\ea37";
+    display: inline-block;
+    font-family: 'osfont' !important;
+    font-size: 1rem;
+    vertical-align: middle;
+    position: relative;
+    top: .09375rem;
+    line-height: 1;
+    padding-right: .625rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    float: left
+}
+
+.footable.breakpoint>tbody>tr.footable-detail-show .footable-toggle:before {
+    content: "\ea1d";
+}
+
+.footable-row-detail-inner {
+    display: table;
+    table-layout: fixed;
+    width: 100%
+}
+
+.footable-row-detail-row {
+    display: table-row
+}
+
+.footable-row-detail-group {
+    display: block;
+    font-weight: 500;
+    margin-top: 1.25rem;
+    margin-bottom: .5rem
+}
+
+.footable-row-detail-group:first-child {
+    margin-top: .5rem
+}
+
+.footable-row-detail-name {
+    display: table-cell;
+    font-weight: 500;
+    width: 30%;
+    padding-right: 2.5rem
+}
+
+.footable-row-detail-value {
+    display: table-cell;
+    padding: .5rem 0;
+    color: #047bf8;
 }
 .no-data{
     font-weight: 600;

@@ -425,7 +425,7 @@
                                                                 <div
                                                                     class="el-tablo centered padded-v-big highlight bigger">
                                                                     <div class="label">Projects Identified</div>
-                                                                    <div class="value pv_pi">00</div>
+                                                                    <div class="value pv_pi"><?=str_pad($programme->no_proj, 2, "0", STR_PAD_LEFT)?></div>
                                                                 </div>
                                                             </div>
                                                         </div>
