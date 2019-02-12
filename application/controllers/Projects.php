@@ -9,60 +9,60 @@ class Projects extends HS_Controller {
         $this->load->model('projectmodel','',TRUE);
         $this->load->model('commonmodel','',TRUE);
     }
-    
-    public function find_project($p_ref='',$projectId=''){
+
+    public function validate_url($p_ref='',$projectId=''){
         if(!empty($p_ref)){
-            $prog_id = $this->commonmodel->getProgrammeIdFromRef($p_ref);
-            if($prog_id != null){
+            $data['prog_id'] = $this->commonmodel->getProgrammeIdFromRef($p_ref);
+            if($data['prog_id'] != null){
                 $this->load->model('programmemodel','',TRUE);
-                $data['programme'] = $this->programmemodel->getProgrammeById($prog_id,1,1);
+                $data['programme'] = $this->programmemodel->getProgrammeById($data['prog_id'],1,1);
                 if (count($data['programme']) > 0) {
                     if($projectId !=''){
-                        $data['project'] = $this->projectmodel->getProjectsByProgramme($prog_id,1);
+                        $this->load->library('imasencryption');
+                        $projectId = $this->imasencryption->decode($projectId);
+                        $data['project'] = $this->projectmodel->getProjectById($projectId,1,1);
                         if (count($data['project']) > 0) {
-                            $this->load->helper('form');
-                            if ($this->session->userdata('message')) {
-                                $messagehrecord = $this->session->userdata('message');
-                                $data['message'] = $messagehrecord['message'];
-                                $data['type'] = $messagehrecord['type'];
-                                $this->session->unset_userdata('message');                              
-                            }
-                            $data['prog_ref'] = $p_ref;
-                            $data['proj_id'] = $projectId;
-                            $_header["page_js"] = "project";
-                            $this->load->view('core/projects/fragments/_header.php',$_header);
-                            $this->load->view('core/projects/fragments/_side_nav.php');
-                            $this->load->view('core/projects/fragments/_top_nav.php');
-                            $this->load->view('core/projects/project',$data);
-                            $this->load->view('core/projects/fragments/_footer.php',$_header);
-
+                            return $data;
                         }else{
-                            show_404();
+                            return [];
                         }
                     }else{
-                        show_404();
+                        return [];
                     }
                 }else{
-                    show_404();
+                    return [];
                 }
             }else{
-                show_404();
+                return [];
             }
         }
+    }
+    
+    public function find_project($p_ref='',$projectId=''){
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            // $data['prog_ref'] = $p_ref;
+            // $data['proj_id'] = $projectId;
+            $_header["page_js"] = "project";
+            $this->load->view('core/projects/fragments/_header.php',$_header);
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/project',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_header);
 
-        // $_header["page_js"] = "project";
-
-        // if($projectId == "cgmr-90-ip2"){
-        //     $data['prog_ref'] = $p_ref;
-        //     $data['proj_id'] = $projectId;
-        //     $this->load->view('core/projects/fragments/_header.php',$_header);
-        //     $this->load->view('core/projects/fragments/_side_nav.php');
-        //     $this->load->view('core/projects/fragments/_top_nav.php');
-        //     $this->load->view('core/projects/project',$data);
-        //     $this->load->view('core/projects/fragments/_footer.php',$_header);
-        // }else{
-        //     $this->load->view('core/projects/project_new');
-        // }
+            //$this->load->view('core/projects/project_new');
+        }else{
+            show_404();
+        }
     }
 
     public function create($p_ref=''){
@@ -135,93 +135,162 @@ class Projects extends HS_Controller {
     }
 
     public function project_benefits($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        $_header["page_js"] = "benefits";
-        $data['prog_ref'] = $p_ref;
-        $data['proj_id'] = $projectId;
-        $this->load->view('core/projects/fragments/_header.php',$_header);
-        $this->load->view('core/projects/fragments/_side_nav.php');
-        $this->load->view('core/projects/fragments/_top_nav.php');
-        $this->load->view('core/projects/benefits',$data);
-        $this->load->view('core/projects/fragments/_footer.php',$_header);
-    }
-
-    public function milestones($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        if($projectId == "cgmr-90-ip2"){
-            $_header['support'] = array("gantt");
-            $_footer["page_js"] = "milestones";
-            $data['prog_ref'] = $p_ref;
-            $data['proj_id'] = $projectId;
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_header["page_js"] = "benefits";
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
-            $this->load->view('core/projects/fragments/_top_nav.php');
-            $this->load->view('core/projects/milestones',$data);
-            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/benefits',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_header);
         }else{
-            $_header['support'] = array("gantt");
-            $_footer["page_js"] = "milestones_new";
-            $data['prog_ref'] = $p_ref;
-            $data['proj_id'] = $projectId;
-            $this->load->view('core/projects/fragments/_header.php',$_header);
-            $this->load->view('core/projects/fragments/_side_nav.php');
-            $this->load->view('core/projects/fragments/_top_nav.php');
-            $this->load->view('core/projects/milestones_new',$data);
-            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+            show_404();
         }
     }
 
+    public function milestones($p_ref='',$projectId=''){
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_header['support'] = array("gantt");
+            $_footer["page_js"] = "milestones";
+            $this->load->view('core/projects/fragments/_header.php',$_header);
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/milestones',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        }else{
+            show_404();
+        }
+        // if($projectId == "cgmr-90-ip2"){
+        //     $_header['support'] = array("gantt");
+        //     $_footer["page_js"] = "milestones";
+        //     $data['prog_ref'] = $p_ref;
+        //     $data['proj_id'] = $projectId;
+        //     $this->load->view('core/projects/fragments/_header.php',$_header);
+        //     $this->load->view('core/projects/fragments/_side_nav.php');
+        //     $this->load->view('core/projects/fragments/_top_nav.php');
+        //     $this->load->view('core/projects/milestones',$data);
+        //     $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        // }else{
+        //     $_header['support'] = array("gantt");
+        //     $_footer["page_js"] = "milestones_new";
+        //     $data['prog_ref'] = $p_ref;
+        //     $data['proj_id'] = $projectId;
+        //     $this->load->view('core/projects/fragments/_header.php',$_header);
+        //     $this->load->view('core/projects/fragments/_side_nav.php');
+        //     $this->load->view('core/projects/fragments/_top_nav.php');
+        //     $this->load->view('core/projects/milestones_new',$data);
+        //     $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        // }
+    }
+
     public function icv_calculation($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        $_header['support'] = array("slick","scrollbar");
-        $_footer["page_js"] = "icvcalc";
-        $data['prog_ref'] = $p_ref;
-        $data['proj_id'] = $projectId;
-        $this->load->view('core/projects/fragments/_header.php',$_header);
-        $this->load->view('core/projects/fragments/_side_nav.php');
-        $this->load->view('core/projects/fragments/_top_nav.php');
-        $this->load->view('core/projects/icv_calculation',$data);
-        $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_header['support'] = array("slick","scrollbar");
+            $_footer["page_js"] = "icvcalc";
+            $this->load->view('core/projects/fragments/_header.php',$_header);
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/icv_calculation',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        }else{
+            show_404();
+        }
     }
     public function delivarables($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        $_header["page_js"] = "delivarables";
-        $data['prog_ref'] = $p_ref;
-        $data['proj_id'] = $projectId;
-        $this->load->view('core/projects/fragments/_header.php',$_header);
-        $this->load->view('core/projects/fragments/_side_nav.php');
-        $this->load->view('core/projects/fragments/_top_nav.php');
-        $this->load->view('core/projects/delivarables',$data);
-        $this->load->view('core/projects/fragments/_footer.php',$_header);
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_footer["page_js"] = "delivarables";
+            $this->load->view('core/projects/fragments/_header.php');
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/delivarables',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        }else{
+            show_404();
+        }
     }
 
     public function activities($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        $_header["page_js"] = "activities";
-        $data['prog_ref'] = $p_ref;
-        $data['proj_id'] = $projectId;
-        $this->load->view('core/projects/fragments/_header.php',$_header);
-        $this->load->view('core/projects/fragments/_side_nav.php');
-        $this->load->view('core/projects/fragments/_top_nav.php');
-        $this->load->view('core/projects/activities',$data);
-        $this->load->view('core/projects/fragments/_footer.php',$_header);
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_footer["page_js"] = "activities";
+            $this->load->view('core/projects/fragments/_header.php');
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/activities',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        }else{
+            show_404();
+        }
     }
 
     public function collaboration($p_ref='',$projectId=''){
-        // tda-pod-mot-54-2015-802
-        // cgmr-90-ip2
-        $_header["page_js"] = "collaboration";
-        $data['prog_ref'] = $p_ref;
-        $data['proj_id'] = $projectId;
-        $this->load->view('core/projects/fragments/_header.php',$_header);
-        $this->load->view('core/projects/fragments/_side_nav.php');
-        $this->load->view('core/projects/fragments/_top_nav.php');
-        $this->load->view('core/projects/collaboration',$data);
-        $this->load->view('core/projects/fragments/_footer.php',$_header);
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0){
+            $this->load->helper('form');
+            if ($this->session->userdata('message')) {
+                $messagehrecord = $this->session->userdata('message');
+                $data['message'] = $messagehrecord['message'];
+                $data['type'] = $messagehrecord['type'];
+                $this->session->unset_userdata('message');                              
+            }
+            $nav['project'] = $data['project'];
+            $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $_footer["page_js"] = "collaboration";
+            $this->load->view('core/projects/fragments/_header.php');
+            $this->load->view('core/projects/fragments/_side_nav.php');
+            $this->load->view('core/projects/fragments/_top_nav.php',$nav);
+            $this->load->view('core/projects/collaboration',$data);
+            $this->load->view('core/projects/fragments/_footer.php',$_footer);
+        }else{
+            show_404();
+        }
     }
 }

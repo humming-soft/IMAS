@@ -22827,7 +22827,7 @@ a.with-avatar span {
 .fancy-selector-w .fancy-selector-current .fs-main-info .fs-name,.fancy-selector-w .fancy-selector-option .fs-main-info .fs-name {
     font-size: .79rem;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.4;
     letter-spacing: 1px;
     margin-bottom: 3px
 }

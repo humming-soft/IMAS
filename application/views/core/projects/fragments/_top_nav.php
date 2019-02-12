@@ -5,37 +5,30 @@
                     <div class="fancy-selector-w">
                         <div class="fancy-selector-current">
                             <div class="fs-main-info">
-                                <div class="fs-name">Development of Variable Density (VD) Tunnel Boring Machine (TBM)</div>
-                                <div class="fs-sub"><span>TOTAL ICV :</span><strong>RM 132 Mil</strong></div>
+                                <div class="fs-name"><?=$project[0]->proj_name?></div>
+                                <div class="fs-sub">
+                                    <div class="float-left"><span>TOTAL ICV :</span><strong>-</strong></div>
+                                    <div class="float-right"><span>STATUS :</span><strong><?=$project[0]->proj_progress_status?></strong></div>
+                                </div>
                             </div>
                             <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
                         </div>
                         <div class="fancy-selector-options">
-                            <div class="fancy-selector-option">
+                            <?php foreach($projects as $proj){ ?>
+                            <a href="<?=site_url('programmes/'.$this->uri->segment(0).'/'.$proj->id_encoded)?>" class="fancy-selector-option <?=($proj->proj_id == $project[0]->proj_id) ? 'active': '' ?>">
                                 <div class="fs-main-info">
-                                    <div class="fs-name">Tunneling Training Academy (TTA graduates)</div>
+                                    <div class="fs-name"><?=$proj->proj_name?></div>
                                     <div class="fs-sub">
-                                        <div class="float-left"><span>TOTAL ICV :</span><strong>RM 520 Mil</strong></div>
-                                        <div class="float-right"><span>STATUS :</span><strong>NEW</strong></div>
+                                        <div class="float-left"><span>TOTAL ICV :</span><strong>-</strong></div>
+                                        <div class="float-right"><span>STATUS :</span><strong><?=$proj->proj_progress_status?></strong></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="fancy-selector-option active">
-                                <div class="fs-main-info">
-                                    <div class="fs-name">Server Product</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>17</strong></div>
-                                </div>
-                            </div>
-                            <div class="fancy-selector-option">
-                                <div class="fs-main-info">
-                                    <div class="fs-name">Compute Engine</div>
-                                    <div class="fs-sub"><span>New Tickets:</span><strong>11</strong></div>
-                                </div>
-                            </div>
+                            </a>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="top-menu-controls">
-                        <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i class="os-icon os-icon-mail-14"></i>
+                        <!-- <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i class="os-icon os-icon-mail-14"></i>
                             <div class="new-messages-count">12</div>
                             <div class="os-dropdown light message-list">
                                 <ul>
@@ -69,7 +62,7 @@
                                         </a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left"><i class="os-icon os-icon-ui-46"></i>
                             <div class="os-dropdown">
                                 <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>

@@ -1,16 +1,8 @@
-
-<!--------------------
-START - Breadcrumbs
--------------------->
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes"><i class="os-icon os-icon-home"></i></a></li>
-    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes/tda-pod-mot-54-2015-802">TUNNELING
-            AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/'.$this->uri->segment(0))?>"><?=$programme[0]->prog_name?></a></li>
+    <li class="breadcrumb-item"><span><?=$project[0]->proj_name?></span></li>
 </ul>
-<!--------------------
-END - Breadcrumbs
--------------------->
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box">

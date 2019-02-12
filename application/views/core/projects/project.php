@@ -25,7 +25,7 @@ END - Breadcrumbs
                                                 class="show-ticket-info" href="#"><span>Show more
                                                     Details</span><i class="os-icon os-icon-documents-03"></i></a>
                                         </div>
-                                        <legend class="text-bright"><span>Programme Info</span></legend>
+                                        <legend class="text-bright"><span>PROGRAMME INFO</span></legend>
                                         <div class="ticket-thread">
                                             <div class="ticket-reply">
                                                 <div class="row pb-3">
@@ -36,24 +36,16 @@ END - Breadcrumbs
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <legend class="text-bright"><span>Project Info</span></legend>
-                                                <div class="col-sm-12 col-md-12">
-                                                    <div class="ticket-reply-info">
-                                                        <div><span class="text-primary">Project Ref.Number : </span><b><?=$project[0]->proj_ref_no?></b></div>
-                                                    </div>
+                                                <legend class="text-bright"><span>PPROJECT INFO</span></legend>
+                                                <div class="ticket-reply-info">
+                                                    <div><span class="text-primary">Project Ref.Number : </span><b><?=$project[0]->proj_ref_no?></b></div>
                                                 </div>
                                                 <div class="ticket-reply-info">
                                                     <div class="text-primary"><span>Project Description
                                                             : </span></div>
                                                 </div>
                                                 <div class="ticket-reply-content">
-                                                    <p>Provide partnership platform with international
-                                                        tunneling expert through joint development of
-                                                        VD TBM and local involvement in TBM design
-                                                        works.</p>
-                                                    <p>Grooms Malaysian company to be ready in
-                                                        venturing through local and international
-                                                        tunneling projects in the future.</p>
+                                                    <p><?=$project[0]->proj_desc?></p>
                                                 </div>
                                                 <!-- <div class="ticket-attachments">
                                                     <a class="attachment" href="#">
@@ -65,8 +57,7 @@ END - Breadcrumbs
                                                         <div class="ticket-reply-info">
                                                             <div class="d-bold">
                                                                 <span class="text-primary">Project
-                                                                    Status : <span class="badge badge-primary">IN
-                                                                        PROGRESS</span></span>
+                                                                    Status : <span class="badge badge-primary"><?=$project[0]->proj_progress_status?></span></span>
 
                                                             </div>
                                                         </div>
@@ -77,8 +68,9 @@ END - Breadcrumbs
                                                                 <span class="text-primary">Objectives :
                                                                 </span>
                                                                 <ul class="features-list">
-                                                                    <li>Localization/Subcontracting</li>
-                                                                    <li>Technology Transfer(s)</li>
+                                                                <?php foreach($project[0]->proj_objs as $proj_obj){ ?>
+                                                                    <li><?=$proj_obj->proj_obj?></li>
+                                                                <?php } ?>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -122,21 +114,23 @@ END - Breadcrumbs
                                                         <div class="ticket-reply-info">
                                                             <span class="text-primary">ICP Recipient :
                                                             </span>
+                                                            <?php foreach($project[0]->proj_recs as $proj_rec){ ?>
                                                             <div class="ticket-reply-content field-highlight1 mt-2">
                                                                 <dl class="dl-horizontal pt-2">
                                                                     <dt>Name</dt>
-                                                                    <dd> ACREWORKS SDN BHD</dd>
+                                                                    <dd><?=$proj_rec->proj_rec_name?></dd>
                                                                     <dt>Address</dt>
-                                                                    <dd> Level 3A-3, Corporate Building
-                                                                        (Block E) Pusat Komersial
-                                                                        Southgate No.2, Jalan Chan Sow
-                                                                        Lin, Off, Jalan Dua, 55200
-                                                                        Kuala Lumpur</dd>
+                                                                    <dd><?=$proj_rec->proj_rec_addr_line1?>,<br>
+                                                                        <?=$proj_rec->proj_rec_addr_line2?>,<br>
+                                                                        <?=$proj_rec->proj_rec_addr_line3?>
+                                                                    </dd>
                                                                     <dt>Contact Details</dt>
-                                                                    <dd> Faizal Ahammed <br>03-2781
-                                                                        9456<br><a href="mailto:faizal@acreworks.com.my">faizal@acreworks.com.my</a></dd>
+                                                                    <dd><?=$proj_rec->proj_rec_cont_name?><br>
+                                                                    <?=$proj_rec->proj_rec_cont_no?><br>
+                                                                    <a href="mailto:<?=$proj_rec->proj_rec_cont_email?>"><?=$proj_rec->proj_rec_cont_email?></a></dd>
                                                                 </dl>
                                                             </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
