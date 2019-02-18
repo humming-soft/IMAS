@@ -29885,3 +29885,6 @@ font-size: 2.4rem;
     font-size: 2rem;
     opacity: .3;
 }
+.no_drag_progress .gantt_task_progress_drag{
+    display:none !important;
+}

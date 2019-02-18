@@ -67,7 +67,6 @@ END - Breadcrumbs
 </div>
 <script type ="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        milestones = <?= $milestone; ?>;
-        Milestone.init(milestones);
+        Milestone.init(<?=$milestone; ?>,<?=$project[0]->proj_id; ?>);
     });
 </script>

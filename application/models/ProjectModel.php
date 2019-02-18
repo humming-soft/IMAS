@@ -81,6 +81,7 @@ Class ProjectModel extends CI_Model
 	}
 
 	function insertProject($data){
+		$projectname =$data['proj_name'];
 		$this->db->trans_begin();
 		$pdata  = array(   
 			'proj_name' =>  $data['proj_name'],
@@ -142,6 +143,23 @@ Class ProjectModel extends CI_Model
 				'modified_by'=> $data['modified_by']
 			);
 			$this->db->insert('tbl_projects_recipients', $rdata);
+			// project inserted as milestone parent is =0
+			// Code added by ANCY MATHEW - 12-02- 2019
+			$milestone = array(
+					'proj_id' => $proj_id,
+					'task_name' =>  $projectname,
+					'task_type' => 'project',
+					'task_parent_id' => 0,
+					'task_status' => 1,
+				    'task_color' => '#1220b7',
+					'created_at'=> date('Y-m-d H:i:s'),
+					'modified_at'=> date('Y-m-d H:i:s'),
+					'created_by'=> 1,
+					'modified_by'=> 1
+			);
+			$this->db->insert('tbl_task', $milestone);
+			//Code END ANCY
+
 		}else{
 			$this->db->trans_rollback();
 			return FALSE;

@@ -1068,12 +1068,7 @@ var App = function () {
         };
     
         gantt.locale.labels.section_owner = "Resources";
-        gantt.config.lightbox.sections = [
-            {name: "description", height: 38, map_to: "text", type: "textarea", focus: true},
-            //{name: "owner", height: 22, map_to: "owner_id", type: "select", options: gantt.serverList("people")},
-            {name:"owner",height:60, type:"multiselect", options:gantt.serverList("people"), map_to:"owner_id", unassigned_value:5 },
-            {name: "time", type: "duration", map_to: "auto"}
-        ];
+
     
         gantt.config.resource_store = "resource";
         gantt.config.resource_property = "owner_id";

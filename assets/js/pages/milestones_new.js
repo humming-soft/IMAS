@@ -1,5 +1,5 @@
 var Milestone = function () {
-  var _wbs = function(base_url,milestones) {
+  var _wbs = function(base_url,milestones,project_id) {
     gantt.config.columns = [
       {name: "text", tree: true, width: 370, resize: true, label: "Milestones And Activities"},
       {name: "start_date", align: "center", width: 100, label: "Start Date", resize: true},
@@ -16,14 +16,14 @@ var Milestone = function () {
 		{name: "description", height: 70, map_to: "text", type: "textarea", focus: true},
 		{name: "time", type: "duration", map_to: "auto", readonly: true}
     ];
-    
-    function defaultValues(task) {
+	 function defaultValues(task) {
 		var text = "",
 			index = gantt.getChildren(task.parent || gantt.config.root_id).length + 1,
 			types = gantt.config.types;
 
 		switch (task.type) {
 			case types.project:
+
 				text = "Project";
 				break;
 			case types.subproject:
@@ -36,8 +36,7 @@ var Milestone = function () {
 		task.text = text + " #" + index;
 		return;
     }
-    
-    gantt.attachEvent("onTaskCreated", function (task) {
+	gantt.attachEvent("onTaskCreated", function (task) {
 		var parent = task.parent,
 			types = gantt.config.types,
 			level = 0;
@@ -58,29 +57,24 @@ var Milestone = function () {
 				task.type = types.task;
 				break;
 		}
-
 		defaultValues(task);
 		return true;
     });
-    
-    gantt.templates.task_class = gantt.templates.grid_row_class = function (start, end, task) {
+	gantt.templates.task_class = gantt.templates.grid_row_class = function (start, end, task) {
 		switch (task.type) {
 			case gantt.config.types.project:
-				return 'Project';
+				return 'no_drag_progress project';
 				break;
 			case gantt.config.types.subproject:
-				return 'Milestone';
+				return 'no_drag_progress milestone';
 				break;
 			default:
 				return 'activity';
 				break;
 		}
 	};
-    
     gantt.init("wbs_milestones");
-	gantt.parse(milestones);
-
-    //Highlights Weekend - START
+	gantt.parse(milestones);//Highlights Weekend - START
     gantt.templates.scale_cell_class = function (date) {
 		if (date.getDay() == 0 || date.getDay() == 6) {
 			return "weekend";
@@ -177,11 +171,11 @@ var Milestone = function () {
 				break;
 		}
 	};
-	  gantt.attachEvent("onAfterTaskAdd", function(id,item){
+	gantt.attachEvent("onAfterTaskAdd", function(id,item){
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  		_showLoader();
-		  $.post(base_url+'milestone/add',{"imas_csrf_token":csrfHash,"data":item,"id":123}, function(d) {
+		  $.post(base_url+'milestone/add',{"imas_csrf_token":csrfHash,"data":item,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
 			  if(d.status == 1) {
@@ -199,7 +193,7 @@ var Milestone = function () {
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
-		  $.post(base_url+'milestone/add_link',{"imas_csrf_token":csrfHash,"data":link,"id":123}, function(d) {
+		  $.post(base_url+'milestone/add_link',{"imas_csrf_token":csrfHash,"data":link,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
 			  if(d.status == 1) {
@@ -215,12 +209,13 @@ var Milestone = function () {
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
-		  $.post(base_url+'milestone/delete_task',{"imas_csrf_token":csrfHash,"task_id":id,"id":123}, function(d) {
+		  $.post(base_url+'milestone/delete_task',{"imas_csrf_token":csrfHash,"task_id":id,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
-
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
 			  }else{
 				  _hideLoader();
 			  }
@@ -230,11 +225,13 @@ var Milestone = function () {
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
-		  $.post(base_url+'milestone/update_task_info',{"imas_csrf_token":csrfHash,"data":item,"id":123,"task_id":id}, function(d) {
+		  $.post(base_url+'milestone/update_task_info',{"imas_csrf_token":csrfHash,"data":item,"id":project_id,"task_id":id }, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
 			  }else{
 				  _hideLoader();
 			  }
@@ -244,15 +241,34 @@ var Milestone = function () {
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
-		  $.post(base_url+'milestone/link_delete',{"imas_csrf_token":csrfHash,"id":123,"link_id":id}, function(d) {
+		  $.post(base_url+'milestone/link_delete',{"imas_csrf_token":csrfHash,"id":project_id,"link_id":id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
 			  }else{
 				  _hideLoader();
 			  }
 		  }, 'json');
+	  });
+	  gantt.attachEvent("onTaskDrag", function(id, mode, task, original){
+		  var modes = gantt.config.drag_mode;
+		  if(mode == modes.move){
+			  var diff = task.start_date - original.start_date;
+			  gantt.eachTask(function(child){
+				  child.start_date = new Date(+child.start_date + diff);
+				  child.end_date = new Date(+child.end_date + diff);
+				  gantt.refreshTask(child.id, true);
+			  },id );
+		  }
+	  });
+	 gantt.attachEvent("onBeforeTaskDrag", function(id, mode, e){
+		if(gantt.hasChild(id) == false){
+			  return true;      //denies dragging if the global task index is odd
+		  }
+		  return false;           //allows dragging if the global task index is even
 	  });
     var currentScale = 2;
     _setScaleConfig(currentScale);
@@ -293,8 +309,8 @@ var Milestone = function () {
 		menu.addClass("selected");
 	}; 
 	return {
-        init: function(milestones){
-			ganttobj = _wbs(base_url,milestones);
+        init: function(milestones,project_id){
+			ganttobj = _wbs(base_url,milestones,project_id);
 			_menuSelected($("#m_gc"));
         }
     }
