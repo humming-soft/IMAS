@@ -192,5 +192,14 @@ Class ProjectModel extends CI_Model
 		}
 		return $result;
 	}
+	function getProjectByType($id,$status){
+		$this->db->select('t1.proj_type as proj_type_id');
+		$this->db->from('tbl_projects as t1');
+		$this->db->join('tbl_project_type as t3', 't1.proj_type = t3.proj_type_id', 'LEFT');
+		$this->db->where('t1.proj_status', $status);
+		$this->db->where('t1.proj_id', $id);
+		$result = $this->db->get()->result();
+		return $result[0]->proj_type_id;
+	}
 }
 ?>

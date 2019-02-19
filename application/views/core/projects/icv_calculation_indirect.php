@@ -32,13 +32,13 @@ START - Email Messages List
                         <?php foreach($icv_milestone as $icv_milestone){  if($icv_milestone['order']==1){ ?>
                             <div class="ae-item active">
                                 <div class="aei-content ">
-                                    <h6 class="aei-title">Milestone <?=$icv_milestone['order']?></h6>
+                                    <h6 class="aei-title"> Milestone <?=$icv_milestone['order']?></h6>
                                     <div class="aei-sub-title"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></div>
                                     <div class="aei-text"><?=$icv_milestone['milestone_text']?>
                                     </div>
                                 </div>
                             </div>
-                       <?php } else { ?>
+                        <?php } else { ?>
                             <div class="ae-item ">
                                 <div class="aei-content ">
                                     <h6 class="aei-title">Milestone <?=$icv_milestone['order']?></h6>
@@ -47,7 +47,7 @@ START - Email Messages List
                                     </div>
                                 </div>
                             </div>
-                       <?php } }?>
+                        <?php } }?>
                     </div>
                     <a class="ae-load-more" href="#"><span>Load More Messages</span></a></div><!--------------------
 END - Email Messages List
@@ -101,7 +101,7 @@ START - Email Content Header
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                     <div class="ae-content" style="height:1000px">
                         <div class="older-pack">
                             <div class="aec-full-message-w">
@@ -129,12 +129,14 @@ START - Email Content Header
                                         <div class="row">
                                             <table class="tabIcv">
                                                 <thead>
-                                                <tr>
-                                                    <th>Nominal Value Non MLC</th>
+                                                <tr class="text-center">
+                                                    <th>NV Non MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Nominal Value MLC</th>
+                                                    <th>1 + μ</th>
+                                                    <th>NV MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Total - (Non MLC * M) + (MLC * M)</th>
+                                                    <th>1 + μ</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -162,6 +164,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -176,6 +185,14 @@ START - Email Content Header
                                                             </div>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
@@ -211,6 +228,14 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -222,6 +247,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -260,6 +292,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -271,6 +310,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -322,13 +368,15 @@ START - Email Content Header
                                         <div class="row">
                                             <table class="tabIcv">
                                                 <thead>
-                                                  <tr>
-                                                      <th>Nominal Value Non MLC</th>
-                                                      <th>Multiplier</th>
-                                                      <th>Nominal Value MLC</th>
-                                                      <th>Multiplier</th>
-                                                      <th>Total - (Non MLC * M) + (MLC * M)</th>
-                                                  </tr>
+                                                <tr class="text-center">
+                                                    <th>NV Non MLC</th>
+                                                    <th>Multiplier</th>
+                                                    <th>1 + μ</th>
+                                                    <th>NV MLC</th>
+                                                    <th>Multiplier</th>
+                                                    <th>1 + μ</th>
+                                                    <th>Total</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
@@ -355,6 +403,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -366,6 +421,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -404,6 +466,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -415,6 +484,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -453,6 +529,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -464,6 +547,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -521,12 +611,14 @@ START - Email Content Header
                                         <div class="row">
                                             <table class="tabIcv">
                                                 <thead>
-                                                <tr>
-                                                    <th>Nominal Value Non MLC</th>
+                                                <tr class="text-center">
+                                                    <th>NV Non MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Nominal Value MLC</th>
+                                                    <th>1 + μ</th>
+                                                    <th>NV MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Total - (Non MLC * M) + (MLC * M)</th>
+                                                    <th>1 + μ</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -554,6 +646,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -565,6 +664,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -603,6 +709,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -614,6 +727,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -652,6 +772,13 @@ START - Email Content Header
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
@@ -663,6 +790,13 @@ START - Email Content Header
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -696,7 +830,60 @@ START - Email Content Header
             </div>
         </div>
     </div>
- </div>
+</div>
+<div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel1" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="onboarding-slider-w">
+                <!--  <div class="onboarding-slide">
+                            <div class="onboarding-media"><img alt="" src="<?/*=site_url('assets/img/bigicon2.png')*/?>" width="200px"></div>
+                            <div class="onboarding-content with-gradient">
+                                <h4 class="onboarding-title">Example of onboarding screen!</h4>
+                                <div class="onboarding-text">This is an example of a multistep onboarding screen, you
+                                    can use it to introduce your customers to your app, or collect additional
+                                    information from them before they start using your app.</div>
+                            </div>
+                        </div>-->
+                <div class="onboarding-slide">
+                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
+                    <div class="onboarding-content with-gradient">
+                        <h4 class="onboarding-title">ICP Multiplier</h4>
+                        <div class="onboarding-text">Direct offset</div>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="hidden" id="hidMultiplierLocation">
+                                    <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
+                                            <option>Select</option>
+                                            <option value="1">Professional Sevices local sourcing</option>
+                                            <option value="2">Local Product</option>
+                                            <option value="3">Plant Facility</option>
+                                            <option value="4">Logistics</option>
+                                        </select></div>
+                                </div>
+                                <div class="col-sm-12" hidden id="itemDesDiv1">
+                                    <div class="form-group">
+                                        <select class="form-control" id="itemdes1">
+                                            <option value="-1">Select</option>
+                                            <!--<option>Equity Investment</option>
+                                            <option>Bank Gua</option>
+                                            <option>Other</option>-->
+                                        </select></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-right">
+                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModelNonMLC" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-centered" role="document">
         <div class="modal-content text-center">
@@ -713,7 +900,7 @@ START - Email Content Header
                                     <div class="form-group"><label for="">Item</label><select class="form-control" id="nonMlcItem">
                                             <option>Select</option>
                                             <?php foreach($icv_multiplier_nonMLC as $nonmlcM){ ?>
-                                                <option value="<?=$nonmlcM->mul_id?>"> <?=$nonmlcM->mul_text?></option>
+                                            <option value="<?=$nonmlcM->mul_id?>"> <?=$nonmlcM->mul_text?></option>
                                             <?php } ?>
                                         </select></div>
                                 </div>
@@ -777,6 +964,9 @@ START - Email Content Header
         </div>
     </div>
 </div>                
+    
+  
+   
    
    
 

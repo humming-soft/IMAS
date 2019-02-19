@@ -1,7 +1,7 @@
 var ICVCalc = function () {
     var _icvCalcDirect = function() {
         $(document).on("change","#nonMlcItem",function(){
-            $('#nonMlcitemDesDiv').removeAttr('hidden');
+          /*  $('#nonMlcitemDesDiv').removeAttr('hidden');
             if($('#nonMlcItem').val() == 1){
                 $('#nonMlcItemDes').find('option').not(':first').remove();
                 $('#nonMlcItemDes').append('<option value="5">Equity Investment</option><option value="4">Bank Guarantee</option><option value="3">Project Financing</option><option value="3">Principal Guarantee for SBLC</option>');
@@ -21,28 +21,48 @@ var ICVCalc = function () {
             if($('#nonMlcItem').val() == 5){
                 $('#nonMlcItemDes').find('option').not(':first').remove();
                 $('#nonMlcItemDes').append('<option value="1">Incidental</option><option value="1">Others</option>');
-            }
+            }*/
+            $('#nonMlcitemDesDiv').removeAttr('hidden');
+            var mulId=$(this).val();
+            var csrfName = _getcsrfname(),
+                csrfHash = _getcsrfcontent();
+            $.post(base_url+'icvcalculation/get_multiplier_items',{"imas_csrf_token":csrfHash,"mulId":mulId}, function(d) {
+                _setcsrfcontent(d.token);
+                if(d.status == 1) {
+                    $('#nonMlcItemDes').find('option').not(':first').remove();
+                    $.each(d.multiplier,function(key,val){
+                        var opt = $('<option />');
+                        opt.val(key);
+                        opt.text(val);
+                        $('#nonMlcItemDes').append(opt);
+                    });
+                }else{
+                    _hideLoader();
+                }
+            }, 'json');
 
         });
         $(document).on("change","#MlcItem",function(){
-            $('#mlcitemDesDiv').removeAttr('hidden');
-            if($('#MlcItem').val() == 1){
-                $('#MlcItemDes').find('option').not(':first').remove();
-                $('#MlcItemDes').append('<option value="4">Design, systems integration work knowledge and skills development</option><option value="4">Technology upgrading, knowledge/Skills transfer and certification(People, Product & process)</option><option value="2">Installation , Testing ,Commissioning and Project Management</option>');
-            }
-            if($('#MlcItem').val() == 2){
-                $('#MlcItemDes').find('option').not(':first').remove();
-                $('#MlcItemDes').append('<option value="3">Parts and Component, Main Equipment, Test Equipment - Custom Made</option><option value="1">Parts and Component, Main Equipment,Test Equipment - Off The Shelves</option>');
-            }
-            if($('#MlcItem').val() == 3){
-                $('#MlcItemDes').find('option').not(':first').remove();
-                $('#MlcItemDes').append('<option value="3">Plant Equipment and machinery</option><option value="4">Tools, Jigs and Fixtures</option>');
-            }
-            if($('#MlcItem').val() == 4){
-                $('#MlcItemDes').find('option').not(':first').remove();
-                $('#MlcItemDes').append('<option value="1">Integrated logistic support</option><option value="1">Forwarding haulage and transportation, storage and warehouse</option><option value="1">Local Insurance</option>');
-            }
 
+
+            $('#mlcitemDesDiv').removeAttr('hidden');
+            var mulId=$(this).val();
+            var csrfName = _getcsrfname(),
+                csrfHash = _getcsrfcontent();
+            $.post(base_url+'icvcalculation/get_multiplier_items',{"imas_csrf_token":csrfHash,"mulId":mulId}, function(d) {
+                _setcsrfcontent(d.token);
+                if(d.status == 1) {
+                    $('#MlcItemDes').find('option').not(':first').remove();
+                    $.each(d.multiplier,function(key,val){
+                        var opt = $('<option />');
+                        opt.val(key);
+                        opt.text(val);
+                        $('#MlcItemDes').append(opt);
+                    });
+                }else{
+                    _hideLoader();
+                }
+            }, 'json');
         });
         $(document).on("click",".nonMLCMultiplier",function(){
             $('#multipilerModelNonMLC').modal('show');

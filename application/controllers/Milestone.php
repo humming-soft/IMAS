@@ -103,6 +103,7 @@ class Milestone extends HS_Controller {
             }
             if($enddateParent <  $enddate){
                 $dataParent = array(
+                    'task_start_date' => date("Y-m-d H:i:s", strtotime($startdate)) ,
                     'task_end_date' => date("Y-m-d H:i:s", strtotime($enddate)) ,
                     'modified_at'=> date('Y-m-d H:i:s'),
                     'modified_by'=> 1

@@ -9,6 +9,7 @@ class Projects extends HS_Controller {
         $this->load->model('projectmodel','',TRUE);
         $this->load->model('commonmodel','',TRUE);
         $this->load->model('milestonemodel','',TRUE);
+        $this->load->model('icvcalculationmodel','',TRUE);
     }
     public function validate_url($p_ref='',$projectId=''){
         if(!empty($p_ref)){
@@ -215,12 +216,22 @@ class Projects extends HS_Controller {
             }
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $data['icv_milestone']=$this->icvcalculationmodel->get_icv_milestone($data['project'][0]->proj_id,1);
+            $data['icv_multiplier_MLC']=$this->icvcalculationmodel->get_icv_multiplier();
+            $data['icv_multiplier_nonMLC']=$this->icvcalculationmodel->get_icv_multiplier_non();
+           /* print_r( $data['icv_multiplier_MLC']);
+            print_r( $data['icv_multiplier_nonMLC']);
+            exit;*/
             $_header['support'] = array("slick","scrollbar");
             $_footer["page_js"] = "icvcalc";
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php',$nav);
-            $this->load->view('core/projects/icv_calculation',$data);
+            if($this->projectmodel->getProjectByType($data['project'][0]->proj_id,1) == 1){
+                $this->load->view('core/projects/icv_calculation',$data);
+            }else{
+                $this->load->view('core/projects/icv_calculation_indirect',$data);
+            }
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             show_404();
