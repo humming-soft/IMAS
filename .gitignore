@@ -5,11 +5,6 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
-
 #codeigniter 3
 application/logs/*
 !application/logs/index.html
@@ -21,5 +16,5 @@ system/application/cache/*
 
 */config/config.php
 */config/database.php
-/config/config.php
-/config/database.php
+*/config/ion_auth.php
+*/views/auth/*

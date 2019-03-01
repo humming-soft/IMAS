@@ -71,6 +71,3 @@ var Dashboard = function () {
         }
     }
 }();
-document.addEventListener('DOMContentLoaded', function() {
-    Dashboard.init();
-  });

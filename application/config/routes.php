@@ -55,6 +55,7 @@ $route['(\w{2})/(.*)'] = '$2';
 $route['(\w{2})'] = $route['default_controller'];
 $route['forgot-password'] = 'forgotpassword';
 $route['reset-password'] = 'resetpassword';
+$route['login'] = 'login/auth';
 $route['programmes/create'] = 'programmes/create';
 $route['programmes/update'] = 'programmes/update';
 $route['programmes/delete'] = 'programmes/delete';

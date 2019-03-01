@@ -3,9 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Programmes extends HS_Controller {
 
+    public $data = [];
+
     function __construct()
     {
-        parent::__construct();
+        parent::__construct('programmes');
         $this->load->helper('form');
         $this->load->model('programmemodel','',TRUE);
         $this->load->model('agencymodel','',TRUE);
@@ -17,16 +19,16 @@ class Programmes extends HS_Controller {
 	{
         if ($this->session->userdata('message')) {
             $messagehrecord = $this->session->userdata('message');
-            $data['message'] = $messagehrecord['message'];
-            $data['type'] = $messagehrecord['type'];
+            $this->data['message'] = $messagehrecord['message'];
+            $this->data['type'] = $messagehrecord['type'];
             $this->session->unset_userdata('message');
         }
-        $data['programmes'] = $this->programmemodel->getAllProgrammes(1,1);
-        $data['currency'] = $this->currencymodel->getCurrencyById(1);
-        $data['cscale'] = $this->currencymodel->getAllCurrencyScale();
-        $data['agencies'] = $this->agencymodel->getAllAgencies();
-        $data['page_js'] = 'dashboard';
-		$this->load->view('core/dashboard',$data);
+        $this->data['programmes'] = $this->programmemodel->getAllProgrammes(1,1);
+        $this->data['currency'] = $this->currencymodel->getCurrencyById(1);
+        $this->data['cscale'] = $this->currencymodel->getAllCurrencyScale();
+        $this->data['agencies'] = $this->agencymodel->getAllAgencies();
+        $this->data['page_js'] = 'dashboard';
+		$this->load->view('core/dashboard',$this->data);
     }
 
     public function create(){

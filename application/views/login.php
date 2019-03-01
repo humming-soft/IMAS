@@ -72,36 +72,45 @@
 					<div class="col-xl-7 pa-0">
 						<div class="auth-form-wrap py-xl-0 py-50">
 							<div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100 auth-box-w">
-								<h1 class="display-5 mb-10 text-center">ICP Management System</h1>
-								<p class="mb-3 text-center">Sign in to your account.</p>
-								<?=form_open('login/auth') ?>
-									<div class="form-group"><label for="">Username</label><input class="form-control" placeholder="Enter your username"
-											type="text">
+								<h1 class="display-5 mb-10 text-center"><?=$this->lang->line('log_header')?></h1>
+								<p class="mb-3 text-center"><?=$this->lang->line('log_sub_header')?></p>
+								<?=form_open('login') ?>
+									<div class="form-group">
+										<label for=""><?=$this->lang->line('log_username')?></label>
+										<input class="form-control" placeholder="Enter your username" name="user_email" value="<?=$user_email?>" type="text">
 										<div class="pre-icon os-icon os-icon-user-male-circle"></div>
 									</div>
-									<div class="form-group"><label for="">Password</label><input class="form-control" placeholder="Enter your password"
-											type="password">
+									<div class="form-group">
+										<label for=""><?=$this->lang->line('log_password')?></label>
+										<input class="form-control" placeholder="Enter your password" name="user_password" type="password">
 										<div class="pre-icon os-icon os-icon-fingerprint"></div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											<div class="custom-control custom-checkbox mb-25">
-												<input class="custom-control-input" id="same-address" type="checkbox" checked>
-												<label class="custom-control-label font-14" for="same-address">Remember Me</label>
+											<div class="form-check">
+												<label class="form-check-label"><?php echo form_checkbox('remember', '1', FALSE, 'id="remember" class="form-check-input"');?><?=$this->lang->line('log_remeber')?></label>
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group text-right">
-												<a href="<?=site_url('forgot-password')?>" class="font-14 mt-15">Forgot Password?</a>
+												<a href="<?=site_url('forgot-password')?>" class="font-14 mt-15"><?=$this->lang->line('log_forgot_pass')?></a>
 											</div>
 										</div>
 									</div>
 
-								<button class="btn btn-primary btn-block " type="submit"><i class="os-icon os-icon-check-square mr-1"></i> Login</button>
+								<button class="btn btn-primary btn-block " type="submit"><i class="os-icon os-icon-check-square mr-1"></i> <?=$this->lang->line('log_btn_signin')?></button>
 								<?=form_close()?>
 								
 								<div class="hs-hr"></div>
-								<p class="text-center pt-3">Do have an account yet? <a href="#">Contact Us</a></p>
+								
+								<div class="text-center pt-3">
+									<?php if(!empty($message)){ ?>
+										<div class="alert bg-info text-white alert-dismissible" role="alert">
+										<button class="close" data-dismiss="alert" type="button"><span aria-hidden="true"> ×</span></button>
+										<?=$message?>
+										</div>
+									<?php } ?>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -114,21 +123,10 @@
 	<!-- /HK Wrapper -->
 
 	<script src="<?=site_url('assets/js/vendors/jquery/dist/jquery.min.js')?>"></script>
+	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/util.js')?>"></script>
+	<script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/alert.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/owl/owl.carousel.min.js')?>"></script>
-    <script src="<?=site_url('assets/js/app.js')?>"></script>
+    <script src="<?=site_url('assets/js/app.min.js')?>"></script>
 </body>
-<script type="text/javascript">
-	"use strict";
-	$('#owl_demo_1').owlCarousel({
-		items: 1,
-		animateOut: 'fadeOut',
-		loop: true,
-		margin: 10,
-		autoplay: true,
-		mouseDrag: false
-
-	});
-
-</script>
-
+<script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {App.initOwlCarousel($('#owl_demo_1'))})</script>
 </html>

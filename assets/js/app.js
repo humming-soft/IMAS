@@ -142,9 +142,9 @@ var App = function () {
 
 
        // #3. FORM VALIDATION
-      var _formValidation = function(){
-        if ($('#formValidate').length) {
-          $('#formValidate').validator();
+      var _formValidation = function(f){
+        if (f.length) {
+          f.validator();
         }
       };
 
@@ -892,13 +892,15 @@ var App = function () {
       };
 
       // #21. Onboarding Screens Modal
-      var _initModal = function(){
+      var _initModal = function(p,n){
         $('.onboarding-modal.show-on-load').modal('show');
         if ($('.onboarding-modal .onboarding-slider-w').length) {
           $('.onboarding-modal .onboarding-slider-w').slick({
             dots: true,
             infinite: false,
             adaptiveHeight: true,
+            prevArrow: '<button class="slick-prev" aria-label="'+p+'" type="button">'+p+'</button>',
+            nextArrow: '<button class="slick-next" aria-label="'+n+'" type="button">'+n+'</button>',
             slidesToShow: 1,
             slidesToScroll: 1,
             draggable: false
@@ -1235,6 +1237,22 @@ var App = function () {
     
     };
 
+      var loadOwlCarousel = function(e){
+          if ($.owlCarousel == 'undefined') {
+            console.warn('Warning - Pikaday.js is not loaded.');
+            return;
+         }
+          e.owlCarousel({
+            items: 1,
+            animateOut: 'fadeOut',
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            mouseDrag: false
+        
+          });
+      };
+
       return {
         initLoader: function(Splash){
           _splashLoader(Splash);
@@ -1248,8 +1266,8 @@ var App = function () {
         initFullChat: function(){
           _fullChatApp();
         },
-        initValidation: function(){
-          _formValidation();
+        initValidation: function(f){
+          _formValidation(f);
         },
         initDateRangePicker: function(){
           _dateRangePicker();
@@ -1303,8 +1321,8 @@ var App = function () {
         initSupportService: function() {
           _supportService();
         },
-        initModal: function() {
-          _initModal();
+        initModal: function(p,n) {
+          _initModal(p,n);
         },
         initColorToggler: function() {
           _initColorToggler();
@@ -1326,24 +1344,26 @@ var App = function () {
         },
         initWBS2: function(base_url){
           _wbs2(base_url);
+        },
+        initOwlCarousel: function(e){
+          loadOwlCarousel(e);
         }
     }
 }();
 // When content is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  App.initMenu();
-  App.initContentMenuToggle();
-  App.initDropdown();
-  App.initElementActions();
-  App.initModal();
-  App.initFancySelector();
-  App.initContentPanelTrigger();
-  App.initSupportService();
-  App.initBlink();
-  App.initTooltip();
-  App.initMailApp();
-
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   App.initMenu();
+//   App.initContentMenuToggle();
+//   App.initDropdown();
+//   App.initElementActions();
+//   App.initModal();
+//   App.initFancySelector();
+//   App.initContentPanelTrigger();
+//   App.initSupportService();
+//   App.initBlink();
+//   App.initTooltip();
+//   App.initMailApp();
+// });
 // When page is fully loaded
 window.addEventListener('load', function() {
   $('.preloader-it').fadeOut('slow');
