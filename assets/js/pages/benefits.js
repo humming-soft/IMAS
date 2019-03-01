@@ -1,7 +1,7 @@
 var Benefits = function () {
     var _addNew = function() {
-        $( "#addrow5" ).click(function() {
-            $("#tabBenefits5").each(function () {
+        $( "#addrow" ).click(function() {
+            $("#tabBenefits").each(function () {
                 var tds = '<tr>';
                 jQuery.each($('tr:last td', this), function () {
                     tds += '<td>' + $(this).html() + '</td>';
@@ -18,15 +18,15 @@ var Benefits = function () {
 
     var _menuSelected = function(menu){
         menu.addClass("selected");
-    }; 
-
+    };
     return {
         init: function(){
             _addNew();
             _menuSelected($("#m_benefits"));
+
         }
     }
 }();
 document.addEventListener('DOMContentLoaded', function() {
     Benefits.init();
-  });
+});

@@ -178,6 +178,7 @@ var Milestone = function () {
 		  $.post(base_url+'milestone/add',{"imas_csrf_token":csrfHash,"data":item,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
+			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
 				  gantt.clearAll();
@@ -196,6 +197,7 @@ var Milestone = function () {
 		  $.post(base_url+'milestone/add_link',{"imas_csrf_token":csrfHash,"data":link,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
+			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
 				  gantt.clearAll();
@@ -212,6 +214,7 @@ var Milestone = function () {
 		  $.post(base_url+'milestone/delete_task',{"imas_csrf_token":csrfHash,"task_id":id,"id":project_id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
+			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
 				  gantt.clearAll();
@@ -228,6 +231,7 @@ var Milestone = function () {
 		  $.post(base_url+'milestone/update_task_info',{"imas_csrf_token":csrfHash,"data":item,"id":project_id,"task_id":id }, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
+			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
 				  gantt.clearAll();
@@ -244,6 +248,7 @@ var Milestone = function () {
 		  $.post(base_url+'milestone/link_delete',{"imas_csrf_token":csrfHash,"id":project_id,"link_id":id}, function(d) {
 			  _hideLoader();
 			  _setcsrfcontent(d.token);
+			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
 				  _hideLoader();
 				  gantt.clearAll();

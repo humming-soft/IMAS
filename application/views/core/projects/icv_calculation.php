@@ -1,126 +1,107 @@
-<!--------------------
-START - Breadcrumbs
--------------------->
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes"><i
-                class="os-icon os-icon-home"></i></a></li>
-    <li class="breadcrumb-item"><a class="text-primary" href="http://localhost/imas/programmes/tda-pod-mot-54-2015-802">TUNNELING
-            AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/'.$this->uri->segment(0))?>"><?=$programme[0]->prog_name?></a></li>
+    <li class="breadcrumb-item"><span><?=$project[0]->proj_name?></span></li>
 </ul>
-<!--------------------
-END - Breadcrumbs
--------------------->
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box p-0">
         <div class="app-email-w">
-            <div class="app-email-i"><!--------------------
-
---------------------><!--------------------
-START - Email Messages List
--------------------->
-                <div class="ae-list-w">
-                    <div class="ael-head">
-                        <div class="actions-left"><select>
-                                <option>Sort by date</option>
-                            </select></div>
-                        <div class="actions-right"><a href="#"><i class="os-icon os-icon-ui-37"></i></a><a href="#"><i
-                                    class="os-icon os-icon-grid-18"></i></a></div>
-                    </div>
-                    <div class="ae-list">
-                        <?php foreach($icv_milestone as $icv_milestone){  if($icv_milestone['order']==1){ ?>
-                            <div class="ae-item active">
-                                <div class="aei-content ">
-                                    <h6 class="aei-title">Milestone <?=$icv_milestone['order']?></h6>
-                                    <div class="aei-sub-title"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></div>
-                                    <div class="aei-text"><?=$icv_milestone['milestone_text']?>
-                                    </div>
-                                </div>
-                            </div>
-                       <?php } else { ?>
-                            <div class="ae-item ">
-                                <div class="aei-content ">
-                                    <h6 class="aei-title">Milestone <?=$icv_milestone['order']?></h6>
-                                    <div class="aei-sub-title"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></div>
-                                    <div class="aei-text"><?=$icv_milestone['milestone_text']?>
-                                    </div>
-                                </div>
-                            </div>
-                       <?php } }?>
-                    </div>
-                    <a class="ae-load-more" href="#"><span>Load More Messages</span></a></div><!--------------------
-END - Email Messages List
--------------------->
-                <div class="ae-content-w"><!--------------------
-START - Email Content Header
--------------------->
-                    <div class="aec-head">
-                        <div class="actions-left">
-                            <a class="highlight" href="#"><i class="os-icon os-icon-ui-02"></i></a>
-                        </div>
-                        <div class="actions-right">
-                            <div class="aeh-actions">
-                                <a href="#"><i class="os-icon os-icon-ui-44"></i></a>
-                                <a class="separate" href="#"><i class="os-icon os-icon-ui-15"></i></a>
-                                <a href="#"><i class="os-icon os-icon-common-07"></i></a>
-                                <a href="#"><i class="os-icon os-icon-mail-19"></i></a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="app-email-i">
+                <div class="ae-content-w">
+                    <?=form_open('programmes/'.$p_ref.'/'.$projectId.'/icv_calculation/add','id="icv_cal_l"')?>
                     <div class="element-box">
+                        <div class="col-sm-12 text-right">
+                            <div class="form-buttons-w">
+                                <button class="btn btn-primary" type="submit"><i class="os-icon os-icon-navigation"></i> Save</button>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                <div class="form-group"><label for="">Total Non MLC</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">RM</div>
+                            <?php if(sizeof($icv_project) > 0) { foreach($icv_project as $icv_project) { ?>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total Non MLC</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="sumNonMLC" name="sumNonMLC" value="<?=$icv_project['p_nonmlc']?>" type="text">
                                         </div>
-                                        <input class="form-control" readonly id="sumNonMLC" value="0.00" type="text">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4">
-                                <div class="form-group"><label for="">Total MLC</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">RM</div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total MLC</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="sumMLC"  name="sumMLC" value="<?=$icv_project['p_mlc']?>" type="text">
                                         </div>
-                                        <input class="form-control" readonly id="sumMLC" value="0.00" type="text">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4">
-                                <div class="form-group"><label for="">Total ICV</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">RM</div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total ICV</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="totalICV"  name="totalICV" value="<?=$icv_project['p_total']?>" type="text">
                                         </div>
-                                        <input class="form-control" readonly id="totalICV" value="0.00" type="text">
                                     </div>
                                 </div>
-                            </div>
+                            <?php } } else { ?>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total Non MLC</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="sumNonMLC" name="sumNonMLC" value="0" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total MLC</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="sumMLC"  name="sumMLC" value="0" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group"><label for="">Total ICV</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">RM</div>
+                                            </div>
+                                            <input class="form-control" readonly id="totalICV"  name="totalICV" value="0" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
-                        </div>
-                    <div class="ae-content" style="height:1000px">
-                        <div class="older-pack">
+                    </div>
+                    <div class="ae-content" >
+                        <?php foreach($icv_milestone as $icv_milestone){?>
                             <div class="aec-full-message-w">
                                 <div class="aec-full-message">
                                     <div class="message-head">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h6 class="onboarding-title">Land Available for Shoplots Jln Tun Tun Razak</h6>
+                                                <h6 class="onboarding-title"><?=$icv_milestone['milestone_text']?></h6>
                                             </div>
                                             <div class="col-sm-12 col-md-6">
                                                 <div class="form-group">
                                                     <label for=""> Timeline /Completion Period</label>
-                                                    <b class="font d-block">01-Jan-19  -  01-May-19</b>
+                                                    <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
+                                                    <input class="form-control"  value="<?=$icv_milestone['milestone_id']?> " id=milestoneID name=milestoneID[] type="hidden">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Evidences</label>
-                                                    <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" value="Upload"></b>
+                                                    <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$icv_milestone['milestone_id']?>][]" multiple value="Upload"></b>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,50 +110,37 @@ START - Email Content Header
                                         <div class="row">
                                             <table class="tabIcv">
                                                 <thead>
-                                                <tr>
-                                                    <th>Nominal Value Non MLC</th>
+                                                <tr class="text-center">
+                                                    <th>NV Non MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Nominal Value MLC</th>
+                                                    <th>NV MLC</th>
                                                     <th>Multiplier</th>
-                                                    <th>Total - (Non MLC * M) + (MLC * M)</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Material</td>
-                                                </tr>
-                                                <tr>
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
-                                                                <input class="form-control nonMLC" type="text">
+                                                                <input class="form-control nonMLC" value="<?=$icv_milestone['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                                <input class="form-control nonMLCMultiplier" value="<?=$icv_milestone['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td>
+                                                    <td hidden>
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                                <input class="form-control" value="<?=$icv_milestone['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="hidden" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -182,29 +150,21 @@ START - Email Content Header
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td  colspan="5">&nbsp; &nbsp; &nbsp;Machinery</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
+                                                                <input class="form-control MLC" value="<?=$icv_milestone['mlc']?>"  id="MLC" name="MlC[]" type="text">
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
+                                                                <input class="form-control MLCMultiplier" value="<?=$icv_milestone['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td hidden>
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input class="form-control" id="MLCMU" value="<?=$icv_milestone['mlcMu']?>" name="MlCMU[]" readonly type="hidden" value="">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -214,489 +174,72 @@ START - Email Content Header
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Manpower</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
+                                                                <input class="form-control TotalRow" value="<?=$icv_milestone['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
-                                            <div class="col-sm-12 text-right">
-                                                <div class="form-buttons-w">
-                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
-                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="aec-full-message-w">
-                                <div class="aec-full-message">
-                                    <div class="message-head">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h6 class="onboarding-title">Instrumentation Installation</h6>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for=""> Timeline /Completion Period</label>
-                                                    <b class="font d-block">01-May-19  -  01-Aug-19</b>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">Evidences</label>
-                                                    <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" value="Upload"></b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="message-content">
-                                        <div class="row">
-                                            <table class="tabIcv">
-                                                <thead>
-                                                  <tr>
-                                                      <th>Nominal Value Non MLC</th>
-                                                      <th>Multiplier</th>
-                                                      <th>Nominal Value MLC</th>
-                                                      <th>Multiplier</th>
-                                                      <th>Total - (Non MLC * M) + (MLC * M)</th>
-                                                  </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Material</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td  colspan="5">&nbsp; &nbsp; &nbsp;Machinery</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Manpower</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="col-sm-12 text-right">
-                                                <div class="form-buttons-w">
-                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
-                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="aec-full-message-w show-pack">
-                            <div class="more-messages" style="font-weight: bold">3 Activities</div>
-                            <div class="aec-full-message-w">
-                                <div class="aec-full-message">
-                                    <div class="message-head">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h6 class="onboarding-title">Specific Ground Improvement Works/Grouting</h6>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for=""> Timeline /Completion Period</label>
-                                                    <b class="font d-block">01-Dec-19  -  01-Apr-2020</b>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">Evidences</label>
-                                                    <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" value="Upload"></b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="message-content">
-                                        <div class="row">
-                                            <table class="tabIcv">
-                                                <thead>
-                                                <tr>
-                                                    <th>Nominal Value Non MLC</th>
-                                                    <th>Multiplier</th>
-                                                    <th>Nominal Value MLC</th>
-                                                    <th>Multiplier</th>
-                                                    <th>Total - (Non MLC * M) + (MLC * M)</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Material</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td  colspan="5">&nbsp; &nbsp; &nbsp;Machinery</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="5">&nbsp; &nbsp; &nbsp;Manpower</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="col-sm-12 text-right">
-                                                <div class="form-buttons-w">
-                                                    <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
-                                                    <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <?php } ?>
+                        <div class="col-sm-12 text-right">
+                            <div class="form-buttons-w">
+                                <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
                             </div>
                         </div>
 
                     </div>
+                    <?=form_close()?>
                 </div>
             </div>
         </div>
     </div>
- </div>
+</div>
+<div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModel1" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="onboarding-slider-w">
+                <div class="onboarding-slide">
+                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png" width="200px"></div>
+                    <div class="onboarding-content with-gradient">
+                        <h4 class="onboarding-title">ICP Multiplier</h4>
+                        <div class="onboarding-text">Direct offset</div>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="hidden" id="hidMultiplierLocation">
+                                    <div class="form-group"><label for="">Item</label><select class="form-control" id="item1">
+                                            <option>Select</option>
+                                            <option value="1">Professional Sevices local sourcing</option>
+                                            <option value="2">Local Product</option>
+                                            <option value="3">Plant Facility</option>
+                                            <option value="4">Logistics</option>
+                                        </select></div>
+                                </div>
+                                <div class="col-sm-12" hidden id="itemDesDiv1">
+                                    <div class="form-group">
+                                        <select class="form-control" id="itemdes1">
+                                            <option value="-1">Select</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-right">
+                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <div aria-hidden="true" class="onboarding-modal modal fade animated" id="multipilerModelNonMLC" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-centered" role="document">
         <div class="modal-content text-center">
@@ -776,7 +319,10 @@ START - Email Content Header
             </div>
         </div>
     </div>
-</div>                
+</div>
+
+
+
    
    
 
