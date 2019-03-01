@@ -81,6 +81,7 @@ Class ProjectModel extends CI_Model
 	}
 
 	function insertProject($data){
+		$projectname =$data['proj_name'];
 		$this->db->trans_begin();
 		$pdata  = array(   
 			'proj_name' =>  $data['proj_name'],
@@ -142,6 +143,23 @@ Class ProjectModel extends CI_Model
 				'modified_by'=> $data['modified_by']
 			);
 			$this->db->insert('tbl_projects_recipients', $rdata);
+			// project inserted as milestone parent is =0
+			// Code added by ANCY MATHEW - 12-02- 2019
+			$milestone = array(
+					'proj_id' => $proj_id,
+					'task_name' =>  $projectname,
+					'task_type' => 'project',
+					'task_parent_id' => 0,
+					'task_status' => 1,
+				    'task_color' => '#1220b7',
+					'created_at'=> date('Y-m-d H:i:s'),
+					'modified_at'=> date('Y-m-d H:i:s'),
+					'created_by'=> 1,
+					'modified_by'=> 1
+			);
+			$this->db->insert('tbl_task', $milestone);
+			//Code END ANCY
+
 		}else{
 			$this->db->trans_rollback();
 			return FALSE;
@@ -173,6 +191,15 @@ Class ProjectModel extends CI_Model
 			$row->proj_recs = $CI->projectrecipientsmodel->getRecipientsByProjectId($row->proj_id);
 		}
 		return $result;
+	}
+	function getProjectByType($id,$status){
+		$this->db->select('t1.proj_type as proj_type_id');
+		$this->db->from('tbl_projects as t1');
+		$this->db->join('tbl_project_type as t3', 't1.proj_type = t3.proj_type_id', 'LEFT');
+		$this->db->where('t1.proj_status', $status);
+		$this->db->where('t1.proj_id', $id);
+		$result = $this->db->get()->result();
+		return $result[0]->proj_type_id;
 	}
 }
 ?>

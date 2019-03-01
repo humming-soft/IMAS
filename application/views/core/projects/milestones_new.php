@@ -4,9 +4,8 @@ START - Breadcrumbs
 -------------------->
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
-    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/tda-pod-mot-54-2015-802')?>">TUNNELING
-            AND UNDERGROUND WORKS (MMC GAMUDA)</a></li>
-    <li class="breadcrumb-item"><span>Development of Variable Density (VD) Tunnel Boring Machine (TBM)</span></li>
+    <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/'.$this->uri->segment(0))?>"><?=$programme[0]->prog_name?></a></li>
+    <li class="breadcrumb-item"><span><?=$project[0]->proj_name?></span></li>
 </ul>
 <!--------------------
 END - Breadcrumbs
@@ -52,6 +51,7 @@ END - Breadcrumbs
                                 </div>
                             </div>
                         </div>
+                        <?=form_open('/icv_calculation/add','id="milestone_l"')?>
                         <div class="element-box">
                             <div class="row m-0">
                                 <div class="col-12 col-md-12 col-lg-12">
@@ -59,6 +59,7 @@ END - Breadcrumbs
                                 </div>
                             </div>
                         </div>
+                        <?=form_close()?>
                     </div>
                 </div>
             </div>
@@ -67,7 +68,6 @@ END - Breadcrumbs
 </div>
 <script type ="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        milestones = <?= $milestone; ?>;
-        Milestone.init(milestones);
+        Milestone.init(<?=$milestone; ?>,<?=$project[0]->proj_id; ?>);
     });
 </script>

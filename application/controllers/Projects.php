@@ -8,7 +8,7 @@ class Projects extends HS_Controller {
         parent::__construct();
         $this->load->model('projectmodel','',TRUE);
         $this->load->model('commonmodel','',TRUE);
-        $this->load->model('milestonemodel','',TRUE);
+        $this->load->library('upload');
     }
     public function validate_url($p_ref='',$projectId=''){
         if(!empty($p_ref)){
@@ -37,7 +37,6 @@ class Projects extends HS_Controller {
             }
         }
     }
-    
     public function find_project($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
@@ -64,7 +63,6 @@ class Projects extends HS_Controller {
             show_404();
         }
     }
-
     public function create($p_ref=''){
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('proj_name', 'Project Name', 'trim|required|xss_clean');
@@ -72,19 +70,15 @@ class Projects extends HS_Controller {
 		$this->form_validation->set_rules('proj_ref_no', 'Project Refernce No.', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_type', 'Project Type', 'trim|required|xss_clean');
         $this->form_validation->set_rules('prog_id', 'Project Reference', 'trim|required|xss_clean');
-        
-        
         $this->form_validation->set_rules('proj_obj[]', 'Project Objective', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_obj_other', 'Other Objective(s)', 'trim|xss_clean');
-
-		$this->form_validation->set_rules('proj_rec_name', 'Recipient Name', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('proj_rec_name', 'Recipient Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_rec_addr_line1', 'Recipient Address Line 1', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_rec_addr_line2', 'Recipient Address Line 2', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_rec_addr_line3', 'Recipient Address Line 3', 'trim|xss_clean');
         $this->form_validation->set_rules('proj_rec_cont_name', 'Recipient Contact Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_rec_cont_no', 'Recipient Contact No.', 'trim|required|xss_clean');
         $this->form_validation->set_rules('proj_rec_cont_email', 'Recipient Contact Email', 'trim|required|xss_clean');
-
         if($this->form_validation->run() != FALSE)
 		{
             $data = array(
@@ -133,11 +127,11 @@ class Projects extends HS_Controller {
                 ));
         }
     }
-
     public function project_benefits($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
             $this->load->helper('form');
+            $this->load->model('benefitsmodel','',TRUE);
             if ($this->session->userdata('message')) {
                 $messagehrecord = $this->session->userdata('message');
                 $data['message'] = $messagehrecord['message'];
@@ -146,6 +140,13 @@ class Projects extends HS_Controller {
             }
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $data['benefitsNkea']=$this->benefitsmodel->get_benefits_nkea();
+            $data['benefitsFocusArea']=$this->benefitsmodel->get_benefits_focusingArea();
+            $data['benefitsOffsets']=$this->benefitsmodel->get_benefits_offsets();
+            $data['projectBenefits']=$this->benefitsmodel->get_project_benefits($data['project'][0]->proj_id);
+            $data['p_ref']=$p_ref;
+            $data['projectId']=$projectId;
+            $_header['support'] = array("repeater");
             $_header["page_js"] = "benefits";
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
@@ -156,11 +157,35 @@ class Projects extends HS_Controller {
             show_404();
         }
     }
-
+    public function add_benefits($p_ref='',$projectId=''){
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0) {
+            $this->load->helper('form');
+            $this->load->model('benefitsmodel','',TRUE);
+            $arr['benefits'] = $this->input->post('benefits');
+            for($i=0;$i<sizeof($arr['benefits']);$i++)
+            {
+                $benefitdata = array(
+                    'proj_id' => $data['project'][0]->proj_id,
+                    'benefits_nkea_id' => $arr['benefits'][$i]['nkea'],
+                    'benefits_focusing_area_id' => $arr['benefits'][$i]['focusArea'],
+                    'benefits_offset_id' => $arr['benefits'][$i]['offstes'],
+                    'benefit_status' => 1,
+                    'created_at'=> date('Y-m-d H:i:s'),
+                    'modified_at'=> date('Y-m-d H:i:s'),
+                    'created_by'=> 1,
+                    'modified_by'=> 1
+                );
+             $this->benefitsmodel->add_project_benefits($benefitdata);
+            }
+            $this->project_benefits($p_ref,$projectId);
+        }
+    }
     public function milestones($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
             $this->load->helper('form');
+            $this->load->model('milestonemodel','',TRUE);
             if ($this->session->userdata('message')) {
                 $messagehrecord = $this->session->userdata('message');
                 $data['message'] = $messagehrecord['message'];
@@ -170,43 +195,23 @@ class Projects extends HS_Controller {
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
             $_header['support'] = array("gantt");
-            $_footer["page_js"] = "milestone_new";
-            $data['milestone']=json_encode( $this->milestonemodel->get_milestone(1,123));
+            $_footer["page_js"] = "milestones_new";
+            $data['milestone']=json_encode( $this->milestonemodel->get_milestone(1,$data['project'][0]->proj_id));
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php',$nav);
-            $this->load->view('core/projects/milestone_new',$data);
+            $this->load->view('core/projects/milestones_new',$data);
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             show_404();
         }
-        // if($projectId == "cgmr-90-ip2"){
-        //     $_header['support'] = array("gantt");
-        //     $_footer["page_js"] = "milestones";
-        //     $data['prog_ref'] = $p_ref;
-        //     $data['proj_id'] = $projectId;
-        //     $this->load->view('core/projects/fragments/_header.php',$_header);
-        //     $this->load->view('core/projects/fragments/_side_nav.php');
-        //     $this->load->view('core/projects/fragments/_top_nav.php');
-        //     $this->load->view('core/projects/milestones',$data);
-        //     $this->load->view('core/projects/fragments/_footer.php',$_footer);
-        // }else{
-        //     $_header['support'] = array("gantt");
-        //     $_footer["page_js"] = "milestones_new";
-        //     $data['prog_ref'] = $p_ref;
-        //     $data['proj_id'] = $projectId;
-        //     $this->load->view('core/projects/fragments/_header.php',$_header);
-        //     $this->load->view('core/projects/fragments/_side_nav.php');
-        //     $this->load->view('core/projects/fragments/_top_nav.php');
-        //     $this->load->view('core/projects/milestones_new',$data);
-        //     $this->load->view('core/projects/fragments/_footer.php',$_footer);
-        // }
     }
-
     public function icv_calculation($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
             $this->load->helper('form');
+            $this->load->model('icvcalculationmodel','',TRUE);
+            $this->load->model('benefitsmodel','',TRUE);
             if ($this->session->userdata('message')) {
                 $messagehrecord = $this->session->userdata('message');
                 $data['message'] = $messagehrecord['message'];
@@ -215,12 +220,25 @@ class Projects extends HS_Controller {
             }
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
+            $data['icv_milestone']=$this->icvcalculationmodel->get_icv_milestone($data['project'][0]->proj_id,1);
+            $data['icv_project']=$this->icvcalculationmodel->get_icv_project($data['project'][0]->proj_id,1);
+            $data['icv_multiplier_MLC']=$this->icvcalculationmodel->get_icv_multiplier();
+            $data['icv_multiplier_nonMLC']=$this->icvcalculationmodel->get_icv_multiplier_non();
+            $data['benefitsNkea']=$this->benefitsmodel->get_benefits_nkea();
+            $data['benefitsFocusArea']=$this->benefitsmodel->get_benefits_focusingArea();
+            $data['benefitsOffsets']=$this->benefitsmodel->get_benefits_offsets();
+            $data['p_ref']=$p_ref;
+            $data['projectId']=$projectId;
             $_header['support'] = array("slick","scrollbar");
             $_footer["page_js"] = "icvcalc";
             $this->load->view('core/projects/fragments/_header.php',$_header);
             $this->load->view('core/projects/fragments/_side_nav.php');
             $this->load->view('core/projects/fragments/_top_nav.php',$nav);
-            $this->load->view('core/projects/icv_calculation',$data);
+            if($this->projectmodel->getProjectByType($data['project'][0]->proj_id,1) == 1){
+                $this->load->view('core/projects/icv_calculation',$data);
+            }else{
+                $this->load->view('core/projects/icv_calculation_indirect',$data);
+            }
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             show_404();
@@ -248,7 +266,6 @@ class Projects extends HS_Controller {
             show_404();
         }
     }
-
     public function activities($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
@@ -271,7 +288,6 @@ class Projects extends HS_Controller {
             show_404();
         }
     }
-
     public function collaboration($p_ref='',$projectId=''){
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
@@ -292,6 +308,132 @@ class Projects extends HS_Controller {
             $this->load->view('core/projects/fragments/_footer.php',$_footer);
         }else{
             show_404();
+        }
+    }
+    function add_icv($p_ref='',$projectId='')
+    {
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0) {
+            $this->load->helper('form');
+            $this->load->model('icvcalculationmodel','',TRUE);
+            $countProject=$this->icvcalculationmodel->get_count_project_icv($data['project'][0]->proj_id);
+            if($countProject > 0){
+                $dataproject = array(
+                    'icv_nonmlc'=> $this->input->post('sumNonMLC'),
+                    'icv_mlc'=> $this->input->post('sumMLC'),
+                    'icv_total'=> $this->input->post('totalICV'),
+                    'created_at'=> date('Y-m-d H:i:s'),
+                    'modified_at'=> date('Y-m-d H:i:s'),
+                    'created_by'=> 1,
+                    'modified_by'=> 1
+                );
+                $status=$this->icvcalculationmodel->update_project_icv($dataproject,$data['project'][0]->proj_id);
+                if($status==1){
+                    $arr['icv']=$this->input->post('milestoneID[]');
+                    $arr['nonmlc']=$this->input->post('nonMlC[]');
+                    $arr['nonmlcmul']=$this->input->post('nonMlCMUL[]');
+                    $arr['nonmlcmu']=$this->input->post('nonMlCMU[]');
+                    $arr['mlc']=$this->input->post('MlC[]');
+                    $arr['mlcmul']=$this->input->post('MlCMUL[]');
+                    $arr['mlcmu']=$this->input->post('MlCMU[]');
+                    $arr['total']=$this->input->post('totalRow[]');
+                    $arr['files']=$this->input->post('files[]');
+
+                    for($i=0;$i<sizeof($arr['icv']);$i++)
+                    {
+                        $taskId=$arr['icv'][$i];
+                      /*  print_r($arr['files'][(int)$taskId]);
+                        echo sizeof($arr['files'][(int)$taskId]);*/
+                       /* $filesCount = sizeof($arr['files'][(int)$taskId]);
+                        for($i = 0; $i < $filesCount; $i++){
+                         
+                        }*/
+                        $countMilestone=$this->icvcalculationmodel->get_count_milestone_icv($taskId);
+                        if($countMilestone > 0){
+                            $dataicv = array(
+                                'nonmlc_value'=>   $arr['nonmlc'][$i],
+                                'nonmlc_multiplier'=>  $arr['nonmlcmul'][$i],
+                                'nonmlc_mu'=>  $arr['nonmlcmu'][$i],
+                                'mlc_value'=>  $arr['mlc'][$i],
+                                'mlc_multiplier'=> $arr['mlcmul'][$i],
+                                'mlc_mu'=>   $arr['mlcmu'][$i],
+                                'row_total'=>  $arr['total'][$i],
+                                'row_status'=>  1,
+                                'created_at'=> date('Y-m-d H:i:s'),
+                                'modified_at'=> date('Y-m-d H:i:s'),
+                                'created_by'=> 1,
+                                'modified_by'=> 1
+                            );
+                            $status=$this->icvcalculationmodel->update_milestone_icv($taskId,$dataicv);
+                        }else{
+                            for($i=0;$i<sizeof($arr['icv']);$i++)
+                            {
+                                $dataicv = array(
+                                    'task_id'=> $arr['icv'][$i],
+                                    'nonmlc_value'=>   $arr['nonmlc'][$i],
+                                    'nonmlc_multiplier'=>  $arr['nonmlcmul'][$i],
+                                    'nonmlc_mu'=>  $arr['nonmlcmu'][$i],
+                                    'mlc_value'=>  $arr['mlc'][$i],
+                                    'mlc_multiplier'=> $arr['mlcmul'][$i],
+                                    'mlc_mu'=>   $arr['mlcmu'][$i],
+                                    'row_total'=>  $arr['total'][$i],
+                                    'row_status'=>  1,
+                                    'created_at'=> date('Y-m-d H:i:s'),
+                                    'modified_at'=> date('Y-m-d H:i:s'),
+                                    'created_by'=> 1,
+                                    'modified_by'=> 1
+                                );
+                               $milestoneid=$this->icvcalculationmodel->insertICV_milestone($dataicv);
+                            }
+                        }
+                    }
+                }
+                $this->icv_calculation($p_ref,$projectId);
+            }else{
+                $datamilestonenew = array(
+                    'proj_id'=> $data['project'][0]->proj_id,
+                    'icv_nonmlc'=> $this->input->post('sumNonMLC'),
+                    'icv_mlc'=> $this->input->post('sumMLC'),
+                    'icv_total'=> $this->input->post('totalICV'),
+                    'created_at'=> date('Y-m-d H:i:s'),
+                    'modified_at'=> date('Y-m-d H:i:s'),
+                    'created_by'=> 1,
+                    'modified_by'=> 1
+                );
+                $id=$this->icvcalculationmodel->insertICV_project($datamilestonenew);
+                if($id){
+                    $arr['icv']=$this->input->post('milestoneID[]');
+                    $arr['nonmlc']=$this->input->post('nonMlC[]');
+                    $arr['nonmlcmul']=$this->input->post('nonMlCMUL[]');
+                    $arr['nonmlcmu']=$this->input->post('nonMlCMU[]');
+                    $arr['mlc']=$this->input->post('MlC[]');
+                    $arr['mlcmul']=$this->input->post('MlCMUL[]');
+                    $arr['mlcmu']=$this->input->post('MlCMU[]');
+                    $arr['total']=$this->input->post('totalRow[]');
+                    for($i=0;$i<sizeof($arr['icv']);$i++)
+                    {
+                        $dataicv = array(
+                            'task_id'=> $arr['icv'][$i],
+                            'nonmlc_value'=>   $arr['nonmlc'][$i],
+                            'nonmlc_multiplier'=>  $arr['nonmlcmul'][$i],
+                            'nonmlc_mu'=>  $arr['nonmlcmu'][$i],
+                            'mlc_value'=>  $arr['mlc'][$i],
+                            'mlc_multiplier'=> $arr['mlcmul'][$i],
+                            'mlc_mu'=>   $arr['mlcmu'][$i],
+                            'row_total'=>  $arr['total'][$i],
+                            'row_status'=>  1,
+                            'created_at'=> date('Y-m-d H:i:s'),
+                            'modified_at'=> date('Y-m-d H:i:s'),
+                            'created_by'=> 1,
+                            'modified_by'=> 1
+                        );
+                        $milestoneid=$this->icvcalculationmodel->insertICV_milestone($dataicv);
+                    }
+
+                }
+                $this->icv_calculation($p_ref,$projectId);
+            }
+         
         }
     }
 }

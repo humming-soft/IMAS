@@ -31,6 +31,9 @@
     <?php if(in_array("scrollbar",$support)){ ?>
     <script src="<?=site_url('assets/js/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')?>"></script>
     <?php } ?>
+    <?php if(in_array("repeater",$support)){ ?>
+     <script src="<?=site_url('assets/js/vendors/repeater/jquery.repeater.min.js')?>"></script>
+    <?php } ?>
     <?php if(in_array("slick",$support)){ ?>
     <script src="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.min.js')?>"></script>
     <?php } ?>

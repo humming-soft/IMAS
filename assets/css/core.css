@@ -20488,7 +20488,7 @@ a.with-avatar span {
 }
 
 .aec-full-message-w .message-content {
-    padding: 6% 10% 8% 10%
+    padding: 1% 10% 1% 10%
 }
 
 .aec-full-message-w .message-attachments {
@@ -29884,4 +29884,7 @@ font-size: 2.4rem;
     font-weight: 600;
     font-size: 2rem;
     opacity: .3;
+}
+.no_drag_progress .gantt_task_progress_drag{
+    display:none !important;
 }
