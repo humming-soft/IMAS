@@ -377,6 +377,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {App.initMenu();App.initContentMenuToggle();App.initDropdown();App.initElementActions();App.initContentPanelTrigger()});</script>
 
    
    

@@ -79,3 +79,4 @@ END - Breadcrumbs
         Milestone.init(<?=$milestone; ?>,<?=$project[0]->proj_id; ?>);
     });
 </script>
+<script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {App.initMenu();App.initContentMenuToggle();App.initDropdown();App.initElementActions();App.initContentPanelTrigger()});</script>

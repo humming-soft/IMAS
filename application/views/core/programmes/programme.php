@@ -1035,6 +1035,7 @@
 				$("#objectiveDes").attr("hidden",true);
 			}
 		});
+		document.addEventListener('DOMContentLoaded', function() {App.initMenu();App.initContentMenuToggle();App.initDropdown();App.initElementActions();App.initContentPanelTrigger();App.initModal('<?=$this->lang->line('prog_create_prev')?>','<?=$this->lang->line('prog_create_next')?>')});
 	</script>
 </body>
 
