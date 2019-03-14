@@ -13,11 +13,12 @@ Class IcvCalculationModel extends CI_Model
 		$milestone = array();
 		$activity = array();
 		$this->db->select('t.task_id,t.proj_id, t.task_name, t.task_start_date, t.task_end_date, t.task_duration, t.task_type, t.task_progress, t.task_parent_id,coalesce(m.nonmlc_value,0) as nonmlc_value, coalesce(m.nonmlc_multiplier,0) as nonmlc_multiplier, 
-coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coalesce( m.mlc_multiplier,0) as mlc_multiplier,coalesce(m. mlc_mu,0) as mlc_mu, coalesce(m.row_total,0) as row_total');
+        coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coalesce( m.mlc_multiplier,0) as mlc_multiplier,coalesce(m. mlc_mu,0) as mlc_mu, coalesce(m.row_total,0) as row_total');
 		$this->db->from('tbl_milestone_icv as m');
 		$this->db->where('t.proj_id', $proj_id);
 		$this->db->where('t.task_type', 'milestone');
 		$this->db->where('t.task_status', $status);
+		$this->db->order_by('t.task_id');
 		$this->db->join('tbl_task as t', 'm.task_id=t.task_id', 'RIGHT');
 		$result = $this->db->get()->result();
 		foreach($result as $key => $value)
@@ -27,15 +28,7 @@ coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coales
 			$data['milestone_text'] = $value->task_name;
 			$data['milestone_start_date'] = date("d-M-Y", strtotime($value->task_start_date));
 			$data['milestone_end_date'] = date("d-M-Y", strtotime($value->task_end_date));
-			$data['nonmlc'] = $value->nonmlc_value;
-			$data['nonmlcMul'] = $value->nonmlc_multiplier;
-			$data['nonmlcMu'] = $value->nonmlc_mu;
-			$data['mlc'] = $value->mlc_value;
-			$data['mlcMul'] = $value->mlc_multiplier;
-			$data['mlcMu'] = $value->mlc_mu;
-			$data['total'] = $value->row_total;
-			$data['milestone_progress'] = (double)$value->task_progress * 100;
-			/*$count = $this->has_child($value->task_id, $proj_id);
+			$count = $this->has_child($value->task_id, $proj_id);
 			$data['activity_count'] = $count;
 				if($count > 0){
 					$activities = $this->get_activities($value->task_id,$proj_id,1);
@@ -47,9 +40,17 @@ coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coales
 						$activity['activity_start_date'] = date("d-M-Y", strtotime($value1->task_start_date));
 						$activity['activity_end_date'] = date("d-M-Y", strtotime($value1->task_end_date));
 						$activity['activity_progress'] = (double)$value1->task_progress * 100;
+						$activity['nonmlc'] = $value1->nonmlc_value;
+						$activity['nonmlcMul'] = $value1->nonmlc_multiplier;
+						$activity['nonmlcMu'] = $value1->nonmlc_mu;
+						$activity['mlc'] = $value1->mlc_value;
+						$activity['mlcMul'] = $value1->mlc_multiplier;
+						$activity['mlcMu'] = $value1->mlc_mu;
+						$activity['total'] = $value1->row_total;
+						$activity['milestone_progress'] = (double)$value1->task_progress * 100;
 						array_push($data['activities'],$activity);
 					}
-				}*/
+				}
 			array_push($milestone,$data);
 		}
 		return $milestone;
@@ -103,11 +104,15 @@ coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coales
 		return $count;
 	}
 	function get_activities($parentId,$pjt_id,$status){
-		$this->db->select('task_id, proj_id, task_name, task_start_date, task_end_date, task_duration, task_type, task_progress,task_color, task_parent_id,task_status, created_by, modified_by');
-		$this->db->from('tbl_task');
-		$this->db->where('proj_id', $pjt_id);
-		$this->db->where('task_parent_id', $parentId);
-		$this->db->where('task_status', $status);
+		$this->db->select('t.task_id,t.proj_id, t.task_name, t.task_start_date, t.task_end_date, t.task_duration, t.task_type, t.task_progress, t.task_parent_id,coalesce(m.nonmlc_value,0) as nonmlc_value, coalesce(m.nonmlc_multiplier,0) as nonmlc_multiplier, 
+        coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coalesce( m.mlc_multiplier,0) as mlc_multiplier,coalesce(m. mlc_mu,0) as mlc_mu, coalesce(m.row_total,0) as row_total');
+		$this->db->from('tbl_milestone_icv as m');
+		$this->db->where('t.proj_id', $pjt_id);
+		$this->db->where('t.task_type', 'task');
+		$this->db->where('t.task_parent_id', $parentId);
+		$this->db->where('t.task_status', $status);
+		$this->db->order_by('t.task_id');
+		$this->db->join('tbl_task as t', 'm.task_id=t.task_id', 'RIGHT');
 		$result1 = $this->db->get()->result();
 		return $result1;
 	}

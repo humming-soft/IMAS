@@ -83,30 +83,30 @@
                         </div>
                     </div>
                     <div class="ae-content" >
-                            <div class="col-sm-12 text-right">
-                                <div class="form-group">
-                                    <a class="btn btn-outline-info"  data-toggle="modal" data-target="#muValusModel">(μ) Entitlement(s)</a>
-                                </div>
+                        <?php foreach($icv_milestone as $icv_milestone){?>
+                        <div class="element-wrapper"  style="padding-bottom: 0rem; !important">
+                            <div class="element-box">
+                                <h6 class="element-box-header"><?=$icv_milestone['milestone_text']?></h6>
+                                 <label for=""> Timeline /Completion Period : - </label>
+                                <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
                             </div>
-                            <?php foreach($icv_milestone as $icv_milestone){?>
-                                <div class="aec-full-message-w">
+                        </div>
+                        <?php foreach($icv_milestone['activities'] as $act){?>
+                                <div class="aec-full-message-w" style="margin-left: 10%; margin-bottom: 8px; !important">
                                     <div class="aec-full-message">
                                         <div class="message-head">
                                             <div class="row">
-                                                <div class="col-sm-12">
-                                                    <h6 class="onboarding-title"><?=$icv_milestone['milestone_text']?></h6>
-                                                </div>
                                                 <div class="col-sm-12 col-md-6">
+                                                    <h6 class="onboarding-title"><?=$act['activity_text']?></h6>
                                                     <div class="form-group">
-                                                        <label for=""> Timeline /Completion Period</label>
-                                                        <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
-                                                        <input class="form-control"  value="<?=$icv_milestone['milestone_id']?> " id=milestoneID name=milestoneID[] type="hidden">
+                                                        <b class="font d-block"><?=$act['activity_start_date']?>  -  <?=$act['activity_end_date']?></b>
+                                                        <input class="form-control"  value="<?=$act['activity_id']?> " id=milestoneID name=milestoneID[] type="hidden">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-md-6">
                                                     <div class="form-group">
                                                         <label for="">Evidences</label>
-                                                        <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$icv_milestone['milestone_id']?>][]" multiple value="Upload"></b>
+                                                        <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$act['activity_id']?>][]" multiple value="Upload"></b>
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,23 +133,23 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text">RM</div>
                                                                     </div>
-                                                                    <input class="form-control nonMLC" value="<?=$icv_milestone['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
-                                                                    <input class="form-control mileName" value="<?=$icv_milestone['milestone_text']?>"  type="hidden">
-                                                                    <input class="form-control mileID" value="<?=$icv_milestone['milestone_id']?>"  type="hidden">
+                                                                    <input class="form-control nonMLC" value="<?=$act['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
+                                                                    <input class="form-control mileName" value="<?=$act['activity_text']?>"  type="hidden">
+                                                                    <input class="form-control mileID" value="<?=$act['activity_id']?>"  type="hidden">
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control nonMLCMultiplier" value="<?=$icv_milestone['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
+                                                                    <input class="form-control nonMLCMultiplier" value="<?=$act['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td >
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control muValue" value="<?=$icv_milestone['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="text" value="">
+                                                                    <input class="form-control muValue" value="<?=$act['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="text" value="">
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -159,21 +159,21 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text">RM</div>
                                                                     </div>
-                                                                    <input class="form-control MLC" value="<?=$icv_milestone['mlc']?>"  id="MLC" name="MlC[]" type="text">
+                                                                    <input class="form-control MLC" value="<?=$act['mlc']?>"  id="MLC" name="MlC[]" type="text">
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control MLCMultiplier" value="<?=$icv_milestone['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
+                                                                    <input class="form-control MLCMultiplier" value="<?=$act['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td >
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control muValueMlc" id="MLCMU" value="<?=$icv_milestone['mlcMu']?>" name="MlCMU[]" readonly type="text" value="">
+                                                                    <input class="form-control muValueMlc" id="MLCMU" value="<?=$act['mlcMu']?>" name="MlCMU[]" readonly type="text" value="">
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -183,13 +183,17 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text">RM</div>
                                                                     </div>
-                                                                    <input class="form-control TotalRow" value="<?=$icv_milestone['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
+                                                                    <input class="form-control TotalRow" value="<?=$act['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>
-
-                                                        </td>
+                                                      <!--  <td>
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <button class="btn btn-outline-info" data-target="#exampleModal1" data-toggle="modal" type="button">(μ) Entitlement(s)</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>-->
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -197,6 +201,7 @@
                                         </div>
                                     </div>
                                 </div>
+                             <?php } ?>
                             <?php } ?>
                         <div class="col-sm-12 text-right">
                             <div class="form-buttons-w">
@@ -230,7 +235,8 @@
                                             <?php foreach($benefitsNkea as $benefitsNkea){ ?>
                                                 <option value="<?=$benefitsNkea->benefits_nkea_id?>"> <?=$benefitsNkea->benefits_nkea_text?></option>
                                             <?php } ?>
-                                        </select></div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -242,7 +248,8 @@
                                             <?php foreach($benefitsFocusArea as $benefitsFocusArea){ ?>
                                                 <option value="<?=$benefitsFocusArea->benefits_focusing_area_id?>"> <?=$benefitsFocusArea->benefits_focusing_area_text?></option>
                                             <?php } ?>
-                                        </select></div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -254,7 +261,8 @@
                                             <?php foreach($benefitsOffsets as $benefitsOffsets){ ?>
                                                 <option value="<?=$benefitsOffsets->benefits_offset_id?>"> <?=$benefitsOffsets->benefits_offset_text?></option>
                                             <?php } ?>
-                                        </select></div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -299,7 +307,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 text-right">
-                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
+                                    <button class="mr-2 mb-2 btn btn-info" type="button"  data-dismiss="modal">Cancel</button>
+                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Add</button>
                                 </div>
                             </div>
                         </form>
@@ -339,7 +348,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 text-right">
-                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Save</button>
+                                    <button class="mr-2 mb-2 btn btn-info" type="button"  data-dismiss="modal">Cancel</button>
+                                    <button class="mr-2 mb-2 btn btn-primary" type="button"  data-dismiss="modal">Add</button>
                                 </div>
                             </div>
                         </form>

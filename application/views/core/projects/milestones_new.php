@@ -5,7 +5,7 @@ START - Breadcrumbs
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes')?>"><i class="os-icon os-icon-home"></i></a></li>
     <li class="breadcrumb-item"><a class="text-primary" href="<?=site_url('programmes/'.$this->uri->segment(0))?>"><?=$programme[0]->prog_name?></a></li>
-    <li class="breadcrumb-item"><span><?=$project[0]->proj_name?></span></li>
+    <li class="breadcrumb-item"><span><?=$project[0]->proj_name ?> </span></li>
 </ul>
 <!--------------------
 END - Breadcrumbs
@@ -23,6 +23,14 @@ END - Breadcrumbs
                         </a>
                     </div>
                     <h6 class="element-header">PROJECT OVERVIEW</h6>
+                    <?php if(!empty($message)){ ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span
+                                    aria-hidden="true"> &times;</span></button>
+                            <strong><?=$message;?> </strong>
+                        </div>
+                    <?php } ?>
+
                     <div class="element-content">
                         <div class="element-wrapper pb-1">
                             <div class="element-box">

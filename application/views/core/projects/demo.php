@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Mirrored from light.pinsupreme.com/apps_email.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:12 GMT -->
+<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:22 GMT -->
 <head><title>Admin Dashboard HTML Template</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -21,7 +21,7 @@
     <link href="css/maince5a.css?version=4.4.1" rel="stylesheet">
 </head>
 <body class="menu-position-side menu-side-left full-screen">
-<div class="all-wrapper no-padding-content solid-bg-all">
+<div class="all-wrapper solid-bg-all">
     <div class="search-with-suggestions-w">
         <div class="search-with-suggestions-modal">
             <div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search..."
@@ -310,7 +310,7 @@ END - Mobile Menu
 START - Main Menu
 -------------------->
         <div
-            class="menu-w color-scheme-dark color-style-bright menu-position-side menu-side-left menu-layout-mini sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+            class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
             <div class="logo-w"><a class="logo" href="index.html">
                     <div class="logo-element"></div>
                     <div class="logo-label">Clean Admin</div>
@@ -347,6 +347,94 @@ START - Main Menu
                     </div>
                 </div>
             </div>
+            <div class="menu-actions"><!--------------------
+START - Messages Link in secondary top menu
+-------------------->
+                <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right"><i
+                        class="os-icon os-icon-mail-14"></i>
+                    <div class="new-messages-count">12</div>
+                    <div class="os-dropdown light message-list">
+                        <ul>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
+                                            class="message-title">Account Update</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
+                                            class="message-title">Secutiry Updates</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
+                                            class="message-title">Vacation Rentals</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
+                                            class="message-title">Payment Confirmation</h6></div>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div><!--------------------
+END - Messages Link in secondary top menu
+--------------------><!--------------------
+START - Settings Link in secondary top menu
+-------------------->
+                <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-right"><i
+                        class="os-icon os-icon-ui-46"></i>
+                    <div class="os-dropdown">
+                        <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
+                        <ul>
+                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
+                            </li>
+                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
+                            </li>
+                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
+                            </li>
+                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-15"></i><span>Cancel Account</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--------------------
+END - Settings Link in secondary top menu
+--------------------><!--------------------
+START - Messages Link in secondary top menu
+-------------------->
+                <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right"><i
+                        class="os-icon os-icon-zap"></i>
+                    <div class="new-messages-count">4</div>
+                    <div class="os-dropdown light message-list">
+                        <div class="icon-w"><i class="os-icon os-icon-zap"></i></div>
+                        <ul>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
+                                            class="message-title">Account Update</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
+                                            class="message-title">Secutiry Updates</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
+                                            class="message-title">Vacation Rentals</h6></div>
+                                </a></li>
+                            <li><a href="#">
+                                    <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                    <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
+                                            class="message-title">Payment Confirmation</h6></div>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div><!--------------------
+END - Messages Link in secondary top menu
+--------------------></div>
+            <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search..."
+                                                                            type="text"></div>
             <h1 class="menu-page-header">Page Header</h1>
             <ul class="main-menu">
                 <li class="sub-header"><span>Layouts</span></li>
@@ -612,7 +700,7 @@ END - Main Menu
         <div class="content-w"><!--------------------
 START - Top Bar
 -------------------->
-            <div class="top-bar color-scheme-transparent d-none"><!--------------------
+            <div class="top-bar color-scheme-transparent"><!--------------------
 START - Top Menu Controls
 -------------------->
                 <div class="top-menu-controls">
@@ -704,331 +792,695 @@ END - User avatar and menu in secondary top menu
 END - Top Menu Controls
 --------------------></div><!--------------------
 END - Top Bar
+--------------------><!--------------------
+START - Breadcrumbs
+-------------------->
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Products</a></li>
+                <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+            </ul><!--------------------
+END - Breadcrumbs
 -------------------->
             <div class="content-i">
                 <div class="content-box">
-                    <div class="app-email-w">
-                        <div class="app-email-i"><!--------------------
-START - Email Side menu
--------------------->
-                            <div class="ae-side-menu">
-                                <div class="aem-head"><a class="ae-side-menu-toggler" href="#"><i
-                                            class="os-icon os-icon-hamburger-menu-2"></i></a></div>
-                                <ul class="ae-main-menu">
-                                    <li class="active"><a href="#"><i
-                                                class="os-icon os-icon-phone-21"></i><span>Inbox</span></a></li>
-                                    <li><a href="#"><i class="os-icon os-icon-ui-92"></i><span>Sent</span></a></li>
-                                    <li><a href="#"><i class="os-icon os-icon-documents-03"></i><span>Draft</span></a>
-                                    </li>
-                                    <li><a href="#"><i class="os-icon os-icon-ui-15"></i><span>Trash</span></a></li>
-                                    <li><a href="#"><i class="os-icon os-icon-ui-44"></i><span>Archive</span></a></li>
-                                </ul>
-                                <div class="ae-labels">
-                                    <div class="ae-labels-header"><i
-                                            class="os-icon os-icon-ui-54"></i><span>Labels</span></div>
-                                    <a class="ae-label ae-label-red" href="#"><span class="label-pin"></span><span
-                                            class="label-value">Corporate</span></a><a class="ae-label ae-label-green"
-                                                                                       href="#"><span
-                                            class="label-pin"></span><span class="label-value">Personal</span></a><a
-                                        class="ae-label ae-label-blue" href="#"><span class="label-pin"></span><span
-                                            class="label-value">Statements</span></a><a class="ae-label ae-label-yellow"
-                                                                                        href="#"><span
-                                            class="label-pin"></span><span class="label-value">Projects</span></a></div>
-                            </div><!--------------------
-END - Email Side menu
---------------------><!--------------------
-START - Email Messages List
--------------------->
-                            <div class="ae-list-w">
-                                <div class="ael-head">
-                                    <div class="actions-left"><select>
-                                            <option>Sort by date</option>
-                                        </select></div>
-                                    <div class="actions-right"><a href="#"><i class="os-icon os-icon-ui-37"></i></a><a
-                                            href="#"><i class="os-icon os-icon-grid-18"></i></a></div>
-                                </div>
-                                <div class="ae-list">
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">1:25pm</div>
-                                            <h6 class="aei-title">James Morgan</h6>
-                                            <div class="aei-sub-title">Create new profile request</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">11:12am</div>
-                                            <h6 class="aei-title">Kyle Jefferson</h6>
-                                            <div class="aei-sub-title">Document Verification</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status active status-red">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">9:07am</div>
-                                            <h6 class="aei-title">Matt Wallas</h6>
-                                            <div class="aei-sub-title">Booking Confirmation</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">6:34am</div>
-                                            <h6 class="aei-title">Kimerley Markson</h6>
-                                            <div class="aei-sub-title">Your Statement is available</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-blue">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar5.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Lora Miller</h6>
-                                            <div class="aei-sub-title">New comment on your blog post</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-blue">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar6.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Ivan Moskovits</h6>
-                                            <div class="aei-sub-title">Diagnostics validation</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar7.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Sheldon Kooper</h6>
-                                            <div class="aei-sub-title">Your trial has ended</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-yellow">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">2 days ago</div>
-                                            <h6 class="aei-title">Mesut Ozil</h6>
-                                            <div class="aei-sub-title">New comment received</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-red">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">3 days ago</div>
-                                            <h6 class="aei-title">Andres Iniesta</h6>
-                                            <div class="aei-sub-title">Certificate is issued</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-blue">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar5.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Lora Miller</h6>
-                                            <div class="aei-sub-title">New comment on your blog post</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-blue">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar6.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Ivan Moskovits</h6>
-                                            <div class="aei-sub-title">Diagnostics validation</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar7.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">Yesterday</div>
-                                            <h6 class="aei-title">Sheldon Kooper</h6>
-                                            <div class="aei-sub-title">Your trial has ended</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-yellow">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">2 days ago</div>
-                                            <h6 class="aei-title">Mesut Ozil</h6>
-                                            <div class="aei-sub-title">New comment received</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ae-item with-status  status-green">
-                                        <div class="aei-image">
-                                            <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                        </div>
-                                        <div class="aei-content">
-                                            <div class="aei-timestamp">1 week ago</div>
-                                            <h6 class="aei-title">Anthony Tailor</h6>
-                                            <div class="aei-sub-title">Create new profile request</div>
-                                            <div class="aei-text">When the equation, first to ability the forwards, the
-                                                a but travelling
+                    <div class="element-wrapper"><h6 class="element-header">Examples of Modals</h6>
+                        <div class="element-box"><h5 class="form-header">New Onboarding Modals <span
+                                    class="badge badge-danger">New</span></h5>
+                            <div class="form-desc">Built specifically for this template, these onboarding modals are a
+                                great way to introduce your customers to your web app or collect additional information
+                                from them. We have two layouts available: wide, with media and text side by side and
+                                narrow one with media above text. Each can also have multiple slides inside them.
+                            </div>
+                            <h6 class="form-header">Media Above Text</h6>
+                            <div class="mb-4"><!--Button trigger modal-->
+                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingSlideModal"
+                                        data-toggle="modal" type="button">Multistep modal with slider
+                                </button>
+                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                     id="onboardingSlideModal" role="dialog" tabindex="-1">
+                                    <div class="modal-dialog modal-centered" role="document">
+                                        <div class="modal-content text-center">
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span class="close-label">Skip Intro</span><span
+                                                    class="os-icon os-icon-close"></span></button>
+                                            <div class="onboarding-slider-w">
+                                                <div class="onboarding-slide">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Example Request Information</h4>
+                                                        <div class="onboarding-text">In this example you can see a form
+                                                            where you can request some additional information from the
+                                                            customer when they land on the app page.
+                                                        </div>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group"><label for="">Your Full
+                                                                            Name</label><input class="form-control"
+                                                                                               placeholder="Enter your full name..."
+                                                                                               type="text" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group"><label for="">Your
+                                                                            Role</label><select class="form-control">
+                                                                            <option>Web Developer</option>
+                                                                            <option>Business Owner</option>
+                                                                            <option>Other</option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="onboarding-slide">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Showcase App Features</h4>
+                                                        <div class="onboarding-text">In this example you can showcase
+                                                            some of the features of your application, it is very handy
+                                                            to make new users aware of your hidden features. You can use
+                                                            boostrap columns to split them up.
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <ul class="features-list">
+                                                                    <li>Fully Responsive design</li>
+                                                                    <li>Pre-built app layouts</li>
+                                                                    <li>Incredible Flexibility</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <ul class="features-list">
+                                                                    <li>Boxed & Full Layouts</li>
+                                                                    <li>Based on Bootstrap 4</li>
+                                                                    <li>Developer Friendly</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="onboarding-slide">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Example of onboarding screen!</h4>
+                                                        <div class="onboarding-text">This is an example of a multistep
+                                                            onboarding screen, you can use it to introduce your
+                                                            customers to your app, or collect additional information
+                                                            from them before they start using your app.
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a class="ae-load-more" href="#"><span>Load More Messages</span></a></div><!--------------------
-END - Email Messages List
--------------------->
-                            <div class="ae-content-w"><!--------------------
-START - Email Content Header
--------------------->
-                                <div class="aec-head">
-                                    <div class="actions-left"><a class="highlight" href="#"><i
-                                                class="os-icon os-icon-ui-02"></i></a></div>
-                                    <div class="actions-right">
-                                        <div class="aeh-actions"><a href="#"><i class="os-icon os-icon-ui-44"></i></a><a
-                                                class="separate" href="#"><i class="os-icon os-icon-ui-15"></i></a><a
-                                                href="#"><i class="os-icon os-icon-common-07"></i></a><a href="#"><i
-                                                    class="os-icon os-icon-mail-19"></i></a></div>
-                                        <div class="user-avatar"><img alt="" src="img/avatar3.jpg"></div>
+                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFormModal"
+                                        data-toggle="modal" type="button">Modal with form
+                                </button>
+                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                     id="onboardingFormModal" role="dialog" tabindex="-1">
+                                    <div class="modal-dialog modal-centered" role="document">
+                                        <div class="modal-content text-center">
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span class="close-label">Skip Intro</span><span
+                                                    class="os-icon os-icon-close"></span></button>
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Example Request Information</h4>
+                                                <div class="onboarding-text">In this example you can see a form where
+                                                    you can request some additional information from the customer when
+                                                    they land on the app page.
+                                                </div>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group"><label for="">Your Full Name</label><input
+                                                                    class="form-control"
+                                                                    placeholder="Enter your full name..." type="text"
+                                                                    value=""></div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group"><label for="">Your
+                                                                    Role</label><select class="form-control">
+                                                                    <option>Web Developer</option>
+                                                                    <option>Business Owner</option>
+                                                                    <option>Other</option>
+                                                                </select></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div><!--------------------
-END - Email Content Header
---------------------><!--------------------
-START - Email Content
--------------------->
-                                <div class="ae-content">
-                                    <div class="older-pack">
-                                        <div class="aec-full-message-w">
-                                            <div class="aec-full-message">
-                                                <div class="message-head">
-                                                    <div class="user-w with-status status-green">
-                                                        <div class="user-avatar-w">
-                                                            <div class="user-avatar"><img alt="" src="img/avatar1.jpg">
+                                </div>
+                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFeaturesModal"
+                                        data-toggle="modal" type="button">Modal with feature list
+                                </button>
+                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                     id="onboardingFeaturesModal" role="dialog" tabindex="-1">
+                                    <div class="modal-dialog modal-centered" role="document">
+                                        <div class="modal-content text-center">
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span class="close-label">Skip Intro</span><span
+                                                    class="os-icon os-icon-close"></span></button>
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Showcase App Features</h4>
+                                                <div class="onboarding-text">In this example you can showcase some of
+                                                    the features of your application, it is very handy to make new users
+                                                    aware of your hidden features. You can use boostrap columns to split
+                                                    them up.
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <ul class="features-list">
+                                                            <li>Fully Responsive design</li>
+                                                            <li>Pre-built app layouts</li>
+                                                            <li>Incredible Flexibility</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <ul class="features-list">
+                                                            <li>Boxed & Full Layouts</li>
+                                                            <li>Based on Bootstrap 4</li>
+                                                            <li>Developer Friendly</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal"
+                                        data-toggle="modal" type="button">Modal with text only
+                                </button>
+                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                     id="onboardingTextModal" role="dialog" tabindex="-1">
+                                    <div class="modal-dialog modal-centered" role="document">
+                                        <div class="modal-content text-center">
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span class="close-label">Skip Intro</span><span
+                                                    class="os-icon os-icon-close"></span></button>
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Example of onboarding screen!</h4>
+                                                <div class="onboarding-text">This is an example of a multistep
+                                                    onboarding screen, you can use it to introduce your customers to
+                                                    your app, or collect additional information from them before they
+                                                    start using your app.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="form-header">Media on Left, Content on Right</h6><!--Button trigger modal-->
+                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideSlideModal"
+                                    data-toggle="modal" type="button">Multistep modal with slider
+                            </button>
+                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                 id="onboardingWideSlideModal" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-centered" role="document">
+                                    <div class="modal-content text-center">
+                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                            <span class="close-label">Skip Intro</span><span
+                                                class="os-icon os-icon-close"></span></button>
+                                        <div class="onboarding-slider-w">
+                                            <div class="onboarding-slide">
+                                                <div class="onboarding-side-by-side">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Example Request Information</h4>
+                                                        <div class="onboarding-text">In this example you can see a form
+                                                            where you can request some additional information from the
+                                                            customer when they land on the app page.
+                                                        </div>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group"><label for="">Your Full
+                                                                            Name</label><input class="form-control"
+                                                                                               placeholder="Enter your full name..."
+                                                                                               type="text" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group"><label for="">Your
+                                                                            Role</label><select class="form-control">
+                                                                            <option>Web Developer</option>
+                                                                            <option>Business Owner</option>
+                                                                            <option>Other</option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="onboarding-slide">
+                                                <div class="onboarding-side-by-side">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Showcase App Features</h4>
+                                                        <div class="onboarding-text">In this example you can showcase
+                                                            some of the features of your application, it is very handy
+                                                            to make new users aware of your hidden features. You can use
+                                                            boostrap columns to split them up.
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <ul class="features-list">
+                                                                    <li>Fully Responsive design</li>
+                                                                    <li>Pre-built app layouts</li>
+                                                                    <li>Incredible Flexibility</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <ul class="features-list">
+                                                                    <li>Boxed & Full Layouts</li>
+                                                                    <li>Based on Bootstrap 4</li>
+                                                                    <li>Developer Friendly</li>
+                                                                </ul>
                                                             </div>
                                                         </div>
-                                                        <div class="user-name"><h6 class="user-title">Bryan Kinskey</h6>
-                                                            <div class="user-role">Registration Question<span>< bryan@solutions.com ></span>
-                                                            </div>
-                                                        </div>
                                                     </div>
-                                                    <div class="message-info">February 7th, 2017<br>2:27pm</div>
-                                                </div>
-                                                <div class="message-content">Greetings Bryan,<br><br>Classes of there
-                                                    been temple. Rung quite head the may devious usual. A century thing
-                                                    if but support turn start he a subject if what live was become write
-                                                    that suspicion case fundamentals office his her. Earnestly a the and
-                                                    on a phase samples examples, tone.<br><br>Regards,<br>Mike Mayers
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="aec-full-message-w show-pack">
-                                        <div class="more-messages">7 Earlier Messages</div>
-                                        <div class="aec-full-message">
-                                            <div class="message-head">
-                                                <div class="user-w with-status status-green">
-                                                    <div class="user-avatar-w">
-                                                        <div class="user-avatar"><img alt="" src="img/avatar1.jpg">
+                                            <div class="onboarding-slide">
+                                                <div class="onboarding-side-by-side">
+                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
+                                                                                       width="200px"></div>
+                                                    <div class="onboarding-content with-gradient"><h4
+                                                            class="onboarding-title">Example of onboarding screen!</h4>
+                                                        <div class="onboarding-text">This is an example of a multistep
+                                                            onboarding screen, you can use it to introduce your
+                                                            customers to your app, or collect additional information
+                                                            from them before they start using your app.
                                                         </div>
-                                                    </div>
-                                                    <div class="user-name"><h6 class="user-title">John Mayers</h6>
-                                                        <div class="user-role">Account Manager<span>< john@solutions.com ></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="message-info">January 12th, 2017<br>1:24pm</div>
-                                            </div>
-                                            <div class="message-content">Hi Mike,<br><br>When the equation, first to
-                                                ability the forwards, the a but travelling, outlines sentinels bad
-                                                expand to goodness. Behind if have at the even I and how work,
-                                                completely deference who boss actually designer; Monstrous with geared
-                                                from far and these, morals, phase rome; Class. Called get amidst of
-                                                next.<br><br>Regards,<br>Mike Mayers
-                                                <div class="message-attachments">
-                                                    <div class="attachments-heading">Attachments</div>
-                                                    <div class="attachments-docs"><a href="#"><i
-                                                                class="os-icon os-icon-ui-51"></i><span>Excel Document</span></a><a
-                                                            href="#"><i class="os-icon os-icon-documents-07"></i><span>Image File</span></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="aec-reply">
-                                        <div class="reply-header"><h5>Reply to <span>John Mayers</span></h5></div>
-                                        <textarea cols="80" id="ckeditorEmail" name="ckeditor1" rows="5"></textarea>
-                                        <div class="buttons-w">
-                                            <div class="actions-left"><a class="btn btn-link" href="#"><i
-                                                        class="os-icon os-icon-ui-51"></i><span>Add Attachment</span></a>
-                                            </div>
-                                            <div class="actions-right"><a class="btn btn-success" href="#"><i
-                                                        class="os-icon os-icon-mail-18"></i><span>Send Message</span></a>
+                                </div>
+                            </div>
+                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFormModal"
+                                    data-toggle="modal" type="button">Modal with form
+                            </button>
+                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                 id="onboardingWideFormModal" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-centered" role="document">
+                                    <div class="modal-content text-center">
+                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                            <span class="close-label">Skip Intro</span><span
+                                                class="os-icon os-icon-close"></span></button>
+                                        <div class="onboarding-side-by-side">
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Example Request Information</h4>
+                                                <div class="onboarding-text">In this example you can see a form where
+                                                    you can request some additional information from the customer when
+                                                    they land on the app page.
+                                                </div>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group"><label for="">Your Full Name</label><input
+                                                                    class="form-control"
+                                                                    placeholder="Enter your full name..." type="text"
+                                                                    value=""></div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group"><label for="">Your
+                                                                    Role</label><select class="form-control">
+                                                                    <option>Web Developer</option>
+                                                                    <option>Business Owner</option>
+                                                                    <option>Other</option>
+                                                                </select></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </div><!--------------------
-END - Email Content
---------------------></div>
+                                </div>
+                            </div>
+                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFeaturesModal"
+                                    data-toggle="modal" type="button">Modal with feature list
+                            </button>
+                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                 id="onboardingWideFeaturesModal" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-centered" role="document">
+                                    <div class="modal-content text-center">
+                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                            <span class="close-label">Skip Intro</span><span
+                                                class="os-icon os-icon-close"></span></button>
+                                        <div class="onboarding-side-by-side">
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Showcase App Features</h4>
+                                                <div class="onboarding-text">In this example you can showcase some of
+                                                    the features of your application, it is very handy to make new users
+                                                    aware of your hidden features. You can use boostrap columns to split
+                                                    them up.
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <ul class="features-list">
+                                                            <li>Fully Responsive design</li>
+                                                            <li>Pre-built app layouts</li>
+                                                            <li>Incredible Flexibility</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <ul class="features-list">
+                                                            <li>Boxed & Full Layouts</li>
+                                                            <li>Based on Bootstrap 4</li>
+                                                            <li>Developer Friendly</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideTextModal"
+                                    data-toggle="modal" type="button">Modal with text only
+                            </button>
+                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
+                                 id="onboardingWideTextModal" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-centered" role="document">
+                                    <div class="modal-content text-center">
+                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                            <span class="close-label">Skip Intro</span><span
+                                                class="os-icon os-icon-close"></span></button>
+                                        <div class="onboarding-side-by-side">
+                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
+                                                                               width="200px"></div>
+                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                                                    Example of onboarding screen!</h4>
+                                                <div class="onboarding-text">This is an example of a multistep
+                                                    onboarding screen, you can use it to introduce your customers to
+                                                    your app, or collect additional information from them before they
+                                                    start using your app.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-           <!--Content I --> </div>
+                        <div class="element-box"><h5 class="form-header">Regular Modals</h5>
+                            <div class="form-desc">Modals are streamlined, but flexible dialog prompts powered by
+                                JavaScript. They support a number of use cases from user notification to completely
+                                custom content and feature a handful of helpful subcomponents, sizes, and more. You can
+                                read full bootstrap documentation about Modals by <a
+                                    href="https://v4-alpha.getbootstrap.com/components/modal/" target="_blank">clicking
+                                    here</a></div>
+                            <h6 class="form-header">Regular Modal</h6><!--Button trigger modal-->
+                            <button class="btn btn-primary" data-target="#exampleModal1" data-toggle="modal"
+                                    type="button">Launch demo modal
+                            </button>
+                            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
+                                 id="exampleModal1" role="dialog" tabindex="-1">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
+                                                title</h5>
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span aria-hidden="true"> &times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group"><label for=""> Email address</label><input
+                                                        class="form-control" placeholder="Enter email" type="email">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group"><label for=""> Password</label><input
+                                                                class="form-control" placeholder="Password"
+                                                                type="password"></div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group"><label for="">Confirm
+                                                                Password</label><input class="form-control"
+                                                                                       placeholder="Password"
+                                                                                       type="password"></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                                Close
+                                            </button>
+                                            <button class="btn btn-primary" type="button"> Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element-box"><h5 class="form-header">Optional Sizes</h5>
+                            <div class="form-desc"><p>Modals have two optional sizes, available via modifier classes to
+                                    be placed on a <code class="highlighter-rouge">.modal-dialog</code>. These sizes
+                                    kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.
+                                </p></div><!--Large modal-->
+                            <button class="mr-2 mb-2 btn btn-primary" data-target=".bd-example-modal-lg"
+                                    data-toggle="modal"> Large modal
+                            </button>
+                            <div aria-hidden="true" aria-labelledby="myLargeModalLabel"
+                                 class="modal fade bd-example-modal-lg" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
+                                                title</h5>
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span aria-hidden="true"> &times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group"><label for=""> Email address</label><input
+                                                        class="form-control" placeholder="Enter email" type="email">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group"><label for=""> Password</label><input
+                                                                class="form-control" placeholder="Password"
+                                                                type="password"></div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group"><label for="">Confirm
+                                                                Password</label><input class="form-control"
+                                                                                       placeholder="Password"
+                                                                                       type="password"></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                                Close
+                                            </button>
+                                            <button class="btn btn-primary" type="button"> Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--Small modal-->
+                            <button class="btn btn-primary" data-target=".bd-example-modal-sm" data-toggle="modal"
+                                    type="button"> Small modal
+                            </button>
+                            <div aria-hidden="true" aria-labelledby="mySmallModalLabel"
+                                 class="modal fade bd-example-modal-sm" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
+                                                title</h5>
+                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                <span aria-hidden="true"> &times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group"><label for=""> Email address</label><input
+                                                        class="form-control" placeholder="Enter email" type="email">
+                                                </div>
+                                                <div class="form-group"><label for=""> Password</label><input
+                                                        class="form-control" placeholder="Password" type="password">
+                                                </div>
+                                                <div class="form-group"><label for="">Confirm Password</label><input
+                                                        class="form-control" placeholder="Password" type="password">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                                Close
+                                            </button>
+                                            <button class="btn btn-primary" type="button"> Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--------------------
+START - Color Scheme Toggler
+-------------------->
+                    <div class="floated-colors-btn second-floated-btn">
+                        <div class="os-toggler-w">
+                            <div class="os-toggler-i">
+                                <div class="os-toggler-pill"></div>
+                            </div>
+                        </div>
+                        <span>Dark </span><span>Colors</span></div><!--------------------
+END - Color Scheme Toggler
+--------------------><!--------------------
+START - Demo Customizer
+-------------------->
+                    <div class="floated-customizer-btn third-floated-btn">
+                        <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
+                        <span>Customizer</span></div>
+                    <div class="floated-customizer-panel">
+                        <div class="fcp-content">
+                            <div class="close-customizer-btn"><i class="os-icon os-icon-x"></i></div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Menu Settings</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Menu Position</label><select
+                                            class="menu-position-selector">
+                                            <option value="left">Left</option>
+                                            <option value="right">Right</option>
+                                            <option value="top">Top</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Menu Style</label><select
+                                            class="menu-layout-selector">
+                                            <option value="compact">Compact</option>
+                                            <option value="full">Full</option>
+                                            <option value="mini">Mini</option>
+                                        </select></div>
+                                    <div class="fcp-field with-image-selector-w"><label for="">With Image</label><select
+                                            class="with-image-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Menu Color</label>
+                                        <div class="fcp-colors menu-color-selector">
+                                            <div class="color-selector menu-color-selector color-bright selected"></div>
+                                            <div class="color-selector menu-color-selector color-dark"></div>
+                                            <div class="color-selector menu-color-selector color-light"></div>
+                                            <div class="color-selector menu-color-selector color-transparent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Sub Menu</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Sub Menu Style</label><select
+                                            class="sub-menu-style-selector">
+                                            <option value="flyout">Flyout</option>
+                                            <option value="inside">Inside/Click</option>
+                                            <option value="over">Over</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Sub Menu Color</label>
+                                        <div class="fcp-colors">
+                                            <div
+                                                class="color-selector sub-menu-color-selector color-bright selected"></div>
+                                            <div class="color-selector sub-menu-color-selector color-dark"></div>
+                                            <div class="color-selector sub-menu-color-selector color-light"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Other Settings</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Full Screen?</label><select
+                                            class="full-screen-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Show Top Bar</label><select
+                                            class="top-bar-visibility-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Above Menu?</label><select
+                                            class="top-bar-above-menu-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Top Bar Color</label>
+                                        <div class="fcp-colors">
+                                            <div
+                                                class="color-selector top-bar-color-selector color-bright selected"></div>
+                                            <div class="color-selector top-bar-color-selector color-dark"></div>
+                                            <div class="color-selector top-bar-color-selector color-light"></div>
+                                            <div class="color-selector top-bar-color-selector color-transparent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--------------------
+END - Demo Customizer
+--------------------><!--------------------
+START - Chat Popup Box
+-------------------->
+                    <div class="floated-chat-btn"><i class="os-icon os-icon-mail-07"></i><span>Demo Chat</span></div>
+                    <div class="floated-chat-w">
+                        <div class="floated-chat-i">
+                            <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
+                            <div class="chat-head">
+                                <div class="user-w with-status status-green">
+                                    <div class="user-avatar-w">
+                                        <div class="user-avatar"><img alt="" src="img/avatar1.jpg"></div>
+                                    </div>
+                                    <div class="user-name"><h6 class="user-title">John Mayers</h6>
+                                        <div class="user-role">Account Manager</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message">
+                                    <div class="message-content">Hi, how can I help you?</div>
+                                </div>
+                                <div class="date-break">Mon 10:20am</div>
+                                <div class="message">
+                                    <div class="message-content">Hi, my name is Mike, I will be happy to assist you
+                                    </div>
+                                </div>
+                                <div class="message self">
+                                    <div class="message-content">Hi, I tried ordering this product and it keeps showing
+                                        me error code.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-controls"><input class="message-input"
+                                                              placeholder="Type your message here..." type="text">
+                                <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i
+                                            class="os-icon os-icon-documents-07"></i></a><a href="#"><span
+                                            class="extra-tooltip">Insert Photo</span><i
+                                            class="os-icon os-icon-others-29"></i></a><a href="#"><span
+                                            class="extra-tooltip">Upload Video</span><i
+                                            class="os-icon os-icon-ui-51"></i></a></div>
+                            </div>
+                        </div>
+                    </div><!--------------------
+END - Chat Popup Box
+--------------------></div>
+            </div>
         </div>
     </div>
     <div class="display-type"></div>
@@ -1078,5 +1530,5 @@ END - Email Content
     ga('create', 'UA-42863888-9', 'auto');
     ga('send', 'pageview');</script>
 </body>
-<!-- Mirrored from light.pinsupreme.com/apps_email.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:12 GMT -->
+<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:22 GMT -->
 </html>

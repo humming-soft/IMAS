@@ -21,6 +21,7 @@ class IcvCalculation extends HS_Controller {
         }
         echo json_encode($data);
 
+
     }
     public function add_mu()
     {

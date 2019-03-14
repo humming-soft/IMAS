@@ -84,108 +84,120 @@
                     </div>
                     <div class="ae-content" >
                         <?php foreach($icv_milestone as $icv_milestone){?>
-                            <div class="aec-full-message-w">
-                                <div class="aec-full-message">
-                                    <div class="message-head">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h6 class="onboarding-title"><?=$icv_milestone['milestone_text']?></h6>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for=""> Timeline /Completion Period</label>
-                                                    <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
-                                                    <input class="form-control"  value="<?=$icv_milestone['milestone_id']?> " id=milestoneID name=milestoneID[] type="hidden">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">Evidences</label>
-                                                    <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$icv_milestone['milestone_id']?>][]" multiple value="Upload"></b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="message-content">
-                                        <div class="row">
-                                            <table class="tabIcv">
-                                                <thead>
-                                                <tr class="text-center">
-                                                    <th>NV Non MLC</th>
-                                                    <th>Multiplier</th>
-                                                    <th>NV MLC</th>
-                                                    <th>Multiplier</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control nonMLC" value="<?=$icv_milestone['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control nonMLCMultiplier" value="<?=$icv_milestone['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td hidden>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control" value="<?=$icv_milestone['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="hidden" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control MLC" value="<?=$icv_milestone['mlc']?>"  id="MLC" name="MlC[]" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control MLCMultiplier" value="<?=$icv_milestone['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td hidden>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <input class="form-control" id="MLCMU" value="<?=$icv_milestone['mlcMu']?>" name="MlCMU[]" readonly type="hidden" value="">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">RM</div>
-                                                                </div>
-                                                                <input class="form-control TotalRow" value="<?=$icv_milestone['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                            <div class="element-wrapper" style="padding-bottom: 0rem; !important">
+                                <div class="element-box">
+                                    <h6 class="element-box-header"><?=$icv_milestone['milestone_text']?></h6>
+                                    <label for=""> Timeline /Completion Period : - </label>
+                                    <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
                                 </div>
                             </div>
+                            <?php foreach($icv_milestone['activities'] as $act){?>
+                                        <div class="aec-full-message-w" style="margin-left: 10%; margin-bottom: 8px; !important">
+                                            <div class="aec-full-message">
+                                                <div class="message-head">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h6 class="onboarding-title"><?=$act['activity_text']?></h6>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for=""> Timeline /Completion Period</label>
+                                                                <b class="font d-block"><?=$act['activity_start_date']?>  -  <?=$act['activity_end_date']?></b>
+                                                                <input class="form-control"  value="<?=$act['activity_id']?> " id=milestoneID name=milestoneID[] type="hidden">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="">Evidences</label>
+                                                                <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$act['activity_id']?>][]" multiple value="Upload"></b>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="message-content">
+                                                    <div class="row">
+                                                        <table class="tabIcv">
+                                                            <thead>
+                                                            <tr class="text-center">
+                                                                <th>NV Non MLC</th>
+                                                                <th>Multiplier</th>
+                                                                <th>NV MLC</th>
+                                                                <th>Multiplier</th>
+                                                                <th>Total</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend">
+                                                                                <div class="input-group-text">RM</div>
+                                                                            </div>
+                                                                            <input class="form-control nonMLC" value="<?=$act['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <input class="form-control nonMLCMultiplier" value="<?=$act['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td hidden>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <input class="form-control" value="<?=$act['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="hidden" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend">
+                                                                                <div class="input-group-text">RM</div>
+                                                                            </div>
+                                                                            <input class="form-control MLC" value="<?=$act['mlc']?>"  id="MLC" name="MlC[]" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <input class="form-control MLCMultiplier" value="<?=$act['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td hidden>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <input class="form-control" id="MLCMU" value="<?=$act['mlcMu']?>" name="MlCMU[]" readonly type="hidden" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend">
+                                                                                <div class="input-group-text">RM</div>
+                                                                            </div>
+                                                                            <input class="form-control TotalRow" value="<?=$act['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
                         <?php } ?>
+                      <!--  <?php /*foreach($icv_milestone as $icv_milestone){*/?>
+
+                        --><?php /*} */?>
                         <div class="col-sm-12 text-right">
                             <div class="form-buttons-w">
                                 <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>

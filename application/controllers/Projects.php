@@ -218,9 +218,14 @@ class Projects extends HS_Controller {
                 $data['type'] = $messagehrecord['type'];
                 $this->session->unset_userdata('message');                              
             }
+            $data['icv_milestone']=$this->icvcalculationmodel->get_icv_milestone($data['project'][0]->proj_id,1);
+            if(sizeof( $data['icv_milestone']) == 0){
+                          $sess_array = array('message' =>  "<strong>Please complete your gantt chart first!</strong>","type" => 1);
+                          $this->session->set_userdata('message', $sess_array);
+                          redirect(site_url('programmes/'.$p_ref.'/'.$projectId.'/milestones'));
+            }
             $nav['project'] = $data['project'];
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
-            $data['icv_milestone']=$this->icvcalculationmodel->get_icv_milestone($data['project'][0]->proj_id,1);
             $data['icv_project']=$this->icvcalculationmodel->get_icv_project($data['project'][0]->proj_id,1);
             $data['icv_multiplier_MLC']=$this->icvcalculationmodel->get_icv_multiplier();
             $data['icv_multiplier_nonMLC']=$this->icvcalculationmodel->get_icv_multiplier_non();
@@ -342,12 +347,10 @@ class Projects extends HS_Controller {
                     for($i=0;$i<sizeof($arr['icv']);$i++)
                     {
                         $taskId=$arr['icv'][$i];
-                      /*  print_r($arr['files'][(int)$taskId]);
+                       /*print_r($arr['files'][(int)$taskId]);
                         echo sizeof($arr['files'][(int)$taskId]);*/
-                       /* $filesCount = sizeof($arr['files'][(int)$taskId]);
-                        for($i = 0; $i < $filesCount; $i++){
-                         
-                        }*/
+                       /*$filesCount = sizeof($arr['files'][(int)$taskId]);
+                        for($i = 0; $i < $filesCount; $i++){ }*/
                         $countMilestone=$this->icvcalculationmodel->get_count_milestone_icv($taskId);
                         if($countMilestone > 0){
                             $dataicv = array(
