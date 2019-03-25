@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:22 GMT -->
+<!-- Mirrored from light.pinsupreme.com/forms_validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:26 GMT -->
 <head><title>Admin Dashboard HTML Template</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -20,8 +20,8 @@
     <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
     <link href="css/maince5a.css?version=4.4.1" rel="stylesheet">
 </head>
-<body class="menu-position-side menu-side-left full-screen">
-<div class="all-wrapper solid-bg-all">
+<body class="menu-position-side menu-side-left full-screen with-content-panel">
+<div class="all-wrapper with-side-panel solid-bg-all">
     <div class="search-with-suggestions-w">
         <div class="search-with-suggestions-modal">
             <div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search..."
@@ -802,535 +802,113 @@ START - Breadcrumbs
             </ul><!--------------------
 END - Breadcrumbs
 -------------------->
+            <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
             <div class="content-i">
                 <div class="content-box">
-                    <div class="element-wrapper"><h6 class="element-header">Examples of Modals</h6>
-                        <div class="element-box"><h5 class="form-header">New Onboarding Modals <span
-                                    class="badge badge-danger">New</span></h5>
-                            <div class="form-desc">Built specifically for this template, these onboarding modals are a
-                                great way to introduce your customers to your web app or collect additional information
-                                from them. We have two layouts available: wide, with media and text side by side and
-                                narrow one with media above text. Each can also have multiple slides inside them.
-                            </div>
-                            <h6 class="form-header">Media Above Text</h6>
-                            <div class="mb-4"><!--Button trigger modal-->
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingSlideModal"
-                                        data-toggle="modal" type="button">Multistep modal with slider
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingSlideModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-slider-w">
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example Request Information</h4>
-                                                        <div class="onboarding-text">In this example you can see a form
-                                                            where you can request some additional information from the
-                                                            customer when they land on the app page.
-                                                        </div>
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your Full
-                                                                            Name</label><input class="form-control"
-                                                                                               placeholder="Enter your full name..."
-                                                                                               type="text" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your
-                                                                            Role</label><select class="form-control">
-                                                                            <option>Web Developer</option>
-                                                                            <option>Business Owner</option>
-                                                                            <option>Other</option>
-                                                                        </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Showcase App Features</h4>
-                                                        <div class="onboarding-text">In this example you can showcase
-                                                            some of the features of your application, it is very handy
-                                                            to make new users aware of your hidden features. You can use
-                                                            boostrap columns to split them up.
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Fully Responsive design</li>
-                                                                    <li>Pre-built app layouts</li>
-                                                                    <li>Incredible Flexibility</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Boxed & Full Layouts</li>
-                                                                    <li>Based on Bootstrap 4</li>
-                                                                    <li>Developer Friendly</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example of onboarding screen!</h4>
-                                                        <div class="onboarding-text">This is an example of a multistep
-                                                            onboarding screen, you can use it to introduce your
-                                                            customers to your app, or collect additional information
-                                                            from them before they start using your app.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="element-wrapper">
+                                <div class="element-box">
+                                    <form id="formValidate"><h5 class="form-header">Form Validation</h5>
+                                        <div class="form-desc">Validation of the form is made possible using powerful
+                                            validator plugin for bootstrap. <a
+                                                href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Learn
+                                                more about Bootstrap Validator</a></div>
+                                        <div class="form-group"><label for=""> Email address</label><input
+                                                class="form-control" data-error="Your email address is invalid"
+                                                placeholder="Enter email" required="required" type="email">
+                                            <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
-                                    </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFormModal"
-                                        data-toggle="modal" type="button">Modal with form
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingFormModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example Request Information</h4>
-                                                <div class="onboarding-text">In this example you can see a form where
-                                                    you can request some additional information from the customer when
-                                                    they land on the app page.
-                                                </div>
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your Full Name</label><input
-                                                                    class="form-control"
-                                                                    placeholder="Enter your full name..." type="text"
-                                                                    value=""></div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your
-                                                                    Role</label><select class="form-control">
-                                                                    <option>Web Developer</option>
-                                                                    <option>Business Owner</option>
-                                                                    <option>Other</option>
-                                                                </select></div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFeaturesModal"
-                                        data-toggle="modal" type="button">Modal with feature list
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingFeaturesModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Showcase App Features</h4>
-                                                <div class="onboarding-text">In this example you can showcase some of
-                                                    the features of your application, it is very handy to make new users
-                                                    aware of your hidden features. You can use boostrap columns to split
-                                                    them up.
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Fully Responsive design</li>
-                                                            <li>Pre-built app layouts</li>
-                                                            <li>Incredible Flexibility</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Boxed & Full Layouts</li>
-                                                            <li>Based on Bootstrap 4</li>
-                                                            <li>Developer Friendly</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal"
-                                        data-toggle="modal" type="button">Modal with text only
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingTextModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example of onboarding screen!</h4>
-                                                <div class="onboarding-text">This is an example of a multistep
-                                                    onboarding screen, you can use it to introduce your customers to
-                                                    your app, or collect additional information from them before they
-                                                    start using your app.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h6 class="form-header">Media on Left, Content on Right</h6><!--Button trigger modal-->
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideSlideModal"
-                                    data-toggle="modal" type="button">Multistep modal with slider
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideSlideModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-slider-w">
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example Request Information</h4>
-                                                        <div class="onboarding-text">In this example you can see a form
-                                                            where you can request some additional information from the
-                                                            customer when they land on the app page.
-                                                        </div>
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your Full
-                                                                            Name</label><input class="form-control"
-                                                                                               placeholder="Enter your full name..."
-                                                                                               type="text" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your
-                                                                            Role</label><select class="form-control">
-                                                                            <option>Web Developer</option>
-                                                                            <option>Business Owner</option>
-                                                                            <option>Other</option>
-                                                                        </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Showcase App Features</h4>
-                                                        <div class="onboarding-text">In this example you can showcase
-                                                            some of the features of your application, it is very handy
-                                                            to make new users aware of your hidden features. You can use
-                                                            boostrap columns to split them up.
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Fully Responsive design</li>
-                                                                    <li>Pre-built app layouts</li>
-                                                                    <li>Incredible Flexibility</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Boxed & Full Layouts</li>
-                                                                    <li>Based on Bootstrap 4</li>
-                                                                    <li>Developer Friendly</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example of onboarding screen!</h4>
-                                                        <div class="onboarding-text">This is an example of a multistep
-                                                            onboarding screen, you can use it to introduce your
-                                                            customers to your app, or collect additional information
-                                                            from them before they start using your app.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFormModal"
-                                    data-toggle="modal" type="button">Modal with form
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideFormModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example Request Information</h4>
-                                                <div class="onboarding-text">In this example you can see a form where
-                                                    you can request some additional information from the customer when
-                                                    they land on the app page.
-                                                </div>
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your Full Name</label><input
-                                                                    class="form-control"
-                                                                    placeholder="Enter your full name..." type="text"
-                                                                    value=""></div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your
-                                                                    Role</label><select class="form-control">
-                                                                    <option>Web Developer</option>
-                                                                    <option>Business Owner</option>
-                                                                    <option>Other</option>
-                                                                </select></div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFeaturesModal"
-                                    data-toggle="modal" type="button">Modal with feature list
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideFeaturesModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Showcase App Features</h4>
-                                                <div class="onboarding-text">In this example you can showcase some of
-                                                    the features of your application, it is very handy to make new users
-                                                    aware of your hidden features. You can use boostrap columns to split
-                                                    them up.
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Fully Responsive design</li>
-                                                            <li>Pre-built app layouts</li>
-                                                            <li>Incredible Flexibility</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Boxed & Full Layouts</li>
-                                                            <li>Based on Bootstrap 4</li>
-                                                            <li>Developer Friendly</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideTextModal"
-                                    data-toggle="modal" type="button">Modal with text only
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideTextModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example of onboarding screen!</h4>
-                                                <div class="onboarding-text">This is an example of a multistep
-                                                    onboarding screen, you can use it to introduce your customers to
-                                                    your app, or collect additional information from them before they
-                                                    start using your app.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element-box"><h5 class="form-header">Regular Modals</h5>
-                            <div class="form-desc">Modals are streamlined, but flexible dialog prompts powered by
-                                JavaScript. They support a number of use cases from user notification to completely
-                                custom content and feature a handful of helpful subcomponents, sizes, and more. You can
-                                read full bootstrap documentation about Modals by <a
-                                    href="https://v4-alpha.getbootstrap.com/components/modal/" target="_blank">clicking
-                                    here</a></div>
-                            <h6 class="form-header">Regular Modal</h6><!--Button trigger modal-->
-                            <button class="btn btn-primary" data-target="#exampleModal1" data-toggle="modal"
-                                    type="button">Launch demo modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
-                                 id="exampleModal1" role="dialog" tabindex="-1">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for=""> Password</label><input
-                                                                class="form-control" placeholder="Password"
-                                                                type="password"></div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for="">Confirm
-                                                                Password</label><input class="form-control"
-                                                                                       placeholder="Password"
-                                                                                       type="password"></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element-box"><h5 class="form-header">Optional Sizes</h5>
-                            <div class="form-desc"><p>Modals have two optional sizes, available via modifier classes to
-                                    be placed on a <code class="highlighter-rouge">.modal-dialog</code>. These sizes
-                                    kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.
-                                </p></div><!--Large modal-->
-                            <button class="mr-2 mb-2 btn btn-primary" data-target=".bd-example-modal-lg"
-                                    data-toggle="modal"> Large modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="myLargeModalLabel"
-                                 class="modal fade bd-example-modal-lg" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for=""> Password</label><input
-                                                                class="form-control" placeholder="Password"
-                                                                type="password"></div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for="">Confirm
-                                                                Password</label><input class="form-control"
-                                                                                       placeholder="Password"
-                                                                                       type="password"></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!--Small modal-->
-                            <button class="btn btn-primary" data-target=".bd-example-modal-sm" data-toggle="modal"
-                                    type="button"> Small modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="mySmallModalLabel"
-                                 class="modal fade bd-example-modal-sm" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-sm">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
                                                 <div class="form-group"><label for=""> Password</label><input
-                                                        class="form-control" placeholder="Password" type="password">
+                                                        class="form-control" data-minlength="6" placeholder="Password"
+                                                        required="required" type="password">
+                                                    <div class="help-block form-text text-muted form-control-feedback">
+                                                        Minimum of 6 characters
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-6">
                                                 <div class="form-group"><label for="">Confirm Password</label><input
-                                                        class="form-control" placeholder="Password" type="password">
+                                                        class="form-control"
+                                                        data-match-error="Passwords don&#39;t match"
+                                                        placeholder="Confirm Password" required="required"
+                                                        type="password">
+                                                    <div
+                                                        class="help-block form-text with-errors form-control-feedback"></div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
+                                        <div class="form-group"><label for=""> Regular select</label><select
+                                                class="form-control">
+                                                <option value="New York">New York</option>
+                                                <option value="California">California</option>
+                                                <option value="Boston">Boston</option>
+                                                <option value="Texas">Texas</option>
+                                                <option value="Colorado">Colorado</option>
+                                            </select></div>
+                                        <div class="form-group"><label for=""> Multiselect</label><select
+                                                class="form-control select2" multiple="true">
+                                                <option selected="true">New York</option>
+                                                <option selected="true">California</option>
+                                                <option>Boston</option>
+                                                <option>Texas</option>
+                                                <option>Colorado</option>
+                                            </select></div>
+                                        <fieldset class="form-group">
+                                            <legend><span>Section Example</span></legend>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"><label for=""> First Name</label><input
+                                                            class="form-control"
+                                                            data-error="Please input your First Name"
+                                                            placeholder="First Name" required="required" type="text">
+                                                        <div
+                                                            class="help-block form-text with-errors form-control-feedback"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"><label for="">Last Name</label><input
+                                                            class="form-control"
+                                                            data-error="Please input your Last Name"
+                                                            placeholder="Last Name" required="required" type="text">
+                                                        <div
+                                                            class="help-block form-text with-errors form-control-feedback"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"><label for=""> Date of Birth</label><input
+                                                            class="single-daterange form-control"
+                                                            placeholder="Date of birth" type="text" value="04/12/1978">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"><label for="">Twitter Username</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">@</div>
+                                                            </div>
+                                                            <input class="form-control" placeholder="Twitter Username"
+                                                                   type="text"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><label for="">Date Range Picker</label><input
+                                                    class="multi-daterange form-control" type="text"
+                                                    value="03/31/2017 - 04/06/2017"></div>
+                                            <div class="form-group"><label> Example textarea</label><textarea
+                                                    class="form-control" rows="3"></textarea></div>
+                                        </fieldset>
+                                        <div class="form-check"><label class="form-check-label"><input
+                                                    class="form-check-input" type="checkbox">I agree to terms and
+                                                conditions</label></div>
+                                        <div class="form-buttons-w">
+                                            <button class="btn btn-primary" type="submit"> Submit</button>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1479,8 +1057,124 @@ START - Chat Popup Box
                         </div>
                     </div><!--------------------
 END - Chat Popup Box
+--------------------></div><!--------------------
+START - Sidebar
+-------------------->
+                <div class="content-panel">
+                    <div class="content-panel-close"><i class="os-icon os-icon-close"></i></div><!--------------------
+START - Support Agents
+-------------------->
+                    <div class="element-wrapper"><h6 class="element-header">Support Agents</h6>
+                        <div class="element-box-tp">
+                            <div class="profile-tile"><a class="profile-tile-box" href="users_profile_small.html">
+                                    <div class="pt-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="pt-user-name">John Mayers</div>
+                                </a>
+                                <div class="profile-tile-meta">
+                                    <ul>
+                                        <li>Last Login:<strong>Online Now</strong></li>
+                                        <li>Tickets:<strong><a href="apps_support_index.html">12</a></strong></li>
+                                        <li>Response Time:<strong>2 hours</strong></li>
+                                    </ul>
+                                    <div class="pt-btn"><a class="btn btn-success btn-sm" href="apps_full_chat.html">Send
+                                            Message</a></div>
+                                </div>
+                            </div>
+                            <div class="profile-tile"><a class="profile-tile-box" href="users_profile_small.html">
+                                    <div class="pt-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                    <div class="pt-user-name">Ben Gossman</div>
+                                </a>
+                                <div class="profile-tile-meta">
+                                    <ul>
+                                        <li>Last Login:<strong>Offline</strong></li>
+                                        <li>Tickets:<strong><a href="apps_support_index.html">9</a></strong></li>
+                                        <li>Response Time:<strong>3 hours</strong></li>
+                                    </ul>
+                                    <div class="pt-btn"><a class="btn btn-secondary btn-sm" href="apps_full_chat.html">Send
+                                            Message</a></div>
+                                </div>
+                            </div>
+                            <div class="profile-tile"><a class="profile-tile-box" href="users_profile_small.html">
+                                    <div class="pt-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                    <div class="pt-user-name">Ken Sorrons</div>
+                                </a>
+                                <div class="profile-tile-meta">
+                                    <ul>
+                                        <li>Last Login:<strong>Offline</strong></li>
+                                        <li>Tickets:<strong><a href="apps_support_index.html">17</a></strong></li>
+                                        <li>Response Time:<strong>1 hour</strong></li>
+                                    </ul>
+                                    <div class="pt-btn"><a class="btn btn-danger btn-sm" href="apps_full_chat.html">Send
+                                            Message</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--------------------
+END - Support Agents
+-------------------->
+                    <div class="element-wrapper"><h6 class="element-header">Side Tables</h6>
+                        <div class="element-box"><h5 class="form-header">Table in white box</h5>
+                            <div class="form-desc">You can put a table tag inside an <code>.element-box</code> class
+                                wrapper and add <code>.table</code> class to it to get something like this:
+                            </div>
+                            <div class="controls-above-table">
+                                <div class="row">
+                                    <div class="col-sm-12"><a class="btn btn-sm btn-primary" href="#">Download CSV</a><a
+                                            class="btn btn-sm btn-danger" href="#">Delete</a></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-lightborder">
+                                    <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>John Mayers</td>
+                                        <td class="text-center">
+                                            <div class="status-pill green" data-title="Complete"
+                                                 data-toggle="tooltip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kelly Brans</td>
+                                        <td class="text-center">
+                                            <div class="status-pill red" data-title="Cancelled"
+                                                 data-toggle="tooltip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tim Howard</td>
+                                        <td class="text-center">
+                                            <div class="status-pill green" data-title="Complete"
+                                                 data-toggle="tooltip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Joe Trulli</td>
+                                        <td class="text-center">
+                                            <div class="status-pill yellow" data-title="Pending"
+                                                 data-toggle="tooltip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fred Kolton</td>
+                                        <td class="text-center">
+                                            <div class="status-pill green" data-title="Complete"
+                                                 data-toggle="tooltip"></div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--------------------
+END - Sidebar
 --------------------></div>
-            </div>
         </div>
     </div>
     <div class="display-type"></div>
@@ -1530,5 +1224,5 @@ END - Chat Popup Box
     ga('create', 'UA-42863888-9', 'auto');
     ga('send', 'pageview');</script>
 </body>
-<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:22 GMT -->
+<!-- Mirrored from light.pinsupreme.com/forms_validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Oct 2018 08:42:26 GMT -->
 </html>

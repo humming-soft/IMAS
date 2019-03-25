@@ -178,7 +178,7 @@ class Projects extends HS_Controller {
                 );
              $this->benefitsmodel->add_project_benefits($benefitdata);
             }
-            $this->project_benefits($p_ref,$projectId);
+            redirect('programmes/' . $p_ref . '/' . $projectId . '/benefits', 'id="pjt_benefit"');
         }
     }
     public function milestones($p_ref='',$projectId=''){
@@ -253,6 +253,7 @@ class Projects extends HS_Controller {
         $data=$this->validate_url($p_ref,$projectId);
         if(count($data)>0){
             $this->load->helper('form');
+            $this->load->model('icvcalculationmodel','',TRUE);
             if ($this->session->userdata('message')) {
                 $messagehrecord = $this->session->userdata('message');
                 $data['message'] = $messagehrecord['message'];
@@ -260,6 +261,15 @@ class Projects extends HS_Controller {
                 $this->session->unset_userdata('message');                              
             }
             $nav['project'] = $data['project'];
+            $data['icv_milestone']=$this->icvcalculationmodel->get_icv_milestone($data['project'][0]->proj_id,1);
+            if(sizeof( $data['icv_milestone']) == 0){
+                $sess_array = array('message' =>  "<strong>Please complete your gantt chart first!</strong>","type" => 1);
+                $this->session->set_userdata('message', $sess_array);
+                redirect(site_url('programmes/'.$p_ref.'/'.$projectId.'/milestones'));
+            }
+            $data['icv_project']=$this->icvcalculationmodel->get_icv_project($data['project'][0]->proj_id,1);
+            $data['p_ref']=$p_ref;
+            $data['projectId']=$projectId;
             $nav['projects'] = $this->projectmodel->getProjectsByProgramme2($data['prog_id'],1);
             $_footer["page_js"] = "delivarables";
             $this->load->view('core/projects/fragments/_header.php');
@@ -391,7 +401,7 @@ class Projects extends HS_Controller {
                         }
                     }
                 }
-                $this->icv_calculation($p_ref,$projectId);
+                redirect('programmes/' . $p_ref . '/' . $projectId . '/icv_calculation', 'id="icv_cal_1"');
             }else{
                 $datamilestonenew = array(
                     'proj_id'=> $data['project'][0]->proj_id,
@@ -434,9 +444,73 @@ class Projects extends HS_Controller {
                     }
 
                 }
-                $this->icv_calculation($p_ref,$projectId);
+                redirect('programmes/' . $p_ref . '/' . $projectId . '/icv_calculation', 'id="icv_cal_1"');
             }
          
         }
+    }
+    function claim_icv($p_ref='',$projectId='')
+    {
+        $data=$this->validate_url($p_ref,$projectId);
+        if(count($data)>0) {
+          /*  echo $data['project'][0]->proj_id;
+            exit;*/
+            $this->load->helper('form');
+            $this->load->model('icvcalculationmodel','',TRUE);
+            $arr['milestone']=$this->input->post('mileID[]');
+            $arr['remark']=$this->input->post('icvRemark[]');
+            $arr['checked']=$this->input->post('icvClamed[]');
+            $dataproject = array(
+                'icv_claimed'=> $this->input->post('totalClamedV'),
+                'created_at'=> date('Y-m-d H:i:s'),
+                'modified_at'=> date('Y-m-d H:i:s'),
+                'created_by'=> 1,
+                'modified_by'=> 1
+            );
+            $status=$this->icvcalculationmodel->update_project_icv($dataproject,$data['project'][0]->proj_id);
+           if($status == 1){
+               for($i=0;$i<sizeof($arr['milestone']);$i++)
+               {
+                   $taskID=$arr['milestone'][$i];
+                   $countMilestone=$this->icvcalculationmodel->get_count_milestone_icvclaim($taskID);
+                   if($countMilestone > 0){
+                       $dataicvClaimUpV = array(
+                           'milestone_claim_remarks'=>   $arr['remark'][$i],
+                           'milestone_claim_status'=> 0,
+                           'created_at'=> date('Y-m-d H:i:s'),
+                           'modified_at'=> date('Y-m-d H:i:s'),
+                           'created_by'=> 1,
+                           'modified_by'=> 1
+                       );
+                       $milestoneUpid=$this->icvcalculationmodel->updateICV_claim($taskID,$dataicvClaimUpV);
+                   }else{
+                       $dataicvClaim = array(
+                           'task_id'=> $arr['milestone'][$i],
+                           'milestone_claim_remarks'=>   $arr['remark'][$i],
+                           'milestone_claim_status'=> 0,
+                           'created_at'=> date('Y-m-d H:i:s'),
+                           'modified_at'=> date('Y-m-d H:i:s'),
+                           'created_by'=> 1,
+                           'modified_by'=> 1
+                       );
+                       $milestoneid=$this->icvcalculationmodel->insertICV_claim($dataicvClaim);
+                   }
+
+               }
+               foreach ($this->input->post('icvClamed') as $id)
+               {
+                   $dataicvClaimUp = array(
+                       'milestone_claim_status'=> 1,
+                       'created_at'=> date('Y-m-d H:i:s'),
+                       'modified_at'=> date('Y-m-d H:i:s'),
+                       'created_by'=> 1,
+                       'modified_by'=> 1
+                   );
+                   $milestoneUpid=$this->icvcalculationmodel->updateICV_claim($id,$dataicvClaimUp);
+               }
+           }
+
+        }
+        redirect('programmes/' . $p_ref . '/' . $projectId . '/delivarables', 'id="icv_cal_claim"');
     }
 }

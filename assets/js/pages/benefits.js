@@ -1,6 +1,6 @@
 var Benefits = function () {
     var _addNew = function() {
-        $( "#addrow" ).click(function() {
+        $( "#addrowNew" ).click(function() {
             $("#tabBenefits").each(function () {
                 var tds = '<tr>';
                 jQuery.each($('tr:last td', this), function () {
@@ -15,13 +15,20 @@ var Benefits = function () {
             });
         });
     };
-
+    var _deleteNew = function() {
+        $(document).on("click",".deleteRow",function(){
+            if (($('#tabBenefits tr').length) > 2) {
+                $(this).parents("tr").remove();
+            }
+        });
+    };
     var _menuSelected = function(menu){
         menu.addClass("selected");
     };
     return {
         init: function(){
             _addNew();
+            _deleteNew();
             _menuSelected($("#m_benefits"));
 
         }

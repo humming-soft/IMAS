@@ -46,22 +46,34 @@ var ICVCalc = function () {
         $(document).on("click",".muValue",function(){
             $('#modelMu').modal('show');
             $Mutitle = $(this).closest("tr").find('.mileName');
-            $mileID = $(this).closest("tr").find('.mileID');
-            $mlcornon="(NON MLC)";
+            $muContaineData = $(this).closest("tr").find('#nonMLCMU');
+            if($muContaineData.attr("data-nkea") !== "-1" || $muContaineData.attr("data-offset") !== "-1"  || $muContaineData.attr("data-focus") !== "-1" ){
+                 $( "#nkea" ).val($muContaineData.attr("data-nkea"));
+                 $( "#focus" ).val($muContaineData.attr("data-focus"));
+                 $( "#offset" ).val($muContaineData.attr("data-offset"));
+             }
         });
-        $(document).on("click",".muValueMlc",function(){
+       $(document).on("click",".muValueMlc",function(){
             $('#modelMu').modal('show');
             $Mutitle = $(this).closest("tr").find('.mileName');
-            $mileID = $(this).closest("tr").find('.mileID');
-            $mlcornon="(MLC)";
+            $muContaineData= $(this).closest("tr").find('#MLCMU');
+            if($muContaineData.attr("data-nkea") !== "-1" || $muContaineData.attr("data-offset") !== "-1"  || $muContaineData.attr("data-focus") !== "-1" ){
+                $( "#nkea" ).val($muContaineData.attr("data-nkea"));
+                $( "#focus" ).val($muContaineData.attr("data-focus"));
+                $( "#offset" ).val($muContaineData.attr("data-offset"));
+            }
         });
         $('#modelMu').on('hidden.bs.modal', function () {
-            var nkea =$( "#nkea option:selected" ).text();
-            var focus =$( "#focus option:selected" ).text();
-            var offset =$( "#offset option:selected" ).text();
-            var nkeaV =$( "#nkea option:selected" ).val();
-            var focusV =$( "#focus option:selected" ).val();
-            var offsetV =$( "#offset option:selected" ).val();
+            var nkea =$( "#nkea option:selected" ).val();
+            var focus =$( "#focus option:selected" ).val();
+            var offset =$( "#offset option:selected" ).val();
+            $muContaineData.attr("data-nkea",nkea);
+            $muContaineData.attr("data-offset",offset);
+            $muContaineData.attr("data-focus",focus);
+            /*       var nkeaV =$( "#nkea option:selected" ).val();
+                     var focusV =$( "#focus option:selected" ).val();
+                     var offsetV =$( "#offset option:selected" ).val();
+                     var activityId=$mileID.val();*/
           /*  var csrfName = _getcsrfname(),
                 csrfHash = _getcsrfcontent();
             _showLoader();
@@ -76,13 +88,14 @@ var ICVCalc = function () {
                     _hideLoader();
                 }
             }, 'json');*/
-            $('.nonmlcTab').append(' <tr><th>'+$Mutitle.val()+'-'+$mlcornon+'</th></tr><tr><td>'+nkea+'</td></tr><tr><td>'+focus+'</td></tr><tr><td>'+offset+'</td></tr>');
+         /*   $('.nonmlcTab'+activityId).append(' <tr><th>'+$mlcornon+'</th></tr><tr><td>'+nkea+'</td></tr><tr><td>'+focus+'</td></tr><tr><td>'+offset+'</td></tr>');*/
         });
      
         $(document).on("keyup",".nonMLC",function(){
             var sum = 0;
             var sumTotal=0;
             $nonMul = $(this).closest("tr").find('.nonMLCMultiplier');
+            $activitySum = $(this).closest("tr").find("#milestoneSID");
             if($nonMul.val() == 0 || isNaN($nonMul.val())){
             }else{
                 $(".nonMLC").each(function(){
@@ -94,6 +107,13 @@ var ICVCalc = function () {
                 $(".TotalRow").each(function(){
                     sumTotal += +$(this).val();
                 });
+                var activitysum = 0;
+                $(".rowtotal"+$activitySum.val()).each(function(){
+                    activitysum += +$(this).val();
+                });
+                if(!isNaN(activitysum)){
+                    $(".icv"+$activitySum.val()).text(activitysum);
+                }
                 $("#sumNonMLC").val(sum);
                 $("#totalICV").val(sumTotal);
             }
@@ -102,6 +122,7 @@ var ICVCalc = function () {
             var sum = 0;
             var sumTotal=0;
             $nonMul = $(this).closest("tr").find('.MLCMultiplier');
+            $activitySum = $(this).closest("tr").find("#milestoneSID");
             if($nonMul.val() == 0 || isNaN($nonMul.val())){
             }else{
                 $(".MLC").each(function(){
@@ -113,17 +134,25 @@ var ICVCalc = function () {
                 $(".TotalRow").each(function(){
                     sumTotal += +$(this).val();
                 });
+                var activitysum = 0;
+                $(".rowtotal"+$activitySum.val()).each(function(){
+                    activitysum += +$(this).val();
+                });
+                if(!isNaN(activitysum)){
+                    $(".icv"+$activitySum.val()).text(activitysum);
+                }
                 $("#sumMLC").val(sum);
                 $("#totalICV").val(sumTotal);
             }
         });
-        $(document).on("click",".nonMLCMultiplier",function(){
+        $(document).on("click",".nonMLCMultiplierChoose",function(){
             $('#multipilerModelNonMLC').modal('show');
-            $nonMLCM = $(this);
+            $nonMLCM = $(this).closest("tr").find('.nonMLCMultiplier');
             $nonNV = $(this).closest("tr").find('.nonMLC');
             $MLCM = $(this).closest("tr").find('.MLCMultiplier');
             $NV = $(this).closest("tr").find('.MLC');
             $rowSum = $(this).closest("tr").find('.TotalRow');
+            $activitySum = $(this).closest("tr").find("#milestoneSID");
         });
         $('#multipilerModelNonMLC').on('hidden.bs.modal', function () {
             $nonMLCM.val($('#nonMlcItemDes').val());
@@ -156,19 +185,37 @@ var ICVCalc = function () {
                  $(".TotalRow").each(function(){
                      sum += +$(this).val();
                  });
+                 var activitysum = 0;
+                 $(".rowtotal"+$activitySum.val()).each(function(){
+                     activitysum += +$(this).val();
+                 });
                  if(!isNaN(sum)){
                      $("#totalICV").val(sum);
+                 }
+                 if(!isNaN(activitysum)){
+                     $(".icv"+$activitySum.val()).text(activitysum);
                  }
              }
         });
 
-        $(document).on("click",".MLCMultiplier",function(){
+        $(document).on("click",".muShow",function(){
+            $mileID = $(this).closest("tr").find('.mileID');
+            var activityId=$mileID.val();
+            if ( $('.muEntitlementShow'+activityId).css('display') == 'none'){
+                $('.muEntitlementShow'+activityId).attr('hidden',false);
+            }else{
+                $('.muEntitlementShow'+activityId).attr('hidden',true);
+            }
+
+        });
+        $(document).on("click",".MLCMultiplierChoose",function(){
             $('#multipilerModelMLC').modal('show');
-            $MLCM = $(this);
+            $MLCM = $(this).closest("tr").find('.MLCMultiplier');
             $NV = $(this).closest("tr").find('.MLC');
             $nonMLCM = $(this).closest("tr").find('.nonMLCMultiplier');
             $nonNV = $(this).closest("tr").find('.nonMLC');
             $rowSum = $(this).closest("tr").find('.TotalRow');
+            $activitySum = $(this).closest("tr").find("#milestoneSID");
         });
         $('#multipilerModelMLC').on('hidden.bs.modal', function () {
             $MLCM.val($('#MlcItemDes').val());
@@ -201,8 +248,15 @@ var ICVCalc = function () {
                 $(".TotalRow").each(function(){
                     sum += +$(this).val();
                 });
+                var activitysum = 0;
+                $(".rowtotal"+$activitySum.val()).each(function(){
+                    activitysum += +$(this).val();
+                });
                 if(!isNaN(sum)){
                     $("#totalICV").val(sum);
+                }
+                if(!isNaN(activitysum)){
+                    $(".icv"+$activitySum.val()).text(activitysum);
                 }
             }
         });

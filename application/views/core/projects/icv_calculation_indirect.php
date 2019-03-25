@@ -86,9 +86,22 @@
                         <?php foreach($icv_milestone as $icv_milestone){?>
                         <div class="element-wrapper"  style="padding-bottom: 0rem; !important">
                             <div class="element-box">
-                                <h6 class="element-box-header"><?=$icv_milestone['milestone_text']?></h6>
-                                 <label for=""> Timeline /Completion Period : - </label>
-                                <b class="font d-block"><?=$icv_milestone['milestone_start_date']?>  -  <?=$icv_milestone['milestone_end_date']?></b>
+                                <h6 class="element-box-header"><?= $icv_milestone['milestone_text'] ?></h6>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label for=""> Timeline /Completion Period : - </label>
+                                            <b class="font d-block"><?= $icv_milestone['milestone_start_date'] ?>
+                                                - <?= $icv_milestone['milestone_end_date'] ?></b>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label for=""> Milestone ICV</label>
+                                            <label class="font d-block icv<?= $icv_milestone['milestone_id'] ?>"><?=$icv_milestone['milestone_icv']?></label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php foreach($icv_milestone['activities'] as $act){?>
@@ -106,7 +119,7 @@
                                                 <div class="col-sm-12 col-md-6">
                                                     <div class="form-group">
                                                         <label for="">Evidences</label>
-                                                        <b class="font d-block"><a href=""><i class="os-icon os-icon-upload"></i></a> <input type="file" name="files[<?=$act['activity_id']?>][]" multiple value="Upload"></b>
+                                                        <b class="font d-block"><input type="file" name="files[<?=$act['activity_id']?>][]" multiple value="Upload"></b>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,6 +149,8 @@
                                                                     <input class="form-control nonMLC" value="<?=$act['nonmlc']?>"  id="nonMLC" name="nonMlC[]" type="text">
                                                                     <input class="form-control mileName" value="<?=$act['activity_text']?>"  type="hidden">
                                                                     <input class="form-control mileID" value="<?=$act['activity_id']?>"  type="hidden">
+                                                                    <input class="form-control" value="<?= $icv_milestone['milestone_id'] ?> "
+                                                                           id=milestoneSID name=milestoneSID[] type="hidden">
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -143,13 +158,19 @@
                                                             <div class="form-group">
                                                                 <div class="input-group">
                                                                     <input class="form-control nonMLCMultiplier" value="<?=$act['nonmlcMul']?>" id="nonMLCMUL" name="nonMlCMUL[]" readonly type="text" value="">
+                                                                    <div class="input-group-append">
+                                                                        <div class="input-group-text nonMLCMultiplierChoose">Choose</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td >
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control muValue" value="<?=$act['nonmlcMu']?>" id="nonMLCMU" name="nonMlCMU[]" readonly type="text" value="">
+                                                                    <input class="form-control muValue" value="<?=$act['nonmlcMu']?>" data-nkea="-1"  data-offset="-1" data-focus="-1" id="nonMLCMU" name="nonMlCMU[]" readonly type="text" value="">
+                                                                    <div class="input-group-append">
+                                                                        <div class="input-group-text muValue">Choose</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -167,13 +188,19 @@
                                                             <div class="form-group">
                                                                 <div class="input-group">
                                                                     <input class="form-control MLCMultiplier" value="<?=$act['mlcMul']?>" id="MLCMUL" name="MlCMUL[]" placeholder="Choose" readonly type="text" value="">
+                                                                    <div class="input-group-append">
+                                                                        <div class="input-group-text MLCMultiplierChoose">Choose</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td >
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <input class="form-control muValueMlc" id="MLCMU" value="<?=$act['mlcMu']?>" name="MlCMU[]" readonly type="text" value="">
+                                                                    <input class="form-control muValueMlc" id="MLCMU"  value="<?=$act['mlcMu']?>"  data-nkea="-1"  data-offset="-1" data-focus="-1" name="MlCMU[]" readonly type="text" value="">
+                                                                    <div class="input-group-append">
+                                                                        <div class="input-group-text muValueMlc">Choose</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -183,17 +210,25 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text">RM</div>
                                                                     </div>
-                                                                    <input class="form-control TotalRow" value="<?=$act['total']?>" id="totalRow" name="totalRow[]" readonly type="text">
+                                                                    <input class="form-control TotalRow rowtotal<?= $icv_milestone['milestone_id']?>"
+                                                                           value="<?= $act['total'] ?>" id="totalRow"
+                                                                           name="totalRow[]" readonly type="text">
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                      <!--  <td>
-                                                            <div class="form-group">
+                                                        <!--   <td>
+                                                        <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <button class="btn btn-outline-info" data-target="#exampleModal1" data-toggle="modal" type="button">(μ) Entitlement(s)</button>
+                                                                    <button class="btn btn-outline-info muShow" id="muShow<?/*=$act['activity_id']*/?>" type="button">(μ) Entitlement(s)</button>
+                                                                    <div class="element-box muEntitlementShow<?/*=$act['activity_id']*/?>" hidden>
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-lightborder nonmlcTab<?/*=$act['activity_id']*/?>">
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </td>-->
+                                                         </td>-->
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -205,7 +240,7 @@
                             <?php } ?>
                         <div class="col-sm-12 text-right">
                             <div class="form-buttons-w">
-                                <button class="btn btn-primary" type="button"><i class="os-icon os-icon-navigation"></i> Save</button>
+                                <button class="btn btn-primary" type="submit"><i class="os-icon os-icon-navigation"></i> Save</button>
                             </div>
                         </div>
 
@@ -231,7 +266,7 @@
                                     <input type="hidden" id="hidMultiplierLocation">
                                     <div class="form-group"><label for="">NKEA</label>
                                         <select class="form-control" id="nkea">
-                                            <option>Select</option>
+                                            <option value="-1">Select</option>
                                             <?php foreach($benefitsNkea as $benefitsNkea){ ?>
                                                 <option value="<?=$benefitsNkea->benefits_nkea_id?>"> <?=$benefitsNkea->benefits_nkea_text?></option>
                                             <?php } ?>
@@ -244,7 +279,7 @@
                                     <input type="hidden" id="hidMultiplierLocation">
                                     <div class="form-group"><label for="">Focusing Corridors</label>
                                         <select class="form-control" id="focus">
-                                            <option>Select</option>
+                                            <option value="-1">Select</option>
                                             <?php foreach($benefitsFocusArea as $benefitsFocusArea){ ?>
                                                 <option value="<?=$benefitsFocusArea->benefits_focusing_area_id?>"> <?=$benefitsFocusArea->benefits_focusing_area_text?></option>
                                             <?php } ?>
@@ -257,7 +292,7 @@
                                     <input type="hidden" id="hidMultiplierLocation">
                                     <div class="form-group"><label for="">Offset Objectives</label>
                                         <select class="form-control" id="offset">
-                                            <option>Select</option>
+                                            <option value="-1">Select</option>
                                             <?php foreach($benefitsOffsets as $benefitsOffsets){ ?>
                                                 <option value="<?=$benefitsOffsets->benefits_offset_id?>"> <?=$benefitsOffsets->benefits_offset_text?></option>
                                             <?php } ?>

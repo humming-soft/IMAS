@@ -13,13 +13,14 @@ Class IcvCalculationModel extends CI_Model
 		$milestone = array();
 		$activity = array();
 		$this->db->select('t.task_id,t.proj_id, t.task_name, t.task_start_date, t.task_end_date, t.task_duration, t.task_type, t.task_progress, t.task_parent_id,coalesce(m.nonmlc_value,0) as nonmlc_value, coalesce(m.nonmlc_multiplier,0) as nonmlc_multiplier, 
-        coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coalesce( m.mlc_multiplier,0) as mlc_multiplier,coalesce(m. mlc_mu,0) as mlc_mu, coalesce(m.row_total,0) as row_total');
+        coalesce(m.nonmlc_mu,0) as nonmlc_mu,coalesce(m.mlc_value,0) as mlc_value,coalesce( m.mlc_multiplier,0) as mlc_multiplier,coalesce(m. mlc_mu,0) as mlc_mu, coalesce(m.row_total,0) as row_total,cl.milestone_claim_status as claim_status,cl.milestone_claim_remarks as claim_remarks');
 		$this->db->from('tbl_milestone_icv as m');
 		$this->db->where('t.proj_id', $proj_id);
 		$this->db->where('t.task_type', 'milestone');
 		$this->db->where('t.task_status', $status);
 		$this->db->order_by('t.task_id');
 		$this->db->join('tbl_task as t', 'm.task_id=t.task_id', 'RIGHT');
+		$this->db->join('tbl_icv_claim as cl', 'cl.task_id=t.task_id ', 'LEFT');
 		$result = $this->db->get()->result();
 		foreach($result as $key => $value)
 		{
@@ -28,10 +29,17 @@ Class IcvCalculationModel extends CI_Model
 			$data['milestone_text'] = $value->task_name;
 			$data['milestone_start_date'] = date("d-M-Y", strtotime($value->task_start_date));
 			$data['milestone_end_date'] = date("d-M-Y", strtotime($value->task_end_date));
+			$data['milestone_remarks'] = $value->claim_remarks;
+			$data['milestone_claim_status'] = $value->claim_status;
 			$count = $this->has_child($value->task_id, $proj_id);
 			$data['activity_count'] = $count;
 				if($count > 0){
 					$activities = $this->get_activities($value->task_id,$proj_id,1);
+					$activitiesCost = $this->get_activities_cost($value->task_id,$proj_id,1);
+					foreach($activitiesCost as $key2 => $value2)
+					{
+						$data['milestone_icv']=$value2->row_total;
+					}
 					$data['activities']=array();
 					foreach($activities as $key1 => $value1)
 					{
@@ -59,15 +67,18 @@ Class IcvCalculationModel extends CI_Model
 	{
 		$data = array();
 		$milestone = array();
-		$this->db->select('icv_projects_id, proj_id, icv_nonmlc, icv_mlc, icv_total');
+		$this->db->select('icv_projects_id, proj_id, icv_nonmlc, icv_mlc, icv_total,icv_claimed,coalesce(icv_total,0) - icv_claimed as balance');
 		$this->db->from('tbl_icv_projects ');
 		$this->db->where('proj_id', $proj_id);
 		$result = $this->db->get()->result();
 		foreach($result as $key => $value)
 		{
+			$data['pjt_id'] = $value->proj_id;
 			$data['p_nonmlc'] = $value->icv_nonmlc;
 			$data['p_mlc'] = $value->icv_mlc;
 			$data['p_total'] = $value->icv_total;
+			$data['p_claimed'] = $value->icv_claimed;
+			$data['p_balance'] = $value->balance;
 			array_push($milestone,$data);
 		}
 		return $milestone;
@@ -112,6 +123,17 @@ Class IcvCalculationModel extends CI_Model
 		$this->db->where('t.task_parent_id', $parentId);
 		$this->db->where('t.task_status', $status);
 		$this->db->order_by('t.task_id');
+		$this->db->join('tbl_task as t', 'm.task_id=t.task_id','RIGHT');
+		$result1 = $this->db->get()->result();
+		return $result1;
+	}
+	function get_activities_cost($parentId,$pjt_id,$status){
+		$this->db->select('sum(m.row_total) as row_total');
+		$this->db->from('tbl_milestone_icv as m');
+		$this->db->where('t.proj_id', $pjt_id);
+		$this->db->where('t.task_type', 'task');
+		$this->db->where('t.task_parent_id', $parentId);
+		$this->db->where('t.task_status', $status);
 		$this->db->join('tbl_task as t', 'm.task_id=t.task_id', 'RIGHT');
 		$result1 = $this->db->get()->result();
 		return $result1;
@@ -175,6 +197,31 @@ Class IcvCalculationModel extends CI_Model
 	function insertBenefits($data){
 		$this->db->insert('tbl_indirect_task_benefits', $data);
 		return $this->db->insert_id();
+	}
+	function insertICV_claim($data){
+		$this->db->insert('tbl_icv_claim', $data);
+		return $this->db->insert_id();
+	}
+	function updateICV_claim($task_id,$data){
+		$this->db->where('task_id', $task_id);
+		$this->db->update('tbl_icv_claim',$data);
+		$updated_status = $this->db->affected_rows();
+		if($updated_status){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	function get_count_milestone_icvclaim($task_id){
+		$this->db->select('count(*) as count');
+		$this->db->from('tbl_icv_claim');
+		$this->db->where('task_id', $task_id);
+		$result1 = $this->db->get()->result();
+		foreach($result1 as $key => $value)
+		{
+			$count = $value->count;
+		}
+		return $count;
 	}
 }
 ?>

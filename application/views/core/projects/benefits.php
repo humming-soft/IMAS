@@ -15,15 +15,13 @@
                         <div class="element-box">
                             <div class="table-responsive">
                                 <div class="col-sm-12 text-right">
-                                    <button data-toggle="modal" class="btn btn-primary" id="addrow"><i
-                                            class="os-icon os-icon-plus-circle"></i> Add New
-                                    </button>
+                                    <button  class="btn btn-primary" id="addrowNew" type="button"><i class="os-icon os-icon-plus-circle"></i> Add New</button>
                                 </div>
                                 <br>
                                 <table class="table  table-v2" id="tabBenefits">
                                     <tbody>
                                     <tr>
-                                        <th>NKEA</th>
+                                        <th> NKEA </th>
                                         <th> Focusing Corridors</th>
                                         <th> Offset Objectives </th>
                                         <th></th>
@@ -54,17 +52,14 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <div class="col-sm-12">
-                                                <span><span class="input-group-append"><button type="button" class="btn btn-danger btn-icon ml-2"><i class="os-icon os-icon-trash"></i></button></span>
-                                                <span class="input-group-append"><button type="button" class="btn btn-info btn-icon ml-2"><i class="os-icon os-icon-pencil-12"></i></button></span></span>
-                                            </div>
+                                            <span class="input-group-append"><button type="button" class="btn btn-danger btn-icon ml-2 deleteRow"><i class="os-icon os-icon-trash"></i></button></span>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <div class="col-sm-12 text-right">
                                     <div class="form-buttons-w">
-                                        <button class="btn btn-grey"  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
+                                        <button class="btn btn-grey "  data-dismiss="modal" type="button"><i class="os-icon os-icon-x"></i> Cancel</button>
                                         <button class="btn btn-primary" type="submit"><i class="os-icon os-icon-navigation"></i> Save</button>
                                     </div>
                                 </div>

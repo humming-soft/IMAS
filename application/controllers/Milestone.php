@@ -87,79 +87,93 @@ class Milestone extends HS_Controller {
         }
     }
     public function update_task_info(){ //Update task details
-        $data[]=array();
-        $data=$this->input->post('data');
-        $splittedstring=explode("00",$data['start_date']);
-        $startdate = date('Y-m-d', strtotime( $splittedstring[0]));
-        $splittedstringEnd=explode("00",$data['end_date']);
-        $enddate = date('Y-m-d', strtotime( $splittedstringEnd[0]));
-        $pjtId=$this->input->post('id');
-        $task_id=$this->input->post('task_id');
-        $perentId = $data['parent'];
-        if($data['type'] == 'task'){
-            $maxDateArray = $this->milestonemodel->calculate_milestone_duration($perentId,$pjtId);
-            foreach ($maxDateArray as $row) {
-                $enddateParent = date("d-m-Y", strtotime($row->edate));
-            }
-            if($enddateParent <  $enddate){
-                $dataParent = array(
-                    'task_start_date' => date("Y-m-d H:i:s", strtotime($startdate)) ,
-                    'task_end_date' => date("Y-m-d H:i:s", strtotime($enddate)) ,
-                    'modified_at'=> date('Y-m-d H:i:s'),
-                    'modified_by'=> 1
-                );
-                $this->milestonemodel->update_milestone($perentId,$pjtId,$dataParent);
-            }
-        }
-        if($data['progress']){
-            $count=$this->milestonemodel->has_child($perentId, $pjtId);
-            if((int)$count > 0){
-                $sumProgress = $this->milestonemodel->sum_child_progress($perentId,$pjtId,$task_id);
-                $progres=((double)$sumProgress + (double)$data['progress'])/(double)$count;
-                $dataProgress = array(
-                    'task_progress' => $progres,
-                    'modified_at'=> date('Y-m-d H:i:s'),
-                    'modified_by'=> 1
-                );
-                $this->milestonemodel->update_milestone($perentId,$pjtId,$dataProgress);
-                $projectParent = $this->milestonemodel->get_project_parent_id($pjtId);
-                $countAll=$this->milestonemodel->has_child($projectParent, $pjtId);
-                $sumMilestoneProgress = $this->milestonemodel->sum_child_progress($projectParent,$pjtId,$perentId);
-                $parentProgress = ((double)$sumMilestoneProgress + (double)$progres)/(double)$countAll;
-                $dataAllProgress = array(
-                    'task_progress' => $parentProgress,
-                    'modified_at'=> date('Y-m-d H:i:s'),
-                    'modified_by'=> 1
-                );
-                $this->milestonemodel->update_milestone($projectParent,$pjtId,$dataAllProgress);
-            }
-            $data = array(
-                'task_name' => $data['text'],
-                'task_start_date' => $startdate,
-                'task_end_date' => $enddate,
-                'task_duration' => $data['duration'],
-                'task_progress'=>$data['progress'],
-                'modified_at'=> date('Y-m-d H:i:s'),
-                'modified_by'=> 1
-            );
-        }else{
-            $data = array(
-                'task_name' => $data['text'],
-                'task_start_date' => $startdate,
-                'task_end_date' => $enddate,
-                'task_duration' => $data['duration'],
-                'modified_at'=> date('Y-m-d H:i:s'),
-                'modified_by'=> 1
-            );
-        }
+                            $data[]=array();
+                            $data=$this->input->post('data');
+                            $splittedstring=explode("00",$data['start_date']);
+                            $startdate = date('Y-m-d', strtotime( $splittedstring[0]));
+                            $splittedstringEnd=explode("00",$data['end_date']);
+                            $enddate = date('Y-m-d', strtotime( $splittedstringEnd[0]));
+                            $pjtId=$this->input->post('id');
+                            $task_id=$this->input->post('task_id');
+                            $perentId = $data['parent'];
+                            if($data['progress']){
+                                $count=$this->milestonemodel->has_child($perentId, $pjtId);
+                                if((int)$count > 0){
+                                    $sumProgress = $this->milestonemodel->sum_child_progress($perentId,$pjtId,$task_id);
+                                    $progres=((double)$sumProgress + (double)$data['progress'])/(double)$count;
+                                    $dataProgress = array(
+                                        'task_progress' => $progres,
+                                        'modified_at'=> date('Y-m-d H:i:s'),
+                                        'modified_by'=> 1
+                                    );
+                                    $this->milestonemodel->update_milestone($perentId,$pjtId,$dataProgress);
+                                    $projectParent = $this->milestonemodel->get_project_parent_id($pjtId);
+                                    $countAll=$this->milestonemodel->has_child($projectParent, $pjtId);
+                                    $sumMilestoneProgress = $this->milestonemodel->sum_child_progress($projectParent,$pjtId,$perentId);
+                                    $parentProgress = ((double)$sumMilestoneProgress + (double)$progres)/(double)$countAll;
+                                    $dataAllProgress = array(
+                                        'task_progress' => $parentProgress,
+                                        'modified_at'=> date('Y-m-d H:i:s'),
+                                        'modified_by'=> 1
+                                    );
+                                    $this->milestonemodel->update_milestone($projectParent,$pjtId,$dataAllProgress);
+                                }
+                                $data1 = array(
+                                    'task_name' => $data['text'],
+                                    'task_start_date' => $startdate,
+                                    'task_end_date' => $enddate,
+                                    'task_duration' => $data['duration'],
+                                    'task_progress'=>$data['progress'],
+                                    'modified_at'=> date('Y-m-d H:i:s'),
+                                    'modified_by'=> 1
+                                );
+                                $this->milestonemodel->update_milestone($task_id,$pjtId,$data1);
+                            }else{
+                                $data1 = array(
+                                    'task_name' => $data['text'],
+                                    'task_start_date' => $startdate,
+                                    'task_end_date' => $enddate,
+                                    'task_duration' => $data['duration'],
+                                    'modified_at'=> date('Y-m-d H:i:s'),
+                                    'modified_by'=> 1
+                                );
+                                $this->milestonemodel->update_milestone($task_id,$pjtId,$data1);
+                                }
+                                    if($data['type'] == 'task'){
+                                        $projectParent = $this->milestonemodel->get_project_parent_id($pjtId);
+                                        $maxDateArrayProjeect = $this->milestonemodel->calculate_milestone_duration($projectParent,$pjtId);
+                                        foreach ($maxDateArrayProjeect as $row) {
+                                            $enddateParentPr = date("d-m-Y", strtotime($row->edate));
+                                            $startdateParentPr = date("d-m-Y", strtotime($row->sdate));
+                                            $durationPr = $row->duration;
+                                        }
+                                        $dataParentproject = array(
+                                            'task_start_date' => date("Y-m-d H:i:s", strtotime($startdateParentPr)) ,
+                                            'task_end_date' => date("Y-m-d H:i:s", strtotime($enddateParentPr)) ,
+                                            'task_duration' => $durationPr,
+                                            'modified_at'=> date('Y-m-d H:i:s'),
+                                            'modified_by'=> 1
+                                        );
+                                        $this->milestonemodel->update_milestone($projectParent,$pjtId,$dataParentproject);
+                                        $maxDateArray = $this->milestonemodel->calculate_milestone_duration($perentId,$pjtId);
+                                        foreach ($maxDateArray as $row) {
+                                            $enddateParent = date("d-m-Y", strtotime($row->edate));
+                                            $startdateParent = date("d-m-Y", strtotime($row->sdate));
+                                            $duration = $row->duration;
+                                        }
+                                        $dataParent = array(
+                                            'task_start_date' => date("Y-m-d H:i:s", strtotime($startdateParent)) ,
+                                            'task_end_date' => date("Y-m-d H:i:s", strtotime($enddateParent)) ,
+                                            'task_duration' => $duration,
+                                            'modified_at'=> date('Y-m-d H:i:s'),
+                                            'modified_by'=> 1
+                                        );
+                                        $this->milestonemodel->update_milestone($perentId,$pjtId,$dataParent);
 
-        if($this->milestonemodel->update_milestone($task_id,$pjtId,$data)>0){
-            $data['milestone']=json_encode($this->milestonemodel->get_milestone(1,$pjtId));
-            echo json_encode( array('status'=>1,'token'=>$this->security->get_csrf_hash(),'milestone'=> $data['milestone']));
-        }else{
-            $data['milestone']=json_encode($this->milestonemodel->get_milestone(1,$pjtId));
-            echo json_encode( array('status'=>0,'token'=>$this->security->get_csrf_hash(),'milestone'=> $data['milestone']));
-        }
+                                    }
+
+                                $data['milestone']=json_encode($this->milestonemodel->get_milestone(1,$pjtId));
+                                echo json_encode( array('status'=>1,'token'=>$this->security->get_csrf_hash(),'milestone'=> $data['milestone']));
     }
     public function link_delete(){
         $link_id=$this->input->post('link_id');

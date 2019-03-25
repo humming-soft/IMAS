@@ -172,6 +172,7 @@ var Milestone = function () {
 		}
 	};
 	gantt.attachEvent("onAfterTaskAdd", function(id,item){
+		console.log("1111111111111111111111111111111111111");
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  		_showLoader();
@@ -180,17 +181,20 @@ var Milestone = function () {
 			  _setcsrfcontent(d.token);
 			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
-				  _hideLoader();
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
+				  _hideLoader();
+
 			  }else{
-				  _hideLoader();
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
+				  _hideLoader();
+
 			  }
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onBeforeLinkAdd", function(id,link){
+		  console.log("222222222222222222222222222222222222");
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -199,15 +203,20 @@ var Milestone = function () {
 			  _setcsrfcontent(d.token);
 			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
-				  _hideLoader();
+
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
-			  }else{
 				  _hideLoader();
+			  }else{
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+				  _hideLoader();
+
 			  }
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterTaskDelete", function(id,item){
+		  console.log("3333333333333333333333333333333333333333333");
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -216,15 +225,19 @@ var Milestone = function () {
 			  _setcsrfcontent(d.token);
 			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
-				  _hideLoader();
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
-			  }else{
 				  _hideLoader();
+			  }else{
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+				  _hideLoader();
+
 			  }
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterTaskUpdate", function(id,item){
+		  console.log("44444444444444444444444444444444444444444444");
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -233,15 +246,19 @@ var Milestone = function () {
 			  _setcsrfcontent(d.token);
 			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
-				  _hideLoader();
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
-			  }else{
 				  _hideLoader();
+			  }else{
+				  gantt.clearAll();
+				  gantt.parse(d.milestone);
+				  _hideLoader();
+
 			  }
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterLinkDelete", function(id,item){
+		  console.log("555555555555555555555555555555555555555555");
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -250,15 +267,20 @@ var Milestone = function () {
 			  _setcsrfcontent(d.token);
 			  $('#milestone_l').find("[name='imas_csrf_token']").val(d.token);
 			  if(d.status == 1) {
+				  gantt.load(d.milestone);
+				  gantt.refreshData();
+
 				  _hideLoader();
+			  }else{
 				  gantt.clearAll();
 				  gantt.parse(d.milestone);
-			  }else{
 				  _hideLoader();
+
 			  }
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onTaskDrag", function(id, mode, task, original){
+		  console.log("666666666666666666666666666666666666666");
 		  var modes = gantt.config.drag_mode;
 		  if(mode == modes.move){
 			  var diff = task.start_date - original.start_date;

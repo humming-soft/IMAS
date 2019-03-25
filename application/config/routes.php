@@ -67,6 +67,7 @@ $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/([a-
 $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)'] = 'projects/find_project/$1/$2';
 $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/icv_calculation'] = 'projects/icv_calculation/$1/$2';
 $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/icv_calculation/add'] = 'projects/add_icv/$1/$2';
+$route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/icv_calculation/claim_icv'] = 'projects/claim_icv/$1/$2';
 $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/benefits'] = 'projects/project_benefits/$1/$2';
 $route['programmes/([tda]{3}\-[prog]{4}\-[a-z]+\-[0-9]+\-[0-9]+\-[0-9]{4}+)/(:any)/benefits/add'] = 'projects/add_benefits/$1/$2';
 
