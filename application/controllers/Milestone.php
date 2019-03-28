@@ -111,12 +111,14 @@ class Milestone extends HS_Controller {
                                     $countAll=$this->milestonemodel->has_child($projectParent, $pjtId);
                                     $sumMilestoneProgress = $this->milestonemodel->sum_child_progress($projectParent,$pjtId,$perentId);
                                     $parentProgress = ((double)$sumMilestoneProgress + (double)$progres)/(double)$countAll;
-                                    $dataAllProgress = array(
-                                        'task_progress' => $parentProgress,
-                                        'modified_at'=> date('Y-m-d H:i:s'),
-                                        'modified_by'=> 1
-                                    );
-                                    $this->milestonemodel->update_milestone($projectParent,$pjtId,$dataAllProgress);
+                                    if($parentProgress){
+                                        $dataAllProgress = array(
+                                            'task_progress' => $parentProgress,
+                                            'modified_at'=> date('Y-m-d H:i:s'),
+                                            'modified_by'=> 1
+                                        );
+                                        $this->milestonemodel->update_milestone($projectParent,$pjtId,$dataAllProgress);
+                                    }
                                 }
                                 $data1 = array(
                                     'task_name' => $data['text'],
@@ -169,9 +171,7 @@ class Milestone extends HS_Controller {
                                             'modified_by'=> 1
                                         );
                                         $this->milestonemodel->update_milestone($perentId,$pjtId,$dataParent);
-
                                     }
-
                                 $data['milestone']=json_encode($this->milestonemodel->get_milestone(1,$pjtId));
                                 echo json_encode( array('status'=>1,'token'=>$this->security->get_csrf_hash(),'milestone'=> $data['milestone']));
     }
