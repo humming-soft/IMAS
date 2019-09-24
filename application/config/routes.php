@@ -57,6 +57,7 @@ $route['forgot-password'] = 'forgotpassword';
 $route['reset-password'] = 'resetpassword';
 $route['login'] = 'login/auth';
 $route['programmes/create'] = 'programmes/create';
+$route['programmes/list'] = 'programmes/listView';
 $route['programmes/update'] = 'programmes/update';
 $route['programmes/delete'] = 'programmes/delete';
 $route['programmes/get_sector/(:num)'] = 'programmes/get_sector/$1';

@@ -22,6 +22,7 @@ $lang["prog_cpn_label"] = "Programme Name";
 $lang["prog_cpn_ph_label"] = "Enter ICP Programme Title/Name..";
 $lang["prog_cpd_label"] = "Programme Description";
 $lang["prog_cpd_ph_label"] = "Enter Programme Description..";
+$lang["prog_cpd_label1"] = "Upload Image";
 $lang["prog_create_p2_leg_label"] = "Procurement Information";
 $lang["prog_cpv_label"] = "Procurement Value";
 $lang["prog_cpv_ph_label"] = "Enter Procurement Value..";

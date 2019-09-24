@@ -27,9 +27,10 @@
                 <div class="modal-content text-center"><button aria-label="Close" class="close" data-dismiss="modal"
                         type="button"><span class="close-label"><?=$this->lang->line('btn_close')?></span><span
                             class="os-icon os-icon-close"></span></button>
-                    <?=form_open('programmes/create','id="prog_c_f" data-toggle="validator"')?>
+                    <?=form_open_multipart('programmes/create','id="prog_c_f" data-toggle="validator"')?>
                     <div class="onboarding-slider-w">
                         <div class="onboarding-slide">
+
                             <div class="onboarding-content with-gradient text-center">
                                 <h4 class="onboarding-title"><?=$this->lang->line('prog_create_header_label')?></h4>
                                 <div class="onboarding-text"><?=$this->lang->line('prog_create_subheader_label')?></div>
@@ -39,11 +40,18 @@
                                         <fieldset class="form-group mt-2">
                                             <legend><span><?=$this->lang->line('prog_create_p1_leg_label')?></span></legend>
                                             <div class="row text-left">
-                                                <div class="col-sm-12 col-md-12">
+                                                <div class="col-sm-8 col-md-8">
                                                     <div class="form-group">
                                                         <label for=""><?=$this->lang->line('prog_cpn_label')?></label>
                                                         <input class="form-control" name="prog_name" minlength="5" maxlength="100"
                                                             placeholder="<?=$this->lang->line('prog_cpn_ph_label')?>" type="text" required>
+                                                        <div class="error-prog_name form-text help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for=""><?=$this->lang->line('prog_cpd_label1')?></label>
+                                                        <input type="file" class="" id="prog_image" name="prog_image">
                                                         <div class="error-prog_name form-text help-block with-errors"></div>
                                                     </div>
                                                 </div>
@@ -370,6 +378,19 @@
                             <div class="col-sm-12">
                                 <div class="element-wrapper">
                                     <div class="element-actions">
+
+<!-- ANCY START TOGGLER-->
+                                        <div class="floated-colors-btn second-floated-btn">
+                                            <span class="listGrid">Grid</span>
+                                            <div class="os-toggler-w">
+                                                <div class="os-toggler-i">
+                                                    <a href="./list"><div class="os-toggler-pill"></div></a>
+                                                </div>
+                                            </div>
+                                            <span class="listGrid">List</span></div>
+
+
+<!-- ANCY END TOGGLER-->
                                         <form class="form-inline justify-content-sm-end btn-block">
                                             <a class="btn btn-primary" data-target=".onboarding-modal" data-toggle="modal" href="#"><i class="os-icon os-icon-plus-circle"></i><span><?=$this->lang->line('prog_create_new_label')?></span></a>
 											<!-- <a class="btn btn-success" href="#"><i class="os-icon os-icon-sliders"></i><span> Filter</span></a> -->
@@ -400,10 +421,6 @@
                                                         <h6 class="post-title">
                                                             <?=$programme->prog_name?>
                                                         </h6>
-                                                        <!-- <a class="ae-label ae-label-red td-none" href="#">
-															<span class="label-pin"></span>
-															<b class="label-value"><span class="text-dark">Ref: No. :</span>TDA/POD/MOT/54/2015/802/MY </b>
-														</a> -->
                                                         <div class="post-text pt-3">
                                                             <?=$programme->prog_desc?>
                                                         </div>
@@ -592,12 +609,18 @@
         </div>
         <div class="display-type"></div>
     </div>
+
+
+
+
+
     <script src="<?=site_url('assets/js/vendors/jquery/dist/jquery.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/popper.js/dist/umd/popper.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/moment/moment.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/pikaday/pikaday.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/bootstrap-validator/dist/validator.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')?>"></script>
+
     <script src="<?=site_url('assets/js/vendors/tether/dist/js/tether.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/slick-carousel/slick/slick.min.js')?>"></script>
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/util.js')?>"></script>
@@ -612,8 +635,24 @@
     <script src="<?=site_url('assets/js/vendors/bootstrap/js/dist/popover.js')?>"></script>
     <script src="<?=site_url('assets/js/customizer.js')?>"></script>
     <script src="<?=site_url('assets/js/app.min.js')?>"></script>
+    <script src="<?=site_url('assets/js/app.js')?>"></script>
     <?php if(isset($page_js)){ ?>
     <script src="<?=site_url('assets/js/pages/').$page_js.'.min.js'?>"></script>
     <?php } ?>
-    <script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {Dashboard.init();App.initMenu();App.initContentMenuToggle();App.initDropdown();App.initElementActions();App.initContentPanelTrigger();App.initModal('<?=$this->lang->line('prog_create_prev')?>','<?=$this->lang->line('prog_create_next')?>')});</script>
+    <script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {Dashboard.init();App.initMenu();App.initColorToggler(base_url);App.initContentMenuToggle();App.initDropdown();App.initElementActions();App.initContentPanelTrigger();App.initModal('<?=$this->lang->line('prog_create_prev')?>','<?=$this->lang->line('prog_create_next')?>')});
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#blah').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $('#fileToUpload').on('click', function() {
+            readURL(this);
+        });
+
+    </script>
 </html>

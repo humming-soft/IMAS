@@ -26908,12 +26908,12 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 .floated-colors-btn {
     z-index: 9999;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: #252A32;
+    bottom: 816px;
+    right: 539px;
+    background: #047bf8;
     border-radius: 75px;
     color: #fff;
-    padding: 12px 20px;
+    padding: 6px 34px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -26921,20 +26921,20 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
     -ms-flex-align: center;
     align-items: center;
     vertical-align: middle;
-    font-size: 1.08rem;
+    font-size: 0.9rem;
     cursor: pointer;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease
 }
 
 .floated-colors-btn.second-floated-btn {
-    right: 200px
+    right: 528px
 }
 
 .floated-colors-btn span {
     vertical-align: middle;
     display: inline-block;
-    font-weight: 500
+    font-weight: 400
 }
 
 .floated-colors-btn span+span {
@@ -26944,9 +26944,18 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 .floated-colors-btn:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
-    background-color: #0f1115
+    background-color: #0362c6
 }
-
+.ellips  {
+    white-space: nowrap;
+    width: 550px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.listGrid {
+    padding-right: 16px;
+    padding-left: 0px;
+}
 .box-style-dark,.color-scheme-dark .ae-content-w .aec-full-message-w .aec-full-message,.color-scheme-dark .ae-content-w .aec-reply,body.color-scheme-dark .box-style,body.color-scheme-dark .user-profile,body.color-scheme-dark .element-box,body.color-scheme-dark .invoice-w,body.color-scheme-dark .big-error-w,body.color-scheme-dark .activity-boxes-w .activity-box,.activity-boxes-w body.color-scheme-dark .activity-box,body.color-scheme-dark .post-box,body.color-scheme-dark .projects-list .project-box,.projects-list body.color-scheme-dark .project-box,body.color-scheme-dark .profile-tile .profile-tile-box,.content-panel.color-scheme-dark .box-style,.content-panel.color-scheme-dark .user-profile,.content-panel.color-scheme-dark .element-box,.content-panel.color-scheme-dark .invoice-w,.content-panel.color-scheme-dark .big-error-w,.content-panel.color-scheme-dark .activity-boxes-w .activity-box,.activity-boxes-w .content-panel.color-scheme-dark .activity-box,.content-panel.color-scheme-dark .post-box,.content-panel.color-scheme-dark .projects-list .project-box,.projects-list .content-panel.color-scheme-dark .project-box,.content-panel.color-scheme-dark .profile-tile .profile-tile-box {
     background-color: #323c58;
     -webkit-box-shadow: 0px 5px 15px rgba(22,22,35,0.1);
@@ -26994,7 +27003,7 @@ body.color-scheme-dark .text-bright,.content-panel.color-scheme-dark .text-brigh
 }
 
 body.color-scheme-dark .floated-colors-btn,.content-panel.color-scheme-dark .floated-colors-btn {
-    background-color: #fff;
+    background-color: #047bf8;
     -webkit-box-shadow: 0px 5px 15px rgba(22,22,35,0.1);
     box-shadow: 0px 5px 15px rgba(22,22,35,0.1)
 }
@@ -27043,6 +27052,7 @@ body.color-scheme-dark .todo-list .todo-item.complete .ti-sub-header,.content-pa
 body.color-scheme-dark .todo-list .todo-item.complete .ti-header,.content-panel.color-scheme-dark .todo-list .todo-item.complete .ti-header {
     color: #F2F4F8
 }
+
 
 body.color-scheme-dark h1,body.color-scheme-dark h2,body.color-scheme-dark h3,body.color-scheme-dark h4,body.color-scheme-dark h5,body.color-scheme-dark h6,body.color-scheme-dark .h1,body.color-scheme-dark .h2,body.color-scheme-dark .h3,body.color-scheme-dark .h4,body.color-scheme-dark .h5,body.color-scheme-dark .h6,.content-panel.color-scheme-dark h1,.content-panel.color-scheme-dark h2,.content-panel.color-scheme-dark h3,.content-panel.color-scheme-dark h4,.content-panel.color-scheme-dark h5,.content-panel.color-scheme-dark h6,.content-panel.color-scheme-dark .h1,.content-panel.color-scheme-dark .h2,.content-panel.color-scheme-dark .h3,.content-panel.color-scheme-dark .h4,.content-panel.color-scheme-dark .h5,.content-panel.color-scheme-dark .h6 {
     color: #fff

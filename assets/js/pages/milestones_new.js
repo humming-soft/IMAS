@@ -172,7 +172,7 @@ var Milestone = function () {
 		}
 	};
 	gantt.attachEvent("onAfterTaskAdd", function(id,item){
-		console.log("1111111111111111111111111111111111111");
+
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  		_showLoader();
@@ -194,7 +194,7 @@ var Milestone = function () {
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onBeforeLinkAdd", function(id,link){
-		  console.log("222222222222222222222222222222222222");
+
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -216,7 +216,7 @@ var Milestone = function () {
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterTaskDelete", function(id,item){
-		  console.log("3333333333333333333333333333333333333333333");
+
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -237,7 +237,7 @@ var Milestone = function () {
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterTaskUpdate", function(id,item){
-		  console.log("44444444444444444444444444444444444444444444");
+
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -258,7 +258,7 @@ var Milestone = function () {
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onAfterLinkDelete", function(id,item){
-		  console.log("555555555555555555555555555555555555555555");
+
 		  var csrfName = _getcsrfname(),
 			  csrfHash = _getcsrfcontent();
 		  _showLoader();
@@ -280,7 +280,7 @@ var Milestone = function () {
 		  }, 'json');
 	  });
 	  gantt.attachEvent("onTaskDrag", function(id, mode, task, original){
-		  console.log("666666666666666666666666666666666666666");
+		
 		  var modes = gantt.config.drag_mode;
 		  if(mode == modes.move){
 			  var diff = task.start_date - original.start_date;

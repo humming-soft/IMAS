@@ -56,10 +56,11 @@
                                                         <div class="error-prog_desc form-text with-errors"></div>
                                                     </div>
                                                 </div>
+												
                                             </div>
                                         </fieldset>
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                         <div class="onboarding-slide">

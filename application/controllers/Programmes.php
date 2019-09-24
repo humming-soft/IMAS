@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Programmes extends HS_Controller {
+class Programmes extends HS_Controller
+{
 
     public $data = [];
 
@@ -9,45 +10,63 @@ class Programmes extends HS_Controller {
     {
         parent::__construct('programmes');
         $this->load->helper('form');
-        $this->load->model('programmemodel','',TRUE);
-        $this->load->model('agencymodel','',TRUE);
-        $this->load->model('sectormodel','',TRUE);
-        $this->load->model('currencymodel','',TRUE);
-        $this->load->model('commonmodel','',TRUE);
+        $this->load->model('programmemodel', '', TRUE);
+        $this->load->model('agencymodel', '', TRUE);
+        $this->load->model('sectormodel', '', TRUE);
+        $this->load->model('currencymodel', '', TRUE);
+        $this->load->model('commonmodel', '', TRUE);
     }
-	public function index()
-	{
+
+    public function index()
+    {
         if ($this->session->userdata('message')) {
             $messagehrecord = $this->session->userdata('message');
             $this->data['message'] = $messagehrecord['message'];
             $this->data['type'] = $messagehrecord['type'];
             $this->session->unset_userdata('message');
         }
-        $this->data['programmes'] = $this->programmemodel->getAllProgrammes(1,1);
+        $this->data['programmes'] = $this->programmemodel->getAllProgrammes(1, 1);
         $this->data['currency'] = $this->currencymodel->getCurrencyById(1);
         $this->data['cscale'] = $this->currencymodel->getAllCurrencyScale();
         $this->data['agencies'] = $this->agencymodel->getAllAgencies();
         $this->data['page_js'] = 'dashboard';
-		$this->load->view('core/dashboard',$this->data);
+        $this->load->view('core/dashboard', $this->data);
     }
-
-    public function create(){
+    public function listView()
+    {
+        if ($this->session->userdata('message')) {
+            $messagehrecord = $this->session->userdata('message');
+            $this->data['message'] = $messagehrecord['message'];
+            $this->data['type'] = $messagehrecord['type'];
+            $this->session->unset_userdata('message');
+        }
+        $this->data['programmes'] = $this->programmemodel->getAllProgrammes(1, 1);
+        $this->data['currency'] = $this->currencymodel->getCurrencyById(1);
+        $this->data['cscale'] = $this->currencymodel->getAllCurrencyScale();
+        $this->data['agencies'] = $this->agencymodel->getAllAgencies();
+        $this->data['page_js'] = 'dashboard';
+        $this->load->view('core/dashboardlist', $this->data);
+    }
+    public function create()
+    {
         $this->load->library('form_validation');
-		$this->form_validation->set_rules('prog_name', 'Programme Name', 'trim|required|xss_clean|callback_project_name_exists');
-		$this->form_validation->set_rules('prog_desc', 'Programme Description', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('currency_code', 'Currency Code', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('proc_value', 'Procurement Value', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('prog_name', 'Programme Name', 'trim|required|xss_clean|callback_project_name_exists');
+        $this->form_validation->set_rules('prog_desc', 'Programme Description', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('currency_code', 'Currency Code', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('proc_value', 'Procurement Value', 'trim|required|xss_clean');
         $this->form_validation->set_rules('currency_scale', 'Currency Scale', 'trim|required|xss_clean');
 
         $this->form_validation->set_rules('proc_agency', 'Agency', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('proc_sector', 'Sector', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('proc_sector', 'Sector', 'trim|required|xss_clean');
         $this->form_validation->set_rules('prog_start_date', 'Start Date(Planned)', 'trim|required|xss_clean');
         $this->form_validation->set_rules('prog_end_date', 'End Date(Planned)', 'trim|required|xss_clean');
+
         if($this->form_validation->run() != FALSE)
 		{
             $data = array(
                 'prog_name' => $this->input->post('prog_name'),
                 'prog_desc' => $this->input->post('prog_desc'),
+             /*   'prog_img' =>  $_FILES['prog_image']['name'],*/
                 'currency_code_id' => $this->input->post('currency_code'),
                 'proc_value' => $this->input->post('proc_value'),
                 'currency_scale_id' => $this->input->post('currency_scale'),
@@ -81,7 +100,6 @@ class Programmes extends HS_Controller {
                 ));
         }
     }
-
     public function update(){
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('prog_name', 'Programme Name', 'trim|required|xss_clean');
